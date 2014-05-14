@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+    <head>
+        <meta charset="utf-8">
+        <title>MfP Beispiel</title>
+        <link rel="stylesheet" href="css/eduZOO.css">
+        <script src="../eduZOO-app/script/lib/angular.min.js"></script>
+        <script src="../eduZOO-app/script/eduZOO.js"></script>
+    </head>
+    <body>
+        <h1>MfP - Beispiel eduZOO Seite</h1>
+        <p>
+          In diesem Beispiel möchten wir Zeigen, wie wir uns interaktive
+          multimediale Lernumbegungen in ihrer einfachsten Form vorstellen.
+        </p>
+        <p>
+          Wir fangen mit einem Warm-Up Quiz wie sie in der MfPII Lehrveranstaltung
+          im SoSe14 gebräuchlich sind an.
+        </p>
+        <p>
+          Im folgenden sollen die Studierenden Ihr Wissen zum Thema Stammfunktionen
+          überprüfen. Sie können dieses Multiple-CHoice-Quiz so oft ausfüllen
+          wie Sie möchten. Nur wenn alle Kreuze richtig gesetzt sind wird das Quiz
+          als korrekt gelöst angesehen.
+        </p>
+        <p>
+          Bisher gibt es noch keine Programmlogik in diesen eduZOO Seiten. Der Studierende
+          ist also selber angehalten, sein eigenen Wissensstand einzusätzen und mit dieser
+          Erkenntnis umzugehen.
+        </p>
+	<p>
+          Gegenbeispiele oder andere Hinweise zur korrekten Lösung werden auf der selben
+          Seite weiter unten angezeigt. Ob der Studierende schummelt muss er/sie selbst
+          entscheiden.
+        </p>
+        <quiz>
+          <question>
+            <p>
+              Markiere die richtigen Aussagen.
+            </p>
+            <p>
+              <strong>1.</strong> Sei <mi>f</mi><mo>:</mo> 
+            </p>
+          </question>
+            <choice>Vannevar Bush</choice>
+            <choice correct>Ted Nelson</choice>
+            <choice>Edsger Dijkstra</choice>
+            <choice>Tim Berners-Lee</choice>
+        </quiz>
+        <p>
+            Und gleich die nächste Frage ...
+        </p>
+        <quiz>
+            <question>Wann war das?</question>
+            <choice>1997</choice>
+            <choice>1984</choice>
+            <choice correct>1965</choice>
+            <choice>1942</choice>
+        </quiz>
+        <p>
+            Und hier gehts weiter ...
+        </p>
+        <quiz>
+            <question>Wie heißt die Maschine, die Vannevar Bush in seinem Artikel "As We May Think" beschreibt?</question>
+            <textinput correct="Memex"></textinput>
+        </quiz>
+    </body>
+</html>
