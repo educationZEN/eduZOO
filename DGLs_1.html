@@ -83,6 +83,27 @@ Wichtige Beispiele gew&ouml;hnlicher DGLs sind
   </li>
  </ul>
 
+<p>
+Sei nun \(y\) eine \(n\)-mal differenzierbare Funktion einer Ver&auml;nderlichen,
+\(a_0(x),a_1(x),\dots,a_n(x),b(x)\) Funktionen einer Variablen, und \(a_0(x)\neq0\) f.a. \(x\).
+Eine allgemeine <em>lineare gew&ouml;hnliche</em> DGL der Ordnung \(n\) f&uuml;r \(y\) hat die Form
+</p>
+<p>
+\(a_n(x)y^{(n)}(x)+a_{n-1}(x)y^{(n)}(x)+\dots+a_1(x)y'(x)+a_0(x)y(x)=b(x),\)
+</p>
+<p>
+oder &auml;quivalent dazu (und kompakt notiert mit Summenzeichen)
+</p>
+<p>
+\(y^{(n)}(x)=\sum_{k=0}^{n-1}\tilde{a}_k(x)y^{(k)}(x)+\tilde{b}(x)\),
+</p>
+
+<p>
+mit Funktionen \(\tilde{a}_k(x)=-\frac{a_k(x)}{a_n(x)},k=0,\dots,n-1,\tilde{b}(x)=\frac{b(x)}{a_n(x)}\). Diese Form ergibt sich, wenn die erste Gleichung durch \(a_n(x)\) geteilt wird und nach \(y^{(n)}(x)\) aufgel&ouml;st. Die Funktionen \(b(x)\) und \(\tilde{b}(x)\) nennt man <em>Inhomogenit&auml;ten</em> und die DGL <em>inhomogen</em>. Ist \(b(x)\) bzw. \(\tilde{b}(x)\) gleich Null, so nennt man die DGL <em>homogen</em>.
+</p>
+
+<!-- <p>Eine gewöhnliche lineare DGL der Ordnung \(n\) kann man also nach der höchsten Ableitung \(y^{(n)}\) umstellen, wobei die rechte Seite der resultierenden Gleichung nur Terme der Form "Funktion von x mal Ableitung von x" enthält und </p> -->
+
 
 
   <h2>Partielle Differentialgleichungen</h2>
@@ -90,7 +111,7 @@ Wichtige Beispiele gew&ouml;hnlicher DGLs sind
 
 
 <p>
-Wichtige Beispiele partieller DGLs sind
+Partielle DGLs sind DGLs f&uuml;r Funktionen mehrerer Variablen. Es tauchen dann partielle Ableitungen der gesuchten Funktion auf. Wichtige Beispiele partieller DGLs sind
 </p>
 
  <ul>
@@ -101,6 +122,9 @@ Wichtige Beispiele partieller DGLs sind
    </strong>
     \( \left(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2} \right)\varphi(x,y,z) = 0 \)
    </p>
+   <p>
+   Diese DGL taucht in der Physik u.a. als Potentialgleichung auf und beschreibt das elektrische Potential \(\varphi\) im leeren Raum.
+   </p>
   </li>
 
   <li>
@@ -108,7 +132,10 @@ Wichtige Beispiele partieller DGLs sind
    <strong>
     Diffusionsgleichung:
    </strong>
-    \(\frac{\partial^2}{\partial x^2}c(x,t)-\frac{1}{D}\frac{\partial}{\partial t}c(x,t)=0\)
+    \(\frac{\partial^2}{\partial x^2}u(x,t)-\frac{1}{D}\frac{\partial}{\partial t}u(x,t)=0\)
+   </p>
+   <p>
+   Die Diffusionsgleichung (oder auch W&auml;rmeleitungsgleichung) beschreibt in der Physik die Ver&auml;nderung der Temperaturfunktion \(u(x,t)\) am Ort \(x\) zur Zeit \(t\).
    </p>
   </li>
 
@@ -119,8 +146,15 @@ Wichtige Beispiele partieller DGLs sind
    </strong>
     \( \nabla\times\textbf{E}(\textbf{r},t)=-\frac{\partial}{\partial t}\textbf{B}(\textbf{r},t) \)
    </p>
+   <p>
+   Das Induktionsgesetz beschreibt die Entstehung eines elektrischen Feldes \(\textbf{E}(\textbf{r},t)\) am Ort \(\textbf{r}=(x,y,z)\) zur Zeit \(t\) bei zeitlicher Ver&auml;nderung der magnetischen Flussdichte \(\textbf{B}(\textbf{r},t)\)
+   </p>
   </li>
  </ul>
+
+<p>
+Die allgemeine Form einer partiellen DGL \(n\)-ter Ordnung in \(k\) Variablen ist ein langer Ausdruck und wird hier ausgelassen. Es gilt wie bei den gewo&ouml;hnlichen DGLs: Die <em>Ordnung</em> der partiellen DGL ist gleich der h&ouml;chsten auftauchenden Ableitungsordnung. Eine partielle DGL ist <em>linear</em>, wenn die partiellen Ableitungen und die Funktion selbst nur linear auftauchen und die Koeffizientenfunktionen nur von den Ver&auml;nderlichen abh&auml;ngen, im anderen Fall hei&szlig;t die DGL <em>nicht-linear</em>. Tritt ein Funktions-Term auf, in dem weder die Funktion selbst noch eine ihrer Ableitungen vorkommen, so ist die DGL <em>inhomogen</em> und man nennt diesen Term <em>Inhomogenit&auml;t</em>, andernfalls hei&szlig;t die DGL <em>homogen</em>.
+</p>
 
 
 
@@ -178,15 +212,15 @@ Wichtige Beispiele partieller DGLs sind
          </p>
       </quiz>
 
-      <!--<quiz>
+      <quiz>
          <p>
          <question>
-         \(\)
+         \(3y''+5y'-6y = sin(x)\)
          </question>
-         <textinput correct=""></textinput>
+         <textinput correct="l g i 2"></textinput>
          </p>
       </quiz>
-      -->
+
 
 <!-- <textinput correct="(ln2|ln 2|ln\(2\))"></textinput> -->
 
@@ -205,7 +239,7 @@ Trennung der Variablen ist ein L&ouml;sungsverfahren f&uuml;r <strong>gew&ouml;h
 </p>
 
 <p>
-Eine dem Verfahren Trennung der Variablen zug&auml;ngliche DGL hat immer die Form \(y'=g(x)h(y)\), zerf&auml;llt also in zwei Faktoren \(g(x)\) unf \(h(y)\), die nur von \(x\) bzw. nur von \(y\) abh&auml;ngen. Die Variablentrennung erfolgt dann im allgmeinen Fall genau wie oben im Beispiel, indem man \(y'=\frac{dy}{dx}\) ausschreibt und die jeweiligen Abh&auml;ngigkeiten auf die Seiten verteilt,
+Eine dem Verfahren Trennung der Variablen zug&auml;ngliche DGL hat immer die Form \(y'=g(x)h(y)\), ist also eine Bestimmungsgleichung f&uuml;r die erste Ableitung \(y'\) einer Funktion \(y\), deren rechte Seite in zwei Faktoren \(g(x)\) unf \(h(y)\) zerf&auml;llt, die nur von \(x\) bzw. nur von \(y\) abh&auml;ngen. Die Variablentrennung erfolgt dann im allgmeinen Fall genau wie oben im Beispiel, indem man \(y'=\frac{dy}{dx}\) ausschreibt und die jeweiligen Abh&auml;ngigkeiten auf die Seiten verteilt,
 </p>
 
 <p align="center">\(\frac{1}{h(y)}dy=g(x)dx\).</p>
@@ -214,8 +248,38 @@ Eine dem Verfahren Trennung der Variablen zug&auml;ngliche DGL hat immer die For
 Diesen Ausdruck kann man integrieren, und kann man die resultierende Gleichung f&uuml;r die Stammfunktionen von \(1/h\) und \(g\) nach \(y\) umstellen, so ist die DGL gel&ouml;st. F&uuml;r die DGL aus dem Beispiel hie&szlig;e das
 </p>
 
+<p>
+\(\int\frac{dy}{y}=3\int dx\)
+</p>
 
-<!-- Auskommentiert, da lange Rechenzeit. Kommentare sollen da stehen und die Videos im Quelltext erläutern. -->
+<p>
+und damit
+</p>
+
+<p>
+\(ln|\frac{y}{C}|=3x,\)
+</p>
+
+<p>
+f&uuml;r eine Integrationskonstante \(C\). Exponenzieren auf beiden Seiten liefert \(|\frac{y}{C}|=e^{3x}\), und da die Konstante \(C\) dasselbe Vorzeichen haben muss wie \(y\) selbst (die Exponentialfunktion ist immer gr&ouml;&szlig;er Null), kann man den Betrag aufl&ouml;sen zu
+</p>
+
+<p>
+\(y(x)=Ce^{3x}\)
+</p>
+
+<p>
+<strong>Bemerkung:</strong> Die Form \(ln|\frac{y}{C}|\) resultiert aus dem Hauptsatz der Integralrechnung &uuml;ber
+</p>
+
+<p>
+\( \int_C^x\frac{dt}{t}=ln(|t|)\bigg\vert_{C}^{x}=ln|x|-ln|C|=ln|\frac{x}{C}| \)
+</p>
+
+
+ <h3>Videobeispiele</h3>
+
+<!-- Auskommentiert, da lange Rechenzeit. Kommentare sollen da stehen und die Videos im Quelltext erläutern.-->
 
  <!-- Franzi-Video Trennung der Variablen: -->
    <p><iframe width="560" height="315" src="//www.youtube.com/embed/IXiE4YBiIWU" frameborder="0" allowfullscreen>        </iframe></p>
@@ -227,15 +291,17 @@ Diesen Ausdruck kann man integrieren, und kann man die resultierende Gleichung f
    <p><iframe width="560" height="315" src="//www.youtube.com/embed/6zvMugBkU6E" frameborder="0" allowfullscreen>        </iframe></p>
 
 
+ <h3>Test</h3>
 
 <p>
 <quiz>
  <question>
-  <strong>Test:</strong> Welche dieser DGLs l&auml;sst sich mit Trennung der Variablen l&ouml;sen?
+  Welche dieser DGLs l&auml;sst sich mit Trennung der Variablen l&ouml;sen?
  </question>
 
    <choice correct> \( y'+2y^2=1 \) </choice>
-   <choice> \( (y')^2+y=1 \) </choice>
+   <choice correct> \( (y')^2+y=1 \) </choice>
+   <choice> \( (y')^2+xy=1 \) </choice>
    <choice> \( y''+y=0 \) </choice>
    <choice> \( y'=4xe^{xy} \) </choice>
    <choice correct> \( y'=4xe^{x+y}  \) </choice>
@@ -247,13 +313,60 @@ Diesen Ausdruck kann man integrieren, und kann man die resultierende Gleichung f
 
    <h2>Variation der Konstanten</h2>
 
-<li>F&uuml;r welche DGLs? Normalform hinschreiben</li>
-<li>L&ouml;sungsformel</li>
-<li>Gr&ouml;&szlig;te Schwierigkeit: DGL in Normalform bringen, Inhomogenit&auml;t erkennen</li>
-<li>Beispiel</li>
-<li>Video</li>
-<li>Test: Welche dieser DGLs lassen sich durch Variation der Konstanten l&ouml;sen?</li>
+<p>
+Variation der Konstanten ist eine Methode zur L&ouml;sung linearer gew&ouml;hnlicher inhomogener DGLs, d.h. DGLs der Form
+</p>
 
+<p>
+\(y'(x)+f(x)y(x)=g(x)\)
+</p>
+
+<p>
+Die allgemeine L&ouml;sung der zugeh&ouml;rigen homogenen DGL \(y'(x)+f(x)y(x)=0\) ist \(y(x)=Ce^{-F(x)}\), wobei \(F(x)\) eine Stammfunktion von \(f(x)\) ist und \(C\) eine beliebige Konstante. Der Name des Verfahrens Variation der Konstanten r&uuml;hrt daher, dass man die Konstante \(C\) durch eine unbekannte, zu bestimmende Funktion \(u(x)\) ersetzt und den beim Ableiten von \(y(x)=u(x)e^{-F(x)}\) entstehenden Term \(u'(x)\) (Produktregel!) mit \(g(x)\) vergleicht. Wird n&auml;mlich der Ansatz \(y(x)=u(x)e^{-F(x)}\) in die DGL eingesetzt, ergibt sich
+</p>
+
+<p>
+\(
+\begin{eqnarray*}
+g(x)&=&y'(x)+f(x)y(x)\\
+    &=&(u(x)e^{-F(x)})'+f(x)y(x)\\
+    &=&u'(x)e^{-F(x)}+u(x)(-f(x))e^{-F(x)}+f(x)y(x)\\
+    &=&u'(x)e^{-F(x)}.
+\end{eqnarray*}
+\)
+</p>
+
+<p>
+Umstellen nach \(u'(x)\) und Integration beider Seiten liefert
+</p>
+
+<p>
+\(u(x)=\int g(x)e^{F(x)}dx+C\),
+</p>
+
+<p>
+mit einer Integrationskonstanten \(C\) und damit f&uuml;r \(y(x)\) die L&ouml;sungsformel
+</p>
+
+<table border="1">
+ <tr>
+  <td>
+   \(y(x)=e^{-F(x)}\left(\int g(x)e^{F(x)}dx+C\right)\)
+  </td>
+ </tr>
+</table>
+
+<p>Es sind die Vorzeichen im Exponenten der Exponentialfunktion vor dem Integral und unter dem Integral zu beachten. Die gr&ouml;&szlig;te Schwierigkeit (neben dem Finden der beteiligten Stammfunktionen) ist es die gegebene DGL in die Normalform \(y'(x)+f(x)y(x)=g(x)\) zu bringen, um die L&ouml;sungsformel anwenden zu k&ouml;nnen.
+</p>
+
+<h3>Videobeispiele:</h3>
+
+ <!-- Franzi-Video Variation der Konstanten 1: --->
+   <p><iframe width="560" height="315" src="//www.youtube.com/embed/DuvHk2MMR_I" frameborder="0" allowfullscreen></iframe>
+</p>
+
+ <!-- Franzi-Video Variation der Konstanten 2: -->
+   <p><iframe width="560" height="315" src="//www.youtube.com/embed/AEzX2q827E8" frameborder="0" allowfullscreen>        </iframe></p>
 
 
 
