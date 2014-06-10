@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+
+<head>
+<meta charset="utf-8">
+<title>eduZEN - Lineare Differentialgleichungen mit konstanten Koeffizienten</title>
+<link rel="stylesheet" href="css/eduZOO.css">
+<script src="../eduZOO-app/script/lib/angular.min.js"></script>
+<script src="../eduZOO-app/script/lib/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+<script src="../eduZOO-app/script/eduZOO.js"></script>
+
+<body>
+
+<h1>Lineare Differentialgleichungen mit konstanten Koeffizienten</h1>
+
+
+
+<p>
+Sind die Koeffizientenfunktionen \(a_k(x)\) einer gew&ouml;hnlichen linearen Differentialgleichung \(\sum_{k=0}^na_k(x)y^{(k)}(x)=g(x)\) konstant, \(a_k(x)=a_k\in\mathbb{R}\), so spricht man von einer <em>linearen DGL mit konstanten Koeffizienten</em>. Diese lassen sich immer mit einem Exponentialansatz l&ouml;sen. Der Ansatz \(y(x)=Ce^{\lambda x}\) wird sich jedoch als nicht gen&uuml;gend herausstellen. Formal entspricht das L&ouml;sen einer Differentialgleichung \(n-\)ter Ordnung einer \(n-\)maligen Integration, daher enth&auml;lt die allgemeine L&ouml;sung \(n\) freie Parameter, die sogenannten <em>Integrationskonstanten</em>. Es wird sich zeigen, dass der "einfache" Exponentialansatz \(y(x)=Ce^{\lambda x}\) nicht in jedem Fall gen&uuml;gend Integrationskonstanten liefert. Ein allgemeinerer Ansatz wie er aus dem Verfahren der Variation der Konstanten bekannt ist wird dieses Problem beheben.
+</p>
+
+
+   <h2>Der homogene Fall</h2>
+
+
+
+<p>
+Jede gew&ouml;hnliche lineare homogene Differentialgleichung mit konstanten Koeffizienten ist von der Form
+</p>
+
+$$a_ny^{(n)}+a_{n-1}y^{(n-1)}+\dots+a_1y'+a_0y=0,$$
+
+<p>
+mit rellen Zahlen \(a_0,a_1,\dots,a_n\), oder kurz in Summenschreibweise
+</p>
+
+$$\sum_{k=0}^na_ky^{(k)}=0,$$
+
+<p>
+wobei f&uuml;r die f&uuml;r \(k=0\) auftauchende "nullte" Ableitung \(y^{(0)}=y\) vereinbart wird.
+</p>
+
+
+  <h4>Beispiel 1</h4>
+<!-- <p><strong>Beispiel:</strong></p> -->
+$$y'''-3y''-y'+3y=0$$
+
+<p>
+also \(n=3, a_3=1,a_2=-3,a_1=-1,a_0=3\). Der Ansatz \(y(x)=e^{\lambda x}\) liefert nach Einsetzen \((\lambda^3-3\lambda^2-\lambda+3)e^{\lambda x}=0\), und da \(e^{\lambda x}\neq0\) ist
+</p>
+
+$$\lambda^3-3\lambda^2-\lambda+3=0.$$
+
+<p>Dieses Polynom hat drei verschiedene Nullstellen, \(\lambda_1=1, \lambda_2=-1, \lambda_3=3\), alle mit Vielfachheit 1, daher ist die allgemeine L&ouml;sung der DGL gegeben durch</p>
+
+$$y(x)=C_1e^{x}+C_2e^{-x}+C_3e^{3x},$$
+
+<p>
+mit den erforderlichen \(n=3\) Integrationskonstanten \(C_1,C_2,C_3\), die aus Anfangs- und Nebenbedingungen (sofern gegeben) zu bestimmen sind.
+</p>
+
+<h4>Das Video zum Beispiel:</h4>
+
+<iframe width="480" height="300" src="https://www.educreations.com/lesson/embed/8648401/" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>
+
+
+
+  <h3>Der Fall Ordnung \(n\) mit \(n\) verschiedenen reellen Nullstellen</h3>
+
+
+<p>
+Dieses Vorgehen l&auml;sst sich f&uuml;r beliebige Ordnung \(n\in\mathbb{N}\) verallgemeinern. Der Ansatz \(y(x)=e^{\lambda x}\) eingesetzt in \(\sum_{k=0}^na_ky^{(k)}=0\) liefert n&auml;mlich
+</p>
+
+$$(a_n\lambda^n+a_{n-1}\lambda^{n-1}+\dots+a_1\lambda+a_0)e^{\lambda x}=0,$$
+
+<p>
+oder, durch \(e^{\lambda x}\) geteilt und kurz geschrieben
+</p>
+
+$$\sum_{k=0}^na_k\lambda^{k}=0.$$
+
+<p>
+Diese Gleichung hei&szlig;t <em>charakteristische Gleichung</em> der Differentialgleichung und das Polynom auf der linken Seite hei&szlig;t <em>charakteristisches Polynom</em>. Hat dieses Polynom \(n\) verschiedene reelle Nullstellen \(\lambda_1,\dots,\lambda_n\), so ist die allgemeine L&ouml;sung gegeben durch
+</p>
+
+$$y(x)=\sum_{k=1}^nC_ke^{\lambda_kx},$$
+
+<p>
+wobei \(C_1,\dots,C_n\) die \(n\) Integrationskonstanten sind.
+</p>
+
+
+  <h4>Beispiel 2</h4>
+
+
+<p>
+Nicht immer hat das charakteristische Polynom verschiedene Nullstellen. Betrachte
+</p>
+
+$$y''-2y'+y=0.$$
+
+<p>
+Das charakteristische Polynom \(\lambda^2-2\lambda+1=(\lambda-1)^2\) l&auml;sst sich mit der binomischen Formel so vereinfachen, dass die Nullstellen einfach abzulesen sind. Es sind zwei, jedoch beide gleich 1. Die oben gefundene vermeintliche allgemeine L&ouml;sung wird zu
+</p>
+
+$$y(x)=C_0e^x+C_1e^x=Ce^x,$$
+
+<p>
+wobei \(C=C_0+C_1\) nur <strong>eine</strong> statt der erforderlichen zwei unabh&auml;ngigen Integrationskonstanten ist. Die Funktion \(Ce^x\) kann also nicht die allgemeine L&ouml;sung sein, und tats&auml;chlich ist \(xe^x\) ebenfalls eine (spezielle) L&ouml;sung. Mehrfach auftretende Nullstellen egalisieren also Integrationskonstanten. Deshalb ist es wichtig, gleiche Nullstellen mehrmals zu z&auml;hlen.
+</p>
+
+<h4>Das Video zum Beispiel:</h4>
+
+<iframe width="480" height="300" src="https://www.educreations.com/lesson/embed/8648413/" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>
+
+
+   <h3>Mehrfache Nullstellen</h3>
+
+
+<p>
+Das letzte Beispiel hat gezeigt, dass es notwendig ist zwischen einfachen und mehrfachen Nullstellen zu unterscheiden. Die allgemeine L&ouml;sung der DGL \(y''-2y'+y=0\) setzt sich aus den beiden gefundenen speziellen L&ouml;sungen zusammen, \(y(x)=C_0e^x+C_1xe^x=(C_0+C_1x)e^x\), ist also von der Form Exponentialfunktion mal Polynom vom Grad eins weinger als die Vielfachheit der Nullstelle. Dies motiviert den folgenden Ansatz:
+</p>
+
+<p>
+Sei \(\lambda\) eine Nullstelle des charakteristischen Polynoms mit Vielfachheit \(k\), und sei \(P_{k-1}(x)\)\(=C_{k-1}x^{k-1}+\dots+C_1x+C_0\)\(=\sum_{j=0}^{k-1}C_jx^j\) ein Polynom vom Grad \(k-1\). Dann ist \(y(x)=P_{k-1}(x)e^{\lambda x}\) die vollst&auml;ndige partikul&auml;re L&ouml;sung zur Nullstelle \(\lambda\). Dies verifiziert man durch Einsetzen.
+</p>
+
+
+   <h3>Komplexe Nullstellen</h3>
+
+
+<p>
+Es bleibt noch zu diskutieren, wie die allgemeine L&ouml;sung im Falle komplexer Nullstellen aussieht. Da im Falle von Polynomen mit reellen Koeffizienten (nur diese werden hier diskutiert) komplexe Nullstellen immer in komplex konjugierten Paaren auftreten, werden die L&ouml;sungen am Ende dennoch rellwertig sein. Es wird sich zeigen, dass der &uuml;bliche Exponentialansatz zu einer &Uuml;berbestimmung der L&ouml;sungen f&uuml;hrt. Tats&auml;chlich m&uuml;ssen wegen der Linearit&auml;t der Ableitung mit einer komplexwertigen L&ouml;sung \(z(x)=u(x)+iv(x)\), wobei \(u, v\) reellwertige Funktionen sind, auch Realteil \(u(x)\) und Imagin&auml;rteil \(v(x)\) die DGL l&ouml;sen.
+</p>
+
+
+ <h4>Beispiel 3</h4>
+
+$$y''-2y'+2=0$$
+
+<p>
+Die charakteristische Gleichung dieser DGL lautet \(\lambda^2-2\lambda+2=0\) und hat die Nullstellen \(\lambda_1=1+i\) und \(\lambda_2=1-i\). Der &uuml;bliche Exponentialansatz liefert die beiden speziellen L&ouml;sungen \(y_1(x)=e^{(1+i)x}=e^xe^{ix}\) und \(y_2(x)=e^{(1-i)x}=e^xe^{-ix}\). Diese sind aber komplexwertig, jede hat einen komplexen und damit zwei reelle Freiheitsgrade, die L&ouml;sung ist &uuml;berbestimmt. Tats&auml;chlich sind der Realteil \(\Re y_1(x)=e^x\cos(x)\) und der Imagin&auml;rteil \(\Im y_1(x)=e^x\sin(x)\) von \(y_1\) auch L&ouml;sungen der DGL. Au&szlig;erdem gilt
+</p>
+
+$$\Re y_2(x)=e^x\cos(-x)=e^x\cos(x)=\Re y_1(x),$$
+
+<p>und</p>
+
+$$\Im y_2(x)=e^x\sin(-x)=-e^x\sin(x)=-\Im y_1(x),$$
+
+<p>
+wobei das Minus in der vollst&auml;ndigen L&ouml;sung von einer Integrationskonstante absorbiert wird. F&uuml;r die vollst&auml;ndige L&ouml;sung  gilt also \(y(x)=e^x(a\cos(x)+b\sin(x))\), mit zwei reellen Integrationskonstanten \(a,b\).
+</p>
+
+<p>
+Hat eine allgemeine gew&ouml;hnl. lin. homogene DGL mit konst. Koeffizienten eine komplexe Nullstelle \(\lambda=\alpha+i\omega\), so gilt also f&uuml;r die zu dieser Nullstelle geh&ouml;rige vollst&auml;ndige Partikul&auml;rl&ouml;sung
+</p>
+
+$$y(x)=e^{\alpha x}(a\cos(\omega x)+b\sin(\omega x)),$$
+
+<p>
+mit reellen Integrationskonstanten \(a, b\). Denn ist \(y_+(x)=e^{(\alpha+i\omega)x}\) die aus dem Exponentialanatz resultierende spezielle L&ouml;sung zur Nullstelle \(\lambda\), und \(y_-(x)=e^{(\alpha-i\omega)x}\) die zu \(\overline{\lambda}=\alpha-i\omega\), so gilt
+</p>
+
+$$\Re y_+(x)=e^{\alpha x}\cos(\omega x)=e^{\alpha x}\cos(-\omega x)=\Re y_-(x),$$
+
+<p>und</p>
+
+$$\Im y_+(x)=e^{\alpha x}\sin(\omega x)=-e^{\alpha x}\sin(-\omega x)=-\Im y_-(x).$$
+
+<p>
+Die Real- und Imagin&auml;rteile der L&ouml;sung zur komplexen Nullstelle \(\lambda\) bestimmen die Partikul&auml;rl&ouml;sung zu \(\lambda\) also vollst&auml;ndig.
+</p>
+
+<h4>Ein weiteres Video-Beispiel:</h4>
+
+<iframe width="480" height="300" src="https://www.educreations.com/lesson/embed/8648448/" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>
+
+
+
+   <h3>Zusammenfassung</h3>
+
+
+<p>
+Eine gew&ouml;hnliche lineare homogene DGL mit konstanten Koeffizienten
+</p>
+
+$$\sum_{k=0}^na_ky^{(k)}=0,$$
+
+<p>
+hat eine charakteristische Gleichung
+</p>
+
+$$\sum_{k=0}^na_k\lambda^{k}=0,$$
+
+<p>
+deren L&ouml;sungen \(\mu\) die L&ouml;sung der DGL bestimmen. Dabei gilt es drei F&auml;lle zu unterscheiden:
+</p>
+
+<ol>
+ <li>
+  Die Nullstelle \(\mu\) hat Vielfachheit 1. Dann ist die zugeh&ouml;rige spezielle L&ouml;sung gegeben durch \(y(x)=Ce^{\mu x}\)
+ </li>
+
+ <li>
+  Die Nullstelle \(\mu\) hat Vielfachheit \(k\). Dann ist die zugeh&ouml;rige spezielle L&ouml;sung gegeben durch \(y(x)=P_{k-1}(x)e^{\lambda x}\), wobei \(P_{k-1}(x)=\sum_{j=0}^{k-1}C_jx^j\) ein Polynom vom Grad \(k-1\) ist.
+ </li>
+
+ <li>
+  Es gibt eine komplexe Nullstelle \(\mu=\alpha+i\omega\), mit \(\alpha,\omega\in\mathbb{R}\), und den komplex konjugierten Partner \(\overline{\mu}=\alpha-i\omega\). Dann ist die vollst&auml;ndige Partikul&auml;rl&ouml;sung gegeben duch \(y(x)=e^{\alpha x}(a\cos(\omega x)+b\sin(\omega x))\).
+ </li>
+</ol>
+
+<p>
+Es ist zu beachten, dass Fall 1 nur ein Spezialfall von Fall 2 ist. Die allgemeine L&ouml;sung ist dann die Summe aller &uuml;ber diese F&auml;lle gefundenen vollst&auml;ndigen Partikul&auml;rl&ouml;sungen.
+</p>
+
+
+
+   <h3>Test</h3>
+
+<p>
+<quiz>
+ <question>
+  F&uuml;r welche dieser DGLs ist die allgemeine L&ouml;sung von der Form \(y(x)=Ae^{ax}+Be^{bx}+Ce^{cx}\)?
+ </question>
+
+   <choice correct> \(y'''-y''-4y'+4y=0\) </choice>
+   <choice> \(y'''-y''-y'+y=0\) </choice>
+   <choice> \(\frac{1}{2}y'''+y''-2y'-4y=0\) </choice>
+   <choice correct> \(2y'''-2y'=0\) </choice>
+
+
+</quiz>
+</p>
+
+</body>
+
+</html>
