@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+
+<head>
+<meta charset="utf-8">
+<title>eduZEN - Differentialgleichungen</title>
+<link rel="stylesheet" href="css/eduZOO.css">
+<script src="../eduZOO-app/script/lib/angular.min.js"></script>
+<script src="../eduZOO-app/script/lib/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+<script src="../eduZOO-app/script/eduZOO.js"></script>
+<script type="text/javascript">
+function showSpoiler(obj)
+    {
+    var inner = obj.parentNode.getElementsByTagName("div")[0];
+    if (inner.style.display == "none")
+        inner.style.display = "";
+    else
+        inner.style.display = "none";
+    }
+</script>
+</head>
+
+<body>
+
+<table border="0" cellpadding="0" cellspacing="20" width="100%">
+  <colgroup>
+    <col width="200">
+    <col>
+  </colgroup>
+
+<!--Überschrift-->
+  <tr>
+    <td colspan="2">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td><h1>Differentialgleichungen</h1></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+
+<!--erste Reihe-->
+  <tr>
+<!--erste Reihe, links-->
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+            <h3>Einleitung</h3>
+          </td>
+        </tr>
+      </table>
+    </td>
+<!--erste Reihe, rechts-->
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+<p>
+Differentialgleichungen sind Gleichungen, in denen eine Funktion mit ihren Ableitungen in Beziehung gesetzt wird. Da es verschiedene Typen von Funktionen gibt, z.B. reellwertige Funktionen einer Variable, mehrerer Variablen, oder vektorwertige Funktionen, gibt es auch verschiedene Typen von Differentialgleichungen. Im Folgenden stellen wir die wichtigsten Typen vor. Ziel ist es, eine gegebene Differentialgleichung korrekt zu klassifizieren, und schlie&szlig;lich eine Funktion zu finden, welche die Differentialgleichung erf&uuml;llt, die sogenannte <em>L&ouml;sung</em> der Differentialgleichung.
+</p>
+<p>
+Jede Differentialgleichung ist entweder eine gew&ouml;hnliche Differentialgleichung oder eine partielle Differentialgleichung. Das Wort partiell enth&auml;lt bereits den Hinweis, dass in <em>partiellen</em> Differentialgleichungen partielle Ableitungen auftauchen, also wenn Funktionen mehrerer Variablen behandelt werden. Differentialgleichungen f&uuml;r Funktionen nur einer Ver&auml;nderlichen hei&szlig;en <em>gew&ouml;hnlich</em>.
+</p>
+<p>
+Ebenso ist jede Differentialgleichung entweder linear oder nicht-linear. Eine Differentialgleichung hei&szlig;t <em>linear</em>, wenn die Funktion und ihre Ableitungen nur in 1. Potenz auftauchen und keine Produkte der Funktion und Ableitungen, also keine Mischterme. Ist dies nicht der Fall, so hei&szlig;t die Differentialgleichung <em>nicht-linear</em>.
+</p>
+<p>
+Schlie&szlig;lich wird noch unterschieden zwischen homogenen und inhomogenen Differentialgleichungen. &Auml;hnlich wie bei Gleichungssystemen hei&szlig;t eine Differentialgleichung <em>inhomogen</em>, wenn in der Differentialgleichung ein Summand vorhanden sind, der nicht proportional zu der Funktion oder ihren Ableitungen ist. Ist solch ein Summand nicht vorhanden, beziehungsweise ist er gleich Null, so nennt man die Differentialgleichung <em>homogen</em>.
+</p>
+<p>
+Die <em>Ordnung</em> einer Differentialgleichung ist definiert als die h&ouml;chste auftretende Ableitungsordnung.
+</p>
+<p>
+Im Folgenden wird das Wort Differentialgleichung mit DGL abgek&uuml;rzt, der Plural mit DGLs.
+</p>
+          </td>
+        </tr>
+      </table>
+<!--Ende erste Reihe, links-->
+    </td>
+  </tr>
+
+
+  <tr>
+    <td valign="top" width="200">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+            <h3>Gew&ouml;hliche Differentialgleichungen</h3>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+
+        <tr>
+         <td>
+<p>
+Gew&ouml;hnliche DGLs sind DGLs f&uuml;r reellwertige Funktionen einer Ver&auml;nderlichen. Die konkreten Bezeichnungen f&uuml;r die Funktion, etwa \(y\) oder \(f\), und die Variable, etwa \(x\) oder \(t\) spielen dabei keine Rolle und dienen in den meisten F&auml;llen nur der Illustration der unterliegenden Zusammenh&auml;nge bzw. des Ursprungs der DGL, wenn etwa die gesuchte Funktion \(c\) hei&szlig;t, weil sie eine Stoffkonzentration (concentration) beschreibt, und die verwendete Variable \(t\) die Zeit ist und keine Ortskoordinate.
+</p>
+
+  <ul>
+    <li>
+      <div class="spoiler">
+      <input type="button" onclick="showSpoiler(this);" value="Beispiel: Radioaktiver Zerfall" />
+      <div class="inner" style="display:none;">
+        <p>
+         $$\frac{dN}{dt}(t)=-kN(t)$$
+        </p>
+        <p>
+        Hier ist \(N(t)\) die (gesuchte) Teilchenzahl zum Zeitpunkt \(t\), und \(k\) die (gegebene) Zerfallsrate. Diese gew. DGL ist linear, homogen, und 1. Ordnung.
+       </p>
+      </div>
+    </li>
+    <li>
+      <div class="spoiler">
+      <input type="button" onclick="showSpoiler(this);" value="Beispiel: Harmonischer Oszillator" />
+      <div class="inner" style="display:none;">
+        <p>
+         $$\frac{d^2x}{dt^2}(t)+\omega_0^2x(t)=0$$
+        </p>
+        <p>
+         Hierbei ist \(x(t)\) die (gesuchte) Auslenkung des Oszillators zum Zeitpunkt \(t\), und \(\omega_0\)eine (gegebene) Resonanzfrequenz. Diese gew. DGL ist linear, homogen, und 2. Ordnung.
+        </p>
+      </div>
+    </li>
+  </ul>
+         </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+
+  <tr>
+    <td>
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+            <h5>Allgemeine Form</h5>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+
+        <tr>
+         <td>
+<p>
+Sei \(y\) eine \(n\)-mal differenzierbare Funktion einer Ver&auml;nderlichen, f&uuml;r \(k=0,\dots,n\) seien \(a_k, b:\mathbb{R}\rightarrow\mathbb{R}\) Funktionen einer Variablen. Eine allgemeine <em>lineare gew&ouml;hnliche</em> DGL der Ordnung \(n\) f&uuml;r \(y\) hat die Form
+</p>
+              <table border="0" cellpadding="10" cellspacing="0">
+                 <tr>
+                   <td bgcolor="#FFE4C4">
+                         $$\sum_{k=0}^na_k(x)y^{(k)}(x)=b(x)$$
+                   </td>
+                 </tr>
+              </table>
+<p>
+Die Funktion \(b(x)\) nennt man <em>Inhomogenit&auml;t</em> und die DGL <em>inhomogen</em>. Ist \(b(x)\) gleich Null, so nennt man die DGL <em>homogen</em>. Damit der Begriff der Ordnung wohldefiniert ist, darf \(a_n\) nicht identisch Null sein.
+</p>
+<div class="spoiler">
+    <input type="button" onclick="showSpoiler(this);" value="Beispiele in Standard-Notation" />
+    <div class="inner" style="display:none;">
+<p>
+In dieser Standard-Notation werden die beiden Beispiele oben zu
+</p>
+  <ul>
+    <li>
+      <p>
+       Beispiel: Radioaktiver Zerfall
+      </p>
+       $$y'(x)+ky(x)=0$$
+    </li>
+
+    <li>
+      <p>
+       Bespiel: Harmonischer Oszillator
+      </p>
+       $$y''(x)+\omega_0^2y(x)=0$$
+    </li>
+  </ul>
+</div>
+         </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="200">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+            <h3>Partielle Differentialgleichungen</h3>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+
+        <tr>
+         <td>
+<p>
+Partielle DGLs sind DGLs f&uuml;r Funktionen mehrerer Variablen. Es tauchen dann partielle Ableitungen der gesuchten Funktion auf.
+</p>
+  <ul>
+    <li>
+      <div class="spoiler">
+      <input type="button" onclick="showSpoiler(this);" value="Beispiel: Laplace-Gleichung" />
+      <div class="inner" style="display:none;">
+        <p>
+         $$\left(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2} \right)\varphi(x,y,z) = 0$$
+        </p>
+        <p>
+Diese DGL taucht in der Physik u.a. als Potentialgleichung auf und beschreibt das elektrische Potential \(\varphi\) im leeren Raum.
+       </p>
+      </div>
+    </li>
+    <li>
+      <div class="spoiler">
+      <input type="button" onclick="showSpoiler(this);" value="Beispiel: Diffusionsgleichung:" />
+      <div class="inner" style="display:none;">
+        <p>
+         $$\frac{\partial^2}{\partial x^2}u(x,t)-\frac{1}{D}\frac{\partial}{\partial t}u(x,t)=0$$
+        </p>
+        <p>
+Die Diffusionsgleichung (oder auch W&auml;rmeleitungsgleichung) beschreibt in der Physik die Ver&auml;nderung der Temperaturfunktion \(u(x,t)\) am Ort \(x\) zur Zeit \(t\).
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="spoiler">
+      <input type="button" onclick="showSpoiler(this);" value="Beispiel: Induktionsgesetz" />
+      <div class="inner" style="display:none;">
+        <p>
+         $$\nabla\times\textbf{E}(\textbf{r},t)=-\frac{\partial}{\partial t}\textbf{B}(\textbf{r},t)$$
+        </p>
+        <p>
+Das Induktionsgesetz beschreibt die Entstehung eines elektrischen Feldes \(\textbf{E}(\textbf{r},t)\) am Ort \(\textbf{r}=(x,y,z)\) zur Zeit \(t\) bei zeitlicher Ver&auml;nderung der magnetischen Flussdichte \(\textbf{B}(\textbf{r},t)\).
+        </p>
+      </div>
+    </li>
+  </ul>
+<p>
+Die allgemeine Form einer partiellen DGL \(n\)-ter Ordnung in \(k\) Variablen ist ein langer Ausdruck und wird hier ausgelassen. Es gilt wie bei den gew&ouml;hnlichen DGLs: Die <em>Ordnung</em> der partiellen DGL ist gleich der h&ouml;chsten auftauchenden Ableitungsordnung. Eine partielle DGL ist <em>linear</em>, wenn die partiellen Ableitungen und die Funktion selbst nur linear auftauchen und die Koeffizientenfunktionen nur von den Ver&auml;nderlichen abh&auml;ngen, im anderen Fall hei&szlig;t die DGL <em>nicht-linear</em>. Tritt ein Funktions-Term auf, in dem weder die Funktion selbst noch eine ihrer Ableitungen vorkommen, so ist die DGL <em>inhomogen</em> und man nennt diesen Term <em>Inhomogenit&auml;t</em>, andernfalls hei&szlig;t die DGL <em>homogen</em>.
+</p>
+         </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+
+
+  <tr>
+    <td valign="top" width="200">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+            <h3>Test: Klassifikation von Differentialgleichungen</h3>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+
+        <tr>
+         <td>
+<p>
+Klassifizieren Sie die folgenden DGLs!</p><p> Die Eingabe ist von der Form "x y z n", also vier einstellige Zeichen getrennt von jeweils einem Leerzeichen. Die <strong>erste Stelle x</strong> steht f&uuml;r die Linearit&auml;t und soll nur mit dem Zeichen "l" (f&uuml;r linear) oder "n" (f&uuml;r nicht-linear) bef&uuml;llt werden. Die <strong>zweite Stelle y</strong> steht f&uuml;r die Ableitungstypen und soll nur mit dem Zeichen "g" (f&uuml;r gew&ouml;hnlich) oder "p" (f&uuml;r partiell) bef&uuml;llt werden. Die <strong>dritte Stelle z</strong> steht f&uuml;r die (In-)Homogenit&auml;tseigenschaft und soll nur mit dem Zeichen "h" (f&uuml;r homogen) oder "i" (f&uuml;r inhomogen) bef&uuml;llte werden. Die <strong>vierte Stelle n</strong> steht f&uuml;r die Ordnung der DGL und soll mit der Zahl der Ordnung bef&uuml;llt werden. Alle Eingaben sind ohne die Anf&uuml;hrungszeichen zu t&auml;tigen.
+</p>
+<p><strong>Beispiel:</strong> \(y'=y\)</p>
+<p>Diese DGL ist <strong>l</strong>inear, <strong>g</strong>ew&ouml;hnlich, <strong>h</strong>omogen, und von der Ordnung <strong>1</strong>. Daher lautet die korrekte Eingabe "l g h 1". Versuchen Sie es jetzt selbst!</p>
+
+<div class="spoiler">
+    <input type="button" onclick="showSpoiler(this);" value="Test" />
+    <div class="inner" style="display:none;">
+      <quiz>
+         <p>
+         <question>
+         \(y'=y\)
+         </question>
+         <textinput correct="l g h 1"></textinput>
+         </p>
+      </quiz>
+
+      <quiz>
+         <p>
+         <question>
+         \(4y''-2y'+7y=8\)
+         </question>
+         <textinput correct="l g i 2"></textinput>
+         </p>
+      </quiz>
+
+      <quiz>
+         <p>
+         <question>
+         \(F=m*a=m*\ddot{x}\)
+         </question>
+         <textinput correct="l g i 2"></textinput>
+         </p>
+      </quiz>
+
+      <quiz>
+         <p>
+         <question>
+         \(\sqrt{y}\cdot y'+4x=4\)
+         </question>
+         <textinput correct="n g i 1"></textinput>
+         </p>
+      </quiz>
+
+      <quiz>
+         <p>
+         <question>
+         \(\frac{\partial}{\partial t}\psi=-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}\psi\)
+         </question>
+         <textinput correct="l p h 2"></textinput>
+         </p>
+      </quiz>
+
+      <quiz>
+         <p>
+         <question>
+         \(3y''+5y'-6y = sin(x)\)
+         </question>
+         <textinput correct="l g i 2"></textinput>
+         </p>
+      </quiz>
+</div>
+         </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+
+
+  <tr>
+    <td valign="top" width="200">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+            <h3>Trennung der Variablen</h3>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+
+        <tr>
+         <td>
+<p>
+Trennung der Variablen ist ein L&ouml;sungsverfahren f&uuml;r <strong>gew&ouml;hnliche Differentialgleichungen erster Ordnung</strong>, das immer dann einsetzbar ist, wenn sich die Abh&auml;ngigkeiten von \(x\) und \(y\) durch Umstellen so <em>trennen</em> lassen, dass sie jeweils nur auf einer Seite der DGL auftauchen. Daf&uuml;r wird die Ableitung \(y'\) ausgeschrieben als \(y'=\frac{dy}{dx}\) und \(dy\) als \(y\)-Term aufgefasst, \(dx\) als \(x\)-Term.
+</p>
+<div class="spoiler">
+    <input type="button" onclick="showSpoiler(this);" value="Beispiel" />
+    <div class="inner" style="display:none;">
+<p>
+Die lineare, gew&ouml;hnliche, homogene DGL 1. Ordnung
+</p>
+$$2y'-6y=0$$
+<p>
+l&auml;sst sich schreiben als
+</p>
+$$2\frac{dy}{dx}=6y,$$
+<p>
+was mit \(dx\) multipliziert \(2dy=6ydx\) ergibt. Wird durch \(y\) geteilt, so sind alle \(y\)-Terme auf der linken Seite, alle \(x\)-Terme auf der rechten,
+</p>
+$$\frac{2}{y}dy=6dx.$$
+<p>
+Auf welcher Seite die Koeffizienten stehen, spielt keine Rolle.
+</p>
+</div>
+         </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+
+
+  <tr>
+    <td>
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+            <h5>Das Verfahren</h5>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+
+        <tr>
+         <td bgcolor="#E0FFFF">
+<p>
+Eine dem Verfahren Trennung der Variablen zug&auml;ngliche DGL hat immer die Form \(y'(x)=g(x)h(y)\), ist also eine Bestimmungsgleichung f&uuml;r die erste Ableitung \(y'\) einer Funktion \(y\), deren rechte Seite in zwei Faktoren \(g(x)\) unf \(h(y)\) zerf&auml;llt, die nur von \(x\) bzw. nur von \(y\) abh&auml;ngen. Die Variablentrennung erfolgt dann im allgmeinen Fall genau wie oben im Beispiel, indem man \(y'=\frac{dy}{dx}\) ausschreibt und die jeweiligen Abh&auml;ngigkeiten auf die Seiten verteilt,
+</p>
+$$\frac{1}{h(y)}dy=g(x)dx.$$
+<p>
+Diesen Ausdruck kann man integrieren, und kann man die resultierende Gleichung f&uuml;r die Stammfunktionen von \(1/h\) und \(g\) nach \(y\) umstellen, so ist die DGL gel&ouml;st.
+</p>
+         </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+
+
+  <tr>
+    <td valign="top" width="200">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+            <h3></h3>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+
+        <tr>
+         <td>
+<p>
+F&uuml;r die DGL aus dem Beispiel hie&szlig;e das
+</p>
+$$\int\frac{dy}{y}=3\int dx$$
+<p>
+und damit
+</p>
+$$ln|\frac{y}{C}|=3x,$$
+<p>
+f&uuml;r eine Integrationskonstante \(C\). Exponenzieren auf beiden Seiten liefert \(|\frac{y}{C}|=e^{3x}\), und da die Konstante \(C\) dasselbe Vorzeichen haben muss wie \(y\) selbst (die Exponentialfunktion ist immer gr&ouml;&szlig;er Null), kann man den Betrag aufl&ouml;sen zu
+</p>
+$$y(x)=Ce^{3x}$$
+<div class="spoiler">
+    <input type="button" onclick="showSpoiler(this);" value="Bemerkung" />
+    <div class="inner" style="display:none;">
+<p>
+Die Form \(ln|\frac{y}{C}|\) resultiert aus dem Hauptsatz der Integralrechnung &uuml;ber
+</p>
+$$\int_C^x\frac{dt}{t}=ln(|t|)\bigg\vert_{C}^{x}=ln|x|-ln|C|=ln|\frac{x}{C}|$$
+</div>
+         </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+
+
+  <tr>
+    <td valign="top" width="200">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+            <h5>Videobeispiel 1</h5>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+
+        <tr>
+         <td>
+<div class="spoiler">
+    <input type="button" onclick="showSpoiler(this);" value="Beispiel 1" />
+    <div class="inner" style="display:none;">
+          <p>
+           <iframe width="560" height="315" src="//www.youtube.com/embed/IXiE4YBiIWU" frameborder="0" allowfullscreen></iframe>
+          </p>
+</div>
+      </table>
+    </td>
+  </tr>
+
+
+  <tr>
+    <td valign="top" width="200">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+            <h5>Videobeispiel 2</h5>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+
+        <tr>
+         <td>
+<div class="spoiler">
+    <input type="button" onclick="showSpoiler(this);" value="Beispiel 2" />
+    <div class="inner" style="display:none;">
+          <p>
+           <iframe width="560" height="315" src="//www.youtube.com/embed/LqI-IWELfeE" frameborder="0" allowfullscreen></iframe>
+          </p>
+</div>
+      </table>
+    </td>
+  </tr>
+
+
+  <tr>
+    <td valign="top" width="200">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+            <h5>Videobeispiel 3</h5>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+
+        <tr>
+         <td>
+<div class="spoiler">
+    <input type="button" onclick="showSpoiler(this);" value="Beispiel 3" />
+    <div class="inner" style="display:none;">
+          <p>
+           <iframe width="560" height="315" src="//www.youtube.com/embed/6zvMugBkU6E" frameborder="0" allowfullscreen></iframe>
+          </p>
+</div>
+      </table>
+    </td>
+  </tr>
+
+
+  <tr>
+    <td valign="top" width="200">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+            <h3>Test</h3>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+
+        <tr>
+         <td>
+            <p>
+             <div class="spoiler">
+             <input type="button" onclick="showSpoiler(this);" value="Test" />
+             <div class="inner" style="display:none;">
+<p>
+<quiz>
+ <question>
+  Welche dieser DGLs l&auml;sst sich mit Trennung der Variablen l&ouml;sen?
+ </question>
+
+   <choice correct> \( y'+2y^2=1 \) </choice>
+   <choice correct> \( (y')^2+y=1 \) </choice>
+   <choice> \( (y')^2+xy=1 \) </choice>
+   <choice> \( y''+y=0 \) </choice>
+   <choice> \( y'=4xe^{xy} \) </choice>
+   <choice correct> \( y'=4xe^{x+y}  \) </choice>
+
+</quiz>
+</p>
+             </div>
+            </p>
+
+         </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+
+
+  <tr>
+    <td valign="top" width="200">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+            <h3>Variation der Konstanten</h3>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+
+        <tr>
+         <td>
+<p>
+Variation der Konstanten ist eine Methode zur L&ouml;sung linearer gew&ouml;hnlicher inhomogener DGLs, d.h. DGLs der Form
+</p>
+              <table border="0" cellpadding="10" cellspacing="0">
+                 <tr>
+                   <td bgcolor="#FFE4C4">
+                         $$y'(x)+f(x)y(x)=g(x)$$
+                   </td>
+                 </tr>
+              </table>
+<p>
+Die allgemeine L&ouml;sung der zugeh&ouml;rigen homogenen DGL \(y'(x)+f(x)y(x)=0\) ist \(y(x)=Ce^{-F(x)}\), wobei \(F(x)\) eine Stammfunktion von \(f(x)\) ist und \(C\) eine beliebige Konstante. Der Name des Verfahrens Variation der Konstanten r&uuml;hrt daher, dass man die Konstante \(C\) durch eine unbekannte, zu bestimmende Funktion \(u(x)\) ersetzt und den beim Ableiten von \(y(x)=u(x)e^{-F(x)}\) entstehenden Term \(u'(x)\) (Produktregel!) mit \(g(x)\) vergleicht. Wird n&auml;mlich der Ansatz \(y(x)=u(x)e^{-F(x)}\) in die DGL eingesetzt, ergibt sich
+</p>
+<p>
+\(
+\begin{eqnarray*}
+g(x)&=&y'(x)+f(x)y(x)\\
+    &=&(u(x)e^{-F(x)})'+f(x)y(x)\\
+    &=&u'(x)e^{-F(x)}+u(x)(-f(x))e^{-F(x)}+f(x)y(x)\\
+    &=&u'(x)e^{-F(x)}.
+\end{eqnarray*}
+\)
+</p>
+<p>
+Umstellen nach \(u'(x)\) und Integration beider Seiten liefert
+</p>
+$$u(x)=\int g(x)e^{F(x)}dx+C,$$
+<p>
+mit einer Integrationskonstanten \(C\) und damit f&uuml;r \(y(x)\) die L&ouml;sungsformel
+</p>
+              <table border="0" cellpadding="10" cellspacing="0">
+                 <tr>
+                   <td bgcolor="#FFE4C4">
+                         $$y(x)=e^{-F(x)}\left(\int g(x)e^{F(x)}dx+C\right)$$
+                   </td>
+                 </tr>
+              </table>
+<p>
+Es sind die Vorzeichen im Exponenten der Exponentialfunktion vor dem Integral und unter dem Integral zu beachten. Die gr&ouml;&szlig;te Schwierigkeit (neben dem Finden der beteiligten Stammfunktionen) ist es die gegebene DGL in die Normalform \(y'(x)+f(x)y(x)=g(x)\) zu bringen, um die L&ouml;sungsformel anwenden zu k&ouml;nnen.
+</p>
+
+         </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+
+  <tr>
+    <td valign="top" width="200">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+            <h5>Videobeispiel 1</h5>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+
+        <tr>
+         <td>
+<div class="spoiler">
+    <input type="button" onclick="showSpoiler(this);" value="Beispiel 1" />
+    <div class="inner" style="display:none;">
+          <p>
+           <iframe width="560" height="315" src="//www.youtube.com/embed/DuvHk2MMR_I" frameborder="0" allowfullscreen></iframe>
+          </p>
+</div>
+      </table>
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="200">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+            <h5>Videobeispiel 2</h5>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+
+        <tr>
+         <td>
+<div class="spoiler">
+    <input type="button" onclick="showSpoiler(this);" value="Beispiel 2" />
+    <div class="inner" style="display:none;">
+          <p>
+           <iframe width="560" height="315" src="//www.youtube.com/embed/AEzX2q827E8" frameborder="0" allowfullscreen></iframe>
+          </p>
+</div>
+      </table>
+    </td>
+  </tr>
+
+
+</table>
+
+
+</body>
+</html>
