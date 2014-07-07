@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+
+<head>
+<meta charset="utf-8">
+<title>eduZEN - Lokale Extrema</title>
+<link rel="stylesheet" href="css/eduZOO.css">
+<script src="../eduZOO-app/script/lib/angular.min.js"></script>
+<script src="../eduZOO-app/script/lib/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+<script src="../eduZOO-app/script/eduZOO.js"></script>
+<script type="text/javascript">
+function showSpoiler(obj)
+    {
+    var inner = obj.parentNode.getElementsByTagName("div")[0];
+    if (inner.style.display == "none")
+        inner.style.display = "";
+    else
+        inner.style.display = "none";
+    }
+</script>
+</head>
+
+<body>
+
+<table border="0" cellpadding="0" cellspacing="20" width="100%">
+  <colgroup>
+    <col width="200">
+    <col>
+  </colgroup>
+
+<!--Überschrift-->
+  <tr>
+    <td colspan="2">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td><h1>Lokale Extrema</h1></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+
+<!--erste Reihe-->
+  <tr>
+<!--erste Reihe, links-->
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+            <h3>Definition</h3>
+          </td>
+        </tr>
+      </table>
+    </td>
+<!--erste Reihe, rechts-->
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+<p>
+Lokale Extrema, also lokale Maxima (oder Minima), sind f&uuml;r rellwertige Funktionen mehrerer Ver&auml;nderlicher genau so definiert wie f&uuml;r Funktionen einer Ver&auml;nderlicher, n&auml;mlich als die Elemente des Definitionsbereichs, in denen lokal ein gr&ouml;&szlig;ter (oder kleinster) Funktionswert vorliegt. Lokal hei&szlig;t dabei, dass diese Bedingung nur in einer Umgebung um den Punkt erf&uuml;llt sein muss.
+</p>
+<p>
+Pr&auml;zise formuliert hat eine auf einer offenen Teilmenge \(U\in\mathbb{R}^n\) definierte Funktion \(f:U\rightarrow\mathbb{R}\) in einem Punkt \(p\in U\) ein <strong>lokales Maximum (bzw. Minimum)</strong>, genau dann wenn es eine \(\epsilon-\)Umgebung \(B_\epsilon(p)\) von \(p\) gibt, sodass f.a. \(q\in B_\epsilon(p)\) gilt
+</p>
+              <table border="0" cellpadding="10" cellspacing="0">
+                 <tr>
+                   <td bgcolor="#FFE4C4">
+                         $$f(p)\geq f(q)\hspace{1cm}(\mbox{bzw. }f(p)\leq f(q))$$
+                   </td>
+                 </tr>
+              </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+
+  <tr>
+    <td valign="top" width="200">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+            <h5>notwendige Bedingung</h5>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+
+        <tr>
+         <td>
+<p>
+Damit in \(p\in U\) ein Extremum vorliegen kann, m&uuml;ssen alle partiellen Ableitungen von \(f\) in \(p\) verschwinden, d.h. der Gradient \(\mbox{grad}_pf\) von \(f\) in \(p\) muss gleich dem Nullvektor sein:
+</p>
+              <table border="0" cellpadding="10" cellspacing="0">
+                 <tr>
+                   <td bgcolor="#FFE4C4">
+                         $$\mbox{grad}_pf=0$$
+                   </td>
+                 </tr>
+              </table>
+<p>
+Das ist analog zur Bedingung \(f'(x)=0\) f&uuml;r eine Funktion einer Ver&auml;nderlichen \(x\). Ein Punkt \(p\), in dem der Gradient von \(f\) verschwindet hei&szlig;t <strong>kritischer Punkt</strong> von \(f\).
+</p>
+         </td>
+        </tr>
+      </table>
+<hr>
+    </td>
+  </tr>
+
+
+  <tr>
+    <td valign="top" width="200">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+            <h5>Definitheit</h5>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+
+        <tr>
+         <td>
+<h3>Definitheit von Matrizen</h3>
+<p>
+Die aus der Analysis einer Ver&auml;nderlichen bekannte hinreichende Bedingung \(f''(x)>0\) f&uuml;r ein Minimum (bzw. \(f''(x)&lt; 0\) f&uuml;r ein Maximum) l&auml;sst sich in h&ouml;heren Dimensionen verallgemeinern. Den Platz der zweiten Ableitung nimmt die Hesse-Matrix \(\mbox{Hess}_pf\) von \(f\), die Matrix \((\mbox{Hess}_pf)_{ij}=\partial_i\partial_jf(p)\) der zweiten partiellen Ableitungen, ein. Ob ein kritischer Punkt \(p\) Extremum ist, entscheidet die <strong>Definitheit</strong> von \(\mbox{Hess}_pf\).
+</p>
+              <table border="0" cellpadding="10" cellspacing="0">
+                 <tr>
+                   <td bgcolor="#E0FFFF">
+<p>
+Eine quadratische Matrix \(A\in\mathbb{R}^{n\times n}\) hei&szlig;t
+  <ul>
+    <li>
+      <strong>positiv definit</strong>, wenn \(\langle v,Av\rangle&gt;0\)
+    </li>
+    <li>
+      <strong>positiv semidefinit</strong>, wenn \(\langle v,Av\rangle\geq0\)
+    </li>
+    <li>
+      <strong>negativ definit</strong>, wenn \(\langle v,Av\rangle&lt;0\)
+    </li>
+    <li>
+      <strong>negativ semidefinit</strong>, wenn \(\langle v,Av\rangle\leq0\)
+    </li>
+  </ul>
+f&uuml;r alle \(v\in\mathbb{R}^n\backslash\{0\}\).
+</p>
+
+                   </td>
+                 </tr>
+              </table>
+<p>
+Ist \(f\) zweimal stetig partiell differenzierbar, so ist \(\mbox{Hess}_pf\) wegen des <a href="http://de.wikipedia.org/wiki/Satz_von_Schwarz">Satz von Schwarz</a> in jedem Punkt \(p\in U\) symmetrisch und damit diagonalisierbar. Es l&auml;sst sich zeigen, dass eine diagonalisierbare Matrix positiv definit ist, genau dann wenn alle Eigenwerte positiv sind (bzw. negativ definit, g.d.w. alle EW negativ sind), positiv semidefinit, g.d.w. Null Eigenwert ist und alle anderen Eigenwerte positiv (bzw. negativ semidefinit, g.d.w. Null EW ist und alle anderen EW negativ), indefinit sonst. <strong>Indefinitheit</strong> liegt also genau dann vor, wenn es zwei Vektoren \(v,w\in\mathbb{R}^n\) gibt, sodass \(\langle v,Av\rangle&gt;0\) und \(\langle w,Aw\rangle&lt;0\).
+</p>
+         </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+
+
+  <tr>
+    <td valign="top" width="200">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+            <h3></h3>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+
+        <tr>
+         <td>
+<h3>Test</h3>
+<p>
+Geben Sie f&uuml;r die folgenden Matrizen die Art der Definitheit an!
+</p>
+<p>
+Die Eingabem&ouml;glichkeiten sind "p" f&uuml;r positive Definitheit, "ps" f&uuml;r positive Semidefinitheit, "n" f&uuml;r negative Definitheit, "ns" f&uuml;r negative Semidefinitheit, "i" f&uuml;r Indefinitheit, immer ohne Anf&uuml;hrungszeichen. Zum Beispiel lautet die korrekte Eingabe f&uuml;r die \(2\times 2\) Einheitsmatrix \(E_2\) also "p".
+</p>
+<div class="spoiler">
+    <input type="button" onclick="showSpoiler(this);" value="   Test   " />
+    <div class="inner" style="display:none;">
+      <quiz>
+         <p>
+         <question>
+         \(E_2=\begin{pmatrix}1&0\\ 0&1\end{pmatrix}\)
+         </question>
+         <textinput correct="p"></textinput>
+         </p>
+      </quiz>
+      <quiz>
+         <p>
+         <question>
+         \(A=\begin{pmatrix}1&0\\ 0&-1\end{pmatrix}\)
+         </question>
+         <textinput correct="i"></textinput>
+         </p>
+      </quiz>
+      <quiz>
+         <p>
+         <question>
+         \(B=\begin{pmatrix}1&1\\ 1&1\end{pmatrix}\)
+         </question>
+         <textinput correct="ps"></textinput>
+         </p>
+      </quiz>
+</div>
+         </td>
+        </tr>
+      </table>
+<hr>
+    </td>
+  </tr>
+
+
+
+  <tr>
+    <td valign="top" width="200">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+            <h3>hinreichende Bedingung</h3>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+
+        <tr>
+         <td>
+<p>
+Sei \(U\subset\mathbb{R}^n\) offen, \(f:U\rightarrow\mathbb{R}\) zweimal stetig differenzierbar, und sei \(p\in U\) kritischer Punkt von \(f\). Dann gilt
+</p>
+              <table border="0" cellpadding="10" cellspacing="0">
+                 <tr>
+                   <td bgcolor="#E0FFFF">
+<p>
+  <ul>
+    <li>
+      \(\mbox{Hess}_pf\) <strong>positiv definit</strong> \(\hspace{6mm}\Longrightarrow\hspace{5mm}\) \(p\) ist <strong>lokales Minimum</strong>.
+    </li>
+    <li>
+      \(\mbox{Hess}_pf\) <strong>negativ definit</strong> \(\hspace{5mm}\Longrightarrow\hspace{5mm}\) \(p\) ist <strong>lokales Maximum</strong>.
+    </li>
+    <li>
+      \(\mbox{Hess}_pf\) <strong>indefinit</strong> \(\hspace{17mm}\Longrightarrow\hspace{5mm}\) \(p\) ist <strong>kein</strong> Extremum.
+    </li>
+  </ul>
+</p>
+
+                   </td>
+                 </tr>
+              </table>
+Ist \(\mbox{Hess}_pf\) semidefinit, so l&auml;sst sich keine Aussage treffen.
+         </td>
+        </tr>
+
+      </table>
+<hr>
+    </td>
+  </tr>
+
+
+
+  <tr>
+    <td valign="top" width="200">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+            <h5>Beispiel</h5>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+
+        <tr>
+          <td>
+            <h3>Beispiel 1: Elliptisches Paraboloid</h3>
+            <p>
+            Elliptische Paraboloiden sind Bild der Funktionen
+            </p>
+            $$f:\mathbb{R}^2\rightarrow\mathbb{R},\hspace{5mm}f(x,y)=x^2+y^2+d,\hspace{5mm}d\in\mathbb{R}.$$
+            <p>
+            Dass im Ursprung \((x,y)=(0,0)\) ein globales Minimum vorliegt folgt bereits aus der Positivit&auml;t des quadratischen Terms \(x^2+y^2\) f&uuml;r alle \((x,y)\neq(0,0)\).
+            </p>
+            <p>
+            Der Gradient von \(f\) im Punkt \(p=(x,y)\)
+            </p>
+            $$\mbox{grad}_pf=\begin{pmatrix}2x\\ 2y\end{pmatrix}$$
+            <p>
+            verschwindet wie erwartet im Ursprung, \(p=(0,0)\) ist also kritischer Punkt. Da in \(f\) keine Mischterme auftauchen, ist die Hesse-Matrix diagonal. Es ist
+            </p>
+            $$\mbox{Hess}f=\begin{pmatrix}2&0\\ 0&2\end{pmatrix},$$
+            <p>
+            und die Hesse-Matrix damit positiv definit, also ist der Ursprung ein lokales Minimum.
+            </p>
+          </td>
+
+          <td>
+            <table border="1" bgcolor="#e5e5e5" cellpadding="10" valign="top">
+              <tr>
+                <td>
+                  <p>
+                   <img src="images/ell_Paraboloid.png" border="1" alt="Elliptisches Paraboloid">
+                   <br>
+                  Elliptisches Paraboloid mit \(d=0\)
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    </td>
+    <td>
+      <table border="0" bgcolor="#e5e5e5" cellpadding="10" cellspacing="0">
+        <tr>
+         <td>
+            <div class="spoiler">
+              <input type="button" onclick="showSpoiler(this);" value="Pr&uuml;fung der Definitheit ohne Eigenwerte" />
+              <div class="inner" style="display:none;">
+              <p>
+              F&uuml;r alle \(v\in\mathbb{R}^2\backslash\{0\}\) gilt \(\mbox{Hess}f.v=2v\), also insbesondere
+              </p>
+              $$\langle v,\mbox{Hess}f.v\rangle=\langle v,2v\rangle=2\langle v,v\rangle&gt;0$$
+            </div>
+         </td>
+        </tr>
+      </table>
+<hr>
+    </td>
+  </tr>
+
+
+  <tr>
+    <td valign="top" width="200">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+            <h5>Beispiel</h5>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+         <td>
+<h3>Beispiel 2: Hyperbolisches Paraboloid</h3>
+<p>
+Hyperbolische Paraboloiden sind Bild der Funktionen
+</p>
+$$f:\mathbb{R}^2\rightarrow\mathbb{R},\hspace{5mm}f(x,y)=x^2-y^2+d,\hspace{5mm}d\in\mathbb{R}.$$
+<p>
+Der Gradient von \(f\) im Punkt \(p=(x,y)\) ist gegeben durch
+</p>
+$$\mbox{grad}_pf=\begin{pmatrix}2x\\ -2y\end{pmatrix},$$
+<p>
+und verschwindet im Ursprung, wo gilt \(f(0,0)=d\). Da f&uuml;r jedes \(\epsilon&gt;0\) gilt, dass \(f(\epsilon,0)=\epsilon^2+d&gt;d\) und \(f(0,\epsilon)=-\epsilon^2+d&lt;d\), kann im Ursprung weder Maximum noch Minimum vorliegen. Die Hesse-Matrix wird also als indefinit erwartet. Tats&auml;chlich ist
+</p>
+$$\mbox{Hess}f=\begin{pmatrix}2&0\\ 0&-2\end{pmatrix},$$
+hat also sowohl einen positiven als auch einen negativen Eigenwert und ist somit indefinit.
+         </td>
+    <td>
+      <table border="1" bgcolor="#e5e5e5" cellpadding="10">
+        <tr>
+          <td>
+          <p><img src="images/hyp_Paraboloid.png" border="1"  alt="Hyperbolisches Paraboloid"><br>
+             Hyperbolisches Paraboloid mit \(d=0\)</p>
+          </td>
+        </tr>
+      </table>
+    </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    </td>
+    <td>
+      <table border="0" cellpadding="10" cellspacing="0" bgcolor="#e5e5e5" >
+        <tr>
+         <td>
+<div class="spoiler">
+    <input type="button" onclick="showSpoiler(this);" value="Pr&uuml;fung der Definitheit ohne Eigenwerte" />
+    <div class="inner" style="display:none;">
+      <p>
+      F&uuml;r den Einheitsvektor \(e_x\) in \(x-\)Richtung gilt \(\mbox{Hess}f.e_x=2e_x\) und damit
+      </p>
+      $$\langle e_x,\mbox{Hess}f.e_x\rangle=\langle e_x,2e_x\rangle=2\langle e_x,e_x\rangle=2&gt;0,$$
+      <p>
+      und f&uuml;r den Einheitsvektor \(e_y\) in \(y-\)Richtung gilt \(\mbox{Hess}f.e_y=-2e_y\) und damit
+      </p>
+      $$\langle e_y,\mbox{Hess}f.e_y\rangle=\langle e_y,-2e_y\rangle=-2&gt;0.$$
+      <p>
+      Es ist also weder die Bedingung f&uuml;r positive Definitheit erf&uuml;llt, noch die f&uuml;r negative Definitheit, da diese f&uuml;r alle Vektoren (ungleich dem Nullvektro) gelten m&uuml;ssen.
+      </p>
+</div>
+         </td>
+        </tr>
+      </table>
+<hr>
+    </td>
+  </tr>
+
+<!--ERSTMAL WEG DAMIT
+  <tr>
+    <td valign="top" width="200">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+            <h5>Beispiel</h5>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+
+        <tr>
+         <td>
+<h3>Beispiel 3: Hyperboloid</h3>
+<p>
+Hyperboloiden sind Bild der Funktionen
+</p>
+$$f:\mathbb{R}^2\rightarrow\mathbb{R},\hspace{5mm}f(x,y)=-x^2-y^2+d,\hspace{5mm}d\in\mathbb{R}.$$
+<p>
+Der Gradient von \(f\) im Punkt \(p=(x,y)\) ist gegeben durch
+</p>
+$$\mbox{grad}_pf=\begin{pmatrix}-2x\\ -2y\end{pmatrix},$$
+         </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+-->
+
+
+
+
+</table>
+
+
+</body>
+</html>
