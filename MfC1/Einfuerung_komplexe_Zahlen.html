@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+    <head>
+        <meta charset="utf-8">
+        <title>eduZOO - Hypertext</title>
+        <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+        <script src="../../eduZOO-app/script/eduZOO.js"></script>
+    </head>
+    <body>
+        <h1>Einführung in die komplexen Zahlen</h1>
+        <h2>Ziel und Motivation</h2>
+        <p>
+			Ziel dieses Abschnittes ist das Lösen algebraischer Gleichungen
+			(z.B. <tex>x^2+1=0</tex>)
+			in denen Wurzeln negativer Zahlen vorkommen. Dieses wird häufig
+			benötigt um Nullstellen reeller Polynome 
+			<tex>\sum_{k=0}^{n}a_k x^k</tex>, <tex>a_k\text{, } x\in \mathbb{R}</tex>, 
+			<tex>k\in\mathbb{N}</tex> zu finden.
+        </p>
+        <h2>Definitionen</h2>
+		<table>
+			<tr>
+				<td>
+					<b>Imaginäre Einheit:</b>
+				</td>
+				<td>
+					<tex>i^2=-1 \Leftrightarrow i=\sqrt{-1}</tex>
+				</td>
+			</tr>	
+			<tr>
+				<td>
+					<b>Komplexe Zahl:</b>
+				</td>
+				<td>
+					<tex>z\in\mathbb{C}:=\left\{ p+i\,q\;\middle|\;
+					p,q\in\mathbb{R},i=\sqrt{-1}\right\}</tex>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Realteil von <tex>z</tex>:</b>
+				</td>
+				<td>
+					<tex>\Re(z)=\Re(p+i\,q):=p\in\mathbb{R}</tex>
+				</td>
+			</tr>	
+			<tr>
+				<td>
+					<b>Imaginärteil von <tex>z</tex>:</b>
+				</td>
+				<td>
+					<tex>\Im(z)=\Im(p+i\,q):=q\in\mathbb{R}</tex>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Betrag von <tex>z</tex>:</b>
+				</td>
+				<td>
+					<tex>|z|:=\sqrt{p^2+q^2}</tex>
+				</td>
+			</tr>	
+			<tr>
+				<td>
+					<b>Komplexkonjugierte von <tex>z</tex>:</b>
+				</td>
+				<td>
+					<tex>z^*=p-i\,q</tex> ist die konjugiert komplexe Zahl 
+					zur Zahl <tex>z=p+i\,q</tex>
+				</td>
+			</tr>	
+			<tr>
+				<td>
+					<b>Gaußsche Zahlenebene:</b>
+				</td>
+				<td>
+					bla Abb.1 blubb
+				</td>
+			</tr>
+		</table>
+		
+		<dl class="imgLeft">
+			<dt>
+				<img src="images/Gaußsche_Zahlenebene.svg" alt="Gaußsche Zahlenebene">
+			</dt>
+			<dd>Abb.: 1</dd>
+		</dl>
+		
+		<h2>Beispiele</h2>
+		<p>
+			Ein Polynom mit reellen und komplexen Nullstellen ist zum Beispiel
+			<tex>p(x)=x^3+x</tex>. Wir können es umschreiben zu 
+			<tex>p(x)=x^3+x=x(x^2+1)</tex>
+			 und erkennen, dass nur eine reelle Nullstelle existiert und 
+			 zwar bei <tex>x_1=0</tex>. Im Komplexen hingegen besitzt dieses
+			 Polynom drei Nullstellen und zwar <tex>x_1=0,\,x_2=i,\,x_3=-i</tex>.
+		</p>
+		
+		
+		
+		
+	 </body>
+</html>
