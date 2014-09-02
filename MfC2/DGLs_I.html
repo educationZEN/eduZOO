@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+<head>
+    <meta charset="utf-8">
+    <title>eduZOO - Differentialgleichungen</title>
+    <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+    <script src="../../eduZOO-app/script/eduZOO.js"></script>
+</head>
+
+<body>
+
+<h1>Differentialgleichungen</h1>
+
+	<p>
+		Differentialgleichungen sind Gleichungen, in denen eine Funktion
+		mit ihren Ableitungen in Beziehung gesetzt wird. Da es verschiedene
+		Typen von Funktionen gibt, z.B. reellwertige Funktionen einer
+		Variable, mehrerer Variablen, oder vektorwertige Funktionen, gibt
+		es auch verschiedene Typen von Differentialgleichungen. Im Folgenden
+		stellen wir die wichtigsten Typen vor. Ziel ist es, eine gegebene
+		Differentialgleichung korrekt zu klassifizieren, und schließlich
+		eine Funktion zu finden, welche die Differentialgleichung erfüllt,
+		die sogenannte <em>Lösung</em> der Differentialgleichung.
+	</p>
+	<p>
+		Jede Differentialgleichung ist entweder eine gewöhnliche
+		Differentialgleichung oder eine partielle Differentialgleichung.
+		Das Wort partiell enthält bereits den Hinweis, dass in
+		<em>partiellen</em> Differentialgleichungen partielle Ableitungen
+		auftauchen, also wenn Funktionen mehrerer Variablen behandelt werden.
+		Differentialgleichungen für Funktionen nur einer Veränderlichen
+		heißen <em>gewöhnlich</em>.
+	</p>
+	<p>
+		Ebenso ist jede Differentialgleichung entweder linear oder
+		nicht-linear. Eine Differentialgleichung heißt <em>linear</em>,
+		wenn die Funktion und ihre Ableitungen nur in 1. Potenz auftauchen
+		und keine Produkte der Funktion und Ableitungen, also keine
+		Mischterme. Ist dies nicht der Fall, so heißt die Differentialgleichung
+		<em>nicht-linear</em>.
+	</p>
+	<p>
+		Schließlich wird noch unterschieden zwischen homogenen und inhomogenen
+		Differentialgleichungen. ähnlich wie bei Gleichungssystemen heißt
+		eine Differentialgleichung <em>inhomogen</em>, wenn in der
+		Differentialgleichung ein Summand vorhanden sind, der nicht
+		proportional zu der Funktion oder ihren Ableitungen ist. Ist solch
+		ein Summand nicht vorhanden, beziehungsweise ist er gleich Null,
+		so nennt man die Differentialgleichung <em>homogen</em>.
+	</p>
+	<p>
+		Die <em>Ordnung</em> einer Differentialgleichung ist definiert als
+		die höchste auftretende Ableitungsordnung.
+	</p>
+	<p>
+		Im Folgenden wird das Wort Differentialgleichung mit DGL abgekürzt,
+		der Plural mit DGLs.
+	</p>
+
+<h2>Gewöhliche Differentialgleichungen</h2>
+	<p>
+		Gewöhnliche DGLs sind DGLs für reellwertige Funktionen einer
+		Veränderlichen. Die konkreten Bezeichnungen für die Funktion,
+		etwa <tex>y</tex> oder <tex>f</tex>, und die Variable, etwa
+		<tex>x</tex> oder <tex>t</tex> spielen dabei keine Rolle und
+		dienen in den meisten Fällen nur der Illustration der unterliegenden
+		Zusammenhänge bzw. des Ursprungs der DGL, wenn etwa die gesuchte
+		Funktion <tex>c</tex> heißt, weil sie eine Stoffkonzentration
+		(concentration) beschreibt, und die verwendete Variable <tex>t</tex>
+		die Zeit ist und keine Ortskoordinate.
+	</p>
+	<p>
+		Wichtige Beispiele gewöhnlicher DGLs sind
+	</p>
+
+	<ul>
+		<li>
+			<p>
+				<strong>Radioaktiver Zerfall:</strong>
+				<tex>\frac{dN}{dt}(t)=-kN(t)</tex>
+			</p>
+			<p>
+				Hier ist <tex>N(t)</tex> die (gesuchte) Teilchenzahl zum
+				Zeitpunkt <tex>t</tex>, und <tex>k</tex> die (gegebene)
+				Zerfallsrate. Diese gew. DGL ist linear, homogen, und 1.
+				Ordnung.
+			</p>
+		</li>
+		<li>
+			<p>
+				<strong>Harmonischer Oszillator:</strong>
+				<tex>\frac{d^2x}{dt^2}(t)+\omega_0x(t)=0</tex>
+			</p>
+			<p>
+				Hierbei ist <tex>x(t)</tex> die (gesuchte) Auslenkung des
+				Oszillators zum Zeitpunkt <tex>t</tex>, und <tex>\omega_0</tex>
+				eine (gegebene) Resonanzfrequenz. Diese gew. DGL ist linear,
+				homogen, und 2. Ordnung.
+			</p>
+		</li>
+	</ul>
+
+	<p>
+		Sei nun <tex>y</tex> eine <tex>n</tex>-mal differenzierbare Funktion
+		einer Veränderlichen, <tex>a_0(x),a_1(x),\dots,a_n(x),b(x)</tex>
+		Funktionen einer Variablen, und <tex>a_0(x)\neq0</tex> für alle
+		<tex>x</tex>. Eine allgemeine <em>lineare gewöhnliche</em> DGL der
+		Ordnung <tex>n</tex> für <tex>y</tex> hat die Form
+	</p>
+	<tex p>
+		a_n(x)y^{(n)}(x)+a_{n-1}(x)y^{(n)}(x)+\dots+a_1(x)y'(x)+
+		a_0(x)y(x)=b(x),
+	</tex>
+	<p>
+		oder äquivalent dazu (und kompakt notiert mit Summenzeichen)
+	</p>
+	<tex p>
+		y^{(n)}(x)=\sum_{k=0}^{n-1}\tilde{a}_k(x)y^{(k)}(x)+\tilde{b}(x),
+	</tex>
+	<p>
+		mit Funktionen <tex>\tilde{a}_k(x)=-\frac{a_k(x)}{a_n(x)},k=0,
+		\dots,n-1,\tilde{b}(x)=\frac{b(x)}{a_n(x)}</tex>. Diese Form
+		ergibt sich, wenn die erste Gleichung durch <tex>a_n(x)</tex>
+		geteilt wird und nach <tex>y^{(n)}(x)</tex> aufgelöst. Die 
+		Funktionen <tex>b(x)</tex> und <tex>\tilde{b}(x)</tex> nennt man
+		<em>Inhomogenitäten</em> und die DGL <em>inhomogen</em>. Ist 
+		<tex>b(x)</tex> bzw. <tex>\tilde{b}(x)</tex> gleich Null, so nennt
+		man die DGL <em>homogen</em>.
+	</p>
+<!-- 
+	<p>
+		Eine gewöhnliche lineare DGL der Ordnung <tex>n</tex> kann man
+		also nach der höchsten Ableitung <tex>y^{(n)}</tex> umstellen,
+		wobei die rechte Seite der resultierenden Gleichung nur Terme der
+		Form "Funktion von x mal Ableitung von x" enthält und 
+	</p>
+-->
+
+<h2>Partielle Differentialgleichungen</h2>
+	<p>
+		Partielle DGLs sind DGLs für Funktionen mehrerer Variablen. Es
+		tauchen dann partielle Ableitungen der gesuchten Funktion auf.
+		Wichtige Beispiele partieller DGLs sind
+	</p>
+	
+	<ul>
+		<li>
+			<p>
+				<strong>Laplace-Gleichung:</strong><tex>\left(
+				\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}
+				+\frac{\partial^2}{\partial z^2} \right)\varphi(x,y,z) = 0</tex>
+			</p>
+			<p>
+				Diese DGL taucht in der Physik u.a. als Potentialgleichung
+				auf und beschreibt das elektrische Potential <tex>\varphi</tex>
+				im leeren Raum.
+			</p>
+		</li>
+		<li>
+			<p>
+				<strong>Diffusionsgleichung:</strong>
+				<tex>\frac{\partial^2}{\partial x^2}u(x,t)-
+				\frac{1}{D}\frac{\partial}{\partial t}u(x,t)=0</tex>
+			</p>
+			<p>
+				Die Diffusionsgleichung (oder auch Wärmeleitungsgleichung)
+				beschreibt in der Physik die Veränderung der Temperaturfunktion
+				<tex>u(x,t)</tex> am Ort <tex>x</tex> zur Zeit <tex>t</tex>.
+			</p>
+		</li>
+		<li>
+			<p>
+				<strong>Induktionsgesetz:</strong><tex>\nabla\times\textbf{E}
+				(\textbf{r},t)=-\frac{\partial}{\partial t}\textbf{B}
+				(\textbf{r},t) </tex>
+			</p>
+			<p>
+				Das Induktionsgesetz beschreibt die Entstehung eines
+				elektrischen Feldes <tex>\textbf{E}(\textbf{r},t)</tex>
+				am Ort <tex>\textbf{r}=(x,y,z)</tex> zur Zeit <tex>t</tex>
+				bei zeitlicher Veränderung der magnetischen Flussdichte
+				<tex>\textbf{B}(\textbf{r},t)</tex>
+			</p>
+		</li>
+	</ul>
+
+	<p>
+		Die allgemeine Form einer partiellen DGL <tex>n</tex>-ter Ordnung
+		in <tex>k</tex> Variablen ist ein langer Ausdruck und wird hier
+		ausgelassen. Es gilt wie bei den gewoöhnlichen DGLs: Die <em>Ordnung
+		</em> der partiellen DGL ist gleich der höchsten auftauchenden
+		Ableitungsordnung. Eine partielle DGL ist <em>linear</em>, wenn
+		die partiellen Ableitungen und die Funktion selbst nur linear
+		auftauchen und die Koeffizientenfunktionen nur von den
+		Veränderlichen abhängen, im anderen Fall heißt die DGL <em>
+		nicht-linear</em>. Tritt ein Funktions-Term auf, in dem weder die
+		Funktion selbst noch eine ihrer Ableitungen vorkommen, so ist die
+		DGL <em>inhomogen</em> und man nennt diesen Term <em>Inhomogenität
+		</em>, andernfalls heißt die DGL <em>homogen</em>.
+	</p>
+
+
+<h2>Test: Klassifikation von Differentialgleichungen</h2>
+	<p>
+		Klassifizieren Sie die folgenden DGLs!
+	</p>
+	<p>
+		Die Eingabe ist von der Form "x y z n", also vier einstellige
+		Zeichen getrennt von jeweils einem Leerzeichen. Die
+		<strong>erste Stelle x</strong> steht für die Linearität und soll
+		nur mit dem Zeichen "l" (für linear) oder "n" (für nicht-linear)
+		befüllt werden. Die <strong>zweite Stelle y</strong> steht für die
+		Ableitungstypen und soll nur mit dem Zeichen "g" (für gewöhnlich)
+		oder "p" (für partiell) befüllt werden. Die <strong>dritte Stelle
+		z</strong> steht für die (In-)Homogenitätseigenschaft und soll nur
+		mit dem Zeichen "h" (für homogen) oder "i" (für inhomogen) befüllte
+		werden. Die <strong>vierte Stelle n</strong> steht für die Ordnung
+		der DGL und soll mit der Zahl der Ordnung befüllt werden. Alle
+		Eingaben sind ohne die Anführungszeichen zu tätigen.
+	</p>
+	<p>
+		<strong>Beispiel:</strong> <tex>y'=y</tex>
+	</p>
+	<p>
+		Diese DGL ist <strong>l</strong>inear, <strong>g</strong>ewöhnlich,
+		<strong>h</strong>omogen, und von der Ordnung <strong>1</strong>.
+		Daher lautet die korrekte Eingabe "l g h 1". Versuchen Sie es jetzt
+		selbst!
+	</p>
+
+	<quiz>
+		<p>
+			<question>
+				<tex>y'=y</tex>
+			</question>
+			
+			<textinput correct="l g h 1"></textinput>
+		</p>
+	</quiz>
+
+    <quiz>
+		<p>
+			<question>
+				<tex>4y''-2y'+7y=8</tex>
+			</question>
+         
+			<textinput correct="l g i 2"></textinput>
+		</p>
+	</quiz>
+
+	<quiz>
+		<p>
+			<question>
+				<tex>F=m\cdot a=m\cdot \ddot{x}</tex>
+			</question>
+         
+			<textinput correct="l g i 2"></textinput>
+		</p>
+	</quiz>
+
+	<quiz>
+		<p>
+			<question>
+				<tex>\sqrt{y}\cdot y'+4x=4</tex>
+			</question>
+         
+			<textinput correct="n g i 1"></textinput>
+		</p>
+	</quiz>
+
+	<quiz>
+		<p>
+			<question>
+				<tex>\frac{\partial}{\partial t}\psi=-\frac{\hbar^2}{2m}
+				\frac{\partial^2}{\partial x^2}\psi</tex>
+			</question>
+       
+			<textinput correct="l p h 2"></textinput>
+		</p>
+	</quiz>
+
+	<quiz>
+		<p>
+			<question>
+				<tex>3y''+5y'-6y = sin(x)</tex>
+			</question>
+         
+			<textinput correct="l g i 2"></textinput>
+		</p>
+	</quiz>
+
+<!--
+	<textinput correct="(ln2|ln 2|ln<tex>2</tex>)"></textinput>
+-->
+
+
+<h2>Trennung der Variablen</h2>
+	<p>
+		Trennung der Variablen ist ein Lösungsverfahren für <strong>
+		gewöhnliche Differentialgleichungen erster Ordnung</strong>, das
+		immer dann einsetzbar ist, wenn sich die Abhängigkeiten von 
+		<tex>x</tex> und <tex>y</tex> durch Umstellen so <em>trennen</em>
+		lassen, dass sie jeweils nur auf einer Seite der DGL auftauchen.
+		Dafür wird die Ableitung <tex>y'</tex> ausgeschrieben als 
+		<tex>y'=\frac{dy}{dx}</tex> und <tex>dy</tex> als <tex>y</tex>-Term
+		aufgefasst, <tex>dx</tex> als <tex>x</tex>-Term.
+	</p>
+	<p>
+		<strong>Beispiel:</strong>  Die lineare, gewöhnliche, homogene DGL
+		1. Ordnung <tex> 2y'-6y=0 </tex> lässt sich schreiben als 
+		<tex>2\frac{dy}{dx}=6y</tex>, was mit <tex>dx</tex> multipliziert
+		<tex>2dy=6ydx</tex> ergibt. Wird durch <tex>y</tex> geteilt, so sind
+		alle <tex>y</tex>-Terme auf der linken Seite, alle <tex>x</tex>-Terme
+		auf der rechten, <tex>\frac{2}{y}dy=6dx</tex>. Auf welcher Seite die
+		Koeffizienten stehen, spielt keine Rolle.
+	</p>
+	<p>
+		Eine dem Verfahren Trennung der Variablen zugängliche DGL hat immer
+		die Form <tex>y'=g(x)h(y)</tex>, ist also eine Bestimmungsgleichung
+		für die erste Ableitung <tex>y'</tex> einer Funktion <tex>y</tex>,
+		deren rechte Seite in zwei Faktoren <tex>g(x)</tex> und <tex>h(y)</tex>
+		zerfällt, die nur von <tex>x</tex> bzw. nur von <tex>y</tex> abhängen.
+		Die Variablentrennung erfolgt dann im allgmeinen Fall genau wie oben
+		im Beispiel, indem man <tex>y'=\frac{dy}{dx}</tex> ausschreibt und
+		die jeweiligen Abhängigkeiten auf die Seiten verteilt,
+	</p>
+	<p align="center">
+		<tex>\frac{1}{h(y)}dy=g(x)dx</tex>.
+	</p>
+	<p>
+		Diesen Ausdruck kann man integrieren, und kann man die resultierende
+		Gleichung für die Stammfunktionen von <tex>\frac{1}{h}</tex> und <tex>g
+		</tex> nach <tex>y</tex> umstellen, so ist die DGL gelöst. Für die
+		DGL aus dem Beispiel hieße das
+	</p>
+	<tex p>	\int\frac{dy}{y}=3\int dx	</tex>
+	<p>
+		und damit
+	</p>
+	<tex p>
+		\ln\left|\frac{y}{C}\right|=3x,
+	</tex>
+	<p>
+		für eine Integrationskonstante <tex>C</tex>. Exponenzieren auf
+		beiden Seiten liefert <tex>\left|\frac{y}{C}\right|=e^{3x}</tex>,
+		und da die Konstante <tex>C</tex> dasselbe Vorzeichen haben muss wie 
+		<tex>y</tex> selbst (die Exponentialfunktion ist immer größer Null),
+		kann man den Betrag auflösen zu
+	</p>
+	<p>
+		<tex>y(x)=Ce^{3x}</tex>
+	</p>
+	<p>
+		<strong>Bemerkung:</strong> Die Form <tex>\ln\left|
+		\frac{y}{C}\right|</tex> resultiert aus dem Hauptsatz der
+		Integralrechnung über
+	</p>
+	<tex p>
+		\int_C^x\frac{dt}{t}=\ln(|t|)\bigg\vert_{C}^{x}=\ln|x|-
+		\ln|C|=\ln\left|\frac{x}{C}\right|
+	</tex>
+
+
+<h3>Videobeispiele</h3>
+<!--
+	Auskommentiert, da lange Rechenzeit. Kommentare sollen da stehen und
+	die Videos im Quelltext erläutern.
+-->
+
+<!-- Franzi-Video Trennung der Variablen: -->
+	<p>
+	   <iframe width="560" height="315" src="//www.youtube.com/embed/IXiE4YBiIWU" frameborder="0" allowfullscreen>        
+	   </iframe>
+	</p>
+
+<!-- Franzi-Video Trennung der Variablen 1: -->
+	<p>
+		<iframe width="560" height="315" src="//www.youtube.com/embed/LqI-IWELfeE" frameborder="0" allowfullscreen>        
+		</iframe>
+	</p>
+
+<!-- Franzi-Video Trennung der Variablen 2: -->
+	<p>
+		<iframe width="560" height="315" src="//www.youtube.com/embed/6zvMugBkU6E" frameborder="0" allowfullscreen>        
+		</iframe>
+	</p>
+
+
+<h3>Test</h3>
+	<p>
+		<quiz>
+			<question>
+				Welche dieser DGLs lässt sich mit Trennung der Variablen lösen?
+			</question>
+
+			<choice correct> <tex> y'+2y^2=1 </tex> </choice>
+			<choice correct> <tex> (y')^2+y=1 </tex> </choice>
+			<choice> <tex> (y')^2+xy=1 </tex> </choice>
+			<choice> <tex> y''+y=0 </tex> </choice>
+			<choice> <tex> y'=4xe^{xy} </tex> </choice>
+			<choice correct> <tex> y'=4xe^{x+y}  </tex> </choice>
+		</quiz>
+	</p>
+
+
+<h2>Variation der Konstanten</h2>
+	<p>
+		Variation der Konstanten ist eine Methode zur Lösung linearer
+		gewöhnlicher inhomogener DGLs, d.h. DGLs der Form
+	</p>
+	<p>
+		<tex>y'(x)+f(x)y(x)=g(x)</tex>
+	</p>
+	<p>
+		Die allgemeine Lösung der zugehörigen homogenen DGL 
+		<tex>y'(x)+f(x)y(x)=0</tex> ist <tex>y(x)=Ce^{-F(x)}</tex>, 
+		wobei <tex>F(x)</tex> eine Stammfunktion von <tex>f(x)</tex>
+		ist und <tex>C</tex> eine beliebige Konstante. Der Name des
+		Verfahrens Variation der Konstanten rührt daher, dass man die
+		Konstante <tex>C</tex> durch eine unbekannte, zu bestimmende
+		Funktion <tex>u(x)</tex> ersetzt und den beim Ableiten von
+		<tex>y(x)=u(x)e^{-F(x)}</tex> entstehenden Term <tex>u'(x)</tex>
+		(Produktregel!) mit <tex>g(x)</tex> vergleicht. Wird nämlich der
+		Ansatz <tex>y(x)=u(x)e^{-F(x)}</tex> in die DGL eingesetzt, 
+		ergibt sich
+	</p>
+	<p>
+		<tex>
+			\begin{eqnarray*}
+				g(x)&=&y'(x)+f(x)y(x)\\
+					&=&(u(x)e^{-F(x)})'+f(x)y(x)\\
+					&=&u'(x)e^{-F(x)}+u(x)(-f(x))e^{-F(x)}+f(x)y(x)\\
+					&=&u'(x)e^{-F(x)}.
+			\end{eqnarray*}
+		</tex>
+	</p>
+	<p>
+		Umstellen nach <tex>u'(x)</tex> und Integration beider Seiten liefert
+	</p>
+	<p>
+		<tex>u(x)=\int g(x)e^{F(x)}dx+C</tex>,
+	</p>
+	<p>
+		mit einer Integrationskonstanten <tex>C</tex> und damit für
+		<tex>y(x)</tex> die Lösungsformel
+	</p>
+
+	<p class="border">
+		<tex>y(x)=e^{-F(x)}\left(\int g(x)e^{F(x)}dx+C\right)</tex>
+	</p>
+	<p>
+		Es sind die Vorzeichen im Exponenten der Exponentialfunktion vor dem Integral und unter dem Integral zu beachten. Die größte Schwierigkeit (neben dem Finden der beteiligten Stammfunktionen) ist es die gegebene DGL in die Normalform <tex>y'(x)+f(x)y(x)=g(x)</tex> zu bringen, um die Lösungsformel anwenden zu können.
+	</p>
+
+
+<h3>Videobeispiele:</h3>
+<!-- Franzi-Video Variation der Konstanten 1: --->
+	<p>
+		<iframe width="560" height="315" src="//www.youtube.com/embed/DuvHk2MMR_I" frameborder="0" allowfullscreen>
+		</iframe>
+	</p>
+
+<!-- Franzi-Video Variation der Konstanten 2: -->
+	<p>
+		<iframe width="560" height="315" src="//www.youtube.com/embed/AEzX2q827E8" frameborder="0" allowfullscreen>        
+		</iframe>
+	</p>
+
+
+</body>
+</html>
+
+
+<!--Mathe Umgebung: <tex> f(x) </tex>  -->

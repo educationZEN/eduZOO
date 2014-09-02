@@ -25,6 +25,28 @@ h2 {
     font-variant: small-caps;
 }
 
+h3 {
+    font-size: 1.5em;
+    color: #535353;
+    font-variant: small-caps;
+}
+
 p {
     font-size: 1.125em;
 }
+
+p.border {
+    border-style: solid;
+    padding: 1em;
+	border-color: #2B65EC;
+}
+/*
+div {
+    background-color: #F0FFFF;
+    width: 560px; 
+    padding: 1em;
+    border: 0px solid navy;
+    margin: 5px;
+}
+*/
+
