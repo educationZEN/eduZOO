@@ -69,7 +69,8 @@ div {
 */
 
 .centered {
-	width: 48em;
+
+	max-width: 48em;
 	margin-left: auto ;
 	margin-right: auto ;
 }
