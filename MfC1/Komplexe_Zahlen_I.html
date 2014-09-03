@@ -7,8 +7,14 @@
         <script src="../../eduZOO-app/script/eduZOO.js"></script>
     </head>
     <body>
-        <h1>Komplexe Zahlen I</h1>
-        <h2>Ziel und Motivation</h2>
+	<div class="row centered">
+
+        <h1>Einführung in die Komplexen Zahlen</h1>
+
+<!--
+	Ziel und Motivation:
+	Komplexe Zahlen werden benötigt um a-Stellen von Polynomen zu finden.
+-->
         <p>
 			Ziel dieses Abschnittes ist das Lösen algebraischer
 			Gleichungen (z.B. <tex>x^2+1=0</tex>) in denen Wurzeln
@@ -17,7 +23,13 @@
 			<tex>a_k\text{, } x\in\mathbb{R}</tex>,
 			<tex>k\in\mathbb{N}</tex> zu finden.
         </p>
-        <h2>Definitionen</h2>
+<!--
+	Definitionen:
+	Grundlegende Definitionen für 	i, z, Re, Im, |z|, z*
+	und die 						Gaußsche Zahlenebene.
+-->
+        <h2>Grundlegende Begriffe und Definitionen</h2>
+
 		<table>
 			<tr>
 				<td>
@@ -74,19 +86,28 @@
 					<b>Gaußsche Zahlenebene:</b>
 				</td>
 				<td>
-					Die Gaußsche Zahlenebene dient zur Veranschaulichung
+					Die Gaußsche Zahlenebene dient der Veranschaulichung
 					von komplexen Zahlen und komplexen Abbildungen. Wie
 					in Abbildung 1 zu sehen, kann eine komplexe Zahl
 					<tex>z = p+i\,q</tex> mit <tex>z \in \mathbb{C}</tex>,
-					<tex>p,q \in \mathbb{R}</tex> auf zwei Arten in einem
-					zweidimensionalen Koordinatensystem darstellen.
+					<tex>p,q \in \mathbb{R}</tex> durch zwei Abbildungen
+					in einem zweidimensionalen Koordinatensystem
+					dargestellt werden.
 					<ol>
-						<li>
+
+							<tex p>
 							\begin{eqnarray*}
 								\Phi\;:\;\mathbb{C}&\rightarrow&\mathbb{R}^2\\
-									z=p+i\,q&=&(u(x)e^{-F(x)})'+f(x)y(x)
+									z&\mapsto& (p,q) \mbox{ mit } z=p+i\,q\\ \\
+
+								\Psi\;:\;\mathbb{C}&\rightarrow&\mathbb{R}^2\\
+									z&\mapsto& (r,\phi) \mbox{ mit }
+									z=r\,	\left(
+												\cos\phi+i\,\sin\phi
+											\right)
 							\end{eqnarray*}
-						</li>
+							</tex>
+
 					</ol>
 				</td>
 			</tr>
@@ -105,7 +126,24 @@
 				wird.
 			</figcaption>
 		</figure>
-
+		<p>
+			In Abbildung 1 wird eine andere Abbildungsvorschrift für
+			<tex>\Psi</tex> als in unserer Definitionsliste verwendet.
+			Dies ist kein Fehler es gild nämlich
+			<tex p>
+				r\, \left( \cos\phi + i\,\sin\phi \right)
+				=
+				r\,e^{i\,\phi}
+			</tex>
+			Um diese sogenannte <strong>Euler-Formel</strong> zu
+			verstehen müssen wir die komplexe <tex>e</tex>-
+			Funktion verstehen. Gelegenheiten hierfür wird im Laufe des
+			Kurses noch geben. Für den Moment muss die Euler-Formel so
+			akzeptiert werden (alle, die nicht warten können verweisen
+			wir auf den
+			<a href="http://de.wikipedia.org/wiki/Exponentialfunktion">
+				Wikipedia-Artikel zur Exponentialfunktion</a>).
+		</p>
 		<h2>Beispiele</h2>
 		<p>
 			Ein Polynom mit reellen und komplexen Nullstellen ist zum
@@ -118,6 +156,6 @@
 
 
 
-
-	 </body>
+	</div>
+	</body>
 </html>
