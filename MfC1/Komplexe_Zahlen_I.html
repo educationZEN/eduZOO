@@ -10,12 +10,12 @@
         <h1>Komplexe Zahlen I</h1>
         <h2>Ziel und Motivation</h2>
         <p>
-			Ziel dieses Abschnittes ist das Lösen algebraischer Gleichungen
-			(z.B. <tex>x^2+1=0</tex>)
-			in denen Wurzeln negativer Zahlen vorkommen. Dieses wird häufig
-			benötigt um Nullstellen reeller Polynome 
-			<tex>\sum_{k=0}^{n}a_k x^k</tex>, <tex>a_k\text{, } x\in 
-			\mathbb{R}</tex>, <tex>k\in\mathbb{N}</tex> zu finden.
+			Ziel dieses Abschnittes ist das Lösen algebraischer
+			Gleichungen (z.B. <tex>x^2+1=0</tex>) in denen Wurzeln
+			negativer Zahlen vorkommen. Dieses wird häufig benötigt um
+			Nullstellen reeller Polynome <tex>\sum_{k=0}^{n}a_k x^k</tex>,
+			<tex>a_k\text{, } x\in\mathbb{R}</tex>,
+			<tex>k\in\mathbb{N}</tex> zu finden.
         </p>
         <h2>Definitionen</h2>
 		<table>
@@ -26,7 +26,7 @@
 				<td>
 					<tex>i^2=-1 \Leftrightarrow i=\sqrt{-1}</tex>
 				</td>
-			</tr>	
+			</tr>
 			<tr>
 				<td>
 					<b>Komplexe Zahl:</b>
@@ -43,7 +43,7 @@
 				<td>
 					<tex>\Re(z)=\Re(p+i\,q):=p\in\mathbb{R}</tex>
 				</td>
-			</tr>	
+			</tr>
 			<tr>
 				<td>
 					<b>Imaginärteil von <tex>z</tex>:</b>
@@ -59,46 +59,65 @@
 				<td>
 					<tex>|z|:=\sqrt{p^2+q^2}</tex>
 				</td>
-			</tr>	
+			</tr>
 			<tr>
 				<td>
 					<b>Komplexkonjugierte von <tex>z</tex>:</b>
 				</td>
 				<td>
-					<tex>z^*=p-i\,q</tex> ist die konjugiert komplexe Zahl 
-					zur Zahl <tex>z=p+i\,q</tex>
+					<tex>z^*=p-i\,q</tex> ist die konjugiert komplexe
+					Zahl zur Zahl <tex>z=p+i\,q</tex>
 				</td>
-			</tr>	
+			</tr>
 			<tr>
 				<td>
 					<b>Gaußsche Zahlenebene:</b>
 				</td>
 				<td>
-					bla Abb.1 blubb
+					Die Gaußsche Zahlenebene dient zur Veranschaulichung
+					von komplexen Zahlen und komplexen Abbildungen. Wie
+					in Abbildung 1 zu sehen, kann eine komplexe Zahl
+					<tex>z = p+i\,q</tex> mit <tex>z \in \mathbb{C}</tex>,
+					<tex>p,q \in \mathbb{R}</tex> auf zwei Arten in einem
+					zweidimensionalen Koordinatensystem darstellen.
+					<ol>
+						<li>
+							\begin{eqnarray*}
+								\Phi\;:\;\mathbb{C}&\rightarrow&\mathbb{R}^2\\
+									z=p+i\,q&=&(u(x)e^{-F(x)})'+f(x)y(x)
+							\end{eqnarray*}
+						</li>
+					</ol>
 				</td>
 			</tr>
 		</table>
-		
-		
-		<dl class="imgLeft">
-			<dt>
-				<img src="images/Gaußsche_Zahlenebene.svg" alt="Gaußsche Zahlenebene">
-			</dt>
-			<dd>Abb.: 1</dd>
-		</dl>
-		
+
+		<figure>
+			<img 	src="images/Gaußsche_Zahlenebene.svg"
+					alt="Gaußsche Zahlenebene" />
+			<figcaption>
+				Abbildung 1: Die Gaußsche Zahlenebene ist ein
+				kartesisches Koordinatensystem, in dem der Realteil
+				<tex>\Re(z) = a \in \mathbb{R}</tex> einer komplexen
+				Zahl <tex>z \in \mathbb{C}</tex> auf der <tex>x</tex>-
+				Achse und der Imaginärteil <tex>\Im(z) = b \in
+				\mathbb{R}</tex> auf der <tex>y</tex>-Achse aufgetragen
+				wird.
+			</figcaption>
+		</figure>
+
 		<h2>Beispiele</h2>
 		<p>
-			Ein Polynom mit reellen und komplexen Nullstellen ist zum Beispiel
-			<tex>p(x)=x^3+x</tex>. Wir können es umschreiben zu 
-			<tex>p(x)=x^3+x=x(x^2+1)</tex>
-			 und erkennen, dass nur eine reelle Nullstelle existiert und 
-			 zwar bei <tex>x_1=0</tex>. Im Komplexen hingegen besitzt dieses
-			 Polynom drei Nullstellen und zwar <tex>x_1=0,\,x_2=i,\,x_3=-i</tex>.
+			Ein Polynom mit reellen und komplexen Nullstellen ist zum
+			Beispiel <tex>p(x)=x^3+x</tex>. Wir können es umschreiben zu
+			<tex>p(x)=x^3+x=x(x^2+1)</tex> und erkennen, dass nur eine
+			reelle Nullstelle existiert und zwar bei <tex>x_1=0</tex>.
+			Im Komplexen hingegen besitzt dieses Polynom drei
+			Nullstellen und zwar <tex>x_1=0,\,x_2=i,\,x_3=-i</tex>.
 		</p>
-		
-		
-		
-		
+
+
+
+
 	 </body>
 </html>
