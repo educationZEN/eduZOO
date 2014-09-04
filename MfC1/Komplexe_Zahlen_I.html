@@ -30,6 +30,7 @@
 -->
         <h2>Grundlegende Begriffe und Definitionen</h2>
 
+		<div class="definition">
 		<table>
 			<tr>
 				<td>
@@ -77,8 +78,10 @@
 					<b>Komplexkonjugierte von <tex>z</tex>:</b>
 				</td>
 				<td>
-					<tex>z^*=p-i\,q</tex> ist die konjugiert komplexe
-					Zahl zur Zahl <tex>z=p+i\,q</tex>
+					<tex>z^*_{1,2}=p \mp i\,q</tex> sind die konjugiert
+					komplexen zu <tex>z_{1,2}=p \pm i\,q</tex>.
+					Oft wird auch <tex>\bar{z}</tex> anstatt <tex>z^*
+					</tex> für die komplex Konjugierte benutzt.
 				</td>
 			</tr>
 			<tr>
@@ -92,19 +95,20 @@
 					<tex>z = p+i\,q</tex> mit <tex>z \in \mathbb{C}</tex>,
 					<tex>p,q \in \mathbb{R}</tex> durch zwei Abbildungen
 					in einem zweidimensionalen Koordinatensystem
-					dargestellt werden.
+					dargestellt werden
 					<ol>
 
 							<tex p>
 							\begin{eqnarray*}
 								\Phi\;:\;\mathbb{C}&\rightarrow&\mathbb{R}^2\\
-									z&\mapsto& (p,q) \mbox{ mit } z=p+i\,q\\ \\
+									z&\mapsto& (p,q) &\mbox{ mit }& z=p+i\,q\\ \\
 
 								\Psi\;:\;\mathbb{C}&\rightarrow&\mathbb{R}^2\\
-									z&\mapsto& (r,\phi) \mbox{ mit }
+									z&\mapsto& (r,\phi) &\mbox{ mit }&
 									z=r\,	\left(
 												\cos\phi+i\,\sin\phi
-											\right)
+											\right) \\
+											\,&&\,&\mbox{ und }& r = |z|.
 							\end{eqnarray*}
 							</tex>
 
@@ -112,6 +116,7 @@
 				</td>
 			</tr>
 		</table>
+		</div>
 
 		<figure>
 			<img 	src="images/Gaußsche_Zahlenebene.svg"
@@ -130,32 +135,65 @@
 			In Abbildung 1 wird eine andere Abbildungsvorschrift für
 			<tex>\Psi</tex> als in unserer Definitionsliste verwendet.
 			Dies ist kein Fehler es gild nämlich
-			<tex p>
-				r\, \left( \cos\phi + i\,\sin\phi \right)
-				=
-				r\,e^{i\,\phi}
-			</tex>
-			Um diese sogenannte <strong>Euler-Formel</strong> zu
+
+			<div class="definition">
+				<b>Euler-Formel:</b>
+				<tex>
+					r\, \left( \cos\phi + i\,\sin\phi \right)
+					=
+					r\,e^{i\,\phi}.
+				</tex>
+			</div>
+
+			Um diese zu
 			verstehen müssen wir die komplexe <tex>e</tex>-
-			Funktion verstehen. Gelegenheiten hierfür wird im Laufe des
-			Kurses noch geben. Für den Moment muss die Euler-Formel so
-			akzeptiert werden (alle, die nicht warten können verweisen
+			Funktion verstehen. Gelegenheiten hierfür wird es im Laufe
+			des Kurses noch geben. Für den Moment muss die Euler-Formel
+			so akzeptiert werden (alle, die nicht warten können verweisen
 			wir auf den
 			<a href="http://de.wikipedia.org/wiki/Exponentialfunktion">
 				Wikipedia-Artikel zur Exponentialfunktion</a>).
+
 		</p>
-		<h2>Beispiele</h2>
+
+<!--
+	Beispiele: Hier werden Beispiele aufgezeigt, die die vorangegangenen
+	Definitionen veranschaulichen sollen.
+		1. Ein Polynom mit komplexen Nullstellen
+		2. Eine Visualisierung der komplexen Konjugation in der Gaußebene
+-->
+
+		<h3>Ein Polynom mit komplexen Nullstellen…</h3>
 		<p>
-			Ein Polynom mit reellen und komplexen Nullstellen ist zum
-			Beispiel <tex>p(x)=x^3+x</tex>. Wir können es umschreiben zu
-			<tex>p(x)=x^3+x=x(x^2+1)</tex> und erkennen, dass nur eine
-			reelle Nullstelle existiert und zwar bei <tex>x_1=0</tex>.
-			Im Komplexen hingegen besitzt dieses Polynom drei
-			Nullstellen und zwar <tex>x_1=0,\,x_2=i,\,x_3=-i</tex>.
+			…ist zum Beispiel <tex>p(x)=x^3+x</tex>. Wir können es
+			umschreiben zu <tex>p(x)=x^3+x=x(x^2+1)</tex> und erkennen,
+			dass nur eine reelle Nullstelle existiert und zwar bei
+			<tex>x_1=0</tex>. Im Komplexen hingegen besitzt dieses
+			Polynom drei Nullstellen und zwar <tex>x_1=0,\,x_2=i,\,x_3=
+			-i</tex>.
+		</p>
+		<p>
+			Beachte, dass hier <tex>x_1,x_2,x_3 \in \mathbb{C}</tex>
+			komplexe Zahlen darstellen.
 		</p>
 
-
-
+		<h3>Darstellung der komplexen Konjugation in der Gaußebene</h3>
+		<figure>
+			<img 	src="images/Gaussebene_Konjugation.png"
+					alt="Gaußebene Konjugation" />
+			<figcaption>
+				Abbildung 2: Darstellung von <tex>z</tex> und
+				<tex>\bar{z}</tex> beziehungsweise <tex>z^*</tex>.
+				Geometrisch entspricht die komplexe Konjugation einer
+				Spiegelung an der <tex>x</tex>-Achse.
+				<aside>
+					Urheberschaft liegt bei SirJective (Künstlername/
+					Pseudonym); Verwertung fällt unter Lizenz GNU FDL.
+				</aside>
+			</figcaption>
+		</figure>
 	</div>
 	</body>
+	<footer>
+	</footer>
 </html>
