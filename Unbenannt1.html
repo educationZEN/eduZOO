@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title></title>
+<meta name="author" content="Sascha">
+<meta name="editor" content="html-editor phase 5">
+
+<script type="text/javascript">
+function showSpoiler(obj)
+    {
+    var inner = obj.parentNode.getElementsByTagName("div")[0];
+    if (inner.style.display == "none")
+        inner.style.display = "";
+    else
+        inner.style.display = "none";
+    }
+</script>
+
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#FF0000" alink="#FF0000" vlink="#FF0000">
+
+Hallo
+
+<div class="spoiler">
+    <input type="button" onclick="showSpoiler(this);" value="           Wie genau geht das?" />
+    <div class="inner" style="display:none;">
+    Hier steht der Beweis
+</div>
+
+
+</body>
+</html>

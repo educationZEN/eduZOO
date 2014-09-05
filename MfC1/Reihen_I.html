@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+<head>
+    <meta charset="utf-8">
+    <title>eduZOO - Reihen I</title>
+    <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+    <script src="../../eduZOO-app/script/eduZOO.js"></script>
+</head>
+
+<body>
+
+<h1>Reihen I</h1>
+
+<p><!-- 1. Absatz: Ziel und Motivation -->
+	Statt endlicher Summen lassen sich auch <em>unendliche</em> Summen
+	behandeln, sogenannte <em>Reihen</em>. Dann kann es aber passieren,
+	dass der Wert der Summe nicht mehr endlich ist. Summen mit unendlich
+	vielen Summanden darauf zu überprüfen, ob ihr Wert eine Zahl ist
+	oder unendlich, ist Gegenstand des mathematischen Gebiets der
+	Reihen. So wird es später von Bedeutung sein, dass z.B. die Summe
+	der Kehrwerte aller natürlichen Zahlen, die sogenannte <em>
+	harmonische Reihe</em>,
+<tex p>
+	\sum_{n=1}^\infty\frac{1}{n}=1+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}+
+								 \frac{1}{5}+\frac{1}{6}+\dots
+</tex>
+	unendlich ist. Dagegen ist die Summe aller Potenzen von
+	\(\frac{1}{2}\), eine sogenannte <em>geometrische Reihe</em>,
+<tex p>
+	\sum_{n=0}^\infty\frac{1}{2^n}=1+\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+
+								 \frac{1}{16}+\frac{1}{32}+\dots
+</tex>
+	endlich, nämlich gleich 2.
+</p>
+<p>
+	Dies zu zeigen und Grundlagen für weitere Untersuchungen an Reihen
+	zu schaffen ist Ziel dieser Lerneinheit.
+</p>
+
+
+
+<h2>Reihen als Folgen</h2>
+
+
+
+<p> <!-- Einführende Bsp.: Partialsummen harmon. und geometr. Reihe -->
+	Um Reihen <tex>\sum_{n=0}^\infty a_n</tex> mathematisch zu
+	beschreiben werden die Summanden als Glieder einer Folge
+	<tex>\{a_n\}_{n\in\mathbb{N}}</tex>	betrachtet,	sodass sich die
+	Teilsummen der ersten \(k\) Summanden jeweils notieren lassen als
+<tex p>
+	\begin{eqnarray*}
+	s_0 &=& a_0\\
+	s_1 &=& a_0+a_1\\
+	s_2 &=& a_0+a_1+a_2\\
+	&\vdots&\\
+	s_k &=& \sum_{n=0}^ka_n\\
+	\end{eqnarray*}
+</tex>
+	Diese Teilsummen \(s_k\) werden <em>Partialsummen</em> genannt. So
+	sind z.B. die ersten vier Partialsummen der harmonischen Reihe
+	<tex>\sum_{n=1}^\infty\frac{1}{n}</tex>, also mit
+	<tex>a_n=\frac{1}{n}</tex>,
+	(Achtung: \(s_0\) wird hier wegen Division durch Null weggelassen)
+<tex p>
+	\begin{eqnarray*}
+	s_1 &=& 1\\
+	s_2 &=& 1+\frac{1}{2}=\frac{3}{2}\\
+	s_3 &=& 1+\frac{1}{2}+\frac{1}{3}=\frac{11}{6}\\
+	s_4 &=& 1+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}=\frac{25}{12}\\
+	\end{eqnarray*}
+</tex>
+	Die ersten Partialsummen der geometrischen Reihe zu \(\frac{1}{2}\)
+	sind
+<tex p>
+	\begin{eqnarray*}
+	s_0 &=& 1\\
+	s_1 &=& 1+\frac{1}{2}=\frac{3}{2}\\
+	s_2 &=& 1+\frac{1}{2}+\frac{1}{4}=\frac{7}{4}\\
+	s_3 &=& 1+\frac{1}{2}+\frac{1}{4}+\frac{1}{8}=\frac{15}{8}\\
+	\end{eqnarray*}
+</tex>
+	Die Folge <tex>\{s_k\}_{k\in\mathbb{N}}</tex> der Partialsummen
+	heißt Reihe, und falls die Folge konvergiert, so heißt der Grenzwert
+	<em>Wert der Reihe</em>. Zusammengefasst:
+</p>
+
+<div class="definition"> <!-- Part.Summe, Reihe, Wert -->
+<strong>Definition: Partialsummen, Reihe, Wert der Reihe</strong><hr>
+<p>
+	Sei <tex>\{a_n\}_{n\in\mathbb{N}}</tex> eine Folge reeller Zahlen.
+	Die Folge <tex>\{s_k\}_{k\in\mathbb{N}}</tex>, definiert durch die
+	\(k-\)ten <em>Partialsummen</em> <tex>s_k=\sum_{n=0}^ka_n</tex>,
+	heißt <em>Reihe</em>. Konvergiert \(s_k\) gegen einen Wert
+	<tex>s\in\mathbb{R}</tex>, so heißt \(s\) <em>Wert der Reihe</em>,
+	notiert als
+	<tex p>
+		s=\lim_{k\rightarrow\infty}s_k=\sum_{n=0}^\infty a_n
+	</tex>
+</p>
+</div>
+<p> <!-- Notation -->
+	Einer einfachen Notation halber wird jede Reihe als
+	<tex>\sum_{n=0}^\infty a_n</tex> notiert, unabhängig vom
+	Konvergenzverhalten. Noch kürzer wird eine Reihe auch als
+	<tex>\sum a_n</tex> notiert. Ist eine Reihe <tex>\sum a_n</tex>
+	konvergent, der Grenzwert jedoch unbekannt, so wird notiert
+	<tex>\sum a_n &lt; \infty</tex>.
+</p>
+
+<p>
+	Da eine Reihe nur eine Folge ist, lassen sich die Partialsummen in
+	einfachen Fällen zu geschlossenen Ausdrücken (also ohne
+	Summenzeichen) berechnen und damit die Konvergenz direkt nachprüfen.
+</p>
+<h3>Beispiel 1</h3>
+<p class="beispiel">
+	Sei <tex>a_n=n</tex> die Folge der natürlichen Zahlen. Die Reihe
+	<tex>\sum a_n=\sum n</tex> konvergiert nicht, da (nach der
+	<a href="http://de.wikipedia.org/wiki/Gau%C3%9Fsche_Summenformel">
+	Gaußschen Summenformel</a>) für die Partialsummen \(s_k\) gilt
+	<tex p>
+			s_k=\sum_{n=0}^k n=\frac{k(k+1)}{2}
+	</tex>
+	was für <tex>k\rightarrow\infty</tex> nicht konvergiert. Dass eine
+	Summe, deren Summanden immer größer werden, nicht konvergieren, ist
+	auch intuitiv schlüssig.
+</p>
+<h3>Beispiel 2</h3>
+<p class="beispiel">
+	Sei <tex>a_n=(-1)^n</tex>. Die Reihe <tex>\sum a_n=\sum (-1)^n</tex>
+	konvergiert nicht. Ist für die Partialsummen \(s_k\) nämlich \(k\)
+	gerade, so ist	<tex>s_k=0</tex> (da der letzte Summand gleich 1 ist
+	treten gleich viele Terme \(1\) und \(-1\) auf), für ungerades \(k\)
+	ist \(s_k=-1\). Die Folge <tex>\{s_k\}_{k\in\mathbb{N}}</tex>
+	alterniert also zwischen zwei Werten und kann demnach nicht
+	konvergieren.
+</p>
+
+<p>
+	Die obigen Beispiele illustrieren, dass eine notwendige Bedingung
+	für die Konvergenz einer Reihe <tex>\sum a_n</tex> ist, dass die
+	Folge \(a_n\) gegen 0 konvergiert. Ist dies nicht erfüllt, so kann
+	die Reihe nicht konvergieren. Es ist jedoch keine hinreichende
+	Bedingung, es gibt Reihen <tex>\sum a_n</tex> mit
+	<tex>a_n\rightarrow 0</tex>, die nicht konvergieren.
+</p>
+
+
+
+
+<h2>Die Geometrische Reihe</h2>
+
+
+
+<p>
+	Eine der wichtigsten Reihen ist die geometrische Reihe zu einer
+	reellen Zahl \(q\). Wegen ihrer simplen Struktur lassen sich die
+	Partialsummen leicht berechnen und damit (soweit existent) ihr Wert.
+	Mit Hilfe der geometrischen Reihe lassen sich die geläufigsten
+	Konvergenzkriterien, das Quotientenkriterium und das
+	Wurzelkriterium, herleiten.
+</p>
+<div class="definition">
+<strong>Definition: Geometrische Reihe</strong><hr>
+<p>
+	Sei <tex>q\in\mathbb{R}</tex>. Die <em>geometrische Reihe</em> zur
+	Zahl q ist gegeben durch die Folge der Partialsummen
+	<tex>\{s_n\}_{n\in\mathbb{N}}</tex>, mit \(s_n\) gegeben durch
+	<tex p>
+		s_n=\sum_{k=0}^n q^k
+	</tex>
+</p>
+</div>
+<p>
+	Es ist im Allg. kompliziert die Grenzwerte von Reihen zu bestimmen.
+	Die Partialsummen der geometrischen Reihe lassen sich jedoch mittels
+	eines Tricks berechnen.
+</p>
+
+<quiz>
+ <question>
+  Bei welcher dieser Reihen handelt es sich um konvergente geometrische
+  Reihen?
+ </question>
+
+	<choice> <strong>a)</strong>
+		<tex p>\sum_{k=0}^\infty 2^k</tex>
+	</choice>
+
+	<choice> <strong>b)</strong>
+		<tex p>\sum_{k=0}^\infty k^2</tex>
+	</choice>
+
+	<choice correct> <strong>c)</strong>
+		<tex p>\sum_{k=0}^\infty \frac{1}{2^k}</tex>
+	</choice>
+
+</quiz>
+
+<p>
+	<em>Hier muss noch eine Übungsaufgabe vorgerechnet werden</em>
+</p>
+
+
+
+<h2>Rechnen mit konvergenten Reihen</h2>
+
+
+
+<p>
+	Für konvergente Reihen gelten dieselben Rechenregeln wie für
+	endliche Summen. Es darf gliedweise addiert/subtrahiert werden und
+	mit Skalaren multipliziert, das heißt für alle konvergenten Reihen
+	<tex>\sum a_n, \sum b_n</tex> und reelle Zahlen <tex>\lambda</tex>
+	gilt
+</p>
+
+<tex p>
+
+</tex>
+
+
+
+<p class="beispiel">
+
+</p>
+
+
+
+<h2>Das Majorantenkriterium</h2>
+
+
+
+<p>
+	Oft reicht es schon zu wissen, ob eine Reihe konvergiert oder nicht.
+</p>
+
+<p>
+	Sei <tex>\sum a_n</tex> eine Reihe mit ausschließlich nicht-negativen
+	Summanden, also <tex>a_n\geq0</tex> für alle <tex>n\in\mathbb{N}</tex>.
+	Lässt sich die Reihe gliedweise, also Summand für Summand, nach oben
+	durch eine konvergente Reihe <tex>\sum b_n</tex>, z.B. die
+	geometrische Reihe, abschätzen, also <tex>a_n\leq b_n</tex> für alle
+	<tex>n\in\mathbb{N}</tex>, so wird die Reihe <tex>\sum a_n</tex>
+	durch die konvergente Reihe <tex>\sum b_n</tex> <em>majorisiert</em>.
+</p>
+
+<div class="definition">
+<strong>Satz: Majorantenkriterium</strong><hr>
+<p>
+	Sei
+</p>
+</div>
+
+
+
+<h2>Test</h2>
+
+
+
+<quiz>
+ <question>
+  Kreuzen Sie die wahren Aussagen an.
+ </question>
+
+	<choice correct>
+	 Die \(k-\)ten Partialsummen einer Reihe <tex>\sum a_n</tex>
+	 sind gegeben durch <tex>s_k=\sum_{n=0}^k a_n</tex>.
+	</choice>
+
+	<choice>
+	 Die \(n-\)ten Partialsummen einer Reihe <tex>\sum a_n</tex>
+	 sind gegeben durch <tex>s_n=\sum_{n=0}^k a_n</tex>.
+	</choice>
+
+	<choice correct>
+	 Die \(n-\)ten Partialsummen einer Reihe <tex>\sum a_n</tex>
+	 sind gegeben durch <tex>s_n=\sum_{k=0}^n a_k</tex>.
+	</choice>
+
+	<choice>
+	 Die geometrische Reihe zur Zahl \(q\in\mathbb{R}\) ist gegeben
+	 durch <tex>\sum_{k=1}^\infty q^k</tex>.
+	</choice>
+
+	<choice correct>
+	 Die geometrische Reihe zur Zahl \(q\in\mathbb{R}\) ist gegeben
+	 durch <tex>\sum_{k=0}^\infty q^k</tex>.
+	</choice>
+
+</quiz>
+
+</body>
+</html>

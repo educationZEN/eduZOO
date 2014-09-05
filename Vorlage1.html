@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+
+<head>
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" href="css/eduZOO.css">
+<script src="../eduZOO-app/script/lib/angular.min.js"></script>
+<script src="../eduZOO-app/script/lib/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+<script src="../eduZOO-app/script/eduZOO.js"></script>
+<script type="text/javascript">
+function showSpoiler(obj)
+    {
+    var inner = obj.parentNode.getElementsByTagName("div")[0];
+    if (inner.style.display == "none")
+        inner.style.display = "";
+    else
+        inner.style.display = "none";
+    }
+</script>
+</head>
+
+<body>
+
+<table border="0" cellpadding="0" cellspacing="20" width="100%">
+  <colgroup>
+    <col width="200">
+    <col>
+  </colgroup>
+
+<!--Überschrift-->
+  <tr>
+    <td colspan="2">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td><h1>&Uuml;berschrift</h1></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+
+<!--erste Reihe-->
+  <tr>
+<!--erste Reihe, links-->
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+            <h3>Erster Punkt</h3>
+          </td>
+        </tr>
+      </table>
+    </td>
+<!--erste Reihe, rechts-->
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+            <p>
+             Kleine Einleitung
+            </p>
+<!--Formel mit Kasten-->
+              <table border="0" cellpadding="10" cellspacing="0">
+                 <tr>
+                   <td bgcolor="#FFE4C4">
+                         $$A=B$$
+                   </td>
+                 </tr>
+              </table>
+<!--Formel mit Kasten, Ende-->
+            <p>
+             <div class="spoiler">
+             <input type="button" onclick="showSpoiler(this);" value="     Beweis     " />
+             <div class="inner" style="display:none;">
+             Hier steht der Beweis f&uuml;r die Formel
+             </div>
+            </p>
+          </td>
+        </tr>
+      </table>
+<!--Ende erste Reihe, links-->
+    </td>
+  </tr>
+
+
+  <tr>
+    <td valign="top" width="200">
+      <table border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>
+            <h3>Dummy</h3>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td valign="top">
+      <table border="0" cellpadding="10" cellspacing="0">
+
+        <tr>
+         <td bgcolor="#E0FFFF">
+          <p>
+           Text.
+          </p>
+         </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+
+</table>
+
+
+</body>
+</html>
