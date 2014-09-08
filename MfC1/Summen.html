@@ -12,13 +12,118 @@
 <h1>Endliche Summen</h1>
 
 <p><!-- 1. Absatz: Ziel und Motivation -->
+	In der mathematischen Beschreibung naturwissenschaftlicher Probleme
+	tauchen oft Summen mit vielen Summanden auf. Daher ist es dienlich,
+	eine Kurzschreibweise einzuführen, die übersichtlich ist und
+	gleichzeitig präziser als Auslassungen von Summanden mit drei
+	Punkten zu kennzeichnen, wie zum Beispiel in der Summe der ersten
+	100 natürlichen Zahlen
+	<tex p>
+	1+2+3+4+\dots+99+100
+	</tex>
+	Zu diesem Zweck wird das Summenzeichen \(\Sigma\) eingeführt, das
+	einer Summe in Kurzschreibweise immer voransteht. Den Summanden
+	werden Namen \(a_k\) gegeben, die mit einem Index \(k\in\mathbb{N}\)
+	versehen sind, der die Stelle des Summanden in der Summe
+	repräsentiert. Es genügt nun anzugeben, mit welchem \(k\) die Summe
+	anfängt (üblich sind 0 oder 1 - aber es gibt auch andere Fälle,
+	siehe unten) und mit welchem sie endet.
 
 </p>
+
+<div class="definition">
+<strong>Definition: Summe</strong><hr>
+ <p>
+	Sei <tex>\{a_1,\dots,a_n\}</tex> eine Menge von \(n\in\mathbb{N}\)
+	reellen (oder komplexen) Zahlen. Dann heißt
+	<tex p>
+		\sum_{k=1}^n a_k=a_1+a_2+\dots+a_{n-1}+a_n
+	</tex>
+	Summe der Zahlen von \(a_1\) bis \(a_n\), gesprochen
+	<em>Summe von k gleich eins bis n \(a_k\)</em>.
+ </p>
+</div>
+
+<p>
+	Welchen Namen der Summationsindex trägt, ob \(k\), \(n\), \(r\),
+	spielt keine Rolle. Wichtig ist, dass der Summationsindex und der
+	Zählindex an den Summanden übereinstimmen. Es gilt also
+	<tex p>
+		\sum_{k=1}^n a_k=\sum_{j=1}^n a_j=\sum_{r=1}^n a_r.
+	</tex>
+	Es ist zu beachten, dass \(n\) hier kein Summationsindex sein darf,
+	da \(n\) bereits als Symbol für das Summen-Ende belegt ist. Der
+	Ausdruck
+	<tex p>
+		\sum_{n=1}^n a_n
+	</tex>
+	ergibt keinen Sinn
+</p>
+
+<div class="beispiel">
+ <h3>Beispiel</h3>
+ <p>
+	Für das einführende Beispiel der Summe der ersten 100 Zahlen ist
+	<tex>a_k=k</tex>, für <tex>k=1,\dots,100</tex>, das heißt
+	<tex p>
+		1+2+3+4+\dots+99+100=\sum_{k=1}^{100} k
+	</tex>
+	Diese Summe lässt sich mit Hilfe der
+	<a href="http://de.wikipedia.org/wiki/Gau%C3%9Fsche_Summenformel">
+	Gaußschen Summenformel</a> zu einem geschlossenen Ausdruck berechnen,
+	<tex p>\sum_{k=1}^{100} k=\frac{100\cdot101}{2}=5050</tex>
+ </p>
+</div>
+
+<p>
+	Die üblichen Rechenregeln für Summen
+</p>
+
+
+
+<h2>Test</h2>
+
+
+
+<p>Wie viele Summanden haben die folgenden Summen?</p>
+
+<quiz>
+	<question>
+		<tex p>
+			\mbox{a)}\hspace{1cm}\sum_{k=0}^{99}a_k
+		</tex>
+	</question>
+	<textinput correct="100"></textinput>
+	<question>
+		<tex p>
+			\mbox{b)}\hspace{1cm}\sum_{k=1}^{n}a_k
+		</tex>
+	</question>
+	<textinput correct="n"></textinput>
+	<question>
+		<tex p>
+			\mbox{c)}\hspace{1cm}\sum_{j=10}^{n}a_j
+		</tex>
+	</question>
+	<textinput correct="n-9"></textinput>
+	<question>
+		<tex p>
+			\mbox{d)}\hspace{1cm}\sum_{r=k+1}^{n}a_r
+		</tex>
+	</question>
+	<textinput correct="r-k"></textinput>
+</quiz>
 
 
 
 <h2>Indexverschiebung</h2>
 
+
+
+<p>
+	Nicht in jedem Fall sind Summen gegeben, die mit dem Index 0 oder 1
+	beginnen.
+</p>
 
 
 <h2>Test</h2>
@@ -27,15 +132,37 @@
 
 <quiz>
  <question>
-  dummyfrage
+  Welche der folgenden Aussagen ist wahr?
  </question>
 
-	<choice>
-		dummy incorrect
+	<choice correct><strong>a)</strong>
+		<tex p>
+			1+4+9+16+25+36+49=\sum_{j=1}^7 j^2
+		</tex>
 	</choice>
 
-	<choice correct>
-		dumm correct
+	<choice><strong>b)</strong>
+		<tex p>
+			2+4+6+8+10+\dots+100=\sum_{j=1}^{50} 2k
+		</tex>
+	</choice>
+
+	<choice><strong>c)</strong>
+		<tex p>
+			\sum_{r=0}^1 1=1
+		</tex>
+	</choice>
+
+	<choice correct><strong>d)</strong>
+		<tex p>
+			\sum_{r=1}^n 1=n
+		</tex>
+	</choice>
+
+	<choice correct><strong>e)</strong>
+		<tex p>
+			\sum_{r=0}^{n-1} 1=n
+		</tex>
 	</choice>
 
 </quiz>
