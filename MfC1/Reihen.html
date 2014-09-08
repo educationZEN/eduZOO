@@ -2,14 +2,14 @@
 <html ng-app="eduZOO">
 <head>
     <meta charset="utf-8">
-    <title>eduZOO - Reihen I</title>
+    <title>eduZOO - Reihen</title>
     <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
     <script src="../../eduZOO-app/script/eduZOO.js"></script>
 </head>
 
 <body>
 
-<h1>Reihen I</h1>
+<h1>Reihen</h1>
 
 <p><!-- 1. Absatz: Ziel und Motivation -->
 	Statt endlicher Summen lassen sich auch <em>unendliche</em> Summen
@@ -113,8 +113,9 @@
 	einfachen Fällen zu geschlossenen Ausdrücken (also ohne
 	Summenzeichen) berechnen und damit die Konvergenz direkt nachprüfen.
 </p>
-<h3>Beispiel 1</h3>
-<p class="beispiel">
+<h3>Beispiel</h3>
+<div class="beispiel">
+ <p>
 	Sei <tex>a_n=n</tex> die Folge der natürlichen Zahlen. Die Reihe
 	<tex>\sum a_n=\sum n</tex> konvergiert nicht, da (nach der
 	<a href="http://de.wikipedia.org/wiki/Gau%C3%9Fsche_Summenformel">
@@ -125,9 +126,11 @@
 	was für <tex>k\rightarrow\infty</tex> nicht konvergiert. Dass eine
 	Summe, deren Summanden immer größer werden, nicht konvergieren, ist
 	auch intuitiv schlüssig.
-</p>
-<h3>Beispiel 2</h3>
-<p class="beispiel">
+ </p>
+</div>
+<h3>Beispiel</h3>
+<div class="beispiel">
+ <p>
 	Sei <tex>a_n=(-1)^n</tex>. Die Reihe <tex>\sum a_n=\sum (-1)^n</tex>
 	konvergiert nicht. Ist für die Partialsummen \(s_k\) nämlich \(k\)
 	gerade, so ist	<tex>s_k=0</tex> (da der letzte Summand gleich 1 ist
@@ -135,7 +138,8 @@
 	ist \(s_k=-1\). Die Folge <tex>\{s_k\}_{k\in\mathbb{N}}</tex>
 	alterniert also zwischen zwei Werten und kann demnach nicht
 	konvergieren.
-</p>
+ </p>
+</div>
 
 <p>
 	Die obigen Beispiele illustrieren, dass eine notwendige Bedingung
@@ -214,17 +218,39 @@
 	mit Skalaren multipliziert, das heißt für alle konvergenten Reihen
 	<tex>\sum a_n, \sum b_n</tex> und reelle Zahlen <tex>\lambda</tex>
 	gilt
+	<tex p>
+	\begin{eqnarray*}
+		\sum_{n=0}^\infty (a_n+b_n)	&=&
+			\sum_{n=0}^\infty a_n + \sum_{n=0}^\infty b_n
+		\sum_{n=0}^\infty(\lambda a_n) &=&
+			\lambda\sum_{n=0}^\infty a_n
+	\end{eqnarray*}
+	</tex>
+	Mit Hilfe dieser Rechenregeln lassen sich Reihen also zerlegen in
+	konvergente Reihen.
 </p>
 
-<tex p>
-
-</tex>
-
-
-
-<p class="beispiel">
-
-</p>
+<h3>Beispiel</h3>
+<div class="beispiel">
+	Gegeben sei die Reihe
+	<tex p>
+		\sum_{n=0}^\infty\frac{10\cdot 2^n+3^n}{4^n}
+	</tex>
+	Durch Anwenden der Rechenregeln lässt sich die Reihe in konvergente
+	Reihen, hier geometrische Reihen, zerlegen, und der Wert berechnen.
+	<tex p>
+	\begin{eqnarray*}
+		\sum_{n=0}^\infty\frac{10\cdot 2^n+3^n}{4^n}&=&
+			\sum_{n=0}^\infty\frac{10\cdot 2^n}{4^n}+
+				\sum_{n=0}^\infty\frac{3^n}{4^n}\\	&=&
+			10\sum_{n=0}^\infty\frac{2^n}{4^n}+
+				\sum_{n=0}^\infty\frac{3^n}{4^n}\\	&=&
+			10\sum_{n=0}^\infty\left(\frac{1}{2}\right)^n+
+				\sum_{n=0}^\infty\left(\frac{3}{4}\right)^n\\ &=&
+			10\cdot2+4\\ &=& 24
+	\end{eqnarray*}
+	</tex>
+</div>
 
 
 
