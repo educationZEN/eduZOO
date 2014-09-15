@@ -31,6 +31,9 @@
         <h2>Grundlegende Begriffe und Definitionen</h2>
 
 		<div class="definition">
+		<strong>Definitionen: Imaginäre Einheit, Komplexe Zahl, Realteil,
+		Imaginärteil, Betrag, Konjugation, Gaußsche Zahlenebene</strong>
+		<hr>
 		<table>
 			<tr>
 				<td>
@@ -134,7 +137,7 @@
 		<p>
 			In Abbildung 1 wird eine andere Abbildungsvorschrift für
 			<tex>\Psi</tex> als in unserer Definitionsliste verwendet.
-			Dies ist kein Fehler es gild nämlich die
+			Dies ist kein Fehler es gilt nämlich die
 		</p>
 		<p class="border">
 			<strong>Euler-Formel: </strong>
@@ -203,11 +206,94 @@
 			entspricht einer Spiegelung an der reellen Achse.
 		</p>
 		<p>
-			Es ist sofort einleuchtend, dass damit auch
+			Es ist sofort einleuchtend, dass damit auch <tex>(z^*)^*=z
+			</tex> ist.
 		</p>
-		<tex p>
-			\bar{\bar{z}}
-		</tex>
+<!--
+	In diesem Abschnitt werden die Rechenregeln zusammengefasst, um von
+		algebraischer Form zu trigonometrischer Form
+		trigonometrischer Form
+-->
+		<h2>Rechenregeln zu Darstellungsformen der komplexen Zahlen</h2>
+
+		<div class="definition">
+			<strong>Satz: Darstellungsformen und Transformationsformel</strong><hr>
+			<p>
+				Sei <tex>z \in \mathbb{C}, z = p + i\,q</tex>. Dann ist
+				<tex>r=|z|=\sqrt{p^2+q^2}</tex>
+				der <strong>Betrag</strong> und
+				<tex>\phi = \arctan\left(\frac{q}{p}\right)</tex>
+				das <strong>Argument</strong> von <tex>z</tex>.
+			</p>
+
+			<p>
+				Mit diesen Transformationsformeln ergeben sich folgende
+				drei Darstellungsformen für eine komplexe Zahl <tex>z</tex>:
+				<table>
+					<tr>
+						<td><strong>Algebraische Form:</strong></td>
+						<td><tex>z = p + i\,q</tex></td>
+					</tr>
+					<tr>
+						<td><strong>Trigonometrische Form:</strong></td>
+						<td><tex>z = r\, \left( \cos\phi + i\, \sin\phi \right)</tex></td>
+					</tr>
+					<tr>
+						<td><strong>Exponentialform:</strong></td>
+						<td><tex>z = r\,e^{i\phi}</tex></td>
+					</tr>
+				</table>
+			</p>
+		</div>
+			<p>
+				<strong>Bemerkung:</strong> Da die Arcustangensfunktion
+				nur auf dem offenen Intervall <tex>\left(-\frac{\pi}{2}
+				,\frac{\pi}{2}\right)</tex> definiert ist, müssen wir von
+				der so genannten
+			</p>
+
+		<div class="definition">
+			<p>
+				<strong>Satz: Quadrantenregel</strong><hr>
+				Das <strong>Argument <tex>\phi</tex></strong> einer komplexen
+				Zahl <tex>z</tex> ist abhängig vom Quadranten (siehe Abb. 3),
+				in dem <tex>z</tex> verortet ist. Es gilt:
+			</p>
+			<table>
+				<tr>
+					<td>1. Quadrant:</td>
+					<td><tex>\phi = \arctan\left(\frac{q}{p}\right)</tex></td>
+				</tr>
+				<tr>
+					<td>2. und 3. Quadrant:</td>
+					<td><tex>\phi = \arctan\left(\frac{q}{p}\right)+\pi</tex></td>
+				</tr>
+				<tr>
+					<td>4. Quadrant:</td>
+					<td><tex>\phi = \arctan\left(\frac{q}{p}\right)+2\pi</tex></td>
+				</tr>
+			</table>
+		</div>
+
+		<figure>
+			<img 	src="images/500px-Cartesian-coordinate-system-with-quadrant.png"
+					alt="Quadranten" />
+				<figcaption>
+					Abbildung 3: In einem 2 dimesionalen Kartesischen
+					Koordinatensystem werden die quadranten in mathematisch
+					positiver Richtung von eins bis vier durchnummeriert.
+					<aside>
+						Urheberschaft liegt bei W!B: (Künstlername/
+						Pseudonym); Verwertung fällt unter Lizenz CC BY-SA 3.0.						</aside>
+				</figcaption>
+			</figure>
+<!--
+	Übungsaufgabe und Video: In diesem Abschnitt sollen die Studis
+	verstmals versuchen Ihr erlangtes Wissen zu testen.
+-->
+
+
+
 
 	</div>
 	</body>
