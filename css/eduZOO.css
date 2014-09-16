@@ -46,13 +46,17 @@ figure {
         display: table;
         text-align: center;
         /* optional: border */
-        border: thin solid gray;
-        padding: 1px;
+
+        padding: 10px;
 }
 
 figcaption {
         display: block;
         font-size: 0.85em;
+}
+
+aside {
+		font-size: 0.4em;
 }
 
 /*
