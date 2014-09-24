@@ -23,9 +23,9 @@
 	</tex>
 	Zu diesem Zweck wird das Summenzeichen \(\Sigma\) eingeführt, das
 	einer Summe in Kurzschreibweise immer voransteht. Den Summanden
-	werden Namen \(a_k\) gegeben, die mit einem Index \(k\in\mathbb{N}\)
+	werden Namen \(a_n\) gegeben, die mit einem Index \(n\in\mathbb{N}\)
 	versehen sind, der die Stelle des Summanden in der Summe
-	repräsentiert. Es genügt nun anzugeben, mit welchem \(k\) die Summe
+	repräsentiert. Es genügt nun anzugeben, mit welchem \(n\) die Summe
 	anfängt (üblich sind 0 oder 1 - aber es gibt auch andere Fälle,
 	siehe unten) und mit welchem sie endet.
 
@@ -34,13 +34,13 @@
 <div class="definition">
 <strong>Definition: Summe</strong><hr>
  <p>
-	Sei <tex>\{a_1,\dots,a_n\}</tex> eine Menge von \(n\in\mathbb{N}\)
+	Sei <tex>\{a_1,\dots,a_N\}</tex> eine Menge von \(N\in\mathbb{N}\)
 	reellen (oder komplexen) Zahlen. Dann heißt
 	<tex p>
-		\sum_{k=1}^n a_k=a_1+a_2+\dots+a_{n-1}+a_n
+		\sum_{n=1}^N a_n=a_1+a_2+\dots+a_{N-1}+a_N
 	</tex>
-	Summe der Zahlen von \(a_1\) bis \(a_n\), gesprochen
-	<em>Summe von k gleich eins bis n \(a_k\)</em>.
+	Summe der Zahlen von \(a_1\) bis \(a_N\), gesprochen
+	<em>Summe von n gleich eins bis \(N\) \(a_n\)</em>.
  </p>
 </div>
 
@@ -49,20 +49,25 @@
 	spielt keine Rolle. Wichtig ist, dass der Summationsindex und der
 	Zählindex an den Summanden übereinstimmen. Es gilt also
 	<tex p>
-		\sum_{k=1}^n a_k=\sum_{j=1}^n a_j=\sum_{r=1}^n a_r.
+		\sum_{n=1}^N a_n=\sum_{k=1}^N a_k=\sum_{j=1}^N a_j
 	</tex>
-	Es ist zu beachten, dass \(n\) hier kein Summationsindex sein darf,
-	da \(n\) bereits als Symbol für das Summen-Ende belegt ist. Der
+	da es sich lediglich um eine Umbenennung des Index handelt.	Es ist
+	zu beachten, dass \(N\) hier kein Summationsindex sein darf, da
+	\(N\) bereits als Symbol für das Summen-Ende belegt ist. Der
 	Ausdruck
 	<tex p>
-		\sum_{n=1}^n a_n
+		\sum_{N=1}^N a_N
 	</tex>
-	ergibt keinen Sinn
+	ergibt keinen Sinn, der Ausdruck
+	<tex p>
+		\sum_{N=1}^n a_N
+	</tex>
+	dagegen schon. Er beschreibt für gegebenes \(n\in\mathbb{N}\) eine
+	Summe mit den \(n\) Summanden <tex>a_1,\dots,a_n</tex>.
 </p>
 
-<div class="beispiel">
- <h3>Beispiel</h3>
- <p>
+<h3>Beispiel</h3>
+<p class="beispiel">
 	Für das einführende Beispiel der Summe der ersten 100 Zahlen ist
 	<tex>a_k=k</tex>, für <tex>k=1,\dots,100</tex>, das heißt
 	<tex p>
@@ -72,15 +77,62 @@
 	<a href="http://de.wikipedia.org/wiki/Gau%C3%9Fsche_Summenformel">
 	Gaußschen Summenformel</a> zu einem geschlossenen Ausdruck berechnen,
 	<tex p>\sum_{k=1}^{100} k=\frac{100\cdot101}{2}=5050</tex>
+	Im Artikel zur Summenformel ist auch Gauß' eleganter Beweis für die
+	allgemeine Summenformel mit \(n\) Summanden zu finden.
+</p>
+
+<p>
+	Die üblichen Rechenregeln für Summen lassen sich wie folgt
+	formulieren.
+</p>
+<div class="definition">
+<strong>Satz: Rechenregeln für Summen</strong><hr>
+ <p>
+	Für je \(N\) reelle (oder komplexe) Zahlen
+	<tex>a_1,\dots,a_N,b_1,\dots,b_N</tex> und alle reellen (oder
+	komplexen) Zahlen \(c\) gilt:
+	<ul>
+		<li> Assoziativgesetz
+			<tex p>
+				\sum_{n=1}^N a_n +\sum_{n=1}^N b_n=\sum_{n=1}^N(a_n+b_n)
+			</tex>
+		</li>
+		<li> Distributivgesetz
+			<tex p>
+				c\cdot\sum_{n=1}^N a_n=\sum_{n=1}^N (c\cdot a_n)
+			</tex>
+		</li>
+	</ul>
  </p>
 </div>
 
-<p>
-	Die üblichen Rechenregeln für Summen
+<h3>Beispiel</h3>
+<p class="beispiel">
+Die Summe der ersten 100 <em>ungeraden</em> Zahlen lässt sich aus der
+Summenformel und den Rechenregeln bestimmen. Ist eine Zahl
+\(k\in\mathbb{N}\) ungerade, so gibt es ein \(n\in\mathbb{N}\) mit
+\(k=2n+1\). Für die Summe der ersten 100 ungeraden Zahlen gilt also
+	<tex p>
+		\begin{eqnarray*}
+			\sum_{n=0}^{99}(2n+1)
+				&=& \sum_{n=0}^{99}(2n)+\sum_{n=0}^{99}1\\
+				&=& 2\sum_{n=0}^{99}n+\sum_{n=0}^{99}1\\
+				&=& 2\frac{99\cdot 100}{2}+\sum_{n=0}^{99}1\\
+				&=& 9900+\sum_{n=0}^{99}1
+		\end{eqnarray*}
+	</tex>
+Der Ausdruck \(\sum 1\) bedeutet, dass alle Summanden gleich 1 sind, es
+wird also 100 mal 1 addiert. Daraus folgt
+	<tex p>
+		\begin{eqnarray*}
+			\sum_{n=0}^{99}(2n+1) &=& 9900+100\\
+								  &=& 10000
+		\end{eqnarray*}
+	</tex>
 </p>
 
 
-
+<hr>
 <h2>Test</h2>
 
 
@@ -111,7 +163,7 @@
 			\mbox{d)}\hspace{1cm}\sum_{r=k+1}^{n}a_r
 		</tex>
 	</question>
-	<textinput correct="r-k"></textinput>
+	<textinput correct="n-k"></textinput>
 </quiz>
 
 
