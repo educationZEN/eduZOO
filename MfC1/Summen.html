@@ -46,6 +46,13 @@
 </div>
 
 <p>
+	Es wird vereinbart, dass die <em>leere Summe</em>
+	<tex p>\sum_{n=1}^0 a_n</tex> den Wert 0 hat. Dies gilt für alle
+	Summen,	bei denen das Summationsende kleiner als der
+	Summationsanfang ist. Eine solche Summe wird leere Summe genannt,
+	da die Menge ihrer Summanden die leere Menge ist.
+</p>
+<p>
 	Welchen Namen der Summationsindex trägt, ob \(k\), \(n\), \(r\),
 	spielt keine Rolle. Wichtig ist, dass der Summationsindex und der
 	Zählindex an den Summanden übereinstimmen. Es gilt also
@@ -175,10 +182,64 @@ wird also 100 mal 1 addiert. Daraus folgt
 
 <p>
 	Nicht in jedem Fall sind Summen gegeben, die mit dem Index 0 oder 1
-	beginnen.
+	beginnen. Die Definition einer Summe lässt sich so anpassen, dass der
+	Summationsindex bei einer beliebigen ganzen (also gegebenfalls auch
+	negativen) Zahl beginnt.
 </p>
+<div class="definition">
+<strong>Definition: Indexverschobene Summe</strong><hr>
+ <p>
+	Seien \(M,N\in\mathbb{Z}\) mit \(M&lt;N\), und
+	<tex>\{a_M,\dots,a_N\}</tex> eine Menge von \(N-M+1\)
+	reellen (oder komplexen) Zahlen. Dann heißt
+	<tex p>
+		\sum_{n=M}^N a_n=a_M+a_{M+1}+a_{M+2}+\dots+a_{N-1}+a_N
+	</tex>
+	Summe der Zahlen von \(a_M\) bis \(a_N\).
+ </p>
+</div>
+<p>
+	Mit der Wahl \(M=1\) ergibt sich der weiter oben eingeführte Begriff
+	der Summe als Spezialfall.
+</p>
+<h3>Beispiel</h3>
+<p class="beispiel">
+	<tex p>
+		\begin{eqnarray*}
+			\sum_{n=-3}^2\frac{1}{2^n}
+			&=& \frac{1}{2^{-3}}+\frac{1}{2^{-2}}+\frac{1}{2^{-1}}
+				+\frac{1}{2^{0}}+\frac{1}{2^{1}}+\frac{1}{2^{2}}\\
+			&=& 8+4+2+1+\frac{1}{2}+\frac{1}{4}\\
+			&=& 15+\frac{3}{4}=\frac{63}{4}
+		\end{eqnarray*}
+	</tex>
+</p>
+<p>
+	Indexverschobene Summen lassen sich immer auf andere indexverschobene
+	Summen zurückführen, also auch solche, deren Summationsindex bei 1
+	beginnt. Dabei wird	ausgenutzt, dass sich der Summationsindex in
+	jedem Fall von Summand zu Summand um genau 1 erhöht. Das ermöglicht,
+	die Summationsgrenzen so zu substituieren, dass die "verschobene"
+	Summe dort anfängt (oder endet) wo es gewünscht wird. Dieses
+	Verfahren nennt sich Indexverschiebung.
+</p>
+<div class="definition">
+<strong>Satz: Indexverschiebung</strong><hr>
+ <p>
+	Es gilt
+	<tex p>
+		\sum_{n=M}^N a_n=\sum_{n=M+k}^{N+k}a_{n-k}
+	</tex>
+	beziehungsweise
+	<tex p>
+		\sum_{n=M}^N a_n=\sum_{n=M-k}^{N-k}a_{n+k}
+	</tex>
+ </p>
+</div>
+	Es ist zu beachten, dass es sich nicht um eine bloße Umbenennung
+	handelt, sondern
 
-
+<hr>
 <h2>Test</h2>
 
 
