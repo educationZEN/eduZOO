@@ -27,31 +27,36 @@
 	werden Namen \(a_n\) gegeben, die mit einem Index \(n\in\mathbb{N}\)
 	versehen sind, der die Stelle des Summanden in der Summe
 	repräsentiert. Es genügt nun anzugeben, mit welchem \(n\) die Summe
-	anfängt (üblich sind 0 oder 1 - aber es gibt auch andere Fälle,
-	siehe unten) und mit welchem sie endet.
+	anfängt und mit welchem sie endet. Für den Wert einer Summe ist
+	nicht entscheidend wie gezählt wird, sondern nur die Anzahl der
+	Summanden.
 
 </p>
 
 <div class="definition">
 <strong>Definition: Summe</strong><hr>
  <p>
-	Sei <tex>\{a_1,\dots,a_N\}</tex> eine Menge von \(N\in\mathbb{N}\)
+	Seien \(M,N\in\mathbb{Z}\) mit \(M&lt;N\), und
+	<tex>\{a_M,\dots,a_N\}</tex> eine Menge von \(N-M+1\)
 	reellen (oder komplexen) Zahlen. Dann heißt
 	<tex p>
-		\sum_{n=1}^N a_n=a_1+a_2+\dots+a_{N-1}+a_N
+		\sum_{n=M}^N a_n=a_M+a_{M+1}+a_{M+2}+\dots+a_{N-1}+a_N
 	</tex>
-	Summe der Zahlen von \(a_1\) bis \(a_N\), gesprochen
-	<em>Summe von n gleich eins bis \(N\) \(a_n\)</em>.
+	Summe der Zahlen von \(a_M\) bis \(a_N\), gesprochen
+	<em>Summe von n gleich \(M\) bis \(N\) über \(a_n\)</em>.
  </p>
 </div>
 
 <p>
-	Es wird vereinbart, dass die <em>leere Summe</em>
-	<tex p>\sum_{n=1}^0 a_n</tex> den Wert 0 hat. Dies gilt für alle
-	Summen,	bei denen das Summationsende kleiner als der
-	Summationsanfang ist. Eine solche Summe wird leere Summe genannt,
-	da die Menge ihrer Summanden die leere Menge ist.
+	Es ist ratsam, sich zu vergewissern, dass die Anzahl der Summanden
+	einer Summe immer gleich Summeationsende minus Summationsanfang plus
+	eins ist. Ist \(M&gt;N\) wird vereinbart, dass diese
+	<em>leere Summe</em>, zum Beispiel mit \(M=1\) und \(N=0\),
+	 <tex p>\sum_{n=1}^0 a_n</tex> den Wert 0 hat.
+	Eine solche Summe wird leere Summe genannt, da die Menge ihrer
+	Summanden die leere Menge ist.
 </p>
+
 <p>
 	Welchen Namen der Summationsindex trägt, ob \(k\), \(n\), \(r\),
 	spielt keine Rolle. Wichtig ist, dass der Summationsindex und der
@@ -181,67 +186,74 @@ wird also 100 mal 1 addiert. Daraus folgt
 
 
 <p>
-	Nicht in jedem Fall sind Summen gegeben, die mit dem Index 0 oder 1
-	beginnen. Die Definition einer Summe lässt sich so anpassen, dass der
-	Summationsindex bei einer beliebigen ganzen (also gegebenfalls auch
-	negativen) Zahl beginnt.
+	In vielen Formeln für Summen, wie zum Beispiel der oben verwendeten
+	Summenformel, beginnen die Summen beim Summationsindex 0. Ist eine
+	Summe gegeben, deren Summationsindex nicht bei 0 beginnt, so lässt
+	sich diese Summe durch eine Substitution des Summationsindex eine
+	Summe mit Summationsbeginn 1 überführen. Dieses Verfahren heißt
+	<em>Indexverschiebung</em>.
 </p>
-<div class="definition">
-<strong>Definition: Indexverschobene Summe</strong><hr>
- <p>
-	Seien \(M,N\in\mathbb{Z}\) mit \(M&lt;N\), und
-	<tex>\{a_M,\dots,a_N\}</tex> eine Menge von \(N-M+1\)
-	reellen (oder komplexen) Zahlen. Dann heißt
-	<tex p>
-		\sum_{n=M}^N a_n=a_M+a_{M+1}+a_{M+2}+\dots+a_{N-1}+a_N
-	</tex>
-	Summe der Zahlen von \(a_M\) bis \(a_N\).
- </p>
-</div>
-<p>
-	Mit der Wahl \(M=1\) ergibt sich der weiter oben eingeführte Begriff
-	der Summe als Spezialfall.
-</p>
-<h3>Beispiel</h3>
-<p class="beispiel">
-	<tex p>
-		\begin{eqnarray*}
-			\sum_{n=-3}^2\frac{1}{2^n}
-			&=& \frac{1}{2^{-3}}+\frac{1}{2^{-2}}+\frac{1}{2^{-1}}
-				+\frac{1}{2^{0}}+\frac{1}{2^{1}}+\frac{1}{2^{2}}\\
-			&=& 8+4+2+1+\frac{1}{2}+\frac{1}{4}\\
-			&=& 15+\frac{3}{4}=\frac{63}{4}
-		\end{eqnarray*}
-	</tex>
-</p>
-<p>
-	Indexverschobene Summen lassen sich immer auf andere indexverschobene
-	Summen zurückführen, also auch solche, deren Summationsindex bei 1
-	beginnt. Dabei wird	ausgenutzt, dass sich der Summationsindex in
-	jedem Fall von Summand zu Summand um genau 1 erhöht. Das ermöglicht,
-	die Summationsgrenzen so zu substituieren, dass die "verschobene"
-	Summe dort anfängt (oder endet) wo es gewünscht wird. Dieses
-	Verfahren nennt sich Indexverschiebung.
-</p>
+
 <div class="definition">
 <strong>Satz: Indexverschiebung</strong><hr>
  <p>
-	Es gilt
-	<tex p>
-		\sum_{n=M}^N a_n=\sum_{n=M+k}^{N+k}a_{n-k}
-	</tex>
-	beziehungsweise
+	Sei <tex>\sum_{n=M}^N a_n</tex> eine Summe, \(k\in\mathbb{Z}\).
+	Dann gilt
 	<tex p>
 		\sum_{n=M}^N a_n=\sum_{n=M-k}^{N-k}a_{n+k}
 	</tex>
  </p>
 </div>
-	Es ist zu beachten, dass es sich nicht um eine bloße Umbenennung
-	handelt, sondern
+<p>
+	Die Zahl \(k\), um die der Index verschoben wird, wird frei gewählt.
+	Die Wahl \(k=M\) zum Beispiel liefert eine Summe, die von \(0\) bis
+	\(N-M\)	läuft, die Wahl \(k=M-1\) liefert eine, die von \(1\) bis
+	\(N-M+1\) läuft. Es ist zu beachten, dass es sich nicht um eine
+	bloße Umbenennung handelt, sondern der Summationsindex der Summanden
+	\(a_n\) sich jeweils in die "andere" Richtung verändert.
+</p>
+
+<h3>Beispiel</h3>
+<p class="beispiel">
+	Gesucht ist die Summe der natürlichen Zahlen größer 100 und kleiner
+	gleich 200,	<tex>\sum_{n=101}^{200}n</tex>. Mit Hilfe der
+	Indexverschiebung wird die Summe in eine Form gebracht, welche die
+	Benutzung der Gaußschen	Summenformel möglich macht. Dazu wird
+	\(k=100\) gewählt, und es ergibt sich
+	<tex p>
+		\begin{eqnarray*}
+			\sum_{n=101}^{200}n
+			&=& \sum_{n=1}^{100}(n+100)
+		\end{eqnarray*}
+	</tex>
+	Was von den Indexgrenzen abgezogen wird, muss im Summationsindex der
+	Summanden draufaddiert werden. Mit den Rechenregeln und der oben
+	berechneten Summe der ersten 100 natürlichen Zahlen, folgt
+	<tex p>
+		\begin{eqnarray*}
+			\sum_{n=101}^{200}n
+			&=& \sum_{n=1}^{100}n+\sum_{n=1}^{100}100\\
+			&=& 5050+100\cdot 100\\
+			&=& 15050
+		\end{eqnarray*}
+	</tex>
+	Die Richtigkeit dieses Ergebnisses lässt sich prüfen durch Vergleich
+	der Summe der ersten 200 Zahlen minus der Summe der ersten 100.
+	<tex p>
+		\begin{eqnarray*}
+			\sum_{n=1}^{200}n-\sum_{n=1}^{100}n
+			&=& \frac{200\cdot 201}{2}-\frac{100\cdot 101}{2}\\
+			&=& 20100-5050\\
+			&=& 15050
+		\end{eqnarray*}
+	</tex>
+
+</p>
+
+
 
 <hr>
 <h2>Test</h2>
-
 
 
 <quiz>
