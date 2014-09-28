@@ -104,7 +104,8 @@
 	Einer einfachen Notation halber wird jede Reihe als
 	<tex>\sum_{n=0}^\infty a_n</tex> notiert, unabhängig vom
 	Konvergenzverhalten. Noch kürzer wird eine Reihe auch als
-	<tex>\sum a_n</tex> notiert. Ist eine Reihe <tex>\sum a_n</tex>
+	<tex>\sum a_n</tex> notiert, wobei über den einzigen freien Index
+	(hier \(n\) summiert wird. Ist eine Reihe <tex>\sum a_n</tex>
 	konvergent, der Grenzwert jedoch unbekannt, so wird notiert
 	<tex>\sum a_n &lt; \infty</tex>.
 </p>
@@ -143,13 +144,20 @@
 </div>
 
 <p>
-	Die obigen Beispiele illustrieren, dass eine notwendige Bedingung
-	für die Konvergenz einer Reihe <tex>\sum a_n</tex> ist, dass die
-	Folge \(a_n\) gegen 0 konvergiert. Ist dies nicht erfüllt, so kann
-	die Reihe nicht konvergieren. Es ist jedoch keine hinreichende
+	Obige Beispiele illustrieren, dass eine notwendige Bedingung für die
+	Konvergenz einer Reihe <tex>\sum a_n</tex> ist, dass die Folge
+	\(a_n\) gegen 0 konvergiert. Ist dies nicht erfüllt, so kann die
+	Reihe nicht konvergieren. Es ist jedoch keine hinreichende
 	Bedingung, es gibt Reihen <tex>\sum a_n</tex> mit
 	<tex>a_n\rightarrow 0</tex>, die nicht konvergieren.
 </p>
+<div class="definition"> <!-- Notw. Bed: Nullfoge -->
+<strong>Notwendige Konvergenzbedingung</strong><hr>
+<p>
+	Damit eine Reihe <tex>\sum a_n</tex> konvergiert, muss zwingend
+	gelten <tex>\lim a_n=0</tex>.
+</p>
+</div>
 
 
 
@@ -180,8 +188,35 @@
 <p>
 	Es ist im Allg. kompliziert die Grenzwerte von Reihen zu bestimmen.
 	Die Partialsummen der geometrischen Reihe lassen sich jedoch mittels
-	eines Tricks berechnen.
+	eines Tricks berechnen. Dieser wird in folgendem Video gezeigt.
 </p>
+
+<p><b>VIDEO HIER!</b></p>
+
+<p>
+	Zusammengefasst gilt also
+</p>
+
+<div class="definition">
+<strong>Partialsummen und Grenzwert der geometrischen Reihe</strong><hr>
+<p>
+	Ist \(q\in\mathbb{R}\) so gilt für die Partialsummen der
+	geometrischen Reihe
+	<tex p>
+		s_k=\frac{1-q^{k+1}}{1-q}
+	</tex>
+	Die Partialsummen konvergieren genau dann, wenn \(|q|&lt;1\), mit
+	Grenzwert
+	<tex p>
+		s=\sum_{n=0}^\infty q^n=\frac{1}{1-q}
+	</tex>
+</p>
+</div>
+
+
+<hr>
+<h2>Test</h2>
+
 
 <quiz>
  <question>
@@ -203,10 +238,6 @@
 
 </quiz>
 
-<p>
-	<em>Hier muss noch eine Übungsaufgabe vorgerechnet werden</em>
-</p>
-
 
 
 <h2>Rechnen mit konvergenten Reihen</h2>
@@ -222,7 +253,7 @@
 	<tex p>
 	\begin{eqnarray*}
 		\sum_{n=0}^\infty (a_n+b_n)	&=&
-			\sum_{n=0}^\infty a_n + \sum_{n=0}^\infty b_n
+			\sum_{n=0}^\infty a_n + \sum_{n=0}^\infty b_n\\
 		\sum_{n=0}^\infty(\lambda a_n) &=&
 			\lambda\sum_{n=0}^\infty a_n
 	\end{eqnarray*}
@@ -261,6 +292,14 @@
 
 <p>
 	Oft reicht es schon zu wissen, ob eine Reihe konvergiert oder nicht.
+	Die Bestimmung des Grenzwertes kann sehr schwierig sein und viel
+	hoher Mathematik bedürfen. Für viele Fragestellungen ist jedoch nur
+	von Belang, <em>ob</em> eine unendliche Summe einen endlichen Wert
+	besitzt und nicht welchen genau, wenn die aufsummierten Folgenglieder
+	\(a_n\) zum Beispiel die Zeit darstellen, Kosten, Energie, oder
+	Ähnliches. Um die bloße Frage der Konvergenz zu beantworten gibt es
+	ein paar Kriterien, von denen ein Erstes, aus dem sich weitere
+	herleiten lassen, nun vorgestellt wird.
 </p>
 
 <p>
@@ -271,14 +310,68 @@
 	geometrische Reihe, abschätzen, also <tex>a_n\leq b_n</tex> für alle
 	<tex>n\in\mathbb{N}</tex>, so wird die Reihe <tex>\sum a_n</tex>
 	durch die konvergente Reihe <tex>\sum b_n</tex> <em>majorisiert</em>.
+	Daraus folgt die Konvergenz der Reihe <tex>\sum a_n</tex>, notiert
+	durch <tex>\sum a_n\leq\sum b_n&lt;\infty</tex>.
+</p>
+
+<p>
+	Haben die Folgenglieder \(a_n\) unterschiedliche Vorzeichen, ist die
+	Abschätzung \(a_n\leq b_n\) ungenügend, da die \(a_n\) alle negativ
+	sein könnten und die Reihe \(\sum a_n\) gegen \(-\infty\) streben
+	könnte.	Lassen sich die \(a_n\) aber <em>betragsweise</em> durch die
+	Glieder \(b_n\) einer konvergenten Reihe abschätzen, das heißt
+	\(|a_n|\leq b_n\), so folgt	wieder die Konvergenz über die
+	Schlusskette
+	<tex p>
+		\left|\sum_{n=0}^\infty a_n\right|\leq\sum_{n=0}^\infty |a_n|
+		\leq\sum_{n=0}^\infty b_n&lt;\infty
+	</tex>
 </p>
 
 <div class="definition">
 <strong>Satz: Majorantenkriterium</strong><hr>
 <p>
-	Sei
+	Sei <tex>\sum_{n=0}^\infty a_n</tex> eine Reihe, und sei
+	<tex>\sum_{n=0}^\infty b_n</tex> eine konvergente Reihe. Gilt für
+	fast alle (das heißt alle bis auf endlich viele) \(n\) die
+	Abschätzung \(|a_n|\leq b_n\) so folgt, dass
+	<tex>\sum_{n=0}^\infty |a_n|</tex> konvergiert, und damit auch
+	<tex>\sum_{n=0}^\infty a_n</tex>.
 </p>
 </div>
+
+<p>
+	Dass die Bedingung \(|a_n|\leq b_n\) nur für <em>fast alle</em>
+	natürlichen Zahlen gelten muss, erklärt sich daraus, dass die
+	endlich vielen Folgenglieder, für welche die Bedingung nicht erfüllt
+	ist, zu einer endlichen Summe zusammengefasst werden können, und
+	die restlichen (unendlich vielen) Summanden zu einer Reihe
+	zusammengefasst werden, für welche die Bedingung ausschließlich
+	gilt.
+</p>
+
+<h3>Beispiel</h3>
+<div class="beispiel">
+	Gegeben sei die Reihe <tex p>\sum_{n=0}^\infty\frac{1}{n2^n}</tex>.
+	Da für alle \(n\) gilt, dass
+	<tex p>
+		\frac{1}{n2^n}\leq\frac{1}{2^n}=\left(\frac{1}{2}\right)^n
+	</tex>
+	lässt sich die Reihe durch die geometrische Reihe zur Zahl \(1/2\)
+	majorisieren, also
+	<tex p>
+		\sum_{n=0}^\infty\frac{1}{n2^n}
+		\leq\sum_{n=0}^\infty\frac{1}{2^n}
+		=2
+	</tex>
+</div>
+
+<p>
+	Das Prinzip, eine Reihe mit unbekanntem Konvergenzverhalten nach	oben
+	durch eine konvergente Reihe abzuschätzen, lässt sich auch umkehren,
+	um Divergenz zu zeigen. Lässt sich eine Reihe nach unten abschätzen
+	durch eine divergente Reihe, so folgt Divergenz.
+</p>
 
 
 
@@ -293,7 +386,7 @@
 
 	<choice correct>
 	 Die \(k-\)ten Partialsummen einer Reihe <tex>\sum a_n</tex>
-	 sind gegeben durch <tex>s_k=\sum_{n=0}^k a_n</tex>.
+	 sind gegeben durch <tex>s_k=\sum_{n=0}^k a_n</tex>
 	</choice>
 
 	<choice>
@@ -314,6 +407,20 @@
 	<choice correct>
 	 Die geometrische Reihe zur Zahl \(q\in\mathbb{R}\) ist gegeben
 	 durch <tex>\sum_{k=0}^\infty q^k</tex>.
+	</choice>
+
+	<choice correct>
+	 Es konvergiert die Reihe
+	 <tex p>
+		\sum_{n=0}\left(1-\frac{1}{\pi}\right)^n
+	 </tex>
+	</choice>
+
+	<choice>
+	 Es konvergiert die Reihe
+	 <tex p>
+		\sum_{n=0}\left(1+\frac{1}{\pi}\right)^n
+	 </tex>
 	</choice>
 
 </quiz>
