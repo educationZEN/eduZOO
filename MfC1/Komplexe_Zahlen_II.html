@@ -2,14 +2,14 @@
 <html ng-app="eduZOO">
     <head>
         <meta charset="utf-8">
-        <title>[eduZOO] Komplexe Zahlen I</title>
+        <title>[eduZOO] Komplexe Zahlen II</title>
         <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
         <script src="../../eduZOO-app/script/eduZOO.js"></script>
     </head>
     <body>
 	<div class="row centered">
 
-        <h1>Einführung in die Komplexen Zahlen</h1>
+        <h1>Rechnen mit Komplexen Zahlen</h1>
 
 <!--
 	Ziel und Motivation:
@@ -160,8 +160,7 @@
 		</p>
 
 <!--
-	Beispiele:
-	Hier werden Beispiele aufgezeigt, die die vorangegangenen
+	Beispiele: Hier werden Beispiele aufgezeigt, die die vorangegangenen
 	Definitionen veranschaulichen sollen.
 		1. Ein Polynom mit komplexen Nullstellen
 		2. Eine Visualisierung der komplexen Konjugation in der Gaußebene
@@ -211,10 +210,9 @@
 			</tex> ist.
 		</p>
 <!--
-	Rechenregeln:
 	In diesem Abschnitt werden die Rechenregeln zusammengefasst, um von
-	algebraischer Form zu trigonometrischer Form
-	trigonometrischer Form
+		algebraischer Form zu trigonometrischer Form
+		trigonometrischer Form
 -->
 		<h2>Rechenregeln zu Darstellungsformen der komplexen Zahlen</h2>
 
@@ -290,8 +288,7 @@
 				</figcaption>
 			</figure>
 <!--
-	Übungsaufgabe und Video:
-	In diesem Abschnitt sollen die Studis
+	Übungsaufgabe und Video: In diesem Abschnitt sollen die Studis
 	erstmals versuchen Ihr erlangtes Wissen zu testen. Dazu
 -->
 		<h2>Lehrvideo: Komplexe Zahlen - Die Darstellungen</h2>
@@ -333,171 +330,8 @@
 			selbstständig machen. Mithilfe unserer Quizfunktion könnt
 			Ihr eure Ergebnisse dann überprüfen lassen.
 		</p>
-
 		<h3>Beispielrechnung für <tex>z_1</tex></h3>
-		<p>
-			Wir wollen nun den Radius <tex>r</tex> und den Winkel <tex>
-			\phi</tex> von <tex>z_1 = 1+i</tex> berechnen.
-		</p>
-		<p>
-			Wir setzen also <tex>\Re\left(z_1\right)=p=1</tex> und
-			<tex>\Im\left(z_1\right)=q=1</tex> in die Formel für den
-			Radius einer komplexen Zahl ein:
-		</p>
-		<tex p>
-			r = \sqrt{1^2+1^2}=\sqrt{1+1}=\sqrt{2}
-		</tex>
-		<p>
-			Da <tex>z_1=1+i</tex> im ersten Quadranten der Gaußebene
-			liegt, benutzen wir zur Winkelberechnung:
-		</p>
-		<tex p>
-			\begin{eqnarray*}
-			\phi	& = & \arctan\left(\frac{q}{p}\right) \\
-					& = & \arctan\left(\frac{1}{1}\right) \\
-					& = & \arctan\left(1\right) \\
-					& = & \frac{\pi}{4}
-			\end{eqnarray*}
-		</tex>
-		<p>
-			Super! Genau dieses Ergebnis haben wir bei einem
-			Gleichschenkligem Dreieck mit Schenkellänge 1 erwartet.
-			Unser <tex>z_1</tex> sieht also in trigonometrischer-
-			beziehungsweise polarer Form folgendermaßen aus:
-		</p>
-		<tex p>
-			\begin{eqnarray*}
-				z_1 & = & 	\sqrt{2}\left(\cos\frac{\pi}{4}+i\,\sin
-							\frac{\pi}{4}\right) \\
-					& = & 	\sqrt{2}\,e^{i\frac{\pi}{4}}
-			\end{eqnarray*}
-		</tex>
-		<p>
-			Um ganz sicher zu gehen, wollen wir jetzt noch die
-			Rücktransformation respektive Probe machen. Dazu müssen
-			wir den Sinus und Cosinus von <tex>\frac{\pi}{4}</tex>
-			berechnen.
-		</p>
-		<tex p>
-				\cos\left(\frac{\pi}{4}\right)=\frac{1}{\sqrt{2}}
-				\mbox{ und }
-				\sin\left(\frac{\pi}{4}\right)=\frac{1}{\sqrt{2}}
-		</tex>
-		<p>
-			Daraus ergibt sich dann für <tex>z_1</tex>:
-		</p>
-		<tex p>
-			\begin{eqnarray*}
-				z_1 & = & \sqrt{2}\,e^{i\frac{\pi}{4}} & \quad &
-							\mbox{benutze Euler-Formel} \\
-					& = & \sqrt{2}\left(\cos\frac{\pi}{4}+i\,\sin
-							\frac{\pi}{4}\right) & \quad &
-							 \mbox{Cosinus und Sinus berechnen} \\
-					& = & \sqrt{2}\left(\frac{1}{\sqrt{2}}+i\,
-							\frac{1}{\sqrt{2}}\right) & \quad &
-							 \mbox{Klammer auflösen} \\
-					& = & \frac{\sqrt{2}}{\sqrt{2}} + i\,
-					      \frac{\sqrt{2}}{\sqrt{2}} \\
-					& = & 1+i
-			\end{eqnarray*}
-		</tex>
-		<p>
-			Wir haben somit die drei Darstellungen von <tex>z_1</tex>
-			berechnet und diese mithilfe der Rücktransformation auf
-			Korrektheit überprüft.
-		</p>
-<!--
-	Interaktiver Teil:
-	In diesem Abschnitt werden die Studierenden dazu aufgefordert selbst
-	Hand anzulegen. Die Quizfunktion gibt Ihnen die Möglichkeit ihre
-	Ergebnisse auf Richtigkeit zu überprüfen.
--->
 
-		<h3>Quiz für <tex>z_2</tex>, <tex>z_3</tex> und <tex>z_4</tex>
-		</h3>
-		<p>
-			Mithilfe dieses Quizzes solltet Ihr überprüfen, ob Ihr die
-			vorangegangene Beispeilrechnung verstanden habt und
-			auf ähnliche Beispiele anwenden könnt. Bitte nehmt euch
-			dazu ein Blatt und einen Stift und rechnet selbst.
-			Wenn Ihr die korrekten Ergebnisse mit Hilfe geometrischer
-			Überlegungen herausfindet, ist das gut, sollte Euch aber
-			nicht davon abhalten, es auch per Rechnung nachzuempfinden.
-			Denn die Menge der Komplexen Zahlen, bei denen das geht, ist
-			nicht nur endlich sondern auch sehr klein.
-		</p>
-		<quiz>
-			<p>1. Frage:</p> <hr>
-			<question>
-				Wieviele <tex>z_i</tex> haben den Radius
-				<tex>\sqrt{2}</tex>?
-			</question>
-
-			<choice>Eine</choice>,
-			<choice>Zwei</choice>,
-			<choice>Drei</choice> oder
-			<choice correct>Vier</choice>?
-		</quiz>
-		<quiz>
-			<p>2. Frage:</p> <hr>
-			<question>
-				Was ist das Argument <tex>\phi</tex> von <tex>z_i</tex>
-				angegeben in Grad auf dem Intervall
-				<tex>\left[ -180, 180 \right]</tex>?
-			</question>
-			<table>
-				<tr>
-					<td>Für <tex>z_2</tex></td>
-					<td><textinput correct="135[°]?"></textinput></td>
-				</tr>
-				<tr>
-					<td>Für <tex>z_3</tex></td>
-					<td><textinput correct="-135[°]?"></textinput></td>
-				</tr>
-				<tr>
-					<td>Für <tex>z_4</tex></td>
-					<td><textinput correct="-45[°]?"></textinput></td>
-				</tr>
-			</table>
-		</quiz>
-
-<!--
-	Das initiale Problem Lösen:
-	Es wird überprüft, ob die Studierenden in der Lage sind, das initiale
-	Problem zu lösen.
--->
-
-		<h2>Lösungen der Gleichung <tex>x^2+c=0</tex></h2>
-		<p>
-			Erinnern wir uns noch einmal an die initiale Problemstellung
-			dieses Kapitels. Es ging darum algebraische Gleichungen zu
-			lösen, wobei Wurzeln negativer Zahlen gezogen werden müssen.
-		</p>
-		<quiz>
-			<question>Welche Aussagen sind wahr?</question>
-			<choice>
-				<tex>x=i</tex> ist Lösung der Gleichung <tex>x^2+c=0</tex>
-			</choice>
-			<choice>
-				<tex>x_{1,2}=\pm i</tex> sind Lösungen der Gleichung
-				<tex>x^2+c=0</tex>
-			</choice>
-			<choice correct>
-				<tex>x=i\sqrt{c}</tex> ist Lösung der Gleichung
-				<tex>x^2+c=0</tex>
-			</choice>
-			<choice correct>
-				<tex>x_{1,2}=\pm i \sqrt{c}</tex> sind Lösungen der
-				Gleichung <tex>x^2+c=0</tex>
-			</choice>
-		</quiz>
-
-<!--
-	Quiz:
-	Die eingeführten Definitionen und Sätze werden abgefragt. Die
-	Studierenden sollen die erlernte Theorie wiederholen und anwenden.
--->
-		<h2></h2>
 	</div>
 	</body>
 	<footer>
@@ -505,4 +339,4 @@
 		<hr>
 
 	</footer>
-</html
+</html>
