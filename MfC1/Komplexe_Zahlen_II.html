@@ -13,324 +13,337 @@
 
 <!--
 	Ziel und Motivation:
-	Komplexe Zahlen werden benötigt um a-Stellen von Polynomen zu finden.
+	Rechnen mit komplexen Zahlen (Addition, Subtraktion, Multiplikation,
+	Division)
 -->
         <p>
-			Ziel dieses Abschnittes ist das Lösen algebraischer
-			Gleichungen (z.B. <tex>x^2+1=0</tex>) in denen Wurzeln
-			negativer Zahlen vorkommen. Dieses wird häufig benötigt um
-			Nullstellen reeller Polynome <tex>\sum_{k=0}^{n}a_k x^k</tex>,
-			<tex>a_k\text{, } x\in\mathbb{R}</tex>,
-			<tex>k\in\mathbb{N}</tex> zu finden.
+			Komplexe Zahlen finden wir in vielen Gleichungen, die die
+			Natur beschreiben wieder. Auch in diesem Kurs werden wir sie
+			immer wieder vorfinden. Damit Ihr dann nicht dasteht wie der
+			Ochs vorm Berg, zeigen wir euch in diesem Kapitel, wie einfach
+			es ist mit Komplexen Zahlen zu rechnen.
         </p>
-<!--
-	Definitionen:
-	Grundlegende Definitionen für 	i, z, Re, Im, |z|, z*
-	und die 						Gaußsche Zahlenebene.
--->
-        <h2>Grundlegende Begriffe und Definitionen</h2>
+        <p>
+			In diesem Kapitel zeigen wir euch die vier (eigentlich zwei)
+			Grundrechenarten. Also
+        </p>
+        <ul>
+			<li>Addition <tex>+</tex></li>
+			<li>Subtraktion <tex>-</tex></li>
+			<li>Multiplikation <tex>\cdot</tex></li>
+			<li>Division <tex>\div</tex></li>
+        </ul>
+        <p>
+			Wenn Ihr dieses Kapitel durchgearbeitet habt, sollte es Euch
+			ein Leichtes sein, einen Term wie
+        <tex p>
+			z=
+			\left(
+				\frac{z_1 + z_2}{z_1}
+			\right)
+			\cdot z_2^*
+        </tex>
+			mit beliebigen <tex>z_1, z_2 \in \mathbb{C}</tex> soweit zu
+			vereinfachen, dass Ihr damit weiterrechnen könnt.
+        </p>
 
+<!--
+	Definitionen: 	Addition, Subtraktion, Multiplikation, Division,
+					Neutrales Element der Addition,
+					Inverses Element der Addition,
+					Neutrales Element der Multiplikation,
+					Inverses Element der Multiplikation,
+					Kommutativität, Assoziativität, Distributivität.
+
+
+-->
+        <h2>Definitionen und Sätze</h2>
+		<p>
+			Wir wollen die Rechenregeln für Komplexe Zahlen auf ein solides
+			Fundament aufbauen, deshalb müssen wir diese Rechenoperationen
+			im folgenden Abschnitt formal Definieren. Es gelten Folgende Sätze:
+		</p>
+
+		<!-- Definitionen und Satz zur  Komplexe Addition -->
 		<div class="definition">
-		<strong>Definitionen: Imaginäre Einheit, Komplexe Zahl, Realteil,
-		Imaginärteil, Betrag, Konjugation, Gaußsche Zahlenebene</strong>
-		<hr>
-		<table>
-			<tr>
-				<td>
-					<b>Imaginäre Einheit:</b>
-				</td>
-				<td>
-					<tex>i^2:=-1 \Leftrightarrow i=\sqrt{-1}</tex>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<b>Komplexe Zahl:</b>
-				</td>
-				<td>
-					<tex>z\in\mathbb{C}:=\left\{ p+i\,q\;\middle|\;
-					p,q\in\mathbb{R},i=\sqrt{-1}\right\}</tex>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<b>Realteil von <tex>z</tex>:</b>
-				</td>
-				<td>
-					<tex>\Re(z)=\Re(p+i\,q):=p\in\mathbb{R}</tex>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<b>Imaginärteil von <tex>z</tex>:</b>
-				</td>
-				<td>
-					<tex>\Im(z)=\Im(p+i\,q):=q\in\mathbb{R}</tex>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<b>Betrag von <tex>z</tex>:</b>
-				</td>
-				<td>
-					<tex>|z|:=\sqrt{p^2+q^2}</tex>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<b>Komplexkonjugierte von <tex>z</tex>:</b>
-				</td>
-				<td>
-					<tex>z^*_{1,2}=p \mp i\,q</tex> sind die konjugiert
-					komplexen zu <tex>z_{1,2}=p \pm i\,q</tex>.
-					Oft wird auch <tex>\bar{z}</tex> anstatt <tex>z^*
-					</tex> für die komplex Konjugierte benutzt.
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<b>Gaußsche Zahlenebene:</b>
-				</td>
-				<td>
-					Die Gaußsche Zahlenebene dient der Veranschaulichung
-					von komplexen Zahlen und komplexen Abbildungen. Wie
-					in Abbildung 1 zu sehen, kann eine komplexe Zahl
-					<tex>z = p+i\,q</tex> mit <tex>z \in \mathbb{C}</tex>,
-					<tex>p,q \in \mathbb{R}</tex> durch zwei Abbildungen
-					in einem zweidimensionalen Koordinatensystem
-					dargestellt werden
-					<ol>
-
-							<tex p>
-							\begin{eqnarray*}
-								\Phi\;:\;\mathbb{C}&\rightarrow&\mathbb{R}^2\\
-									z&\mapsto& (p,q) &\mbox{ mit }& z=p+i\,q\\ \\
-
-								\Psi\;:\;\mathbb{C}&\rightarrow&\mathbb{R}^2\\
-									z&\mapsto& (r,\phi) &\mbox{ mit }&
-									z=r\,	\left(
-												\cos\phi+i\,\sin\phi
-											\right) \\
-											\,&&\,&\mbox{ und }& r = |z|.
-							\end{eqnarray*}
-							</tex>
-
-					</ol>
-				</td>
-			</tr>
-		</table>
-		</div>
-
-		<figure>
-			<img 	src="images/Gaußsche_Zahlenebene.svg"
-					alt="Gaußsche Zahlenebene" />
-			<figcaption>
-				Abbildung 1: Die Gaußsche Zahlenebene ist ein
-				kartesisches Koordinatensystem, in dem der Realteil
-				<tex>\Re(z) = a \in \mathbb{R}</tex> einer komplexen
-				Zahl <tex>z \in \mathbb{C}</tex> auf der <tex>x</tex>-
-				Achse und der Imaginärteil <tex>\Im(z) = b \in
-				\mathbb{R}</tex> auf der <tex>y</tex>-Achse aufgetragen
-				wird.
-			</figcaption>
-		</figure>
-		<p>
-			In Abbildung 1 wird eine andere Abbildungsvorschrift für
-			<tex>\Psi</tex> als in unserer Definitionsliste verwendet.
-			Dies ist kein Fehler es gilt nämlich die
-		</p>
-		<p class="border">
-			<strong>Euler-Formel: </strong>
-			<tex>
-				r\, \left( \cos\phi + i\,\sin\phi \right)
-				=
-				r\,e^{i\,\phi}.
-			</tex>
-		</p>
-		<p>
-			Um diese zu
-			verstehen müssen wir die komplexe <tex>e</tex>-
-			Funktion verstehen. Gelegenheiten hierfür wird es im Laufe
-			des Kurses noch geben. Für den Moment muss die Euler-Formel
-			so akzeptiert werden (alle, die nicht warten können verweisen
-			wir auf den
-			<a href="http://de.wikipedia.org/wiki/Exponentialfunktion">
-				Wikipedia-Artikel zur Exponentialfunktion</a>).
-
-		</p>
-
-<!--
-	Beispiele: Hier werden Beispiele aufgezeigt, die die vorangegangenen
-	Definitionen veranschaulichen sollen.
-		1. Ein Polynom mit komplexen Nullstellen
-		2. Eine Visualisierung der komplexen Konjugation in der Gaußebene
--->
-		<h3>Ein Polynom mit komplexen Nullstellen…</h3>
-
-		<div class="beispiel">
-
-		<p>
-			…ist zum Beispiel <tex>p(x)=x^3+x</tex>. Wir können es
-			umschreiben zu <tex>p(x)=x^3+x=x(x^2+1)</tex> und erkennen,
-			dass nur eine reelle Nullstelle existiert und zwar bei
-			<tex>x_1=0</tex>. Im Komplexen hingegen besitzt dieses
-			Polynom drei Nullstellen und zwar <tex>x_1=0,\,x_2=i,\,x_3=
-			-i</tex>.
-		</p>
-		<p>
-			Beachte, dass hier <tex>x_1,x_2,x_3 \in \mathbb{C}</tex>
-			komplexe Zahlen darstellen.
-		</p>
-
-		</div>
-
-		<h3>Darstellung der komplexen Konjugation in der Gaußebene</h3>
-		<figure>
-			<img 	src="images/Gaussebene_Konjugation.png"
-					alt="Gaußebene Konjugation" />
-			<figcaption>
-				Abbildung 2: Darstellung von <tex>z</tex> und
-				<tex>\bar{z}</tex> beziehungsweise <tex>z^*</tex>.
-				Geometrisch entspricht die komplexe Konjugation einer
-				Spiegelung an der <tex>x</tex>-Achse.
-				<aside>
-					Urheberschaft liegt bei SirJective (Künstlername/
-					Pseudonym); Verwertung fällt unter Lizenz GNU FDL.
-				</aside>
-			</figcaption>
-		</figure>
-
-		<p>
-			In Abbildung 2 ist eine graphische Darstellung der komplexen
-			Konjugation in der Gaußebene zu sehen. Die kompelxe Konjugation
-			entspricht einer Spiegelung an der reellen Achse.
-		</p>
-		<p>
-			Es ist sofort einleuchtend, dass damit auch <tex>(z^*)^*=z
-			</tex> ist.
-		</p>
-<!--
-	In diesem Abschnitt werden die Rechenregeln zusammengefasst, um von
-		algebraischer Form zu trigonometrischer Form
-		trigonometrischer Form
--->
-		<h2>Rechenregeln zu Darstellungsformen der komplexen Zahlen</h2>
-
-		<div class="definition">
-			<strong>Satz: Darstellungsformen und Transformationsformel</strong><hr>
+			<strong>Satz: Addition und Subtraktion im Komplexen</strong>
+			<hr>
 			<p>
-				Sei <tex>z \in \mathbb{C}, z = p + i\,q</tex>. Dann ist
-				<tex>r=|z|=\sqrt{p^2+q^2}</tex>
-				der <strong>Betrag</strong> und
-				<tex>\phi = \arctan\left(\frac{q}{p}\right)</tex>
-				das <strong>Argument</strong> von <tex>z</tex>.
+				Sei <tex>z_1, z_2 \in \mathbb{C}</tex> mit <tex>z_1 =
+				a+ib</tex>, <tex>z_2 = p+iq</tex> und <tex> a, b, p, q
+				\in \mathbb{R}</tex>, dann ist
+				<tex p>
+					\begin{eqnarray*}
+						z_1 \pm z_2 & = & \Re(z_1) \pm \Re(z_2) \pm
+										 i\left(
+											\Im(z_1)+\Im(z_2)
+										  \right) \\
+									& = & (a \pm p) \pm i(b + q)
+					\end{eqnarray*}
+				</tex>
+				die <strong>Summe</strong> beziehungsweise die <strong>
+				Differenz</strong> von <tex>z_1</tex> und <tex>z_2</tex>.
 			</p>
-
 			<p>
-				Mit diesen Transformationsformeln ergeben sich folgende
-				drei Darstellungsformen für eine komplexe Zahl <tex>z</tex>:
+				Ferner sei <tex>z_1, z_2, z_3 \in \mathbb{C}</tex>, und
+				<tex>i, j \in \{1,2,3\}</tex> dann gilt das
 				<table>
 					<tr>
-						<td><strong>Algebraische Form:</strong></td>
-						<td><tex>z = p + i\,q</tex></td>
+						<td><strong>Kommutativgesetz:</strong></td>
+						<td><tex>z_i \pm z_j = z_j \pm z_i</tex> und</td>
 					</tr>
 					<tr>
-						<td><strong>Trigonometrische Form:</strong></td>
-						<td><tex>z = r\, \left( \cos\phi + i\, \sin\phi \right)</tex></td>
-					</tr>
-					<tr>
-						<td><strong>Exponentialform:</strong></td>
-						<td><tex>z = r\,e^{i\phi}</tex></td>
+						<td><strong>Assoziativgesetz:</strong></td>
+						<td>
+							<tex>
+								(z_1 \pm z_2) \pm z_3
+								=
+								z_1 \pm (z_2 \pm z_3)
+							</tex>.
+						</td>
 					</tr>
 				</table>
 			</p>
-		</div>
 			<p>
-				<strong>Bemerkung:</strong> Da die Arcustangensfunktion
-				nur auf dem offenen Intervall <tex>\left(-\frac{\pi}{2}
-				,\frac{\pi}{2}\right)</tex> definiert ist, müssen wir von
-				der so genannten
+				Das <strong>Neutrale Element</strong> der komplexen
+				Addition und Subtraktion ist die Null.
+				<tex p>
+					z \pm 0 = z
+				</tex>
 			</p>
+			<p>
+				Das <strong>Inverse Element</strong> zu einer Komplexen
+				Zahl <tex>z</tex> ist die Komplexe Zahl <tex>-z</tex>.
+				<tex p>
+					z - z = 0
+				</tex>
+			</p>
+		</div>
 
+		<p>
+			Die Komplexe Subtraktion ist also nichts anderes als die
+			Komplexe Addition mit einem Inversen Element <tex>-z</tex>.
+		</p>
+		<p>
+			Bisher ändert sich also nichts im Vergleich zum Rechnen mit
+			reellen Zahlen. Lediglich das <tex>i</tex> müssen wir immer
+			mitziehen und darauf achten, dass wir Terme mit <tex>i</tex>
+			und Terme ohne <tex>i</tex> nicht addieren dürfen.
+		</p>
+
+		<!-- Definitionen und Satz zur Komplexen Multiplikation -->
 		<div class="definition">
+			<strong>Satz: Multiplikation im Komplexen (algebraische Form)</strong>
+			<hr>
 			<p>
-				<strong>Satz: Quadrantenregel</strong><hr>
-				Das <strong>Argument <tex>\phi</tex></strong> einer komplexen
-				Zahl <tex>z</tex> ist abhängig vom Quadranten (siehe Abb. 3),
-				in dem <tex>z</tex> verortet ist. Es gilt:
+				Sei <tex>z_1, z_2 \in \mathbb{C}</tex> mit <tex>z_1 =
+				a+ib</tex>, <tex>z_2 = p+iq</tex> und <tex> a, b, p, q
+				\in \mathbb{R}</tex>, dann ist
+				<tex p>
+					\begin{eqnarray*}
+						z_1 \cdot z_2 	& = & (a+ib)\cdot(p+iq) \\
+										& = & ap+iaq+ibp+i^1bq \\
+										& = & ap+i(aq+bp)-bq \\
+										& = & (ap-bq)+i(aq+bp)
+					\end{eqnarray*}
+				</tex>
+				das <strong>Produkt</strong> von <tex>z_1</tex> und <tex>
+				z_2</tex>.
 			</p>
-			<table>
-				<tr>
-					<td>1. und 4. Quadrant:</td>
-					<td><tex>\phi = \arctan\left(\frac{q}{p}\right)</tex></td>
-				</tr>
-				<tr>
-					<td>2. Quadrant:</td>
-					<td><tex>\phi = \arctan\left(\frac{q}{p}\right)+\pi</tex></td>
-				</tr>
-				<tr>
-					<td>3. Quadrant:</td>
-					<td><tex>\phi = \arctan\left(\frac{q}{p}\right)-\pi</tex></td>
-				</tr>
-			</table>
+			<p>
+				Außerdem sei <tex>z_1, z_2, z_3 \in \mathbb{C}</tex>, und
+				<tex>i, j \in \{1,2,3\}</tex> dann gilt das
+				<table>
+					<tr>
+						<td><strong>Kommutativgesetz:</strong></td>
+						<td><tex>z_i \cdot z_j = z_j \cdot z_i</tex> und</td>
+					</tr>
+					<tr>
+						<td><strong>Assoziativgesetz:</strong></td>
+						<td>
+							<tex>
+								(z_1 \cdot z_2) \cdot z_3
+								=
+								z_1 \cdot (z_2 \cdot z_3)
+							</tex>.
+						</td>
+					</tr>
+				</table>
+			</p>
+			<p>
+				Das <strong>Neutrale Element</strong> der komplexen
+				Addition und Subtraktion ist die Eins.
+				<tex p>
+					z \cdot 1 = z
+				</tex>
+			</p>
+			<p>
+				Das <strong>Inverse Element</strong> zu einer Komplexen
+				Zahl <tex>z</tex> ist die Komplexe Zahl <tex>\frac{1}{z}</tex>.
+				<tex p>
+					z \cdot \frac{1}{z} = 1
+				</tex>
+			</p>
+		</div>
+		<p>
+			Mit dem Inversen Element der Multiplikation haben wir sogleich
+			die Division im Komplexen definiert. Der Satz dazu folgt unmittelbar
+			aus dem der Multiplikation und eben diesem Inversen Element. Doch
+			bevor wir den Satz hinschreiben lasst uns noch folgendes Bemerken:
+		</p>
+		<p>
+			Auch bei der komplexen Multiplikation ändert sich nichts im
+			Vergleich zum Rechnen mit reellen Zahlen. Zu beachten ist nur
+			das <tex>i</tex> und viele Terme lassen sich vereinfachen,
+			wenn man bedenkt, dass <tex>i^2=-1</tex> gilt.
+		</p>
+
+		<!-- Definitionen und Satz zur Komplexen Division -->
+		<div class="definition">
+			<strong>Satz: Division im Komplexen (algebraische Form)</strong>
+			<hr>
+			<p>
+				Sei <tex>z_1, z_2 \in \mathbb{C}</tex> mit <tex>z_1 =
+				a+ib</tex>, <tex>z_2 = p+iq</tex> und <tex> a, b, p, q
+				\in \mathbb{R}</tex>, <tex>z_2 \neq 0</tex> und
+				<tex>z_2^*</tex> die komplex Konjugierte von <tex>z_2</tex>
+				dann ist
+				<tex p>
+					\begin{eqnarray*}
+						\frac{z_1}{z_2} & = & \frac{z_1}{z_2} \cdot 1 \\
+										& = & \frac{z_1}{z_2} \cdot \frac{z_1^*}{z_2^*} \\
+										& = & \frac{a+ib}{p+iq} \cdot \frac{p-iq}{p-iq} \\
+										& = & \frac{(ap+bq)+i(bp-aq)}{p^2+q^2}
+					\end{eqnarray*}
+				</tex>
+				der <strong>Quotient</strong> von <tex>z_1</tex> und <tex>z_2</tex>.
+			</p>
 		</div>
 
-		<figure>
-			<img 	src="images/500px-Cartesian-coordinate-system-with-quadrant.png"
-					alt="Quadranten" />
-				<figcaption>
-					Abbildung 3: In einem 2 dimesionalen Kartesischen
-					Koordinatensystem werden die quadranten in mathematisch
-					positiver Richtung von eins bis vier durchnummeriert.
-					<aside>
-						Urheberschaft liegt bei W!B: (Künstlername/
-						Pseudonym); Verwertung fällt unter Lizenz CC BY-SA 3.0.						</aside>
-				</figcaption>
-			</figure>
-<!--
-	Übungsaufgabe und Video: In diesem Abschnitt sollen die Studis
-	erstmals versuchen Ihr erlangtes Wissen zu testen. Dazu
--->
-		<h2>Lehrvideo: Komplexe Zahlen - Die Darstellungen</h2>
-		<figure>
-			<iframe width="640"
-					height="360"
-					src="//www.youtube.com/embed/UHOdP0ryUaQ"
-					frameborder="0"
-					allowfullscreen>
-			</iframe>
-			<figcaption>
-				Video 1: In diesem Video erklärt euch Fabian die
-				Darstellungsformen der komplexen Zahlen noch einmal in
-				aller ausführlichkeit.
-			</figcaption>
-			<aside>
-				Urheberschaft liegt bei Fabian Kruse. Verwertung fällt
-				unter die Lizenz CC BY-SA 3.0.
-			</aside>
-		</figure>
-
-		<h2>Übungsaufgaben und Quiz</h2>
 		<p>
-			Mithilfe dieser Grundlagen, sollte es uns nun möglich sein,
-			die trigonometrische und die Exponentialform der Komplexen
-			Zahlen
+			Wahrscheinlich habt Ihr gar nicht gemerkt, dass wir mit den
+			soeben aufgestellten Sätzen fast den
+			<a href="http://de.wikipedia.org/wiki/K%C3%B6rper_(Algebra)#Formale_Definition">
+			Körper</a> der komplexen Zahlen definiert haben. Ihr kennt
+			den Körper der reellen Zahlen vielleicht noch aus der Schule.
+		</p>
+		<p>
+			Um die Körperaxiome zu vervollständigen müssen wir neben dem
+			Assoziativ- und Kommutativgesetzen für Additon und Multiplikation
+			noch das Distributivgesetz niederschreiben, mit welchem die
+			Addition und Multiplikation von komplexen Zahlen zueinander
+			Bezug nehmen.
+		</p>
+		<div class="definition">
+			<strong>Satz: Distributivgesetz</strong>
+			<hr>
+			<p>
+				Sei <tex>+</tex> die Addition zweier komplexer Zahlen und
+				<tex>\times</tex> die Multiplikation zweier komplexer Zahlen,
+				dann gilt für alle <tex>z_1, z_2, z_3 \in \mathbb{C}</tex>
+			</p>
 			<tex p>
-				z_1=1+i, \quad z_2=-1+i, \quad z_3=-1-i \mbox{ und}
-				\quad z_4=1-i
+				\begin{eqnarray*}
+					z_1 \times (z_2 + z_3) &=& (z_1 \times z_2) + (z_1 \times z_3)
+					& \mbox{ linksdistributiv}
+					\\
+					(z_1 + z_2) \times z_3 &=& (z_1 \times z_3) + (z_2 \times z_3)
+					& \mbox{ rechtsdistributiv}.
+				\end{eqnarray*}
 			</tex>
-			zu berechnen und das Ergebnis graphisch auf seinen
-			Wahrheitsgehalt zu interpretieren. Danach werden wir zur
-			Probe den Rechenweg von der Exponentialform von <tex>z_i,\;
-			i\in\{1,2,3,4\}</tex> zurück zur algebraischen Form gehen.
-		</p>
+		</div>
 		<p>
-			Exemplarisch wird dies hier für <tex>z_1</tex> vorgeführt.
-			Ihr solltet das dann für <tex>z_2</tex> bis <tex>z_4</tex>
-			selbstständig machen. Mithilfe unserer Quizfunktion könnt
-			Ihr eure Ergebnisse dann überprüfen lassen.
+			Jetzt haben wir alle Rechenoperationen für komplexe Zahlen
+			formal eingeführt. Bevor wir anfangen damit zu rechnen, soll
+			aber der nächste Satz dazu dienen, euch und uns das rechnen
+			zu erleichtern, denn…
 		</p>
-		<h3>Beispielrechnung für <tex>z_1</tex></h3>
+
+		<h3>Multiplikation und Division von Komplexen Zahlen in Polarform</h3>
+		<p>
+			Im Algemeinen ist es schneller, die Komplexe Zahl zuerst
+			in Polarform umzurechnen und dann zu multiplizieren respektive
+			zu dividieren. Es gilt
+			nämlich auch:
+		</p>
+		<div class="definition">
+			<strong>Satz: Multiplikation und Division im Komplexen (Polarform)</strong>
+			<hr>
+			<p>
+				Sei <tex>z_1, z_2 \in \mathbb{C}</tex> mit <tex>z_1 =
+				r\,e^{i\phi}</tex>, <tex>z_2 = s\,e^{i\psi}</tex> und
+				<tex> r, s, \phi, \psi \in \mathbb{R}</tex>, dann ist
+				<strong>Multiplikation:</strong>
+				<tex p>
+					\begin{eqnarray*}
+						z_1 \cdot z_2 	& = & \left(r\,e^{i\phi}\right) \cdot
+											  \left(s\,e^{i\psi}\right) \\
+										& = & (r s)\,e^{i(\phi+\psi)}
+					\end{eqnarray*}
+				</tex>
+				<strong>Division:</strong>
+				<tex p>
+					\begin{eqnarray*}
+						\frac{z_1}{z_2} & = & \frac{r\,e^{i\phi}}{s\,e^{i\psi}} \\
+										& = & \frac{r}{s}\,e^{i(\phi-\psi)}
+					\end{eqnarray*}
+				</tex>
+				das <strong>Produkt</strong> beziehungsweise der
+				<strong>Quotient</strong> von <tex>z_1</tex> und <tex>
+				z_2</tex>.
+			</p>
+		</div>
+
+
+		<h2>Wir rechnen ein paar Beispiele</h2>
+		<ol>
+			<li>
+				<tex p>
+					(3+2i)+(4-i)=7+i
+				</tex>
+			</li>
+			<p>
+				Der war einfach, oder?
+			</p>
+			<li>
+				<tex p>
+					\begin{eqnarray*}
+					\frac{11+\frac{i}{4}}{2i}
+					&=&
+						\frac{11+\frac{i}{4}}{2i}\cdot\frac{-2i}{-2i} &\quad& \mbox{I}\\ \\
+					&=& \frac{\left(11+\frac{i}{4}\right)(-2i)}{(2i)(-2i)} &\quad& \mbox{II}\\ \\
+					&=& \frac{-22i+\frac{-2i^2}{4}}{-4i^2} &\quad& \mbox{III}\\ \\
+					&=& \frac{-22i+\frac{2}{4}}{4} &\quad& \mbox{IV} \\ \\
+					&=& \frac{1}{8}-\frac{11}{2}i &\quad& \mbox{V}
+					\end{eqnarray*}
+				</tex>
+			</li>
+			<p>
+				Machen wir uns die Schritte der Reihe nach klar:
+			</p>
+			<p>
+				In <tex>\mbox{I}</tex> haben wir, um das <tex>i</tex> aus
+				dem Nenner zu bekommen, mit dem komplex Konjugierten
+				Nenner multipliziert. Undzwar derart dass, die Gleichung
+				nicht verändert wird. In der Mathematik wird oft eine
+				"geschickte" Eins dranmultipliziert, oder eine
+				"geschickte" Null draufaddiert.
+			</p>
+			<p>
+				<tex>\mbox{II}</tex> ist wieder einfach.
+			</p>
+			<p>
+				Bei <tex>\mbox{III}</tex> haben wir das Assoziativgesetz
+				und das Distributivgesetz benutzt um die Klammern aufzulösen.
+			</p>
+			<p>
+				In <tex>\mbox{IV}</tex> haben wir <tex>i^2=-1</tex> ausgenutzt.
+			</p>
+			<p>
+				In <tex>\mbox{V}</tex> haben wir den Doppelbruch aufgelöst
+				und Realteil und Imaginärteil voneinander getrennt.
+			</p>
+		</ol>
 
 	</div>
 	</body>
