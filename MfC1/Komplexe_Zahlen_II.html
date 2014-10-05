@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+    <head>
+        <meta charset="utf-8">
+        <title>[eduZOO] Komplexe Zahlen II</title>
+        <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+        <script src="../../eduZOO-app/script/eduZOO.js"></script>
+    </head>
+    <body>
+	<div class="row centered">
+
+        <h1>Rechnen mit Komplexen Zahlen</h1>
+
+<!--
+	Ziel und Motivation:
+	Rechnen mit komplexen Zahlen (Addition, Subtraktion, Multiplikation,
+	Division)
+-->
+        <p>
+			Komplexe Zahlen finden wir in vielen Gleichungen, die die
+			Natur beschreiben wieder. Auch in diesem Kurs werden wir sie
+			immer wieder vorfinden. Damit Ihr dann nicht dasteht wie der
+			Ochs vorm Berg, zeigen wir euch in diesem Kapitel, wie einfach
+			es ist mit Komplexen Zahlen zu rechnen.
+        </p>
+        <p>
+			In diesem Kapitel zeigen wir euch die vier (eigentlich zwei)
+			Grundrechenarten. Also
+        </p>
+        <ul>
+			<li>Addition <tex>+</tex></li>
+			<li>Subtraktion <tex>-</tex></li>
+			<li>Multiplikation <tex>\cdot</tex></li>
+			<li>Division <tex>\div</tex></li>
+        </ul>
+        <p>
+			Wenn Ihr dieses Kapitel durchgearbeitet habt, sollte es Euch
+			ein Leichtes sein, einen Term wie
+        <tex p>
+			z=
+			\left(
+				\frac{z_1 + z_2}{z_1}
+			\right)
+			\cdot z_2^*
+        </tex>
+			mit beliebigen <tex>z_1, z_2 \in \mathbb{C}</tex> soweit zu
+			vereinfachen, dass Ihr damit weiterrechnen könnt.
+        </p>
+
+<!--
+	Definitionen: 	Addition, Subtraktion, Multiplikation, Division,
+					Neutrales Element der Addition,
+					Inverses Element der Addition,
+					Neutrales Element der Multiplikation,
+					Inverses Element der Multiplikation,
+					Kommutativität, Assoziativität, Distributivität.
+
+
+-->
+        <h2>Definitionen und Sätze</h2>
+		<p>
+			Wir wollen die Rechenregeln für Komplexe Zahlen auf ein solides
+			Fundament aufbauen, deshalb müssen wir diese Rechenoperationen
+			im folgenden Abschnitt formal Definieren. Es gelten Folgende Sätze:
+		</p>
+
+		<!-- Definitionen und Satz zur  Komplexe Addition -->
+		<div class="definition">
+			<strong>Satz: Addition und Subtraktion im Komplexen</strong>
+			<hr>
+			<p>
+				Sei <tex>z_1, z_2 \in \mathbb{C}</tex> mit <tex>z_1 =
+				a+ib</tex>, <tex>z_2 = p+iq</tex> und <tex> a, b, p, q
+				\in \mathbb{R}</tex>, dann ist
+				<tex p>
+					\begin{eqnarray*}
+						z_1 \pm z_2 & = & \Re(z_1) \pm \Re(z_2) \pm
+										 i\left(
+											\Im(z_1)+\Im(z_2)
+										  \right) \\
+									& = & (a \pm p) \pm i(b + q)
+					\end{eqnarray*}
+				</tex>
+				die <strong>Summe</strong> beziehungsweise die <strong>
+				Differenz</strong> von <tex>z_1</tex> und <tex>z_2</tex>.
+			</p>
+			<p>
+				Ferner sei <tex>z_1, z_2, z_3 \in \mathbb{C}</tex>, und
+				<tex>i, j \in \{1,2,3\}</tex> dann gilt das
+				<table>
+					<tr>
+						<td><strong>Kommutativgesetz:</strong></td>
+						<td><tex>z_i \pm z_j = z_j \pm z_i</tex> und</td>
+					</tr>
+					<tr>
+						<td><strong>Assoziativgesetz:</strong></td>
+						<td>
+							<tex>
+								(z_1 \pm z_2) \pm z_3
+								=
+								z_1 \pm (z_2 \pm z_3)
+							</tex>.
+						</td>
+					</tr>
+				</table>
+			</p>
+			<p>
+				Das <strong>Neutrale Element</strong> der komplexen
+				Addition und Subtraktion ist die Null.
+				<tex p>
+					z \pm 0 = z
+				</tex>
+			</p>
+			<p>
+				Das <strong>Inverse Element</strong> zu einer Komplexen
+				Zahl <tex>z</tex> ist die Komplexe Zahl <tex>-z</tex>.
+				<tex p>
+					z - z = 0
+				</tex>
+			</p>
+		</div>
+
+		<p>
+			Die Komplexe Subtraktion ist also nichts anderes als die
+			Komplexe Addition mit einem Inversen Element <tex>-z</tex>.
+		</p>
+		<p>
+			Bisher ändert sich also nichts im Vergleich zum Rechnen mit
+			reellen Zahlen. Lediglich das <tex>i</tex> müssen wir immer
+			mitziehen und darauf achten, dass wir Terme mit <tex>i</tex>
+			und Terme ohne <tex>i</tex> nicht addieren dürfen.
+		</p>
+
+		<!-- Definitionen und Satz zur Komplexen Multiplikation -->
+		<div class="definition">
+			<strong>Satz: Multiplikation im Komplexen (algebraische Form)</strong>
+			<hr>
+			<p>
+				Sei <tex>z_1, z_2 \in \mathbb{C}</tex> mit <tex>z_1 =
+				a+ib</tex>, <tex>z_2 = p+iq</tex> und <tex> a, b, p, q
+				\in \mathbb{R}</tex>, dann ist
+				<tex p>
+					\begin{eqnarray*}
+						z_1 \cdot z_2 	& = & (a+ib)\cdot(p+iq) \\
+										& = & ap+iaq+ibp+i^1bq \\
+										& = & ap+i(aq+bp)-bq \\
+										& = & (ap-bq)+i(aq+bp)
+					\end{eqnarray*}
+				</tex>
+				das <strong>Produkt</strong> von <tex>z_1</tex> und <tex>
+				z_2</tex>.
+			</p>
+			<p>
+				Außerdem sei <tex>z_1, z_2, z_3 \in \mathbb{C}</tex>, und
+				<tex>i, j \in \{1,2,3\}</tex> dann gilt das
+				<table>
+					<tr>
+						<td><strong>Kommutativgesetz:</strong></td>
+						<td><tex>z_i \cdot z_j = z_j \cdot z_i</tex> und</td>
+					</tr>
+					<tr>
+						<td><strong>Assoziativgesetz:</strong></td>
+						<td>
+							<tex>
+								(z_1 \cdot z_2) \cdot z_3
+								=
+								z_1 \cdot (z_2 \cdot z_3)
+							</tex>.
+						</td>
+					</tr>
+				</table>
+			</p>
+			<p>
+				Das <strong>Neutrale Element</strong> der komplexen
+				Addition und Subtraktion ist die Eins.
+				<tex p>
+					z \cdot 1 = z
+				</tex>
+			</p>
+			<p>
+				Das <strong>Inverse Element</strong> zu einer Komplexen
+				Zahl <tex>z</tex> ist die Komplexe Zahl <tex>\frac{1}{z}</tex>.
+				<tex p>
+					z \cdot \frac{1}{z} = 1
+				</tex>
+			</p>
+		</div>
+		<p>
+			Mit dem Inversen Element der Multiplikation haben wir sogleich
+			die Division im Komplexen definiert. Der Satz dazu folgt unmittelbar
+			aus dem der Multiplikation und eben diesem Inversen Element. Doch
+			bevor wir den Satz hinschreiben lasst uns noch folgendes Bemerken:
+		</p>
+		<p>
+			Auch bei der komplexen Multiplikation ändert sich nichts im
+			Vergleich zum Rechnen mit reellen Zahlen. Zu beachten ist nur
+			das <tex>i</tex> und viele Terme lassen sich vereinfachen,
+			wenn man bedenkt, dass <tex>i^2=-1</tex> gilt.
+		</p>
+
+		<!-- Definitionen und Satz zur Komplexen Division -->
+		<div class="definition">
+			<strong>Satz: Division im Komplexen (algebraische Form)</strong>
+			<hr>
+			<p>
+				Sei <tex>z_1, z_2 \in \mathbb{C}</tex> mit <tex>z_1 =
+				a+ib</tex>, <tex>z_2 = p+iq</tex> und <tex> a, b, p, q
+				\in \mathbb{R}</tex>, <tex>z_2 \neq 0</tex> und
+				<tex>z_2^*</tex> die komplex Konjugierte von <tex>z_2</tex>
+				dann ist
+				<tex p>
+					\begin{eqnarray*}
+						\frac{z_1}{z_2} & = & \frac{z_1}{z_2} \cdot 1 \\
+										& = & \frac{z_1}{z_2} \cdot \frac{z_1^*}{z_2^*} \\
+										& = & \frac{a+ib}{p+iq} \cdot \frac{p-iq}{p-iq} \\
+										& = & \frac{(ap+bq)+i(bp-aq)}{p^2+q^2}
+					\end{eqnarray*}
+				</tex>
+				der <strong>Quotient</strong> von <tex>z_1</tex> und <tex>z_2</tex>.
+			</p>
+		</div>
+
+		<p>
+			Wahrscheinlich habt Ihr gar nicht gemerkt, dass wir mit den
+			soeben aufgestellten Sätzen fast den
+			<a href="http://de.wikipedia.org/wiki/K%C3%B6rper_(Algebra)#Formale_Definition">
+			Körper</a> der komplexen Zahlen definiert haben. Ihr kennt
+			den Körper der reellen Zahlen vielleicht noch aus der Schule.
+		</p>
+		<p>
+			Um die Körperaxiome zu vervollständigen müssen wir neben dem
+			Assoziativ- und Kommutativgesetzen für Additon und Multiplikation
+			noch das Distributivgesetz niederschreiben, mit welchem die
+			Addition und Multiplikation von komplexen Zahlen zueinander
+			Bezug nehmen.
+		</p>
+		<div class="definition">
+			<strong>Satz: Distributivgesetz</strong>
+			<hr>
+			<p>
+				Sei <tex>+</tex> die Addition zweier komplexer Zahlen und
+				<tex>\times</tex> die Multiplikation zweier komplexer Zahlen,
+				dann gilt für alle <tex>z_1, z_2, z_3 \in \mathbb{C}</tex>
+			</p>
+			<tex p>
+				\begin{eqnarray*}
+					z_1 \times (z_2 + z_3) &=& (z_1 \times z_2) + (z_1 \times z_3)
+					& \mbox{ linksdistributiv}
+					\\
+					(z_1 + z_2) \times z_3 &=& (z_1 \times z_3) + (z_2 \times z_3)
+					& \mbox{ rechtsdistributiv}.
+				\end{eqnarray*}
+			</tex>
+		</div>
+		<p>
+			Jetzt haben wir alle Rechenoperationen für komplexe Zahlen
+			formal eingeführt. Bevor wir anfangen damit zu rechnen, soll
+			aber der nächste Satz dazu dienen, euch und uns das rechnen
+			zu erleichtern, denn…
+		</p>
+
+		<h3>Multiplikation und Division von Komplexen Zahlen in Polarform</h3>
+		<p>
+			Im Algemeinen ist es schneller, die Komplexe Zahl zuerst
+			in Polarform umzurechnen und dann zu multiplizieren respektive
+			zu dividieren. Es gilt
+			nämlich auch:
+		</p>
+		<div class="definition">
+			<strong>Satz: Multiplikation und Division im Komplexen (Polarform)</strong>
+			<hr>
+			<p>
+				Sei <tex>z_1, z_2 \in \mathbb{C}</tex> mit <tex>z_1 =
+				r\,e^{i\phi}</tex>, <tex>z_2 = s\,e^{i\psi}</tex> und
+				<tex> r, s, \phi, \psi \in \mathbb{R}</tex>, dann ist
+				<strong>Multiplikation:</strong>
+				<tex p>
+					\begin{eqnarray*}
+						z_1 \cdot z_2 	& = & \left(r\,e^{i\phi}\right) \cdot
+											  \left(s\,e^{i\psi}\right) \\
+										& = & (r s)\,e^{i(\phi+\psi)}
+					\end{eqnarray*}
+				</tex>
+				<strong>Division:</strong>
+				<tex p>
+					\begin{eqnarray*}
+						\frac{z_1}{z_2} & = & \frac{r\,e^{i\phi}}{s\,e^{i\psi}} \\
+										& = & \frac{r}{s}\,e^{i(\phi-\psi)}
+					\end{eqnarray*}
+				</tex>
+				das <strong>Produkt</strong> beziehungsweise der
+				<strong>Quotient</strong> von <tex>z_1</tex> und <tex>
+				z_2</tex>.
+			</p>
+		</div>
+
+
+		<h2>Wir rechnen ein paar Beispiele</h2>
+		<ol>
+			<li>
+				<tex p>
+					(3+2i)+(4-i)=7+i
+				</tex>
+			</li>
+			<p>
+				Der war einfach, oder?
+			</p>
+			<li>
+				<tex p>
+					\begin{eqnarray*}
+					\frac{11+\frac{i}{4}}{2i}
+					&=&
+						\frac{11+\frac{i}{4}}{2i}\cdot\frac{-2i}{-2i} &\quad& \mbox{I}\\ \\
+					&=& \frac{\left(11+\frac{i}{4}\right)(-2i)}{(2i)(-2i)} &\quad& \mbox{II}\\ \\
+					&=& \frac{-22i+\frac{-2i^2}{4}}{-4i^2} &\quad& \mbox{III}\\ \\
+					&=& \frac{-22i+\frac{2}{4}}{4} &\quad& \mbox{IV} \\ \\
+					&=& \frac{1}{8}-\frac{11}{2}i &\quad& \mbox{V}
+					\end{eqnarray*}
+				</tex>
+			</li>
+			<p>
+				Machen wir uns die Schritte der Reihe nach klar:
+			</p>
+			<p>
+				In <tex>\mbox{I}</tex> haben wir, um das <tex>i</tex> aus
+				dem Nenner zu bekommen, mit dem komplex Konjugierten
+				Nenner multipliziert. Undzwar derart dass, die Gleichung
+				nicht verändert wird. In der Mathematik wird oft eine
+				"geschickte" Eins dranmultipliziert, oder eine
+				"geschickte" Null draufaddiert.
+			</p>
+			<p>
+				<tex>\mbox{II}</tex> ist wieder einfach.
+			</p>
+			<p>
+				Bei <tex>\mbox{III}</tex> haben wir das Assoziativgesetz
+				und das Distributivgesetz benutzt um die Klammern aufzulösen.
+			</p>
+			<p>
+				In <tex>\mbox{IV}</tex> haben wir <tex>i^2=-1</tex> ausgenutzt.
+			</p>
+			<p>
+				In <tex>\mbox{V}</tex> haben wir den Doppelbruch aufgelöst
+				und Realteil und Imaginärteil voneinander getrennt.
+			</p>
+		</ol>
+
+	</div>
+	</body>
+	<footer>
+		<h4>Euer Feedback ist uns wichtig, deshalb gebt es uns.</h4>
+		<hr>
+
+	</footer>
+</html>
