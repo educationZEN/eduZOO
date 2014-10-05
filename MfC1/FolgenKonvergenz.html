@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+<head>
+<meta charset="utf-8">
+<title>eduZOO - Folgen und Konvergenz</title>
+<script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+<script src="../../eduZOO-app/script/eduZOO.js"></script>
+</head>
+
+
+<body>
+<div class="row centered">
+
+<h1>Folgen und Konvergenz</h1>
+
+<p>
+	Ein wichtiges Charakteristikum von Folgen ist deren Verhalten für
+	große Argumente. Ändert sich <tex>a_n</tex> für große <tex>n</tex>
+	nur noch wenig, sodass die Folge gegen einen festen Wert strebt?
+	Eine solche Zahl <tex>a</tex> wird Limes oder Grenzwert der Folge
+	<tex>{a_n}</tex> genannt, notiert
+	<tex p>
+		\lim_{n\to\infty}a_n=a\hspace{5mm}\mbox{ oder }\hspace{5mm}
+		a_n\overset{n\to\infty}{\longrightarrow}a
+	</tex>
+	Dass sich Folgenglieder <tex>a_n</tex> für große <tex>n</tex> "nur
+	noch wenig" ändern, soll meinen, dass sie um den vermuteten
+	Grenzwert <tex>a</tex> herum konzentriert sind, also <tex>a_n</tex>
+	nur Werte zwischen <tex>a+\varepsilon</tex> und <tex>a-\varepsilon</tex>
+	annimmt für eine reelle Zahl <tex>\varepsilon&gt;0</tex>, das heißt
+	<tex p>a-\varepsilon&lt;a_n&lt;a+\varepsilon</tex>
+	oder äquivalent formuliert
+	<tex p>|a_n-a|&lt;\varepsilon</tex>
+</p>
+
+<p>
+	Das folgende Beispiel soll verdeutlichen, dass aus der Bedingung
+	<tex>|a_n-a|&lt;\varepsilon</tex> für ein <tex>\varepsilon&gt;0</tex>
+	nicht folgt, dass dann <tex>a_n</tex> gegen \(a\) konvergiert.
+</p>
+
+
+<h3>Beispiel</h3>
+<div class="beispiel">
+ <p>
+	Sei \(a_n=(-1)^n\) die Folge, die zwischen 1 und -1 alterniert.
+	Gesucht sind ein \(a\in\mathbb{R}\) und ein \(\varepsilon&gt;0\),
+	sodass \(|a_n-a| &lt;\varepsilon\) für alle \(n\in\mathbb{N}\). Wird
+	der	Mittelwert \(a=0\) gewählt, so vereinfacht sich \(|a_n-a|=|a_n|\),
+	außerdem ist ist \(|a_n|=1\) für alle. Jedes \(\varepsilon&gt;1\),
+	zum	Beispiel \(\varepsilon=2\), erfüllt dann \(|a_n-a|&lt;\epsilon\)
+	für	alle \(n\in\mathbb{N}\), da \(|a_n-a|=|a_n|=1&lt;\epsilon=2\)
+	immer gilt.<br>
+	Es kann aber auch \(a=1\) gewählt werden. Der Betrag \(|a_n-a|\)
+	alterniert dann zwischen \(0\) (wenn \(n\) eine gerade Zahl ist) und
+	\(2\) (wenn \(n\) ungerade ist), also ist \(|a_n-a|\leq2\) für alle
+	\(n\). Jetzt erfüllt jedes \(\varepsilon&gt;2\) die Bedingung, zum
+	Beispiel \(\varepsilon=3\), denn \(|a_n-a|\leq2&lt;3\) für alle
+	\(n\).
+ </p>
+</div><hr>
+
+<p>
+	Die Möglichkeit, mehr als einen Wert als Grenzwert wählen zu können,
+	muss ausgeschlossen werden. Strebt eine Folge gegen einen Wert, soll
+	dieser eindeutig sein.
+</p>
+
+<p>
+	Um zu überprüfen, ob eine Folge <tex>a_n</tex> gegen einen Grenzwert
+	<tex>a</tex> strebt, muss <tex>\varepsilon</tex> also sehr klein
+	werden, beliebig klein. Die Formulierung "beliebig klein" heißt
+	mathematisch formuliert, dass der Abstand <tex>|a_n-a|</tex> von
+	<tex>a_n</tex> zu \(a\)	kleiner als <u>jedes</u>
+	<tex>\varepsilon>0</tex> werden muss, vorausgesetzt es ist der
+	Folgenindex	<tex>n</tex> groß genug gewählt.
+</p>
+
+<p>
+	Lässt sich also zu einer beliebigen Genauigkeit
+	<tex>\varepsilon>0</tex> ein Folgenglied <tex>a_N</tex>,
+	<tex>N \in \mathbb{N}</tex>, finden, sodass für die darauf folgenden
+	Glieder	(also die <tex>a_n</tex> mit <tex>n>N</tex>), gilt, dass
+	<tex>|a_n-a| &lt;\varepsilon</tex>, so konvergiert die Folge
+	<tex>\{a_n\}</tex> gegen \(a\).
+</p>
+
+<div class="definition"><a name="Konvergenzdefinition"></a>
+<strong>Definition: Konvergenz, Grenzwert</strong><hr>
+<p>
+	Eine Folge \(\{a_n\}\) heißt <em>konvergent</em> gegen den
+	<em>Grenzwert</em> \(a\in\mathbb{R}\), genau dann wenn für alle
+	<tex>\varepsilon&gt;0</tex> ein \(N\in\mathbb{N}\) existiert, sodass
+	für alle \(n&gt;N\) gilt <tex>|a_n-a| &lt;\varepsilon</tex>
+</p>
+</div>
+
+<p>
+	Wird der Parameter <tex>n</tex> als Zeit aufgefasst, bedeutet die
+	Definition, dass es zu jeder Genauigkeit <tex>\varepsilon <0 </tex>
+	eine Zeit <tex>T \in \mathbb{N}</tex> gibt,	sodass danach also für
+	<tex>t&gt;T</tex>, immer gilt <tex>|a_t-a| &lt;\varepsilon</tex>.
+</p>
+
+<p>
+	<u>Wichtig:</u> Die Zahl <tex>N</tex>, welche zu dem Folgenglied
+	\(a_N\) gehört, ab dem alle Glieder einen Abstand kleiner als
+	\(\varepsilon\) zum Grenzwert haben, hängt im Allgemeinen von
+	<tex>\varepsilon</tex>.
+</p>
+
+<p>
+	Häufig ist es notwendig, den Grenzwert <tex>a</tex> zu raten um dann
+	die Definition nachzuprüfen. Mit der Hilfe von einigen bekannten
+	konvergenten Folgen und Rechengesetzen für deren Grenzwerte, lässt
+	sich Konvergenz allgemeiner Folgen oft aber auf diese Bekannten
+	zurückführen.
+</p>
+
+<h3>Beispiel</h3>
+<div class="beispiel">
+<p>
+	Sei <tex>a_n=\frac{1}{n}</tex>, die harmonische Folge. Die
+	Folgenglieder werden mit wachsenden <tex>n</tex> immer kleiner,
+	jedoch nie kleiner als <tex>0</tex>. Die Folge strebt gegen
+	<tex>a=0</tex>. Um die Konvergenz nachzuweisen ist zu zeigen,
+	dass für ein beliebiges vorgegebenes <tex>\varepsilon>0</tex> ein
+	<tex>N\in\mathbb{N}</tex> existiert, sodass
+	<tex>|a_n-a| &lt;\varepsilon </tex> für alle <tex>n>N</tex>. Diese
+	Bedingung lässt sich vereinfachen. Da <tex>a=0</tex> ist
+	<tex>|a_n-a|=|a_n| </tex> und da <tex>a_n=\frac{1}{n}</tex> und
+	immer positiv ist, ist
+	<tex>|a_n|= \left|\frac{1}{n}\right|=\frac{1}{n}</tex>.
+</p>
+<p>
+	Gegeben ist also ein beliebiges <tex>\varepsilon&lt;0</tex>, gesucht
+	ein <tex>N\in\mathbb{N}</tex> (das im Allgemeinen von
+	<tex>\varepsilon</tex> abhängt), sodass gilt
+	<tex>\frac{1}{n}&lt;\varepsilon</tex> für alle
+	<tex>a_n=\frac{1}{n}</tex>.	Die letzte Ungleichung lässt sich
+	umformen zu <tex>n>\frac{1}{\varepsilon}</tex>. Wird nun
+	<tex>N>\frac{1}{\varepsilon}</tex> gewählt
+	(<tex>\frac{1}{\varepsilon}</tex> ist eine positive reelle Zahl und
+	es existiert immer eine natürliche Zahl, die größer ist.), so gilt
+	für alle <tex>n>N</tex>
+    <tex p>
+		\begin{eqnarray*}
+		\frac{1}{n}
+			&&lt;&\frac{1}{N},\mbox{ da }n&gt;N\\
+			&&lt;&\frac{1}{1/\varepsilon},\mbox{ da }
+				N&gt;\frac{1}{\varepsilon}\\
+			&=&\varepsilon
+		\end{eqnarray*}
+	</tex>
+    also <tex>\frac{1}{n}&lt;\varepsilon</tex>, was zu zeigen war. Da
+    kein bestimmtes \(\varepsilon\) gewählt wurde, ist die Rechnung für
+    alle <tex>\varepsilon&lt;0</tex> korrekt.
+ </p>
+</div><hr>
+
+<p>
+	Dieses Vorgehen lässt sich zu einem "Kochrezept" zusammenfassen.
+</p>
+
+<div class="definition">
+<strong>Das Kochrezept</strong><hr>
+<p>
+	Häufig lässt sich die Definition mit Hilfe eines Algorithmus
+	zeigen.
+	<ul>
+        <li>Schritt 1: Setzen Sie in <tex>|a_n-a| </tex> die Terme für
+			<tex>a_n</tex> ein und das vermutete <tex>a</tex>.</li>
+		<li>Schritt 2: Vereinfachen Sie.</li>
+        <li>Schritt 3: Formen Sie die Ungleichung
+			<tex>|a_n-a| &lt;\varepsilon</tex> mit Hilfe der in Schritt
+			2 erhaltenen Vereinfachung in eine Ungleichung der Form
+			<tex>n&lt;\dots</tex> um, wobei <tex>\varepsilon </tex> auf
+			der rechte Seite stehen wird.</li>
+	</ul>
+</p>
+</div>
+
+<p>
+	Achtung: Dieser Algorithmus liefert nur ein Ergebnis, falls die
+	Folge auch tatsächlich konvergiert. Konvergiert die Folge
+	<u>nicht</u>, so muss ein \(\varepsilon&gt;0\) gefunden werden,
+	das die Definition verletzt, für das also kein Folgenglied gefunden
+	werden kann, ab dem immer <tex>|a_n-a| &lt;\varepsilon</tex> gilt.
+</p>
+
+<h2>Test</h2>
+
+<quiz>
+ <question>
+	Sei \(c\in\mathbb{R}\). Konvergiert die konstante Folge \(a_n=c\)?
+ </question>
+
+	<choice correct> ja	</choice>
+	<choice> nein </choice>
+</quiz>
+
+
+
+<h2>Rechenregeln für konvergente Folgen</h2>
+
+
+<p>
+	Mit <u>konvergenten</u> Folgen darf gerechnet werden wie mit Zahlen.
+	Das	heißt, die Summe zweier konvergenter Folgen ist konvergent und
+	konvergiert gegen die Summe der Grenzwerte. Ein Vielfaches einer
+	konvergenten Folge konvergiert gegen das Vielfache des Grenzwertes.
+</p>
+
+<div class="definition">
+<strong>Satz: Rechenregeln für konvergente Folgen</strong><hr>
+<p>
+	Seien <tex>\{a_n\}, \{b_n\}</tex> konvergente Folgen mit
+	<tex>a_n\to a, b_n\to b</tex>. Dann sind die Folgen
+	<tex>\{a_n+b_n\}, \{a_n\cdot b_n\}</tex> konvergent mit Grenzwerten
+	<tex p>
+		\begin{eqnarray*}
+		\lim_{n\to\infty}(a_n+b_n)&=& a+b\\
+		\lim_{n\to\infty}(a_n\cdot b_n)&=& a\cdot b
+		\end{eqnarray*}
+	</tex>
+</p>
+</div>
+
+<p>
+	Dabei ist zu beachten, dass diese Regeln nur für <u>konvergente</u>
+	Folgen gelten. Summen und Produkte nicht konvergenter Folgen
+	auseinander zu ziehen, liefert im Allgemeinen falsche Ergebnisse.
+</p>
+
+<h3>Beispiel</h3>
+<div class="beispiel">
+<p>
+	Für gegebenes \(k\in\mathbb{N}\) konvergiert die Folge
+	<tex>a_n=\frac{1}{n^k}</tex> gegen \(0\). Dies folgt mit dem
+	Kochrezept analog zum Beweis für die Folge der Kehrwerte, oder mit
+	den Rechenregeln. Es ist nämlich <tex>\frac{1}{n^k}</tex> das
+	Produkt aus \(k\) Faktoren <tex>\frac{1}{n}</tex>. Da Produkte
+	konvergenter Folgen gegen das Produkt der Grenzwerte konvergieren,
+	folgt dass
+	<tex p>
+		\lim_{n\to\infty}\frac{1}{n^k}=
+		\left(\lim_{n\to\infty}\frac{1}{n}\right)^k=0
+	</tex>
+</p>
+</div>
+
+<p>
+	Mit Hilfe der Folgen \(1/n^k\) lässt sich eine große Klasse von
+	Folgen auf Konvergenz prüfen, nämlich die, die sich durch
+	Umformungen auf Summen und Produkte dieser Folgen zurückführen
+	lassen.
+</p>
+
+<h3>Beispiel</h3>
+<div class="beispiel">
+<p>
+	Sei <tex p>a_n=\frac{n^2+n-4}{6n^3-2n^2+n}</tex>
+	Durch Ausklammern der <u>höchsten auftretenden Potenz</u> von \(n\)
+	werden alle Terme mit niedrigeren Potenzen von \(n\) auf Nullfolgen
+	zurückgeführt,
+	<tex p>
+		\begin{eqnarray*}
+		\frac{n^2+n-4}{6n^3-2n^2+n}
+	&=&\frac{n^3\left(\frac{1}{n}+\frac{1}{n^2}-\frac{4}{n^3}\right)}
+		{n^3\left(6-\frac{2}{n}+\frac{1}{n^2}\right)}
+		\end{eqnarray*}
+	</tex>
+	Kürzen von \(n^3\) liefert
+	<tex p>
+		\begin{eqnarray*}
+		\frac{n^2+n-4}{6n^3-2n^2+n}
+			&=&\frac{\frac{1}{n}+\frac{1}{n^2}-\frac{4}{n^3}}
+		{6-\frac{2}{n}+\frac{1}{n^2}}
+		\end{eqnarray*}
+	</tex>
+	Alle Summanden in Zähler und Nenner sind konvergente Folgen, es
+	handelt sich also um eine konvergente Folge mit Grenzwert
+	<tex p>
+		\begin{eqnarray*}
+		\lim_{n\to\infty}\frac{n^2+n-4}{6n^3-2n^2+n}
+	&=&\lim_{n\to\infty}\frac{\frac{1}{n}+\frac{1}{n^2}-\frac{4}{n^3}}
+							 {6-\frac{2}{n}+\frac{1}{n^2}}\\
+&=&\frac{\lim_{n\to\infty}\left(\frac{1}{n}+\frac{1}{n^2}-\frac{4}{n^3}\right)}
+		{\lim_{n\to\infty}\left(6-\frac{2}{n}+\frac{1}{n^2}\right)}\\
+&=&\frac{\lim_{n\to\infty}\frac{1}{n}
+			+\lim_{n\to\infty}\frac{1}{n^2}
+			-\lim_{n\to\infty}\frac{4}{n^3}}
+		{\lim_{n\to\infty}6
+			-\lim_{n\to\infty}\frac{2}{n}
+			+\lim_{n\to\infty}\frac{1}{n^2}}
+		\end{eqnarray*}
+	</tex>
+</p>
+</div>
+
+
+</div>
+</body>
+</html>

@@ -13,7 +13,67 @@
 <h1>Konvergenzkriterien für Reihen</h1>
 
 <p><!-- 1. Absatz: Ziel und Motivation -->
+	Aus dem Prinzip, Reihen durch die geometrische Reihe zu majorisieren,
+	lassen sich zwei weitere Konvergenzkriterien ableiten. Ist eine
+	Reihe \(\sum a_n\) gegeben, so sind die Ungleichungen
+	\(a_n\leq q^n\) für ein \(q\in]-1,1[\) in vielen Fällen nur mühsam
+	zu zeigen.
+</p>
 
+
+
+<h2>Das Wurzelkriterium</h2>
+
+
+<p>
+	Das Wurzelkriterium, in seiner hier päsentierten Form, ist eine
+	vereinfachte Bedingung an die Konvergenz einer Reihe \(\sum a_n\),
+	aus der die Abschätzung \(a_n\leq p^n\) für	ein \(p\in]-1,1[\)
+	folgt. Nach dem Majorantenkriterium muss die Reihe dann konvergieren.
+</p>
+
+
+<div class="definition">
+<strong>Satz: Wurzelkriterium</strong><hr>
+<p>
+	Sei <tex>\sum a_n</tex> eine Reihe und es gelte
+	<tex p>
+		\lim_{n\rightarrow\infty}\left(|a_n|^{\frac{1}{n}}\right)=q
+	</tex>
+	Ist dann
+		<ul>
+			<li>\(q&lt;1\), so konvergiert die Reihe</li>
+			<li>\(q=1\), so bleibt das Konvergenzverhalten unbekannt</li>
+			<li>\(q&gt;1\), so konvergiert die Reihe nicht</li>
+		</ul>
+</p>
+</div>
+
+<p>
+	Ist nämlich <tex>\lim|a_n|^{1/n}=q</tex>, so folgt aus der
+	<a href="FolgenKonvergenz.html#Konvergenzdefinition">Definition des
+	Grenzwertes</a>, dass für jedes \(\varepsilon&gt;0\) fast alle
+	Glieder der Folge \(|a_n|^{1/n}\) kleiner als \(q+\varepsilon\)
+	sind. Ist \(q&lt;1\), so lässt sich \(\varepsilon\) so wählen, dass
+	\(p=q+\varepsilon\) kleiner \(1\) ist, und es folgt
+	\(|a_n|^{1/n}&lt;p&lt;1\), beziehungsweise <tex>|a_n| &lt;p^n</tex>.
+	Konvergiert die \(n-\)te Wurzel des	Betrags der Folgenglieder
+	\(a_n\) also gegen eine Zahl kleiner \(1\),	so wird die Reihe
+	\(\sum a_n\) von einer konvergenten geometrische Reihe majorisiert.
+</p>
+
+<p>
+	Ist jedoch \(q=1\), so lässt sich diese Argumentation nicht
+	anwenden. Es kann vorkommen, dass die Folgenglieder \(|a_n|^{1/n}\)
+	größer als \(1\) werden, dann konvergiert die Reihe nicht. Im Fall
+	\(q=1\) hängt das Konvergenzverhalten von der Folge \(a_n\) ab und
+	es muss mit anderen Mitteln geprüft werden.
+</p>
+
+<p>
+	Ist \(q&gt;1\) so folgt immer die Divergenz der Reihe, denn die
+	Folge \(a_n\)
+	<a href="Reihen.html#notwbedNullfolge">ist keine Nullfolge</a>.
 </p>
 
 
@@ -25,20 +85,16 @@
 <div class="definition">
 <strong>Satz: Quotientenkriterium</strong><hr>
 <p>
-	Sei
-</p>
-</div>
-
-
-
-<h2>Das Wurzelkriterium</h2>
-
-
-
-<div class="definition">
-<strong>Satz: Wurzelkriterium</strong><hr>
-<p>
-	Sei
+	Sei <tex>\sum a_n</tex> eine Reihe und es gelte
+	<tex p>
+		\lim_{n\rightarrow\infty}\left|\frac{a_{n+1}}{a_{n}}\right|=q
+	</tex>
+	Ist dann
+		<ul>
+			<li>\(q&lt;1\), so konvergiert die Reihe</li>
+			<li>\(q=1\), so bleibt das Konvergenzverhalten unbekannt</li>
+			<li>\(q&gt;1\), so konvergiert die Reihe nicht</li>
+		</ul>
 </p>
 </div>
 
@@ -51,14 +107,22 @@
 <div class="definition">
 <strong>Satz: Leibniz-Kriterium</strong><hr>
 <p>
-	Sei
+	Sei <tex>\sum (-1)^n a_n</tex> eine Reihe und \(a_n\) eine monotone
+	Nullfolge. Dann konvergiert <tex>\sum (-1)^n a_n</tex>.
 </p>
 </div>
 
+<p>
+	Dass die Folge monoton gegen Null konvergiert, sichert, dass sich
+	ihr Vorzeichen nicht ändert. Das könnte den Effekt des \((-1)^n\)
+	Terms in der Reihe kompensieren. So ist zum Beispiel die
+	alternierende harmonische Reihe
+	<tex p>\sum_{n=1}^\infty(-1)^n\frac{1}{n}</tex>
+	konvergent nach dem Leibniz-Kriterium.
+</p>
 
 
-<h2>Quiz</h2>
-
+<h2>Test</h2>
 
 
 <quiz>
