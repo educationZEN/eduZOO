@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+<head>
+	<meta charset="utf-8">
+    <title>eduZOO - Folgen</title>
+    <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+    <script src="../../eduZOO-app/script/eduZOO.js"></script>
+</head>
+<body>
+<div class="row centered">
+
+<h1>Folgen</h1>
+<p>
+	Chemische Messreihen sind häufig Sequenzen von (mit Einheiten
+	behafteten) Zahlen, wie zum Beispiel die Stoffmengenkonzentration
+	\(c(t)\) eines Stoffes zur Zeit \(t\) während einer mit geringer
+	Geschwindigkeit verlaufenden chemischen Reaktion.
+</p>
+
+<p>
+	[<em>kleines konkretes Beispiel mit Wertetabelle und Graph
+			&larr; DISSOZIATION</em>]
+</p>
+
+<p>
+	Die Konzentration \(c\) des Stoffes nimmt mit der Zeit ab. Wird sie
+    jemals Null werden oder strebt sie gegen einen festen Wert größer
+    Null? Um Fragen dieser Art zu untersuchen wird das Konzept der Folge
+    verwendet. Eine Folge ist eine Abbildung, die einen diskreten
+    Parameter (überlicherweise eine natüliche Zahl) eine reelle Zahl
+    zuordnet, also eine Funktion
+    <tex>a:\mathbb{N}\to\mathbb{R},n\mapsto a_n</tex>. Wie das
+    Beispiel oben zeigt, ist es häufig zweckmäßig \(n\) als zeitlichen
+    Verlaufsparameter anzusehen.
+</p>
+
+<div class="definition">
+<strong>Definition: Folge</strong><hr>
+<p>
+	Eine Abbildung
+	<tex p>
+		\begin{eqnarray*}
+		a&:&\mathbb{N}\to\mathbb{R}\\
+		 &&n\mapsto a_n
+		\end{eqnarray*}
+	</tex>
+	heißt <em>Folge reeller Zahlen</em>, oder kurz Folge.
+</p>
+</div>
+
+<p>
+	Um Folgen von allgemeinen Funktionen zu unterscheiden, werden sie
+    statt mit <tex>f, g, h,</tex> usw., mit <tex>a, b, c</tex>
+    bezeichnet. Um die diskrete/sequentielle Natur von Folgen zu betonen
+    wird statt <tex>a(n)</tex> einfach <tex>a_n</tex> für das Bild der
+    natürlichen Zahl <tex>n</tex> unter der Abbilldung \(a\)
+    geschrieben. Ist ersichtlich, dass es sich bei einer Abbildung
+    <tex>a:\mathbb{N}\to\mathbb{R},n\mapsto a_n</tex> um eine Folge
+    handelt, so werden Definitions- und Wertebereich unterdrückt und nur
+    die Abbildungsvorschrift <tex>a_n=\dots</tex> genannt, die Folge
+    selbst auch nur als
+    <tex>\left\{a_n\right\}_{n\in\mathbb{N}}</tex> oder kürzer als
+    <tex>\left\{a_n\right\}</tex> notiert.
+</p>
+
+<h3>Beispiel</h3>
+<div class="beispiel">
+ <p>
+	<ul>
+		<li>Die Folge der natürlichen Zahlen, \(a_n=n\)</li>
+		<li>Die Folge der geraden Zahlen, \(a_n=2n\)</li>
+		<li>Die Folge der Kehrwerte der natürlichen Zahlen,
+			\(a_n=\frac{1}{n}\)</li>
+		<li>Die zwischen 1 und -1 alternierende Folge,
+			\(a_n=(-1)^n\)</li>
+	</ul>
+ </p>
+</div>
+
+<hr>
+<h2>Test</h2>
+
+<p>
+	Geben Sie mögliche Abbildungsvorschrifen für die Folgen an.
+</p>
+
+<quiz>
+	<question><strong>a)</strong>
+		<tex>a_1=1, a_2=3, a_3=5, a_4=7, a_5=9</tex>
+	</question>
+    <textinput correct="2n-1"></textinput><br><br>
+
+    <question><strong>b)</strong>
+		<tex> a_1=2, a_2=1, a_3=\frac{2}{3}, a_4=\frac{1}{2},
+				a_5=\frac{2}{5}, a_6=\frac{1}{3}</tex>
+	</question>
+    <textinput correct="2/n"></textinput><br><br>
+
+    <question><strong>c)</strong>
+		<tex> a_1=1, a_2=4, a_3=9, a_4=16, a_5=25</tex>
+	</question>
+    <textinput correct="n\^2"></textinput><br><br>
+
+	<question><strong>d)</strong>
+		<tex> a_1=2, a_2=4, a_3=8, a_4=16, a_5=32</tex>
+	</question>
+	<textinput correct="2\^n"></textinput><br><br>
+</quiz>
+<p>
+	<u>Bemerkung:</u> <br/>
+    Sind endlich viele reelle Zahlen <tex>x_1,\dots,x_n</tex> vorgegeben,
+    so existiert immer eine Folge <tex>a:\mathbb{N}\to\mathbb{R}</tex>,
+    sodass <tex>a_1=x_1, \dots, a_n=x_n</tex>. Es lässt sich beweisen,
+    dass sogar unendlich viele verschiedene Folgen existieren, die auf
+    den ersten \(n\) Gliedern mit den Zahlen <tex>x_1,\dots,x_n</tex>
+    übereinstimmen, dann jedoch eine beliebige reelle Zahl als
+    <tex>n+1</tex> Glied annehmen. Daraus folgt, dass eine gegebene
+    endliche Sequenz von Zahlen keinen eindeutigen Nachfolger hat.
+    Insbesondere kann man zum Beispiel in Intelligenztests, die
+    Aufforderung "Setzen Sie die Folge fort" immer mit 42 beantworten.
+</p>
+
+
+<h2>Monotonie</h2>
+
+<p>
+	Eine wichtige Eigenschaft von Folgen ist ihr Monotonieverhalten.
+	Dabei heißt eine Folge <tex>\{a_n\}</tex> monoton wachsend, wenn
+	ihre Werte \(a_n\) mit steigendem \(n\) nicht kleiner werden. Ebenso
+	heißt die Folge monoton fallend, wenn ihre Werte mit steigendem
+	\(n\) nicht größer werden.
+</p>
+
+<div class="definition">
+<strong>Definition: Monotonie</strong><hr>
+<p>
+	Eine Folge \(\{a_n\}\) heißt <em>monoton wachsend</em>, falls für
+	alle \(n\in\mathbb{N}\) gilt <tex p>a_{n+1}\geq a_n</tex>
+	Eine Folge \(\{a_n\}\) heißt <em>monoton fallend</em>, falls für
+	alle \(n\in\mathbb{N}\) gilt <tex p>a_{n+1}\leq a_n</tex>
+	Die Monotonie heißt <em>streng</em>, falls die Ungleichungen scharf
+	sind, das heißt Gleichheit jeweils ausgeschlossen ist.
+</p>
+</div>
+
+<p>
+	Statt die Ungleichungen <tex>a_{n+1}\geq a_n</tex> oder
+	<tex>a_{n+1}\leq a_n</tex> zu zeigen ist es manchmal zweckdienlich,
+	stattdessen das Vorzeichen der Differenz <tex>a_{n+1}-a_n</tex> zu
+	untersuchen. Dies ist oft hilfreich, wenn zu zeigen ist, dass eine
+	Folge nicht monoton ist. Dann wechselt nämlich das Vorzeichen der
+	Differenz.
+</p>
+
+<h3>Beispiel</h3>
+<div class="beispiel">
+<p>
+	Als Beispiele verwenden wir die oben eingeführten Folgen.
+	<ul>
+	 <li>
+		Die Folge der natürlichen Zahlen, \(a_n=n\), ist streng monoton
+		wachsend, da <tex>a_{n+1}=n+1&gt;n=a_n</tex> für alle \(n\).
+	 </li>
+	 <li>
+		Die Folge der geraden Zahlen, \(a_n=2n\), ist streng monoton
+		wachsend, da <tex>a_{n+1}=2(n+1)=2n+2&gt;2n=a_n</tex> für alle
+		\(n\).
+	 </li>
+	 <li>
+		Die Folge der Kehrwerte der natürlichen Zahlen,
+		\(a_n=\frac{1}{n}\), ist streng monoton fallend, da
+		<tex>a_{n+1}=\frac{1}{n+1}&lt;\frac{1}{n}=a_n</tex> für alle
+		\(n\).
+	 </li>
+	 <li>
+		Die zwischen 1 und -1 alternierende Folge, \(a_n=(-1)^n\), ist
+		nicht monoton. Das Vorzeichen der Differenz
+		<tex p>
+			a_{n+1}-a_n=(-1)^{n+1}-(-1)^{n}=(-1)^{n}(-1-1)=-2(-1)^{n}
+		</tex>
+		hängt von \(n\) ab, kann also nicht für alle \(n\) gleich sein.
+	 </li>
+	</ul>
+</p>
+</div>
+
+
+<h3>Test</h3>
+<quiz>
+ <question>
+	Gibt es Folgen, die sowohl monoton wachsend als auch monoton fallend
+	sind?
+ </question>
+
+	<choice correct> ja
+	</choice>
+
+	<choice> nein
+	</choice>
+</quiz>
+
+
+<h2>Beschränktheit</h2>
+
+<p>
+	Überschreitet eine Folge einen festen Wert nicht, so heißt die Folge
+	nach oben beschränkt. Unterschreitet sie einen Wert nicht, so heißt
+	sie nach unten beschränkt. Ist eine Folge nach oben und nach unten
+	beschränkt, so heißt die Folge beschränkt.
+</p>
+
+<div class="definition">
+<strong>Definition: Beschränktheit</strong><hr>
+<p>
+	Sei \(\{a_n\}\) eine Folge. Gibt es eine Zahl \(R\in\mathbb{R}\),
+	sodass für alle \(n\in\mathbb{N}\) gilt <tex>a_n\leq R</tex>, so
+	heißt \(\{a_n\}\) <em>nach oben beschränkt</em>. <br>
+	Gibt es eine Zahl \(S\in\mathbb{R}\), sodass für alle
+	\(n\in\mathbb{N}\) gilt	<tex>a_n\geq S</tex>, so heißt \(\{a_n\}\)
+	<em>nach unten beschränkt</em>. <br>
+	Eine Folge heißt <em>beschränkt</em>, genau dann wenn sie nach oben
+	und nach unten beschränkt ist.
+</p>
+</div>
+
+<p>
+	Die wichtige Eigenschaft hier ist die Beschränktheit. Über Folgen,
+	die	nur nach oben oder nur nach unten beschränkt sind, lässt sich
+	selten mehr sagen, beschränkte Folgen jedoch können immer dem Betrag
+	nach nach oben abgeschätzt werden. Ist nämlich eine Folge nach oben
+	und nach unten beschränkt, so gibt es Zahlen
+	<tex>R,S\in\mathbb{R}</tex>, sodass <tex>S\leq a_n\leq R</tex> für
+	alle \(n\). Ist ein \(a_n\) positiv, so gilt
+	<tex>|a_n|=a_n\leq R</tex>. Ist ein \(a_n\) negativ, so gilt
+	<tex>|a_n|=-a_n\leq-S</tex>. Daraus folgt, dass
+	<tex>|a_n|\leq\max\{R,-S\}</tex>.
+</p>
+
+<h3>Beispiel</h3>
+<div class="beispiel">
+<p>
+	Als Beispiele verwenden wir die oben eingeführten Folgen.
+	<ul>
+	 <li>
+		Die Folge der natürlichen Zahlen, \(a_n=n\), ist nicht
+		beschränkt, da nicht nach oben beschränkt. Für jede Schranke
+		\(R\), die gewählt werden kann, um <tex>a_n\leq R</tex> zu
+		erreichen, gibt es ein \(N\in\mathbb{N}\), sodass
+		<tex>a_N=N&gt;R</tex>.
+	 </li>
+	 <li>
+		Die Folge der Kehrwerte der natürlichen Zahlen,
+		\(a_n=\frac{1}{n}\), ist beschränkt. Da sie monoton fallend ist,
+		ist das erste Folgenglied \(a_1=1\) obere Schranke,
+		<tex>a_n\leq 1</tex> für alle \(n\). Da die Folge für alle \(n\)
+		positiv ist, ist \(0\) untere Schranke, <tex>a_n\geq 0</tex> für
+		alle \(n\).
+	 </li>
+	 <li>
+		Die zwischen 1 und -1 alternierende Folge, \(a_n=(-1)^n\), ist
+		beschränkt, da <tex>|a_n|=1</tex> für alle \(n\) und somit
+		ist \(1\) obere Schranke und \(-1\) untere Schranke.
+	 </li>
+	</ul>
+</p>
+</div>
+
+
+<h3>Test</h3>
+<quiz>
+ <question>
+  Welche dieser Folgen ist beschränkt?
+ </question>
+
+	<choice correct> <strong>a)</strong>
+		<tex p>a_n=(-1)^n</tex>
+	</choice>
+
+	<choice> <strong>b)</strong>
+		<tex p>a_n=\sqrt{n}</tex>
+	</choice>
+</quiz>
+
+</div>
+</body>
+</html>
