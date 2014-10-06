@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+    <head>
+        <meta charset="utf-8">
+        <title>[eduZOO] Mengen</title>
+        <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+        <script src="../../eduZOO-app/script/eduZOO.js"></script>
+    </head>
+    <body>
+	<div class="row centered">
+
+	<h1>Mengen</h1>
+
+	<p>
+		Dinge zu klassifizieren ist eine inherent menschliche Tugend.
+		Wir tun ähnliche Objekte, Personen und so weiter in "Schubladen"
+		um mit unserer Denkleistung zu haushalten.
+	</p>
+	<p>
+		In der Mathematik ist der Begriff der Menge fundamental.
+		Heutzutage ist es üblich mathematische Definitionen und Sätze
+		auf dem Mengenbegriff zu fußen. Dies hat sich als nützlich
+		erwiesen und bewahrt uns davor bis ins <i>Unendliche</i>
+		weiterzufragen.
+	</p>
+
+	<h2>Definitionen</h2>
+
+	<p>
+		Die klassische Definition des Mengenbegriffs von Georg Cantor
+		(1845-1918)
+	</p>
+
+	<div class="definition">
+		<p><strong>Definition: Menge</strong></p><hr>
+		<p>
+			"Eine Menge ist jede Zusammenfassung von bestimmten
+			wohlunterschiedenen Objekten unserer Anschauung oder unseres
+			Denkens."
+		</p>
+	</div>
+
+	<p>
+		So können wir zum Beispiel die Einwohner Berlins zur Menge der
+		Berliner zusammenfassen. Die Einwohner Berlins werden dann als
+		Elemente der Menge benannt.
+	</p>
+	<p>
+		Wir nennen die Menge der Berliner fortan <tex>\mathfrak{B}</tex>.
+		So können wir für eine Person <tex>p</tex> nun angeben, ob diese
+
+	<table>
+		<tr>
+			<td><tex>p\in\mathfrak{B}\quad</tex></td>
+			<td>
+				(sprich: <tex>p</tex> ist Element von <tex>\mathfrak{B}</tex>)
+			</td>
+		</tr>
+		<tr>
+			<td><tex>p\not\in\mathfrak{B}\quad</tex></td>
+			<td>
+				(sprich: <tex>p</tex> ist nicht Element von <tex>\mathfrak{B}</tex>)
+			</td>
+		</tr>
+	</table>
+
+		Berliner ist oder nicht.
+	</p>
+	<p>
+		Wollen wir zum Beispiel angeben, dass die Personen <tex>p</tex>
+		und <tex>q</tex> Berliner sind, so schreiben wir
+		<tex p>
+			p,q \in \mathfrak{B}
+		</tex>
+	</p>
+	<p>
+		Bei einer Menge von Personen ist es im gegensatz zu einer Menge
+		von Zahlen (z.B. die Menge der Studierenden an der TU-Berlin als
+		Matrikelnummern) offensichtlich so, dass ein und das selbe Element
+		nicht mehrfach in der Menge enthalten sein kann.
+	</p>
+	<p>
+		Analog legen wir fest, dass diese Eigenschaft für alle Mengen
+		gelten soll. So ist
+		<tex p>
+			M = \{1,1,2,3\}
+		</tex>
+		also keine Menge sondern ein System.
+	</p>
+
+	<div class="definition">
+		<p>
+			Es gibt prinzipiell zwei Arten eine Menge zu definieren:
+			<ol>
+				<li>
+					<tex p>M=\{1,3,5,7,11,13,17,…\}</tex>
+				</li>
+				Durch aufzählen der Elemente und
+				<li>
+					<tex p>M=\{a\;|\;a \mbox{ ist Primzahl}\}</tex>
+				</li>
+				durch Benennen von Eigenschaften der Elemente.
+			</ol>
+			Zu beachten ist, dass die Pünktchen nur benutzt werden dürfen,
+			wenn aus dem Kontext klar wird, was die weiteren
+			Mengenelemente sind.
+		</p>
+	</div>
+
+	<h2>Grundlegende Begriffe und Symbole</h2>
+
+
+	<ul>
+		<li><strong>Die leere Menge:</strong> "<tex>\varnothing</tex>"</li>
+		Ist eine wohldefinierte Menge, die keine Elemente enthält.
+
+		<li><strong>Element von:</strong> "<tex>\in</tex>"</li>
+		Ist <tex>M</tex> eine Menge und <tex>x</tex> irgend ein mathematisches
+		Objekt, so steht <tex>x \in M</tex> für die Aussage <tex>x</tex>
+		gehört zu <tex>M</tex>.
+
+		<li><strong>Nicht Element von:</strong> "<tex>\not\in</tex>"</li>
+		Zum Beispiel <tex>3 \not\in \{4,7,9\}</tex>
+
+		<li><strong>Vereinigung zweier Mengen:</strong> "<tex>\cup</tex>"</li>
+		Sind <tex>M</tex> und <tex>N</tex> Mengen, so bezeichnet
+		<tex>M \cup N</tex> die Menge der Elemente, die in einer der beiden
+		Mengen enthalten sind.
+		<figure>
+			<img 	src="images/mengen_vereinigung.svg"
+					alt="Vereinigung zweier Mengen" />
+			<figcaption>
+				Abbildung 1: Vereinigungsmenge von <tex>A</tex> und
+				<tex>B</tex>
+			</figcaption>
+		</figure>
+
+		<li><strong>Durchschnitt zweier Mengen:</strong> "<tex>\cap</tex>"</li>
+		Sind <tex>M</tex> und <tex>N</tex> Mengen, so bezeichnet der
+		Durchschnitt <tex>M \cap N</tex> die Menge der Elemente, die in
+		<tex>M</tex> und <tex>N</tex> enthalten sind.
+		<figure>
+			<img 	src="images/mengen_schnitt.svg"
+					alt="Durchschnitt zweier Mengen" />
+			<figcaption>
+				Abbildung 2: Schnittmenge von <tex>A</tex> und
+				<tex>B</tex>
+			</figcaption>
+		</figure>
+
+		<li><strong>Teilmenge:</strong> "<tex>\subset</tex>"</li>
+		Sind <tex>M</tex> und <tex>N</tex> Mengen und jedes Element von
+		<tex>M</tex> ist auch Element von <tex>N</tex>, so gilt
+		<tex>M \subset N</tex>.
+		<figure>
+			<img 	src="images/mengen_teilmenge_(cc-by-sa-3.0 (Ed g2s)).svg"
+					alt="Teilmenge" />
+			<figcaption>
+				Abbildung 3: <tex>A</tex> ist eine (echte) Teilmenge
+				von <tex>B</tex>
+				<aside>
+					Urheberschaft liegt bei Ed g2s (Künstlername/
+					Pseudonym); Verwertung fällt unter Lizenz CC By-SA 3.0
+				</aside>
+			</figcaption>
+		</figure>
+
+		<li><strong>Ist gleich: "<tex>=</tex>"</strong></li>
+		Zwei Mengen <tex>M</tex> und <tex>N</tex> sind genau dann gleich
+		wenn <tex>M \subset N</tex> und <tex>N \subset M</tex> gilt.
+
+		<li><strong>Komplementärmenge: "<tex>\setminus</tex>"</strong></li>
+		Für Mengen <tex>M</tex> und <tex>N</tex> ist die Menge
+		<tex>M \setminus N</tex> die Menge, die alle Elemente von <tex>M</tex>
+		enthält, die nicht auch Element von <tex>N</tex> sind.
+		<figure>
+			<img 	src="images/mengen_komplement.svg"
+					alt="Komplementärmenge" />
+			<figcaption>
+				Abbildung 4: <tex>A</tex> ohne <tex>B</tex>
+			</figcaption>
+		</figure>
+
+		<li><strong>Potenzmenge: <tex>\mathcal{P}(.)</tex></strong></li>
+		Ist <tex>M</tex> eine Menge, so bezeichnet <tex>\mathcal{P}(M)</tex>
+		die Menge aller Teilmengen von M.
+		<br>
+		<strong>Beispiel:</strong>
+		<tex p>
+			\begin{eqnarray*}
+				M &=& \{1,2,3\} \\
+				\mathcal{P}(M) &=& \{\varnothing, \{1\},\{2\},\{3\},
+					\{1,2\},\{1,3\},\{2,3\},\{1,2,3\}\}
+			\end{eqnarray*}
+		</tex>
+		Beachte, dass die leere Menge Teilmenge jeder Menge ist.
+		<tex>\varnothing \subset M</tex> gilt für alle M.
+
+		<li><strong>Kartesisches Produkt: "<tex>\times</tex>"</strong></li>
+		Sind <tex>M</tex> und <tex>N</tex> Mengen und <tex>x \in M</tex>,
+		<tex>y \in N</tex> zwei beliebige Elemente, dann ist
+		<tex>M \times N</tex> die Menge aller geordneten Paare
+		<tex>(x,y)</tex>.
+		<br>
+		<strong>Beispiel:</strong> Die Menge der reellen Zahlen
+		<tex>\mathbb{R}</tex>.
+		<br>
+		<tex>\mathbb{R} \times \mathbb{R}</tex>
+		ist dann die zweidimensionale Zahlenebene in der jeder Punkt dieser
+		Ebene enthalten ist. Anstatt <tex>\mathbb{R} \times \mathbb{R}</tex>
+		schreibt man meist <tex>\mathbb{R}^2</tex>.
+
+	</ul>
+
+
+
+	<h2>Beispiele und Test</h2>
+
+	<p>
+		Rekapitulieren Sie das bis hierhin gelernte indem Sie für nachfolgende
+		Beispiele die jeweils korrekten Aussagen markieren.
+	</p>
+
+	<ol>
+	<li>
+
+	<quiz>
+		<question>
+			Welche formalen Ausdrücke stehen für die Menge:
+			<br>
+			<i>"Alle Berliner, die studieren"</i>
+		</question>
+
+		<choice correct>
+			<tex>
+				\mathfrak{A}:=\{p\,|\,p \mbox{ ist Berliner}, p \mbox{ studiert} \}
+			</tex>
+		</choice>
+
+		<choice>
+			<tex>
+				\mathfrak{B}:=\{p\,|\,p \mbox{ ist Berliner} \}
+				\;\subset\;
+				\mathfrak{D}:=\{p\,|\,p \mbox{ studiert} \}
+			</tex>
+		</choice>
+
+		<choice>
+			<tex>
+				\mathfrak{C}:=\varnothing
+			</tex>
+		</choice>
+
+		<choice correct>
+			<tex>
+				\mathfrak{S}:=\{p\,|\,p \mbox{ studiert} \}
+				\;\cap\;
+				\mathfrak{B}:=\{p\,|\,p \mbox{ ist Berliner} \}
+			</tex>
+		</choice>
+
+		<choice>
+			<tex>
+				\mathfrak{B}:=\{p\,|\,p \mbox{ ist Berliner} \}
+				\;\cup\;
+				\mathfrak{S}:=\{p\,|\,p \mbox{ studiert} \}
+			</tex>
+		</choice>
+
+	</quiz>
+
+	</li>
+
+	<li>
+
+	<quiz>
+		<question>
+			Welche formalen Ausdrücke stehen für die Menge:
+			<br>
+			<i>"Alle Studenten, die an der HU oder TU eingeschrieben sind"</i>
+		</question>
+
+		<choice>
+			<tex>
+				\mathfrak{S}:=\{p\,|\,p \mbox{ ist an TU eingeschrieben},
+					p \mbox{ ist an HU eingeschrieben} \}
+			</tex>
+		</choice>
+
+		<choice correct>
+			<tex>
+				\mathfrak{T}:=\{p\,|\,p \mbox{ ist an TU eingeschrieben} \}
+				\;\cup\;
+				\mathfrak{H}:=\{p\,|\,p \mbox{ ist an HU eingeschrieben} \}
+			</tex>
+		</choice>
+
+		<choice>
+			<tex>
+				\mathfrak{H}:=\{p\,|\,p \mbox{ ist an HU eingeschrieben} \}
+				\;\setminus\;
+				\mathfrak{T}:=\{p\,|\,p \mbox{ ist an TU eingeschrieben} \}
+			</tex>
+		</choice>
+
+		<choice>
+			<tex>
+				\mathfrak{T}:=\{p\,|\,p \mbox{ ist an TU eingeschrieben} \}
+				\;\cap\;
+				\mathfrak{H}:=\{p\,|\,p \mbox{ ist an HU eingeschrieben} \}
+			</tex>
+		</choice>
+
+	</quiz>
+
+	</li>
+
+	<li>
+	<quiz>
+		<question>
+			Welche formalen Ausdrücke stehen für die Menge:
+			<br>
+			<i>"Personen, die 'Müller' heißen, deren Vorname aber nicht
+			'Klaus' ist"</i>
+		</question>
+
+		<choice>
+			<tex>
+				\mathfrak{N}_{Müller}:=\{p\,|\,p \mbox{ heißt 'Müller'}\}
+				\,\supset\,
+				\mathfrak{N}_{Klaus}:=\{p\,|\,p\mbox{'s Vorname ist 'Klaus'}\}
+			</tex>
+		</choice>
+
+		<choice>
+			<tex>
+				\mathfrak{N}_{Klaus}:=\{p\,|\,p\mbox{'s Vorname ist 'Klaus'}\}
+				\,\setminus\,
+				\mathfrak{N}_{Müller}:=\{p\,|\,p \mbox{ heißt 'Müller'}\}
+			</tex>
+		</choice>
+
+		<choice correct>
+			<tex>
+				\mathfrak{N}_{Müller}:=\{p\,|\,p \mbox{ heißt 'Müller'}\}
+				\,\setminus\,
+				\mathfrak{N}_{Klaus}:=\{p\,|\,p\mbox{'s Vorname ist 'Klaus'}\}
+			</tex>
+		</choice>
+
+		<choice>
+			<tex>
+				\mathfrak{N}_{Klaus}:=\{p\,|\,p\mbox{'s Vorname ist 'Klaus'}\}
+				\,\subset\,
+				\mathfrak{N}_{Müller}:=\{p\,|\,p \mbox{ heißt 'Müller'}\}
+			</tex>
+		</choice>
+
+	</quiz>
+
+	</li>
+
+	</ol>
+
+	<p>
+		Nun versuchen Sie für die abgebildeten Mengen die korrekten
+		Ausdrücke zu identifizieren. Die Farbcodierung entspricht derer
+		der Abbildungen 1-4 (Wenn in einem Bild graue und rote Flächen
+		dargestellt werden ist die rote Fläche die gesuchte Menge).
+	</p>
+
+	<ol>
+	<table>
+		<tr>
+			<td>
+				<li>
+					<figure>
+						<img 	src="images/mengen_quiz_1.svg"
+								alt="mengen_quiz_1" />
+						<figcaption>
+							Abbildung T1
+						</figcaption>
+					</figure>
+				</li>
+			</td>
+			<td>
+				<li>
+					<figure>
+						<img 	src="images/mengen_quiz_2.svg"
+								alt="mengen_quiz_2" />
+						<figcaption>
+							Abbildung T2
+						</figcaption>
+					</figure>
+				</li>
+			</td>
+			<td>
+				<li>
+					<figure>
+						<img 	src="images/mengen_quiz_3.svg"
+								alt="mengen_quiz_3" />
+						<figcaption>
+							Abbildung T3
+						</figcaption>
+					</figure>
+				</li>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<li>
+					<figure>
+						<img 	src="images/mengen_quiz_4.svg"
+								alt="mengen_quiz_4" />
+						<figcaption>
+							Abbildung T4
+						</figcaption>
+					</figure>
+				</li>
+			</td>
+			<td>
+				<li>
+					<figure>
+						<img 	src="images/mengen_quiz_5.svg"
+								alt="mengen_quiz_5" />
+						<figcaption>
+							Abbildung T5
+						</figcaption>
+					</figure>
+				</li>
+			</td>
+			<td>
+				<li>
+					<figure>
+						<img 	src="images/mengen_quiz_6.svg"
+								alt="mengen_quiz_6" />
+						<figcaption>
+							Abbildung T6
+						</figcaption>
+					</figure>
+				</li>
+			</td>
+		</tr>
+	</table>
+	</ol>
+
+	<p>
+		Schreiben Sie die jeweilige(n) Nummer(n) der Mengenabbildungen (also T1,
+		T2, usw.) in die Texteingabefelder.
+	</p>
+	<quiz>
+		<table>
+		<tr>
+		<td>
+			<question><tex>M \cap N = \varnothing</tex></question>
+			<textinput correct="T?5"></textinput>
+		</td>
+		<td>
+			<question><tex>M \cup N</tex></question>
+			<textinput correct="T?3"></textinput>
+		</td>
+		<td>
+			<question><tex>M \cap N</tex></question>
+			<textinput correct="T?4"></textinput>
+		</td>
+		</tr>
+		<tr>
+		<td>
+			<question><tex>M \subset N</tex></question>
+			<textinput correct="T?1"></textinput>
+		</td>
+		<td>
+			<question><tex>M \not\subset N</tex></question>
+			<textinput correct="(T?2,[ T]?5|T?5,[ T]?2)"></textinput>
+		</td>
+		<td>
+			<question><tex>M \setminus N</tex></question>
+			<textinput correct="T?6"></textinput>
+		</td>
+		</tr>
+		</table>
+	</quiz>
+
+	<h2>Gebräuchliche Mengen</h2>
+	<p>
+		In diesem Kurs werden wir uns häufig mit Zahlenmengen befassen.
+		Die bekanntesten unter diesen sollen hier kurz benannt werden.
+	</p>
+	<ul>
+		<li><tex>\mathbb{N}:=\{1,2,3,…\}</tex> ist die Menge der
+			natürlichen Zahlen.
+			</li>
+		<li><tex>\mathbb{N}_0:=\{0,1,2,…\}</tex> ist die Menge der
+			natürlichen Zahlen mit Null.</li>
+		<p>Beide sind gebräuchlich. Strenggenommen muss wann immer die
+			Menge der Natürlichen Zahlen benutzt werden soll klargestellt
+			werden, welche Variante gemeint ist. In diesem Kurs ist im
+			Allgemeinen <tex>\mathbb{N}_0</tex> gemeint, auch wenn
+			<tex>\mathbb{N}</tex> geschrieben steht.</p>
+		<li><tex>\mathbb{Z}:={0,1,-1,2,-2,…}</tex> ist die Menge der ganzen
+			Zahlen.</li>
+		<li><tex>\mathbb{Q}:=\{\frac{p}{q}\,|\,p,q\in\mathbb{Z},q\neq0\}
+			</tex> ist die Menge der rationalen Zahlen.</li>
+		<li><tex>\mathbb{R}</tex> ist die Menge der Reellen Zahlen.
+			Das heißt, sie beinhaltet alle rationalen und alle irrationalen
+			Zahlen.</li>
+		<li><tex>\mathbb{R}^+:=\{x\in\mathbb{R}\,|\,x>0\}</tex> ist die
+			Menge der positiven reellen Zahlen und <tex>\mathbb{R}^+_0:=
+			\{x\in\mathbb{R}\,|\,x\geq0\}</tex> die Menge der positiven
+			reellen Zahlen mit Null.</li>
+	</ul>
+
+
+	<h2>Intervalle</h2>
+	<p>Um Teilmengen von <tex>\mathbb{Q}</tex> und <tex>\mathbb{R}</tex>
+		anzugeben, benötigen wir, wie bei <tex>\mathbb{R}^+</tex> und
+		<tex>\mathbb{R}^+_0</tex> schon verwendet, noch die Symbole
+		<b>kleiner</b> "<tex><</tex>", <b>kleiner gleich</b>
+		"<tex>\leq</tex>", <b>größer</b> "<tex>></tex>" und <b>größer
+		gleich</b> "<tex>\geq</tex>".</p>
+	<p>So können zum Beispiel alle Zahlen <tex>x\in\mathbb{R}</tex> die
+		größer als <tex>a\in\mathbb{R}</tex> und kleiner als
+		<tex>b\in\mathbb{R}</tex> sind mit</p>
+	<tex p>(a,b):=\{x\in\mathbb{R}\,|\,a < x < b\}</tex>
+	<p>angeben. Die Menge <tex>(a,b)</tex> bezeichnen wir als
+		<b>offenes Intervall</b> der reellen Zahlen zwischen <tex>a</tex>
+		und <tex>b</tex>, die Menge</p>
+	<tex p>[a,b]:=\{x\in\mathbb{R}\,|\,a \leq x \leq b\}</tex>
+	<p> als <b>abgeschlossenes Intervall</b> der reellen Zahlen zwischen
+		<tex>a</tex> und <tex>b</tex>. Außerdem gibt es noch </p>
+	<tex p>\begin{eqnarray*}
+		[a,b)&:=&\{x\in\mathbb{R}\,|\,a\leq x < b\} \\
+		(a,b]&:=&\{x\in\mathbb{R}\,|\,a < x \leq b\}.
+		\end{eqnarray*}</tex>
+	<p><strong>Bemerkung:</strong> Das "spezielle" offene Intervall
+		<tex>(a,a)</tex> definieren wir für alle <tex>a\in\mathbb{R}
+		</tex> mit</p>
+	<tex p>(a,a):=\varnothing.</tex>
+
+	<h3>Verständnisfragen zu Intervallen</h3>
+
+	<quiz>
+		<question>Welche der folgenden Aussagen sind im Allgemeinen nicht
+			gültig?</question>
+		<choice correct>Die Schnittmenge zweier offener Intervalle ist
+			ein offenes Intervall.</choice>
+		<choice>Das Komplement eines offenen Intervalls in einem
+			abgeschlossenen Intervall ist ein abgeschlossenes Intervall.
+			</choice>
+		<choice>Die Vereinigung zweier offenen Intervalle ist ein offenes
+			Intervall.</choice>
+	</quiz>
+	</div>
+	</body>
+	<footer>
+		<h4>Euer Feedback ist uns wichtig, deshalb gebt es uns.</h4>
+		<hr>
+
+	</footer>
+</html>

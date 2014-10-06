@@ -1,0 +1,417 @@
+<html>
+	<head>
+		<script src="http://code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
+		<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" type="text/javascript"></script>
+		<script src="expand.js" type="text/javascript"></script>
+		<script src="nav.js" type="text/javascript"></script>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" type="text/css" href="expand.css" />
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		
+		
+		<div id="fb-root"></div>
+			<script>(function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s); js.id = id;
+				js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>
+		
+		
+		<!--
+			Page Header
+		-->
+		<div class="header">
+			<div class="centered">
+				<a href="http://www.physik.tu-berlin.de/~thilo"><img id="logo-bulb" src="img/Logo_facebook_2a.png" /></a>
+				<h1><img id="logo-eduzen" src="img/eduzen.png" alt="educationZen"/> ist eine Philosophie für die Lehre des frühen 21. Jahrhunderts.</h1>
+				<nav id="navigation"></nav>
+			</div>
+		</div>
+		
+		
+		<!--
+			3-column Layout
+		-->
+		<div class="row centered">
+			<div class="column column-3 content">
+				<!--<h4 id="ziel">Das Ziel</h4>-->
+				<p>Die Probleme unserer Zeit werden nicht gelöst, indem Du dein Studium in kürzester Zeit abschließt. Lebenslaufoptimierung geht auch anders. Im geschützten Raum der Universität liegt deine Gelegenheit dich auszuprobieren und herauszufinden, was du willst. Auf diesem Weg  startest du schon im Studium ins Leben und musst nicht auf den Abschluss warten.</p>
+			</div>
+			<div class="column column-3 content">
+				<!--<h4 id="loesung">Die Lösung</h4>-->
+				<p>Angewandte, realitätsnahe Probleme werden zum Mittelpunkt eines neuen  Bildungsystems. Dies öffnet die Tür für gesellschaftlich relevante  Probleme. deren Lösung nun Teil des studentischen Alltags wird. Beim Lösen dieser Probleme festigst du nicht nur fachliche Grundlagen,  sondern erwirbst auch Fähigkeiten, die du für den Berufsalltag brauchst und  erarbeitest dir nebenbei Reputation.</p>
+			</div>
+			<div class="column column-3 content">
+				<!--<h4 id="weg">Der Weg</h4>-->
+				<p>Das ECTS bietet dir die Möglichkeit deinen Weg im Studium frei zu gestalten. Die Flexibilität der modularisierten Lehre gestattet es,  projektorientiertes Lernen an Universitäten zu etablieren. Deine  Interessen und die Bedürfnisse der Gesellschaft bestimmen wie  entsprechende Projekte aussehen. Diese könnten dich zu deinem Traumjob  führen oder Teil einer Existenzgründung sein.</p>
+			</div>
+		</div>
+		
+		<hr>
+		
+		<!--
+			1-Column-Layout
+		-->
+		<div class="row centered">
+			<div class="column column-1 content">
+				<h2 id="seLV">Learning-by-doing</h2>
+				<p>
+					<img src="img/wikipedia.png" class="image-right" style="height: 6em;" />
+					Was haben Mark Zuckerberg, Bill Gates und Steve Jobs gemeinsam? Sie haben alle im Studium gelernt was sie wollen und daraufhin die Uni verlassen um selbst etwas auf die Beine zu stellen! Do-It-Yourself war ihr Motto, und in ihren Fußstapfen können wir im Rahmen von educationZEN wirken. In selbstorganisierten Lehrveranstaltungen (seLV) lernen  wir nicht nur für die ECTS Punkte sondern auch für das eigene Leben! Wie das geht? educationZEN integriert die  Do-it-yourself (DIY) Bewegung, Aufgaben in Organisationen oder Vereinen und sogar dein eigenes Start-up in die universitäre Lehre.
+				</p>
+				<p>
+					<img src="img/work-in-progress.png" class="image-left" style="height: 5em;" />
+					Abgabe um 12:30 und zwar als Vortrag vor dem Vorstand! In den Semesterferien bieten seLVs die Möglichkeit die Arbeitswelt in die Uni zu holen. Dort treffen sich Arbeitsgruppen und definieren Tasks in  Case-Studies, deren Ergebnisse bis zu einer Deadline vorliegen müssen. Du erlebst diesen Prozesses live und kannst deine Fähigkeiten entsprechend einbringen und weiterentwickeln. Wer weiß wie es in der realen Welt aussieht kann Sie besser bestreiten.</p>
+				<p>
+					<img src="img/gd-bildung-kultur_2.png" class="image-right" style="height: 4em;" />
+					Veröffentlichungen, Berichte, Vorträge, Produkte und Dienstleistungen sind das reale Maß für erbrachte Leistung. Sie spielen damit die wesentliche  Rolle auf dem Weg zu einer Karriere und persönlicher Erfüllung. Aus diesem Grund sollten Studierende so früh wie nur möglich mit ihren vielseitigen Aspekten in Kontakt kommen. Im Rahmen der seLVs sollen die Studierenden in Gruppen Projekte realisieren und zwar zu Themen ihrer Wahl. Gibt es eine schönere Art zu lernen?
+				</p>
+			</div>
+		</div>
+		
+		<!--
+			Expander
+		-->
+		<div class="expandable">
+			<div class="expandable-content">
+				<!--
+					4-column Layout
+				-->
+				<div class="row centered">
+					<div class="column column-4 content">
+						<img src="img/openEEG.png" class="image-right" style="height: 6em;" />
+						<h4>OpenEEG Workshop</h4>
+						<p>Die Open Hardware Community bietet viele Projektideen. Eine dieser Projektideen, die wir schon etwas weiter gedacht haben ist das OpenEEG (Elektroenzephalografie). In einer seLV könnte eine Gruppe ein EEG Bauen und versuchen damit einen Computer zu steuern. Im Zuge dessen lernen die Teilnehmer an einem anspruchsvollen Elektronikprojekt unter anderem SMD-löten und programmieren. Dazu kann dieses Projekt einen Einblick in das weitläufige Feld der Neurowissenschaften. Auch an der TU-Berlin beschäftigen sich einige Arbeitsgruppen mit dieser Wissenschaft. Kooperationen wären mit diesen wären in vielerlei Hinsicht vorstell- und realisierbar.</p>
+					</div>
+					<div class="column column-4 content">
+						<img src="img/InnovationPavilion.png" class="image-right" style="height: 6em;" />
+						<h4>Open Innovation Pavilion</h4>
+						<p>Eine andere Quelle für Projektideen kann der nature.com open innovation pavilion darstellen. In einem Projekt, was wir für die kommenden Semesterferien planen, könnte eine Gruppe von Interesserten damit beginnen diese Liste von Projekten durchzugehen und jedes einzelne einer Machbarkeitsstudie zu unterziehen. Dabei wird schon ordentlich gelernt. Am Ende könnte eine Projektskizze für das am wahrscheinlichsten zu realisierende Projekt stehen, die das Fundament für eine weitere Open Innovation seLV legt.</p>
+					</div>
+					<div class="column column-4 content">
+						<img src="img/start-up.jpg" class="image-right" style="height: 6em;" />
+						<h4>Existenzgründer seLV</h4>
+						<p>Warum sollten wir noch eine ExistenzgründerLV anbieten, wenn es doch schon so viele gibt? Es gibt zwar eine Menge dieser Lehrveranstaltungen, aber in diesen geht es fast ausschließlich theoretisch zu. Was es noch nicht gibt, ist eine Lehrveranstaltung in der es nicht um Erfahrungsberihte oder Bürokratisches sondern um den tatsächlichen Akt der Unternehmung geht. In unserer Existenzgründer seLV geht es explizit darum Gründungsideen mit minimalem Investitionsvolumen zu einer ertragreichen Unternehmung zu führen. Dabei werden wir mit möglichst einfach realisierbaren Produkt- und Serviceideen versuchen einen Markt zu identifizieren und diesen nach Möglichkeit auch so schnell wie möglich zu bediehnen.</p>
+					</div>
+					<div class="column column-4 content">
+						<img src="img/zen.jpg" class="image-right" style="height: 6em;" />
+						<h4>Deine eigene seLV</h4>
+						<p>Wenn dir das alles nicht zusagt, kein Problem. Du kannst dir wie gesagt auch einfach selbst ein spannendes Projekt ausdenken und es mit unserer Hilfe zu einer seLV machen. Wenn du das nicht seler machen möchtest, sondern uns nur von deiner guten Idee berichten möchtest kannst du das auch tun. Wir werden dann versuchen, diese seLV mit dir auszugestalten und anzubieten, aufdass du dann einfach nur teilnehmen kannst. In beiden Fällen schreibe uns per Mail an team@eduzen.tu-berlin.de deine Idee und wir unterstützen dich so gut wir können.</p>
+					</div>
+				</div>
+				<!--
+					1-column Layout
+				-->
+				<div class="row centered">
+					<div class="column column-1 content">
+						<p>
+						<img src="img/Bologna.png" class="image-left" style="height: 10em;" />
+						<h4>Wahlmodul</h4>
+						Sich in den Ferien zusammentun und geilen Scheiß machen geht ja jetzt auch schon. ECTS-Punkte dafür bekommen aber eher selten. Das soll sich jetzt ändern. Wir arbeiten an einem Modul für den Wahlbereich, in dem die Inhalte nicht vorgegeben sind. Lediglich die Prüfungsmodalitäten werden darin festgelegt (Prüfungsäquivalente Leistung). Idealerweise sollten auch die ECTS-Punkte und damit auch der Zeitaufwand variabel sein. Da dieses Ziel rein juristisch nicht zu erreichen ist, wird es in absehbarer Zeit eine Vielzahl solcher Module geben, so dass Du noch benötigte Wahlbereichspunkte vollständig mit dieser Lehrveranstaltungsform füllen kannst, sofern Du das möchtest.
+					</p>
+				</div>
+				</div>
+				<!--
+					3-column Layout
+				-->
+				<div class="row centered">
+				<div class="column column-3 content">
+					<h4 id="vorraussetzungen">Vorraussetzung</h4>
+					<p>Vorraussetzungen für die Teilnahme an einer seLV werden nicht in der Modulbeschreibung festgelegt. Die Vorraussetzungen werden stattdessen für jede einzelne seLV von der Projektleitung festgelegt. Die Teilnehmerzahl ist auf 10 beschränkt und die Studierenden einigen sich untereinander, wer an der seLV teilnimmt.</p>
+					<img src="img/hurdle.jpg" class="image-left" style="height: 6em;" />
+				</div>
+				<div class="column column-3 content">
+					<h4 id="zielsetzung">Zielsetzung</h4>
+					<p>Die Zielsetzung ist das zentrale Element einer seLV. Sie sollte immer die Form einer Veröffentlichung oder eines Angebots haben. Die Projektleitung bestimmt die Zielsetzung. Eingeschränkt wird diese Wahl durch die Interessen der Studierenden. Nur eine seLV, die die mindestens 10 Teilnehmer findet wird auch durchgeführt.</p>
+					<img src="img/ziel.jpg" class="image-left" style="height: 6em;" />
+				</div>
+				<div class="column column-3 content">
+					<h4 id="teamleiter">Projektleitung</h4>
+					<p>Projektleiter können aus allen Statusgruppen (Professoren, Wissenschaftliche und Sonstige Mitarbeiter und Studenten) sowie von Außen kommen. Ob eine Projektidee zu einer seLV wird, entscheidet die Nachfrage unter den Studierenden. Die Projektleitung muss dafür sorgen, dass die Zielsetzung mit allen zur verfügung stehenden Resourcen angestrebt wird.</p>
+					<img src="img/leitung.jpg" class="image-left" style="height: 6em;" />
+				</div>
+				</div>
+				<!--
+					1-column Layout
+				-->
+				<div class="row centered">
+					<div class="column column-1 content">
+						<!-- <img src="img/schein.jpg" class="image-right" style="height: 6em;" /> -->
+						<h4>Benotung</h4>
+						Nicht das Ergebnis ist entsheidend für die Benotung sondern die Arbeitsweise der Teilnehmenden während der Projektlaufzeit. Haben diese all ihre Möglichkeiten, das Ziel zu erreichen, ausgeschöpft, ist die Note "sehr gut" gerechtfertigt.
+					</p>
+				</div>
+			</div>
+		</div>
+		
+		<!--
+			1-Column-Layout
+		-->
+		<div class="row centered">
+			<div class="column column-1 content">
+				<p>Der Wahlbereich macht nur ein paar Prozent des Studiums aus. Deshalb müssen die anderen Lehrveranstaltungen umgestaltet werden, damit das volle Potential der studentischen Arbeitszeit zur Wertschöpfung beitragen kann.</p>
+				<p>
+					<h2 id="jit">Just-in-time learning</h2>
+					<img src="img/just-in-time.png" class="image-left" style="height: 5em"/>
+					Bulimielernen für Prüfungen ist keine Lösung. In Zeiten der Bolognareform führen zeitlich verkürzte und immer kopakter werdende Kurse mit Ihrem Anspruch auf vollständigkeit zur Doppelbelastung von Studierenden. Immer mehr wird nach dem Sinn vom zwanghaftem Lernen von Inhalten, die im Rahmen der Vorlesung kaum abgehandelt werden können, gefragt. Weniger ist manchmal eben doch mehr und educationZEN glaubt dass Lehrinhalte erst im Kontext relevant werden.
+				</p>
+				<p>
+					<img src="img/video.jpg" class="image-right" style="height: 5em;"/>
+					<h4>Lehrvideos</h4>
+					Vorlesung verpasst? Kein Problem! Jeder Mensch ist zu einem anderem Zeitpunkt am aufmerksamsten. Der heutige Stand der Technik ermöglicht den problemlosen Zugang zu Vorlesunginhalten, nicht nur die der TU sondern der ganzen Welt! Dokumente mit Kommentarfunktion, Vorlesungmitschriften in Form von E-chalk oder synchronierte Video Aufnahmen von Vorlesungen ermöglichen den ultimativen Lernvorteil; sogar mit Stoppfunktion wenn man mal etwas nicht verstanden hat.
+				</p>
+				<p>
+					<img src="img/assignment.png" class="image-left" style="height: 5em;"/>
+					<h4>Übungsbetrieb</h4>
+					Manchmal kann eine Frage einfach nicht warten. Aber mit der schwindenden Anzahl von Lehrpersonal und dem Alltag einer Massenuniversität hat man zu warten...oder? Nein! educationZEN hat verstanden dass man dann am besten lernt wenn man das erworbene Wissen und Content teilt. In organisierten Gruppen können sich ältere Semester durch ihren Einsatz selbst vertieften, Einlick in die Materie verschaffen und jüngere Studierende profitieren von dieser Einsicht. educationZEN liefert eine Plattform dafür!
+				</p>
+			</div>
+		</div>
+				
+		<!--
+			3-column Layout
+		-->
+		<div class="row centered">
+			<div class="column column-3 content">
+				<h4 id="betreuung">Betreuung durch Studierende</h4>
+				<p>Unser Ansatz ist, die Studierenden aktiv in die Betreuungsarbeit - vor allem Korrekturen von Abgaben - einzubeziehen. Diese Betreuungsarbeit dient gleichzeitig der Wiederholung der Lehrinhalte.</p>
+				<img src="img/crowdsourced.png" class="image-left" style="height: 6em;"/>
+			</div>
+			<div class="column column-3 content">
+				<h4 id="klausel">100%-Klausel</h4>
+				<img src="img/kumon_logo.jpg" class="image-left" style="height: 6em;"/>
+				<p>Seit 30 Jahren ist die KUMON Methode das bewährte System zur Qualitätssicherung in der Lehre wenn es um die weitergabe von Inhalten von Stundenten untereinander geht. Jeder der Studenten hat die Lehrinhalte, die er weitergibt zu 100% gemeistert und stellt damit eine ausgezeichnete Quelle dar!</p>
+			</div>
+			<div class="column column-3 content">
+				<h4 id="einszueins">1:1-Betreuung</h4>
+				<p>One to One coaching öffnet Türen und hat sich seit jeher als beste Möglicheit zur Orientierung erwiesen. Ätere Semester und Alumnis stellen Lösungen, Ideen und Ihre Welt der Welt dar. Nicht verpassen!</p>
+				<img src="img/2Sigma_Graph_2.png" class="image-left" style="height: 6em;"/>
+			</div>
+		</div>
+
+		<!--
+			Expander
+		-->
+		<div class="expandable">
+			<div class="expandable-content">
+				<div class="centered content">
+					<h2>Gestufte Kursreform</h2>
+					<p>Es ist einleuchtend, dass so eine Umstellung nicht von Heute auf Morgen zu berwerkstelligen ist. Deshalb haben wir überlegt, wie wir schrittweise vom Status Quo zum Ziel kommen. Für die Veranstaltung Mathematik für Chemikerinnen und Chemiker haben wir das schon getan. Im Prinzip ist dieser Plan aber auf viele Lehrveranstaltungen aus der MINT-Lehre anwendbar.</p>
+				</div>
+				<div class="centered content">
+					<h4>Die Stufen sind:</h4>
+					<p>
+						<ol>
+							<li>Stufe ist erreicht wenn…</li>
+								<p>…Nachbearbeitungszettel für jede Kurswoche bereitgestellt werden. Zu diesen gehören:</p>
+								<ul>
+									<li>Angabe einer Normbearbeitungszeit für die Übungsaufgaben, sollten sie in der Klausur vorkommen,</li>
+									<li>Didaktisch aufgearbeitete Musterlösungen zu jeder Aufgabe,</li>
+									<li>Zusatzaufgaben fürs Selbststudium auf Zeit zu trainieren und</li>
+									<li>Angabe von Qualifikationszielen, die die Studierenden nach dieser Kurswoche erreicht haben sollten.</li>
+								</ul>
+								<p>Studierende werden aufgefordert, diese Nachbearbeitung kollaborativ im Netz zu machen.</p>
+							<li>Stufe ist erreicht wenn…</li>
+								<ul>
+									<li>…Tutoriumsaufzeichnungen bereitgestellt werden,</li>
+									<li>Tutorien fortan Betreute Rechentermine sind und</li>
+									<li>ein Binäres Bewertungsschema eingeführt ist.</li>
+								</ul>
+							<li>Stufe ist erreicht wenn…</li>	
+								<ul>
+									<li>…Aufzeichnungen von Vorlesungen und evtl. Großen Übungen bereitgestellt werden,</li>
+									<li>Professor und Assistent ihre Zeit für Detailverbesserungen nutzen können,</li>
+									<li>der Kurs semesterweise anstatt jahresweise angeboten wird und</li>
+									<li>in Tutorien Studierende aus verschiedenen Semestern sitzen.</li>
+								</ul>
+							<li>Stufe ist erreicht wenn…</li>	
+						</ol>
+					</p>
+				</div>
+				<div class="centered content">
+					<h2>Alternative Klausurzulassungskriterien</h2>
+					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+				</div>
+			</div>
+		</div>
+		
+		<!--
+			1-Column-Layout
+		-->
+		<div class="row centered">
+			<div class="column column-1 content">
+				<p>Heißt das jetzt: "Alle haben jede Menge Organisationsaufwand?" Nein! Wer wen wann wo tutoriert, kann formal entschieden und mit Software organisiert werden. Der individuelle Lernerfolg wird transparent und eine repräsentative Lehrdatenbank entsteht im vorbeigehen.</p>
+				<h2 id="Software">Blended learning</h2>
+				<p>
+					<img src="img/l2db.jpg" class="image-right" style="height: 7em;"/>
+					<h4>Lehr- und Lerndatenbank</h4>
+					Hast du auf Youtube ein Video gefunden, das deine entscheidende Frage zu einer aktuellen Aufgabenstellung beantwortet und möchtest diese Information  mit deinen Kommilitonen teilen? Hast du endlich die Uniseite gefunden, auf der steht welche Wahlpflichtfächer für deinen Studiengang  anrechenbar sind und möchtest diese Seite auf keinen Fall wieder verlieren? Bist du studentische Hilfskraft mit Lehrauftrag und wünschst dir Übungsblätter in kürzerer Zeit zu erstellen? All das und noch viel mehr kann und sollte Software ermöglichen. Aufgabenarchiv und Skriptwiki sind nur zwei Beispiele in diesem Kontext.
+				</p>
+				<p>
+					<img src="img/path.jpg" class="image-left" style="height: 7em;"/>
+					<h4>Kurse und Bücher sind Lehrpfade</h4>
+					Was unterscheidet Lehrbücher und Vorlesungen vonenander? Oftmals nur der  Pfad, entlag dem sie die Lehrinhalte erarbeiten. Studierende, die  lieber mit Büchern lernen, haben deshalb häufig das Problem, dass sie  zwischen den Kapiteln hin- und herspringen müssen. Dadurch geht der  didaktische Mehrwert des Buches oft kaputt. Wäre es nicht besser, Studierende könnten sich ihren Lehrpfad selbst aussuchen und der Kurs würde sich ihrer Wahl anpassen? Ein heterogener, für alle individueller Übungsbetrieb ist mit gegenseitigem Tutorieren machts möglich.
+				</p>
+				<p>
+					<img src="img/feedback.png" class="image-right" style="height: 7em;"/>
+					<h4>Feedback zum eigenen Lernerfolg</h4>
+					Habe ich die Minimalvoraussetzungen zum Bestehen meines Kruses erreicht? Es kann beliebig schwer sein diese Frage  eindeutig und vorteilhaft zu beantworten. Insbesondere auch für die Tutoren und Professoren. In Sprechstunden und Tutorien ist für die dedizierte Erarbeitung einer Antwort auf diese Frage kaum Zeit. Aber der Vergleich mit den Lernleistungen der eigenen  Kommilitonen, sowohl im aktuellen als auch in vergangenen Semestern kann dir einen Hinweis geben.  Anonymisierte Statistiken zum Lernerfolg des gesamten Kurses und deinem eigenen Lernfortschritt geben dir ein sinnvolles Leistunsfeedback.
+				</p>
+			</div>
+		</div>
+		
+		<!--
+			2-column Layout
+		-->
+		<div class="row centered">
+			<div class="column column-2 content">
+				<h4 id="betreuung">Open Educational Resources</h4>
+				<img src="img/oer_logo.png" class="image-left" style="height: 6em;"/>
+				<p>"Wenn ich weiter geblickt habe, so deshalb, weil ich auf den Schultern  von Riesen stehe." Sir Isaac Newton hat verstanden, warum er es geschafft hat die Physik wie wir sie kennen zu begründen. Um auf den  Leistungen anderer Aufbauen zu können, muss der Zugriff auf diese  Leistungen frei sein. Darauf baut sich alles auf. Was die Open Source  Bewegung für den Computer ist, ist die OER-Bewegung für die Bildung.</p>
+			</div>
+			<div class="column column-2 content">
+				<h4 id="klausel">Linked Open Data</h4>
+				<p>Stelle dir vor du könnest nicht nur eine Sammlung deiner bearbeiteten Aufgaben und besuchten Kurse sehen, sondern auch gleich deinen individuellen Lehrpfad, mit der Angabe von inhaltlich verknüpften Themen und Daten. Damit das Internet dein Studium bestmöglich unterstützen kann, muss es möglich sein, dass relevante und ähnliche Daten maschinell gefunden und zusammengestellt werden können. Dies ist auch die Vorraussetzung für ein automatisiertes Leistungfeedback. Erreichen können wir das mit Linked Open Data (LOD).</p>
+				<img src="img/LOD_cloud.png" class="image-left" style="height: 6em;"/>
+			</div>
+		</div>
+
+		<!--
+			Expander
+		-->
+		<div class="expandable">
+			<div class="expandable-content">
+				<div class="centered content">
+					<h2>DeepaMehta</h2>
+					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+				</div>
+				<div class="row centered">
+					<div class="column column-2 content">
+						<h4 id="betreuung">Prototyp 1 : Übungsplattform</h4>
+						<p>Lorem Ipsum…</p>
+					</div>
+					<div class="column column-2 content">
+						<h4 id="klausel">Prototyp 2 : notizen</h4>
+						<p>Lorem Ipsum…</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--
+			1-Column-Layout
+		-->
+		<div class="row centered">
+			<div class="column column-1 content">
+				<h2 id="mitmachen">Mitmachen</h2>
+				<p>
+					<p>Willst du mit uns in einer eduZEN-Gruppe lernen? Hast du Lust unser Konzept mitzugestalten oder an der Entwicklung der Plattform mitzuwirken? Hier hast du die Möglichkeit dazu. Wir freuen uns auf Dich! Wir wollen unser Konzept nicht im stillen Kämmerlein entwickeln. eduZEN kann auch deinProjekt sein, also Gestalte es mit uns. Deine Ideen und deine Expertise sind gefragt.</p>
+					<h4>Follow us</h4>
+					Du findest unser Projekt spannend und willst auf dem Laufenden gehalten werden? Dann trage dich in unsere Mailingliste ein! Eure Adressen werden wir selbstverständlich nicht zu kommerziellen Zwecken mißbrauchen. Außerdem kannst du uns auch bei Facebook besuchen. 
+				</p>
+				<p>
+					<div class="fb-like" data-href="https://www.facebook.com/pages/eduZEN/538880626134997" data-send="false" data-width="250" data-show-faces="false" data-font="arial"></div>
+				</p>
+			</div>
+		</div>
+				
+		<!--
+			4-column Layout
+		-->
+		<div class="row centered">
+			<div class="column column-4 content">
+				<h4 id="rechnen">eduZEN-Tutorien</h4>
+				<p>Möchtest du mit uns Lernen? Wir bieten eduZEN Tutorien in der Mathematik an. Lerngruppen rechnen mit Unterstützung eines eduZEN-Tutors. Online-Feedback und Video-Tutorials sorgen dafür, dass du dich ausreichend vorbereiten kannst, so dass bei jedem Treffen das Rechnen im Vordergrund steht. Ein besonderer Wert wird dabei auf deine Lernskills gelegt, die wir stetig mit dir verbessern und erweitern. Wir wollen dich trainieren möglichst autark mit deinen Kommilitonen lernen zu können. Auch hierbei ist die Struktur nicht festgeschrieben. Vielmehr wollen wir  in diesen Tutorien mit Dir zusammen ausprobieren, wie das Potential von Blended Learning ausgeschöpft werden kann. Die angebotenen eduZEN-Tutorien des laufenden Semesters findest du im Kalender.</p>
+				<p>Wenn du selbst eine Lerngruppe bilden möchtest, unterstützen wir dich gerne. Hast du einen Lehrauftrag und möchtest mit uns kooperieren? Dann schreibe an team@eduzen.tu-berlin.de.</p>
+			</div>
+			<div class="column column-4 content">
+				<h4 id="konzeption">Lehrinhalte</h4>
+				<p>
+					Du kennst ein besonders schönes Video-Tutorial oder hast ein gut strukturiertes Skript gefunden? Dann Teile es mit deinen Kommiltonen!  Was dir geholfen hat zu verstehen wird für sie auch hilfreich sein. Mit notiZEN hast du demnächst die Möglickeit dazu! Bis dahin einfach per Facebook oder Mail an team@eduzen.tu-berlin.de. Falls du Dokumente, Übungsaufgaben, Klausurvorbereitungszettel oder persönliche Mitschriften teilen möchtest, nenne bitte auch die Quelle beziehungsweise den Autor des Dokuments, damit wir diesen kontaktieren können.
+				</p>
+			</div>
+			<div class="column column-4 content">
+				<h4 id="development">Development</h4>
+				<p>Willst du mit unseren Entwicklern an unserer Software tüfteln? Dann mach mit bei der Programmierung und werde eduZEN-Hacker oder -Hackse!</p>
+				<p>Falls Du uns hier unterstützen möchtest, schreib eine Mail an malte.reissig@tu-berlin.de. Unser Entwickler Malte wird sich dann bei euch melden. Am besten du schreibst ihm auch gleich wie du dich einbringen möchtest und womit du bei der Programmierung und Gestaltung von Software bereits erste Erfahrungen sammeln konntest. Oder du kommst zu einem unserer Entwicklertreffen, die du im Kalender findest.</p>
+				<p>Gerne helfen wir dir auch aus deiner Idee eine eigene seLV zu machen!</p>
+			</div>
+			<div class="column column-4 content">
+				<h4 id="provider">Konzeption</h4>
+				<p>Wir wollen keine neue Lehre für, sondern mit euch entwickeln. Also nichts wie ran! Ihr seid herzlich eingeladen eure persönlichen Interessen und Ideen in eduZEN einzubringen. Wie sollte eine Vorlesung gestaltet sein? Wie sollten Tutorien gestaltet werden? Was haltet ihr vom Online-Angebot der Universität? Was würdet ihr anders machen und warum? Wie klappt die Zusammenarbeit mit den Kommilitonen? Schreibt uns eure Meinung! Nur Probleme, die bekannt sind können auch gelöst werden. Jede Idee und jede Beobachtung, jede Kritik und jedes Lob ist wichtig um aus diesem Konzept ein für uns alle erstrebenswertes Ziel zu machen.</p>
+				<p>Euer Engagement ist gefragt!</p>
+			</div>
+		</div>
+
+		<!--
+			Expander
+		-->
+		<div class="expandable">
+			<div class="expandable-content">
+				<div class="centered content">
+					<h2>ToDo4U</h2>
+					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+				</div>
+				<div class="centered content">
+					<h2 id="AuT">Aktuelles und Termine</h2>
+					<p>Hier findest du Informationen über das Tagesgeschäft des eduZEN-Projekts:</p>
+				</div>
+				<div class="row centered">
+					<div class="column column-2 content">
+						<h4 id="aktuelles">Twitter, RSS und Co.</h4>
+						<p>Lorem Ipsum…</p>
+					</div>
+					<div class="column column-2 content">
+						<h4 id="termine">Kalender</h4>
+						<p><iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=350&amp;wkst=2&amp;hl=de&amp;bgcolor=%23FFFFFF&amp;src=fbcgtbf7di3b4g6o907a8noiq4%40group.calendar.google.com&amp;color=%23875509&amp;ctz=Europe%2FBerlin" style=" border-width:0 " width="100%" height="350" frameborder="0" scrolling="no"></iframe></p>
+					</div>
+				</div>						
+			</div>
+		</div>
+				
+		<!--
+			1-Column-Layout
+		-->
+		<div class="row centered">
+			<div class="column column-1 content">
+				<h1><img id="logo-eduzen" src="img/eduzen.png" alt="educationZen"/> - work in progress</h1>
+			</div>
+		</div>
+			
+		<footer>
+			<!--
+				4-column Layout
+			-->
+			<div class="row centered">
+				<div class="column column-4 content">
+					<h3>TU-Berlin</h3>
+					<p><a href="http://www.chemie.tu-berlin.de/projekt_eduzen/eduzen/"><img src="img/TUBerlin_Logo_rot_small.png" class="image-left" style="height: 12em;"/></a></p>
+					<p>educationZEN ist ein Studienreformprojekt an der Technischen Universität Berlin<p>
+				</div>
+				<div class="column column-4 content">
+					<h3>DeepaMehta e.V.</h3>
+					<p><a href="http://www.deepamehta.de/de/content/foerderverein-deepamehta-ev"><img src="img/deepamehta_logo_medium.png" class="image-left" style="height: 12em;"/></a></p>
+					<p>Der DeepaMehta e.V. ist die Organisation hinter unserem Softwaregrundgerüst.</p>
+				</div>
+				<div class="column column-4 content">
+					<h3>Lehrveranstaltungen</h3>
+					<p>Wir arbeiten momentan mit den Lehrbeauftragten von Mathematik 2 für ChemikerInnen und Mathematik 2 für PhysikerInnen sowie der Physik für ElektrotechikerInnen und Technische Informatik zusammen.</p>
+				</div>
+				<div class="column column-4 content">
+					<h3>Links</h3>
+					<ul>
+						<li><a href="http://eduzen.wordpress.com/">Unser Blog</a></li>
+						<li><a href="http://research.eduzen.tu-berlin.de:8080/notes">Unser notiZEN Prototyp</a></li>
+						<li><a href="javascript:alert();"></a>Unsere seLVs</li>
+						<li><a href="http://www.bioenergetik.tu-berlin.de/menue/bioenergetik/">Unser Team</a></li>
+						<li><a href="javascript:alert();">Unser Impressum</a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
