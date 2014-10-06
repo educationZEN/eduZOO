@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+    <head>
+        <meta charset="utf-8">
+        <title>[eduZOO] Vollständige Induktion</title>
+        <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+        <script src="../../eduZOO-app/script/eduZOO.js"></script>
+    </head>
+    <body>
+	<div class="row centered">
+		<h1>Die vollständige Induktion</h1>
+		<p>Wie können wir zeigen, dass eine Aussage <tex>A(n),\; n\in \mathbb{N}</tex>,
+			nicht nur für eine narürliche Zahl <tex>k \in \mathbb{N}</tex>
+			gilt, sondern für alle Zahlen <tex>n\in \mathbb{N}</tex>?
+		</p>
+		<h2>Grundlegende Begriffe und Definitionen</h2>
+		<p>Das Beweisverfahren der <strong>vollständigen Induktion</strong>
+			ist eine Möglichkeit Aussagen auf den natürlichen Zahlen 
+			<tex>\mathbb{N_0}</tex> zu beweisen. Dieses Verfahren besteht 
+			aus drei Schritten:
+		</p>
+		<div class="definition">
+			<p><strong>Kochrezept: Vollständige Induktion</strong>
+			</p><hr>
+		<p>Sei <tex>A(n),\; n \in \mathbb{N_0}</tex>, die zu beweisende 
+			Aussageform.
+			<table>
+				<tr>
+					<td><strong>Induktionsbasis</strong> (IB) oder 
+						<strong>Induktionsanfang</strong> 
+					</td>
+					<td>
+						Hier wird gezeigt, dass die zu beweisende Annahme
+						für die kleinste zu beweisende Zahl <tex>n_0
+						\in \mathbb{N_0}</tex> zutrifft. Meißtens handelt 
+						es sich hierbei um <tex>n_0=0</tex> oder 
+						<tex>n_0=1</tex>. D.h.
+						<p>Zeige, dass <tex>A(n_0),\;n_0\in
+						\mathbb{N}</tex>, eine wahre Aussage ist.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td><strong>Induktionsannahme</strong> (IA) oder <strong>
+						Induktionsvorraussetzung</strong>
+					</td>
+					<td>Man nimmt an, dass die Aussage für ein beliebiges
+						aber festes <tex>n \in \mathbb{N}</tex> gilt. D.h.
+						<p>Die Aussage <tex>A(n)</tex> ist wahr, für ein 
+							beliebiges, aber festes, <tex>n\geq n_0</tex>.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td><strong>Induktionsschritt</strong> (IS) oder <strong>
+						Induktionsschluss</strong>
+					</td>
+					<td>Unter Benutzung der Induktionsannahme zeigt man, 
+						dass die zu beweisende Behauptung auch für <tex>
+						n+1</tex> zutrifft. Dh.
+						<p>Zeige unter der Vorraussetztung, dass <tex>A(n)
+							</tex> eine wahre Aussage ist, dass <tex>A(n+1)
+							</tex> wahr ist.
+						</p>
+					</td>
+				</tr>
+			</table>
+			Damit hat man bewiesen, da das gewählte <tex>n\in\mathbb{N_0}</tex> 
+			beliebig war, dass die Aussage <tex>A(n)</tex> wahr ist für 
+			alle <tex>n\in\mathbb{N_0}</tex>.
+		</p>
+		</div>
+		<h2>Ein Beispiel</h2>
+		<p>Zeige mit Hilfe der vollständigen Induktion, dass <tex>
+			\sum_{k=1}^n \frac{k}{2^k}=2-\frac{n+2}{2^n}</tex> gilt.
+		</p>
+		<table>
+			<tr>
+				<td><strong>IB</strong>:
+				</td>
+				<td>Wir wollen zeige, dass die obige Behauptung für die 
+					kleinste zu betrachtende Zahl <tex>n_0\in
+					\mathbb{N_0}</tex> gilt. Da die betrachtete Reihe bei 
+					<tex>k=1</tex> beginnt ist damit die kleinste Zahl 
+					<tex>n_0=1</tex>.
+					<p>Die Aussage gilt für <tex>n_0=1</tex>, denn
+					</p>
+					<tex p>\sum_{k=1}^1 \frac{k}{2^k}=\frac{1}{2}=2-\frac{3}{2}
+						=2-\frac{1+2}{2^1}.</tex>
+					Damit haben wir die <strong>IB</strong> bewiesen.
+				</td>
+			</tr>
+			<tr>
+				<td><strong>IA</strong>:
+				</td>
+				<td>Die Aussage
+				<tex p>\sum_{k=1}^n \frac{k}{2^k}=2-\frac{n+2}{2^n}</tex>
+				gelte für beliebiges aber festes <tex>n\in\mathbb{N}</tex>.
+				</td>
+			</tr>
+			<tr>
+				<td><strong>IS</strong>:
+				</td>
+				<td>Unter Benutzung der <strong>IA</strong> gilt die Behauptung 
+					auch für <tex>n+1</tex>. D.h. es ist zu zeigen, dass
+					<tex p>\sum_{k=1}^{n+1}\frac{k}{2^k}=2-\frac{(n+1)+2}{2^{(n+1)}}.</tex>
+					Los geht's:
+					<tex p>\sum_{k=1}^{n+1}\frac{k}{2^k}=\sum_{k=1}^{n}\frac{k}{2^k}
+					+\frac{n+1}{2^{(n+1)}}\overset{\text{IA}}{=}2-\frac{n+2}
+					{2^n}+\frac{n+1}{2^{(n+1)}}=2-\frac{(n+1)\cdot 2-(n+1)}
+					{2^{(n+1)}}=2-\frac{(n+1)+2}{2^{(n+1)}}</tex>
+					q.e.d.
+				</td>
+			</tr>
+		</table>
+		<p><strong>Bemerkung:</strong> Es ist sehr wichtig zu zeigen, an welcher 
+			Stelle des Beweisen man genau die Induktionsannahme (IA) verwendet.
+		</p>
+		<h2>Lehrvideos und Übungsaufgaben</h2>
+		<ol>
+			<li>Zeigen Sie mit Hilfe der vollständigen Induktion, dass 
+				für alle <tex>x\in\{x\in\mathbb{R}|x\geq -1\}</tex> 
+				und <tex>n\in\mathbb{N_0}</tex> die Bernoulli Ungleichung 
+				gilt: <tex p>(1+x)^n\geq 1+nx.</tex>
+				<figure>
+					<iframe width="560" 
+							height="315" 
+							src="//www.youtube.com/embed/AWxlZpnSofE" 
+							frameborder="0" allowfullscreen>
+					</iframe>
+					<figcaption>
+						Video 1: In diesem Video erklärt euch Franziska, 
+						wie man die Bernoulli Ungleichung mit Hilfe der 
+						vollständigen Induktion beweist.
+					</figcaption>
+					<aside>
+						Urheberschaft liegt bei Franziska Egbers. Verwertung 
+						fällt unter die Lizenz CC BY-SA 3.0.
+					</aside>
+				</figure>	
+			</li>
+			<li>Zeigen Sie mit Hilfe der vollständigen Induktion die
+				Gaußsche Summenformel <tex p>\sum_{k=1}^m k=\frac{m(m+1)}{2}
+				,\; m\in\mathbb{N}.</tex>
+				<figure>
+					<iframe width="420" 
+							height="315" 
+							src="//www.youtube.com/embed/mwypDNs3mTk" 
+							frameborder="0" allowfullscreen></iframe>
+					<figcaption>
+						Video 2: In diesem Video erklärt euch Fabian, wie 
+						man die Gaußsche Summenformel mit Hilfe der vollständigen 
+						Induktion beweist.
+					</figcaption>
+					<aside>
+						Urheberschaft liegt bei Fabian Kruse. Verwertung 
+						fällt unter die Lizenz CC BY-SA 3.0.
+					</aside>
+				</figure>
+			</li>
+		</ol>
+		<h2>Test</h2>
+		<quiz>
+			<question>
+				Bitte kreuzen Sie die wahren Aussagen an
+			</question>
+
+			<choice>Die Induktionsbasis lautet: Für <tex>n\in \mathbb{N_0}
+					</tex> gilt die Aussage <tex>A(n)</tex>.</choice>
+			<choice correct>Man kann eine vollständige Induktion auch bei
+					<tex>n_0=2</tex> starten.</choice>
+			<choice correct>Man kann mit Hilfe der vollständigen Induktion Aussagen
+					der Form <tex>A(n),\;n\in\mathbb{N_0}</tex>, wiederlegen.</choice>
+			<choice>Man kann mit Hilfe der vollständigen Induktion Aussagen
+					der Form <tex>A(r)</tex> mit <tex>r\in\mathbb{R}</tex> 
+					belegen.</choice>
+			<choice correct>Gilt eine Aussage für eine natürliche Zahl <tex>
+					m\in\mathbb{N}</tex> und folgt aus der Gültigkeit der 
+					Aussage für eine Zahl <tex>n\geq m</tex> auch die Gültigkeit 
+					der Aussage für <tex>n+1</tex>, dann nennt man dies eine
+					vollständige Induktion.</choice>
+		</quiz>
+		
+	</div>
+	</body>
+	<footer>
+		<h4>Euer Feedback ist uns wichtig, deshalb gebt es uns.</h4>
+		<hr>
+
+	</footer>
+</html
