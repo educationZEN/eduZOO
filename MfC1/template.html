@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+<head>
+    <meta charset="utf-8">
+    <title>eduZOO - Template</title>
+    <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+    <script src="../../eduZOO-app/script/eduZOO.js"></script>
+</head>
+
+<body>
+<div class="row centered">
+
+<h1>Große Überschrift für das Thema</h1>
+
+<p><!-- 1. Absatz: Ziel und Motivation -->
+	Ziel und Motivation hier
+</p>
+
+
+
+<h2>Unterkapitel</h2>
+
+
+<p>
+	Hier wird es spezieller. Mathe-Umgebung sieht so aus:
+	<tex>x\in\mathbb{R}</tex>.
+</p>
+
+
+<div class="definition">
+<strong>Definition/Satz/Merk-Würdiges!</strong><hr>
+<p>
+	Sei alles Mögliche. Die Latex-Doppeldollarumgebung geht so:
+	<tex p>
+		\begin{eqnarray*}
+			e^{i\pi}+1 &=& 0
+		\end{eqnarray*}
+	</tex>
+</p>
+</div>
+
+
+<h3>Beispiel</h3>
+<div class="beispiel">
+<p>
+	Beispiele haben einen etwas kleineren Font.
+</p>
+</div>
+
+
+
+<h2>Test</h2>
+
+
+<quiz>
+ <question>
+	So sieht ein Test aus!
+ </question>
+
+	<choice correct>
+		Richtig
+	</choice>
+
+	<choice>
+		Falsch
+	</choice>
+</quiz>
+
+<quiz>
+	<question>
+		Und ein Test mit Eingabe. Die richtige Antwort lautet 42.
+	</question>
+
+	<textinput correct="42"></textinput>
+
+</quiz>
+
+
+</div>
+</body>
+</html>

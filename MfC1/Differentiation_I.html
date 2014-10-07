@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+<head>
+    <meta charset="utf-8">
+    <title>[edoZoo] Differentiation I</title>
+    <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+    <script src="../../eduZOO-app/script/eduZOO.js"></script>
+</head>
+
+<body>
+<div class="row centered">
+
+<h1>Differentiation I - Der Differenzenquotient</h1>
+
+<p><!-- 1. Absatz: Ziel und Motivation -->
+	Wir wollen zeigen, wie man die lokale Steigung einer im Allgemeinen 
+	gekrümmten Kurve bestimmen.
+</p>
+
+<h2>Vorüberlegung zur Definition des Differentenquotienten</h2>
+<p>
+	Zu Beginn möchte man die Steigung der Sekante von dem Funktionsgraphen von 
+	<tex>f</tex>, durch die Punkte <tex>(x_0,f(x_0))</tex> und <tex>(x_0+h,f(x_0+h))</tex> 
+	mit Hilfe des Steigungsdreiecks berechnen. Es gilt also, dass die Sekantensteigung
+	<tex>S(x_0,x_0+h)</tex> gegeben ist durch
+	<tex p>
+		S(x_0,x_0+h)=\frac{f(x_0+h)-f(x_0)}{h}.
+	</tex>
+	Da man allerdings die lokale Steigung im Punkt <tex>x_0</tex> kennen möchte, 
+	genauer die Steigung der Tangente am Punkt <tex>(x_0,f(x_0))</tex>, 
+	führen wir einen Grenzübergang ein. Das heißt, wir lassen <tex>h</tex>, also 
+	den Abstand zwischen <tex>x_0</tex> und <tex>x_0+h</tex>, immer kleiner 
+	werden <tex>(h\rightarrow 0)</tex>, sodass wir die gewünschte Steigung 
+	erhalten. So gelangen wir zum sogenannten <strong>Differenzenquotient</strong>: 
+	<tex p>\lim_{h\rightarrow 0}\frac{f(x_0+h)-f(x_0)}{h}.</tex>
+	
+</p>
+
+
+<h2>Grundlegende Begriffe und Definitionen</h2>
+<div class="definition">
+	<strong>Differenzierbar, Differenzenquotient, erste Ableitung</strong><hr>
+	<p>
+		Eine Funktion <tex>f:D\rightarrow \mathbb{R},\, D\subset\mathbb{R}</tex> 
+		offen, heißt <strong>differenzierbar</strong> an der Stelle <tex>x_0\in D</tex>, wenn
+		 der Grenzwert des <strong>Differenzenquotienten</strong> (auch 
+		 <strong>Differenzialquotient</strong> genannt)
+		<tex p>
+			\lim_{h\rightarrow 0}\frac{f(x_0+h)-f(x_0)}{h}=
+			\lim_{x\rightarrow x_0}\frac{f(x)-f((x_0)}{x-x_0}
+		</tex>
+		existiert. Den Grenzwert des Differenzenquotienten nennt man die 
+		<strong>erste Ableitung</strong> von <tex>f</tex> an der Stelle
+		 <tex>x_0</tex> und bezeichnet sie mit <tex>f'(x_0)</tex>.
+	</p>
+	<p>
+		Ist <tex>f</tex> in jedem Punkt <tex>x_0\in D</tex> differenzierbar 
+		nennt man <tex>f</tex> <strong> differenzierbar</strong> auf ganz 
+		<tex>D</tex>.
+	</p>
+	<strong>Notwendige Bedingung zur Differenzierbarkeit</strong><hr>
+	<p>
+		Notwendig für die Existenz der ersten Ableitung einer Funtkion in 
+		einem Punkt <tex>x_0\in D</tex> ist die Stetigekeit im selbigen. 
+		Dies gilt aber nicht umgekehrt!
+	</p>
+</div>
+<p>
+	<table>
+		<tr>
+			<td>
+				<strong>Bemerkung:</strong>
+			</td>
+			<td>
+				Ist <tex>f</tex> an der Stelle <tex>x_0</tex> 
+				differenzierbar gilt:
+				<tex p>
+					f'(x_0)=\lim_{x\rightarrow x_0} \frac{f(x)-f(x_0)}{x-x_0}
+					=\lim_{h\rightarrow 0} \frac{f(x_0+h)-f(x_0)}{h}.
+				</tex>
+			</td>
+		</tr>
+	</table>
+ </p>
+
+<h3>Beispiel</h3>
+	<div class="beispiel">
+		<p>
+			Berechnen Sie die erste Ableitung von <tex>f(x)=2x</tex> mit 
+			Hilfe des Differenzenquotienten.
+			<tex p>
+				\lim_{x\rightarrow x_0}\frac{f(x)-f(x_0)}{x-x_0}=\lim_
+				{x\rightarrow x_0}\frac{2x-2x_0}{x-x_0}=\lim_{x\rightarrow x_0}
+				\frac{2(x-x_0)}{x-x_0}=\lim_{x\rightarrow x_0}2=2=f'(x_0).
+			</tex>
+			Oder man benutzt die äquivalente Formel für den Differenzenquotienten.
+			<tex p>
+				\lim_{h\rightarrow 0}\frac{f(x_0+h)-f(x_0)}{h}=\lim_{h\rightarrow 0}
+				\frac{2(x_0+h)-2x_0}{h}=\lim_{h\rightarrow 0}\frac{2h}{h}
+				=2=f'(x_0).
+			</tex>			
+		</p>
+	</div>
+<h2>Übungsaufgaben und Videos</h2>
+Berechnen Sie die jeweilige Ableitung mit Hilfe des Differenzenquotienten:
+<ol>
+	<li>
+		<tex p>
+			f_1(x)=x^2
+		</tex>
+	</li>
+	<li>
+		<tex p>
+			f_2(x)=\sqrt{x}
+		</tex>
+	</li>
+	<li>
+		<tex p>
+			f_3(x)=3x^3
+		</tex>
+	</li>
+</ol>
+<figure>
+			<iframe width="560" 
+					height="315" 
+					src="//www.youtube.com/embed/YsWfTao4A7o" 
+					frameborder="0" allowfullscreen>
+			</iframe>
+			
+			<figcaption>
+				Video 1: In diesem Video erklärt euch Franziska, 
+				die Lösungen zu den Übungsaufgabe.
+			</figcaption>
+			<aside>
+				Urheberschaft liegt bei Franziska Egbers. Verwertung 
+				fällt unter die Lizenz CC BY-SA 3.0.
+			</aside>
+		</figure>
+<p>
+	<strong>Bemerkung:</strong> Es macht den Eindruck, dass der Differenzenquotient 
+	die gleiche Ableitung berechnet, wie wir die Ableitung und ihre Ableitungsregeln 
+	aus der Schule kennen. Tatsächlich ist dies auch der Fall, wie wir im nächsten 
+	eduZOO sehen werden.
+</p>
+
+<h2>Test</h2>
+	<quiz>
+		<question>
+			Kreuzen Sie die wahren Aussagen an!
+		</question>
+
+		<choice correct>
+			Jede in <tex>x_0</tex> differenzierbare Funktion ist dort auch 
+			stetig.
+		</choice>
+		<choice>
+			Ist eine Funktion in einem Punkt <tex>x_0</tex> differenzierbar, 
+			dann ist sie überall differenzierbar.
+		</choice>
+		<choice>
+			Jede stetige Funktion ist differenzierbar.
+		</choice>
+		<choice>
+			Jede in <tex>x_0</tex> stetige Funktion ist dort auch differenzierbar.
+		</choice>
+		<choice correct>
+			Ist eine Funktion differenzierbar, dann existiert ihre Ableitung 
+			in jedem Punkt <tex>x_0\in D</tex>.
+		</choice>
+		<choice correct>
+			Jede differenzierbare Funktion ist auch stetig.
+		</choice>
+		<choice correct>
+			Der Differenzenquotient dient der Bestimmung der Ableitung in 
+			einem Punkt <tex>x_0</tex>.
+		</choice>
+		<choice correct>
+			Der Differenzenquotient dient der Bestimmung der Steigung in 
+			einem Punkt <tex>x_0</tex>.
+		</choice>
+	</quiz>
+
+</div>
+</body>
+</html>
