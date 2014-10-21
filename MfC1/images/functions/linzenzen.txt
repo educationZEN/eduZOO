@@ -1,0 +1,88 @@
+
+Datei:
+	Constant function2.svg
+Lizenz:
+	unentgeltliches, bedingungsloses Nutzungsrecht für jedermann ohne 
+	zeitliche, räumliche und inhaltliche Beschränkung
+Urheber:
+	Lenny222
+	
+Datei:
+	Function-x.svg
+Lizenz:
+	CC BY-SA 3.0
+Urheber:
+	Qualc1
+	
+Datei:
+	Lineare_funktionen2.svg
+Lizenz:
+	CC BY 3.0
+Urheber:
+	Kmhkmh
+	
+Datei:
+	Polynomialdeg5.svg
+Lizenz:
+	CC BY-SA 3.0
+Urheber:
+	Geek3
+	
+Datei:
+	Gebrochenrational.svg
+Lizenz:
+	CC0
+Urheber:
+	StefanPohl
+	
+Datei:
+	Squareroot-0-9-metapost.svg
+Lizenz:
+	CC BY-SA 3.0
+Urheber:
+	Georg-Johann
+	
+Datei:
+	Absolute_Value.svg
+Lizenz:
+	Gemeinfrei
+Urheber:
+	LennyWikidata
+
+Datei:	
+	Winkelfunktionen_Einheitskreis.svg
+Lizenz:
+	Gemeinfrei
+Urheber:
+	TheCarnil
+	
+Datei:
+	Sine_cosine_one_period.svg
+Lizenz:
+	CC BY 3.0
+Urheber:
+	Geek3
+	
+Datei:
+	Circle_cos_sin.gif
+Lizenz:
+	Public Domain
+Urheber:
+	LucasVB
+	
+Datei:
+	Exp_e.svg
+Lizenz:
+	Gemeinfrei
+Urheber:
+	Marcel Marnitz, reworked by Georg-Johann
+	
+Datei:
+	Log4.svg
+Lizenz:
+	for any purpose including unrestricted redistribution, commercial 
+	use, and modification
+Urheber:
+	Marcel Marnitz (Transfered by Georg-Johann/Original uploaded by 
+	Georg-Johann)
+	

@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   viewBox="-500 -800 659.24658 690.56163"
+   width="329.62329"
+   height="345.28082"
+   id="svg3290"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="Exp_e.svg">
+  <metadata
+     id="metadata3459">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1536"
+     inkscape:window-height="803"
+     id="namedview3457"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.97649903"
+     inkscape:cx="165.17123"
+     inkscape:cy="173.13699"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3290" />
+  <title
+     id="title3292">exp(x) with Tangent in (0,1)</title>
+  <desc
+     id="desc3294">
+	This is the file
+		http://commons.wikimedia.org/wiki/File:Exp_e.svg
+
+	It shows the graph of the exponential e^x together with its
+	tangent of slope 1, i.e. x+1.
+</desc>
+  <defs
+     id="defs3296">
+    <!-- pstricks-style arrow, zoom 3 -->
+    <marker
+       id="Arrow"
+       refX="6"
+       refY="5"
+       markerUnits="strokeWidth"
+       markerWidth="12"
+       markerHeight="9"
+       orient="auto">
+      <g
+         transform="translate(6,5)"
+         id="g3299">
+        <path
+           d="M -1,0 -6,4 6,0 -6,-5 z"
+           id="path3301"
+           inkscape:connector-curvature="0" />
+      </g>
+    </marker>
+    <path
+       id="tick"
+       d="M -0.1,0 H 0.1"
+       inkscape:connector-curvature="0" />
+    <!-- Grid -->
+    <pattern
+       id="grid"
+       width="1"
+       height="1"
+       patternUnits="userSpaceOnUse">
+      <g
+         style="stroke:#000; stroke-width:0.002; stroke-linecap:butt; fill:none;"
+         id="g3305">
+        <rect
+           width="1"
+           height="1"
+           id="rect3307" />
+      </g>
+    </pattern>
+    <!-- Pattern used to x-Ticks on Axes -->
+    <pattern
+       id="tick-x"
+       width="1"
+       height="1"
+       patternUnits="userSpaceOnUse">
+      <path
+         style="stroke:black; stroke-width:0.02;"
+         d="M 0,-1 v 2"
+         id="path3310" />
+    </pattern>
+    <!-- Pattern used to y-Ticks on Axes -->
+    <pattern
+       id="tick-y"
+       width="1"
+       height="1"
+       patternUnits="userSpaceOnUse">
+      <path
+         style="stroke:black; stroke-width:0.02;"
+         d="M -1,0 h 2"
+         id="path3313" />
+    </pattern>
+    <!-- Legend -->
+    <path
+       id="leg"
+       d="M 0,0 H -0.3"
+       inkscape:connector-curvature="0" />
+    <!--
+		x(t) = t
+		y(t) = exp(t)
+		t    = -5 ... 2.5
+	-->
+    <path
+       id="exp"
+       d="m -5,0.0067 c 0.3125,0.0021 0.625,0.0051 0.9375,0.0105 0.3125,0.0054 0.625,0.013 0.9375,0.0267 0.3125,0.0138 0.625,0.0332 0.9375,0.0683 0.3125,0.0351 0.625,0.0848 0.9375,0.1743 0.1563,0.0448 0.3125,0.0998 0.4688,0.1713 0.1562,0.0716 0.3125,0.1595 0.4687,0.2738 C -0.1563,0.8459 0,0.9864 0.1563,1.1691 0.3125,1.3518 0.4688,1.5763 0.625,1.8682 0.7031,2.0142 0.7813,2.1772 0.8594,2.3617 0.9375,2.5462 1.0156,2.7522 1.0938,2.9854 1.1719,3.2187 1.25,3.4791 1.3281,3.774 1.4063,4.0688 1.4844,4.398 1.5625,4.7707 1.6406,5.1434 1.7188,5.5596 1.7969,6.0308 1.875,6.5019 1.9531,7.028 2.0313,7.6236 c 0.039,0.2978 0.0781,0.613 0.1171,0.9479"
+       inkscape:connector-curvature="0" />
+    <style
+       type="text/css"
+       id="style3317">
+	.rm {font-size:30px; stroke-width:0px; font-style:normal; font-variant:normal; stroke:black; font-family: Times New Roman;}
+	.it {font-size:30px; stroke-width:0px; font-style:italic; font-variant:normal; stroke:black; font-family: Times New Roman;}
+	.it2{font-size:22px; stroke-width:0px; font-style:italic; font-variant:normal; stroke:black; font-family: Times New Roman;}
+
+	.tangent { stroke-width:0.04; stroke:#88f; stroke-dasharray:.1 .1; }
+	.dots    { stroke-width:0.02; stroke:black; stroke-dasharray:.04 .04; }
+	.exp     { stroke-width:0.05;  stroke:red; }
+	</style>
+    <marker
+       id="Arrow-1"
+       refX="6"
+       refY="5"
+       markerUnits="strokeWidth"
+       markerWidth="12"
+       markerHeight="9"
+       orient="auto">
+      <g
+         transform="translate(6,5)"
+         id="g3299-7">
+        <path
+           inkscape:connector-curvature="0"
+           d="M -1,0 -6,4 6,0 -6,-5 z"
+           id="path3301-4" />
+      </g>
+    </marker>
+    <marker
+       id="marker3534"
+       refX="6"
+       refY="5"
+       markerUnits="strokeWidth"
+       markerWidth="12"
+       markerHeight="9"
+       orient="auto">
+      <g
+         transform="translate(6,5)"
+         id="g3536">
+        <path
+           inkscape:connector-curvature="0"
+           d="M -1,0 -6,4 6,0 -6,-5 z"
+           id="path3538" />
+      </g>
+    </marker>
+  </defs>
+  <!-- ################################################################### -->
+  <!-- Typesetting Text in SVG is plain Horror.
+	 Scaling does not work as expected and font metrics like
+	 anchor points get garbaged. So we zoom the complete image
+	 except the texts instead. -->
+  <!-- Labels for x-Axis -->
+  <!-- Labels for y-Axis, &#8722; = &minus; -->
+  <!-- Legend for Graphs -->
+  <g
+     id="g3816"
+     transform="matrix(0.54794521,0,0,0.54794521,-226.0274,-361.64384)">
+    <g
+       id="g3333"
+       class="rm"
+       style="font-size:30px;font-style:normal;font-variant:normal;text-anchor:middle;stroke:#000000;stroke-width:0px;font-family:Times New Roman"
+       transform="translate(5.125,97.149988)">
+      <g
+         id="g3335"
+         transform="translate(-400,0)">
+        <text
+           id="text3337">−4</text>
+      </g>
+      <g
+         id="g3339"
+         transform="translate(-300,0)">
+        <text
+           id="text3341">−3</text>
+      </g>
+      <g
+         id="g3343"
+         transform="translate(-200,0)">
+        <text
+           id="text3345">−2</text>
+      </g>
+      <g
+         id="g3347"
+         transform="translate(-100,0)">
+        <text
+           id="text3349">−1</text>
+      </g>
+      <g
+         id="g3351"
+         transform="translate(100,0)">
+        <text
+           id="text3353">1</text>
+      </g>
+      <g
+         id="g3355"
+         transform="translate(200,0)">
+        <text
+           id="text3357">2</text>
+      </g>
+      <g
+         id="g3359"
+         transform="translate(300,0)">
+        <text
+           id="text3361">3</text>
+      </g>
+      <g
+         id="g3363"
+         transform="translate(400,0)">
+        <text
+           id="text3365">4</text>
+      </g>
+      <g
+         id="g3367"
+         transform="translate(500,0)">
+        <text
+           id="text3369">5</text>
+      </g>
+      <g
+         id="g3371"
+         transform="translate(600,0)">
+        <text
+           id="text3373">6</text>
+      </g>
+      <g
+         id="g3375"
+         transform="translate(640,-55)">
+        <g
+           id="g3377"
+           transform="scale(1.3,1.3)">
+          <text
+             style="font-size:30px;font-style:italic;font-variant:normal;stroke:#000000;stroke-width:0px;font-family:Times New Roman"
+             id="text3379"
+             class="it">x</text>
+        </g>
+      </g>
+      <!-- &#402; = &fnof; -->
+      <g
+         id="g3381"
+         transform="translate(20,-770)"
+         style="text-anchor:start">
+        <g
+           id="g3383"
+           transform="scale(1.3,1.3)">
+          <text
+             id="text3385">
+            <tspan
+               style="font-size:30px;font-style:normal;font-variant:normal;stroke:#000000;stroke-width:0px;font-family:Times New Roman"
+               id="tspan3387"
+               class="rm">ƒ(</tspan>
+            <tspan
+               style="font-size:30px;font-style:italic;font-variant:normal;stroke:#000000;stroke-width:0px;font-family:Times New Roman"
+               id="tspan3389"
+               class="it">x</tspan>
+            <tspan
+               style="font-size:30px;font-style:normal;font-variant:normal;stroke:#000000;stroke-width:0px;font-family:Times New Roman"
+               id="tspan3391"
+               class="rm">)</tspan>
+          </text>
+        </g>
+      </g>
+    </g>
+    <g
+       id="g3393"
+       class="rm"
+       style="font-size:30px;font-style:normal;font-variant:normal;text-anchor:end;stroke:#000000;stroke-width:0px;font-family:Times New Roman"
+       transform="translate(-9.875,67.149988)">
+      <g
+         id="g3395"
+         transform="translate(0,-700)">
+        <text
+           id="text3397">7</text>
+      </g>
+      <g
+         id="g3399"
+         transform="translate(0,-600)">
+        <text
+           id="text3401">6</text>
+      </g>
+      <g
+         id="g3403"
+         transform="translate(0,-500)">
+        <text
+           id="text3405">5</text>
+      </g>
+      <g
+         id="g3407"
+         transform="translate(0,-400)">
+        <text
+           id="text3409">4</text>
+      </g>
+      <g
+         id="g3411"
+         transform="translate(0,-300)">
+        <text
+           id="text3413">3</text>
+      </g>
+      <g
+         id="g3415"
+         transform="matrix(1.3,0,0,1.3,0,-271.8)">
+        <text
+           style="font-size:30px;font-style:italic;font-variant:normal;stroke:#000000;stroke-width:0px;font-family:Times New Roman"
+           id="text3417"
+           class="it">e</text>
+      </g>
+      <g
+         id="g3419"
+         transform="translate(0,-200)">
+        <text
+           id="text3421">2</text>
+      </g>
+      <g
+         id="g3423"
+         transform="translate(0,-100)">
+        <text
+           id="text3425">1</text>
+      </g>
+      <g
+         id="g3427"
+         transform="translate(0.3,100)">
+        <text
+           id="text3429">−1</text>
+      </g>
+      <g
+         id="g3431"
+         transform="translate(0.3,200)">
+        <text
+           id="text3433">−2</text>
+      </g>
+    </g>
+    <g
+       id="g3435"
+       style="fill:#000000"
+       transform="translate(3.125,57.149988)">
+      <!-- very labels -->
+      <text
+         style="font-size:30px;font-style:normal;font-variant:normal;stroke:#000000;stroke-width:0px;font-family:Times New Roman"
+         id="text3437"
+         transform="matrix(1.3,0,0,1.3,480,-540)"
+         class="rm"><tspan
+   style="font-size:30px;font-style:italic;font-variant:normal;stroke:#000000;stroke-width:0px;font-family:Times New Roman"
+   id="tspan3439"
+   class="it">x</tspan>
+ + 1</text>
+      <text
+         style="font-size:30px;font-style:italic;font-variant:normal;stroke:#000000;stroke-width:0px;font-family:Times New Roman"
+         id="text3441"
+         transform="matrix(1.5,0,0,1.5,190,-540)"
+         class="it">e<tspan
+   style="font-size:22px;font-style:italic;font-variant:normal;stroke:#000000;stroke-width:0px;font-family:Times New Roman"
+   id="tspan3443"
+   class="it2"
+   dx="3.7590112e-039"
+   dy="3.7590112e-039">x</tspan>
+</text>
+    </g>
+    <g
+       id="g3445"
+       style="fill:none"
+       transform="matrix(100,0,0,-100,3.125,57.149988)">
+      <!-- Axes -->
+      <g
+         id="g3447"
+         style="stroke:#000000;stroke-width:0.02">
+        <path
+           id="path3449"
+           d="M -5,0 H 6.85"
+           inkscape:connector-curvature="0"
+           style="marker-end:url(#Arrow)" />
+        <path
+           id="path3451"
+           d="M 0,-3 V 7.85"
+           inkscape:connector-curvature="0"
+           style="marker-end:url(#Arrow)" />
+      </g>
+      <!-- exp(x) -->
+      <use
+         style="stroke:#ff0000;stroke-width:0.05"
+         id="use3453"
+         class="exp"
+         xlink:href="#exp"
+         x="0"
+         y="0"
+         width="744.09448"
+         height="1052.3622" />
+      <!-- Tangent -->
+      <path
+         style="stroke:#8888ff;stroke-width:0.04;stroke-dasharray:0.1, 0.1"
+         id="path3455"
+         class="tangent"
+         d="M -5,-4 7,8"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
+</svg>

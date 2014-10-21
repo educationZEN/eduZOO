@@ -22,23 +22,25 @@
 <p>
 	Sei <tex>f:\mathcal{D}\to\mathcal{W}</tex> eine Abbildung. Die Menge
 	<tex p>G_f=\{(x,y)\in\mathbb{R}^2|y=f(x)\}</tex> heißt
-	<em>Graph von</em> \(f\).
+	<em>Graph von</em> <tex>f</tex>.
 </p>
 </div>
 
 <p>
-	Da zu jedem \(x\in\mathcal{D}\) immer genau ein \(y\in\mathcal{W}\)
+	Da zu jedem <tex>x\in\mathcal{D}</tex> immer genau ein <tex>y\in\mathcal{W}</tex>
 	gehört, sind Graphen von Funktionen immer vertikal doppelpunktfrei.
 	Ein Kreis zum Beispiel kann nicht Graph einer Funktion sein (aber
 	Bild - der Unterschied soll klar sein).
 </p>
+
+
 
 <h3>Beispiel</h3>
 <div class="beispiel">
 <p>
 	Der Graph der Funktion
 	<tex>f:\mathbb{R}\to\mathbb{R}\;,\;f(x)=x</tex> ist die
-	Winkelhalbierende des \(\mathbb{R}^2\), denn
+	Winkelhalbierende des <tex>\mathbb{R}^2</tex>, denn
 	<tex p>
 		\begin{eqnarray*}
 		G_f	&=&\{(x,y)\in\mathbb{R}^2|y=f(x)\}\\
@@ -52,19 +54,29 @@
 <h2>Test</h2>
 
 
+<figure>
+	<img 	src="images/Teilmengen.svg"
+			alt="Teilmengen" />
+		<figcaption>
+			Abbildung 1a-e: Teilmengen von <tex>\mathcal{D}\times\mathcal{W}</tex>.
+		</figcaption>
+</figure>
+
 <quiz>
- <question>
-	Welche dieser Teilmengen  des \(\mathbb{R}^2\) sind Graph einer
-	Funktion?
- </question>
-
-	<choice correct>
-		Richtig
-	</choice>
-
-	<choice>
-		Falsch
-	</choice>
+	<question>
+		Welche Teilmengen von <tex>\mathcal{D}\times\mathcal{W}</tex>
+		sind Graph einer Funktion?
+	</question>
+	<table>
+		<tr>
+			<td><choice>a, </choice></td>
+			<td><choice>b, </choice></td>
+			<td><choice>c, </choice></td>
+			<td><choice correct>d, </choice></td>
+			<td><choice correct>e </choice></td>
+		</tr>
+	</table>
+</quiz>
 </quiz>
 
 
@@ -76,7 +88,7 @@
 <p>
 	Für die im Folgenden aufgeführten Funktionen wird der
 	Definitionsbereich immer maximal gewählt. Im Allgemeinen gilt, dass
-	reelle Funktionen auf ganz \(\mathbb{R}\) definiert sind, außer bei
+	reelle Funktionen auf ganz <tex>\mathbb{R}</tex> definiert sind, außer bei
 	bestimmten inversen Funktionen (z.B. Logarithmus, Wurzel) und an
 	Stellen, an denen durch Null dividiert wird. Dies kann immer dann
 	passieren, wenn die Funktion als Quotient zweier Funktionen
@@ -91,8 +103,8 @@
 <strong>Definition: Nullstelle</strong><hr>
 <p>
 	Sei <tex>f:\mathcal{D}\to\mathbb{R}</tex> eine reellwertige
-	Abbildung. Ein Element \(x\in\mathcal{D}\) heißt
-	<em>Nullstelle von</em> \(f\), genau dann wenn gilt
+	Abbildung. Ein Element <tex>x\in\mathcal{D}</tex> heißt
+	<em>Nullstelle von</em> <tex>f</tex>, genau dann wenn gilt
 	<tex>f(x)=0</tex>.
 </p>
 </div>
@@ -103,74 +115,118 @@
 </p>
 
 
-<p><u><strong>Konstante Funktionen</strong></u></p>
+<h3>Konstante Funktionen</h3>
 
-<p> Sei \(c\in\mathbb{R}\). Dann heißt
+<p> Sei <tex>c\in\mathbb{R}</tex>. Dann heißt
 	<tex p>f:\mathbb{R}\to\mathbb{R}\;,\; f(x)=c</tex>
-	konstante Funktion mit Wert \(c\). Sie bildet alle Elemente des
-	Definitionsbereichs auf die Zahl \(c\) ab. Sie ist injektiv nur im
+	konstante Funktion mit Wert <tex>c</tex>. Sie bildet alle Elemente des
+	Definitionsbereichs auf die Zahl <tex>c</tex> ab. Sie ist injektiv nur im
 	trivialen Fall, in dem der Definitionsbereich aus genau einem
-	Element besteht. Konstante Funktionen mit \(c\neq0\) haben keine
-	Nullstellen. Ist \(c=0\), so ist jedes Element des
+	Element besteht. Konstante Funktionen mit <tex>c\neq0</tex> haben keine
+	Nullstellen. Ist <tex>c=0</tex>, so ist jedes Element des
 	Definitionsbereichs Nullstelle.
 </p>
 
+<figure>
+	<img 	src="images/functions/Constant_function2.svg"
+			alt="Konstante Funktion" />
+	<figcaption>
+		Abbildung 2: Graph einer Konstanten Funktion.
+		<aside>
+			Urheberschaft liegt bei Lenny222 (Künstlername/
+			Pseudonym); Verwertung fällt unter Lizenz 
+			"unentgeltliches, bedingungsloses Nutzungsrecht 
+			für jedermann ohne zeitliche, räumliche und 
+			inhaltliche Beschränkung".
+		</aside>
+	</figcaption>
+</figure>
 
-<p><u><strong>Die Identität</strong></u></p>
+
+<h3>Die Identische Funktion</h3>
 
 	<tex p>f:\mathbb{R}\to\mathbb{R}\;,\; f(x)=x</tex>
 <p>
 	Die Identität bildet jedes Element des Definitionsbereichs auf sich
 	selbst ab. Daher ist sie bijektiv und ihre eigene Inverse. Sie hat
-	genau eine Nullstelle bei \(x=0\).
+	genau eine Nullstelle bei <tex>x=0</tex>.
 </p>
 
-<p><u><strong>Affine Funktionen</strong></u></p>
+<figure>
+	<img 	src="images/functions/Function-x.svg"
+			alt="Identische Funktion" />
+	<figcaption>
+		Abbildung 3: Graph der Identischen Funktion.
+		<aside>
+			Urheberschaft liegt bei Qualc1 (Künstlername/
+			Pseudonym); Verwertung fällt unter Lizenz 
+			CC BY-SA 3.0.
+		</aside>
+	</figcaption>
+</figure>
 
-<p> Seien \(a,b\in\mathbb{R}\). Dann heißt
+
+<h3>Affine Funktionen</h3>
+
+<p> Seien <tex>a,b\in\mathbb{R}</tex>. Dann heißt
 	<tex p>f:\mathbb{R}\to\mathbb{R}\;,\; f(x)=ax+b</tex>
-	affine Funktion. Im Fall \(a=0\) wird die Funktion zu einer
-	konstanten Funktion. Im Fall \(a\neq0\) ist die Funktion bijektiv.
+	affine Funktion. Im Fall <tex>a=0</tex> wird die Funktion zu einer
+	konstanten Funktion. Im Fall <tex>a\neq0</tex> ist die Funktion bijektiv.
 	<ul>
 	<li>
 		Beweis der
 		<a href="Abbildungen_I.html#InjektivitätDef">Injektivität</a>:
-		Es ist zu zeigen, dass aus <tex>f(x)=f(y)</tex> folgt \(x=y\).
+		Es ist zu zeigen, dass aus <tex>f(x)=f(y)</tex> folgt <tex>x=y</tex>.
 		Sei also <tex>f(x)=f(y)</tex>, das heißt
-		<tex p>ax+b=ay+b</tex> Subtraktion von \(b\) auf beiden Seiten
-		und teilen durch \(a\) (hier ist \(a\neq0\) wichtig!) liefert
-		das erforderliche \(x=y\).
+		<tex p>ax+b=ay+b</tex> Subtraktion von <tex>b</tex> auf beiden Seiten
+		und teilen durch <tex>a</tex> (hier ist <tex>a\neq0</tex> wichtig!) liefert
+		das erforderliche <tex>x=y</tex>.
 	</li>
 	<li>
 		Beweis der
 		<a href="Abbildungen_I.html#SurjektivitätDef">Surjektivität</a>:
-		Es ist zu zeigen, dass für jedes \(y\) aus dem Wertebereich ein
-		\(x\) aus dem Definitionsbereich (hier sind beide gleich
+		Es ist zu zeigen, dass für jedes <tex>y</tex> aus dem Wertebereich ein
+		<tex>x</tex> aus dem Definitionsbereich (hier sind beide gleich
 		<tex>\mathbb{R}</tex>) existiert, sodass <tex>f(x)=y</tex>.
-		Die Bedingung ausgeschrieben und nach \(x\) umgestellt liefert
+		Die Bedingung ausgeschrieben und nach <tex>x</tex> umgestellt liefert
 		<tex p>ax+b=y\Longleftrightarrow x=\frac{y-b}{a}</tex> und damit
-		das benötigte \(x\)
+		das benötigte <tex>x</tex>
 	</li>
 	</ul>
-	Ist \(b=0\) so heißt die Funktion lineare Funktion.
+	Ist <tex>b=0</tex> so heißt die Funktion lineare Funktion.
 </p>
 
-<p><u><strong>Ganzrationale Funktion / Polynome</strong></u></p>
+<figure>
+	<img 	src="images/functions/Lineare_funktionen2.svg"
+			alt="Affine Funktion" />
+	<figcaption>
+		Abbildung 4: Graph einer Affinen Funktion.
+		<aside>
+			Urheberschaft liegt bei Kmhkmh (Künstlername/
+			Pseudonym); Verwertung fällt unter Lizenz 
+			CC BY 3.0.
+		</aside>
+	</figcaption>
+</figure>
 
-<p> Sei \(a_0,a_1,\dots,a_n\in\mathbb{R}, a_n\neq0\). Dann heißt
+
+<h3>Ganzrationale Funktionen / Polynome</h3>
+
+<p> Sei <tex>a_0,a_1,\dots,a_n\in\mathbb{R}, a_n\neq0</tex>. Dann heißt
 	<tex p>P:\mathbb{R}\to\mathbb{R}\;,\;
 			P(x)=a_nx^n+a_{n-1}x^{n-1}+\dots+a_1x+a_0</tex>
 	ganzrationale Funktion oder Polynom. Die Zahlen
-	\(a_0,a_1,\dots,a_n\) heißen Koeffizienten des Polynoms \(P\). Die
-	natürliche Zahl \(n\) heißt Grad des Polynoms. Die Polynome ersten
+	<tex>a_0,a_1,\dots,a_n</tex> heißen Koeffizienten des Polynoms <tex>P</tex>. Die
+	natürliche Zahl <tex>n</tex> heißt Grad des Polynoms. Die Polynome ersten
 	Grades sind genau die affinen Funktionen. Die
 	Abbildungseigenschaften von Polynome hängen vom Grad und von den
-	Koeffizienten ab. Polynome gerade Grades, also wenn \(n=2k\) für
-	ein \(k\in\mathbb{N}\), sind nicht surjektiv, Polynome ungeraden
+	Koeffizienten ab. Polynome gerade Grades, also wenn <tex>n=2k</tex> für
+	ein <tex>k\in\mathbb{N}</tex>, sind nicht surjektiv, Polynome ungeraden
 	Grades sind surjektiv. Dies exakt zu beweisen fehlen uns hier aber
 	noch die Mittel.
 </p>
 
+<<<<<<< HEAD
 <p>
 	Affine Funktionen und die Identität sind Polynome ersten Grades,
 	konstante Funktionen Polynome nullten Grades.
@@ -184,23 +240,158 @@
 </p>
 
 <p><u><strong>Die Betragsfunktion</strong></u></p>
+=======
+<figure>
+	<img 	src="images/functions/Polynomialdeg5.svg"
+			alt="Polynom" />
+	<figcaption>
+		Abbildung 5: Graph eines Polinoms vom Grad 5.
+		<aside>
+			Urheberschaft liegt bei Geek3 (Künstlername/
+			Pseudonym); Verwertung fällt unter Lizenz 
+			CC BY-SA 3.0.
+		</aside>
+	</figcaption>
+</figure>
+
+<h3>Die (gebrochen) rationalen Funktionen</h3>
+
+<figure>
+	<img 	src="images/functions/Gebrochenrational.svg"
+			alt="rationale Funktion" />
+	<figcaption>
+		Abbildung 6: Graphen rationaler Funktionen.
+		<aside>
+			Urheberschaft liegt bei StefanPohl (Künstlername/
+			Pseudonym); Verwertung fällt unter Lizenz 
+			CC0.
+		</aside>
+	</figcaption>
+</figure>
+
+
+<h3>Die Wurzelfunktion</h3>
+
+<figure>
+	<img 	src="images/functions/Squareroot-0-9-metapost.svg"
+			alt="Wurzelfunktion" />
+	<figcaption>
+		Abbildung 7: Graph der Wurzelfunktion.
+		<aside>
+			Urheberschaft liegt bei Georg-Johann (Künstlername/
+			Pseudonym); Verwertung fällt unter Lizenz 
+			CC BY-SA 3.0.
+		</aside>
+	</figcaption>
+</figure>
+
+
+<h3>Die Betragsfunktion</h3>
+>>>>>>> origin/gh-pages
 
 	<tex p>f:\mathbb{R}\to\mathbb{R}\;,\;
 		f(x)=|x|=\begin{cases}x&,& x\geq0\\ -x&,& x&lt;0\end{cases}
 	</tex>
 <p>
 	Die Betragsfunktion "befreit" reelle Zahlen von ihrem Vorzeichen.
-	Sie ist nicht injektiv, da jeder Wert \(y\) sowohl \(y\) als auch
-	\(-y\) als Urbild hat. Wird der Definitionsbereich eingeschränkt auf
+	Sie ist nicht injektiv, da jeder Wert <tex>y</tex> sowohl <tex>y</tex> als auch
+	<tex>-y</tex> als Urbild hat. Wird der Definitionsbereich eingeschränkt auf
 	die nicht-negativen reellen Zahlen (oder die nicht-positiven), wird
 	die Betragsfunktion injektiv. Da die Betragsfunktion nicht negativ
 	werden kann, ist sie surjektiv auf die nicht-negativen reellen
-	Zahlen. Sie besitzt genau eine Nullstelle bei \(x=0\).
+	Zahlen. Sie besitzt genau eine Nullstelle bei <tex>x=0</tex>.
 </p>
 
-<p><u><strong>Die trigonometrischen Funktionen</strong></u></p>
-<p><u><strong>Die Exponentialfunktion</strong></u></p>
-<p><u><strong>Der Logarithmus</strong></u></p>
+<figure>
+	<img 	src="images/functions/Absolute_Value.svg"
+			alt="Betragsfunktion" />
+	<figcaption>
+		Abbildung 8: Graph der Betragsfunktion.
+		<aside>
+			Urheberschaft liegt bei LennyWikidata (Künstlername/
+			Pseudonym); Verwertung fällt unter Lizenz 
+			"Gemeinfrei".
+		</aside>
+	</figcaption>
+</figure>
+
+<h3>Die trigonometrischen Funktionen</h3>
+
+<figure>
+	<img 	src="images/functions/Winkelfunktionen_Einheitskreis.svg"
+			alt="Winkelfunktionen im Einheitskreis" />
+	<figcaption>
+		Abbildung 9a: Geometrische Interpretation der Winkelfunktionen.
+		<aside>
+			Urheberschaft liegt bei TheCarnil (Künstlername/
+			Pseudonym); Verwertung fällt unter Lizenz 
+			"Gemeinfrei".
+		</aside>
+	</figcaption>
+</figure>
+
+<figure>
+	<img 	src="images/functions/Circle_cos_sin.gif"
+			alt="Winkelfunktionen im Einheitskreis" 
+			style="width: 50%; height: 50%;"/>
+	<figcaption>
+		Abbildung 9b: Wie wird aus der geometrischen Interpretation der 
+		Winkelfunktionen deren Graphen?
+		<aside>
+			Urheberschaft liegt bei LucasVB (Künstlername/
+			Pseudonym); Verwertung fällt unter Lizenz 
+			"Public Domain".
+		</aside>
+	</figcaption>
+</figure>
+
+<figure>
+	<img 	src="images/functions/Sine_cosine_one_period.svg"
+			alt="Winkelfunktionen im Einheitskreis" />
+	<figcaption>
+		Abbildung 9c: Graphen der Sinus- und der Cosinus-Funktion.
+		<aside>
+			Urheberschaft liegt bei Geek3 (Künstlername/
+			Pseudonym); Verwertung fällt unter Lizenz 
+			CC BY 3.0.
+		</aside>
+	</figcaption>
+</figure>
+
+<h3>Die Exponentialfunktion</h3>
+
+<figure>
+	<img 	src="images/functions/Exp_e.svg"
+			alt="Exponentialfunktion" />
+	<figcaption>
+		Abbildung 10: Graph der Exponentialfunktion zur Basis 
+		<tex>e</tex>.
+		<aside>
+			Urheberschaft liegt bei Marcel Marnitz, reworked by 
+			Georg-Johann (Künstlername/Pseudonym); Verwertung fällt 
+			unter Lizenz "Gemeinfrei".
+		</aside>
+	</figcaption>
+</figure>
+
+
+<h3>Der Logarithmus</h3>
+
+<figure>
+	<img 	src="images/functions/Log4.svg"
+			alt="Logarithmus-Funktionen" />
+	<figcaption>
+		Abbildung 11: Graphen der Logarithmus-Funktionen zu den Basen 
+		<tex>2</tex>, <tex>e</tex> und <tex>\frac{1}{2}</tex>.
+		<aside>
+			Urheberschaft liegt bei Marcel Marnitz (Transfered by 
+			Georg-Johann/Original uploaded by Georg-Johann) 
+			(Künstlername/Pseudonym); Verwertung fällt unter Lizenz 
+			"for any purpose including unrestricted redistribution, 
+			commercial use, and modification".
+		</aside>
+	</figcaption>
+</figure>
 
 
 <h2>Konstruktion weiterer Funktionen</h2>
@@ -227,6 +418,8 @@
 </p>
 </div>
 
+<p></p>
+
 <div class="definition">
 <strong>Definition: Beschränktheit</strong><hr>
 <p>
@@ -237,6 +430,7 @@
 </p>
 </div>
 
+<<<<<<< HEAD
 <p>
 	Da der Betrag nicht nigativ sein kann, folgt, dass \(M\geq0\) sein
 	muss. Auflösen des Betrags liefert die beiden Ungleichungen
@@ -244,6 +438,9 @@
 	zwischen \(-M\) und \(M\) an. Der Graph einer beschränkten Funktion
 	ist immer eine Teilmenge von <tex>\mathbb{R}\times[-M,M]</tex>.
 </p>
+=======
+<p></p>
+>>>>>>> origin/gh-pages
 
 <div class="definition">
 <strong>Definition: Symmetrie</strong><hr>
@@ -251,13 +448,15 @@
 </p>
 </div>
 
+<p></p>
+
 <div class="definition">
 <strong>Definition: Periodizität</strong><hr>
 <p>
 </p>
 </div>
 
-
+<p></p>
 
 
 <!--

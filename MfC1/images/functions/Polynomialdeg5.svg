@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="Polynomialdeg5"
+   version="1.1"
+   width="328.58954"
+   height="253.9375"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="Polynomialdeg5.svg">
+  <metadata
+     id="metadata8312">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8310" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1536"
+     inkscape:window-height="803"
+     id="namedview8308"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="1.2274678"
+     inkscape:cx="18.466094"
+     inkscape:cy="126.96875"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Polynomialdeg5" />
+  <title
+     id="title8297">Polynomialdeg5.svg - a polynomial of degree 5</title>
+  <desc
+     id="desc8299">
+     f(x) = 2 + (x + 4) * (x + 2) * (x + 1) * (x - 1) * (x - 3) / 20
+
+     from Wikimedia Commons
+     plotted with cubic bezier-curves
+     the bezier-controll-points are calculated to give a very accurate result.
+     acuracy is 0.000001
+
+     symbols in &quot;Computer Modern&quot; (TeX) font embedded
+     created with a plain text editor using GNU/Linux
+
+     about: http://commons.wikimedia.org/wiki/Image:Polynomialdeg5.svg
+     source: http://commons.wikimedia.org/
+     rights: GNU Free Documentation license,
+             Creative Commons Attribution ShareAlike license
+  </desc>
+  <rect
+     id="background"
+     x="0"
+     y="0.75088501"
+     width="328.58954"
+     height="252.43573"
+     style="fill:#ffffff;stroke:none" />
+  <g
+     transform="matrix(1.4102555,0,0,1.4102555,178.39733,155.17386)"
+     id="g8302">
+    <path
+       id="axes"
+       d="m -126.5,0 h 233 M 0,-109.5 v 179"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt" />
+    <path
+       id="xticks"
+       d="m -115,-3 v 6 m 23,-6 v 6 m 23,-6 v 6 m 23,-6 v 6 m 23,-6 v 6 m 46,-6 v 6 m 23,-6 v 6 m 23,-6 v 6 m 23,-6 v 6"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square" />
+    <path
+       id="yticks"
+       d="m -3,-108 h 6 m -6,18 h 6 m -6,18 h 6 m -6,18 h 6 m -6,18 h 6 m -6,18 h 6 m -6,36 h 6 m -6,18 h 6 m -6,18 h 6"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square" />
+  </g>
+  <path
+     id="polynomial"
+     d="m 36.632819,253.18661 c 2.256434,-38.69606 4.545467,-71.06191 6.869302,-98.01275 4.397884,-51.00425 8.931057,-82.73607 13.62216,-101.17885 4.015983,-15.788649 8.160866,-21.889643 12.458523,-21.889643 4.048484,0 8.246659,5.414034 12.630173,13.362803 4.028601,7.305208 8.224798,16.771197 12.64477,26.25402 3.832104,8.221554 7.819873,16.428674 12.044833,23.337159 3.61722,5.914681 7.325,10.741171 11.23086,13.945841 3.57943,2.93684 7.12827,4.35007 10.75113,4.35007 4.13386,0 8.16521,-1.84002 12.18389,-4.81501 4.82078,-3.56885 9.54961,-8.716298 14.26384,-14.006135 5.13168,-5.758309 10.23618,-11.674029 15.39504,-15.869026 4.3467,-3.534602 8.7032,-5.824056 13.14834,-5.824056 3.53292,0 7.04021,1.446153 10.59382,4.658084 3.70278,3.346766 7.27624,8.448313 10.81366,15.125595 3.93107,7.420318 7.66742,16.503018 11.28723,26.433128 4.21664,11.56735 8.22156,24.13755 12.07497,36.11602 4.371,13.58726 8.54507,26.40689 12.56534,35.98122 4.21115,10.02897 8.26544,16.52543 12.18946,16.52543 5.79445,0 11.33514,-14.16517 16.6689,-52.50665 4.48173,-32.21651 8.83255,-81.611875 13.06877,-154.42299"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#ff0000;stroke-width:1.41024709px;stroke-linecap:square" />
+</svg>
