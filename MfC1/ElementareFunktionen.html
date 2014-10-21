@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+<head>
+    <meta charset="utf-8">
+    <title>eduZOO - Elementare Reelle Funktionen</title>
+    <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+    <script src="../../eduZOO-app/script/eduZOO.js"></script>
+</head>
+
+<body>
+<div class="row centered">
+
+<h1>Elementare Reelle Funktionen</h1>
+
+<p><!-- 1. Absatz: Ziel und Motivation -->
+	Ziel und Motivation hier
+</p>
+
+<div class="definition">
+<strong>Definition</strong><hr>
+<p>
+	Eine <em>reelle Funktion</em> \(f\) ist eine Zuordnungsvorschrift,
+	die einer reellen Zahl \(x\) aus einer gegebenen Teilmenge
+	<tex>\mathcal{D}</tex> eine reelle Zahl \(f(x)\) zuweist, notiert
+	als
+	<tex p>f:\mathcal{D}\to\mathbb{R}\;,\;x\mapsto f(x)</tex>
+	Dabei heißt <tex>\mathcal{D}</tex> der <em>Definitionsbereich</em>
+	von \(f\). Die Zahl \(f(x)\) heißt <em>Bild</em> von \(x\) unter
+	\(f\)
+</p>
+</div>
+
+<p>
+	Die Zeile <tex>f:\mathcal{D}\to\mathbb{R}\;,\;x\mapsto f(x)</tex>
+	wird gesprochen als "f von D nach R, x wird abgebildet auf f von x".
+</p>
+
+<p>
+	Häufig ist der Definitionsbereich reeller Funktionen gleich den
+	reellen Zahlen, es werden also alle reellen Zahlen abgebildet. Es
+	kann jedoch vorkommen, dass bei der Berechnung des Bildes von \(x\)
+	durch Null dividiert werden muss, was nicht erklärt ist. Solche
+	\(x\) dürfen nicht im Definitionsbereich liegen, weswegen reelle
+	Funktionen im Allgemeinen nur auf einer Teilmenge
+	<tex>\mathcal{D}</tex> der reellen Zahlen erklärt werden. Im
+	einfachsten	Fall ist <tex>\mathcal{D}=\mathbb{R}</tex>.
+</p>
+
+<p>
+	Ist der Definitionsbereich klar, so wird statt des vollen
+	<tex>f:\mathcal{D}\to\mathbb{R}\;,\;x\mapsto f(x)</tex> nur die
+	Zuordnungsvorschrift <tex>f(x)</tex> geschrieben.
+</p>
+
+
+
+<h2>Wichtige Elementare Funktionen</h2>
+
+
+
+<h4>Die Exponentialfunktion</h4>
+
+<p>
+	Die Exponentialfunktion zur Basis \(a\) ist eine Funktion, die auf
+	ganz <tex>\mathbb{R}</tex> erklärt ist. Sie bildet eine Zahl \(x\)
+	ab auf eine Zahl \(a^x\), derart dass gilt
+	<tex p>
+		\begin{eqnarray*}
+			a^{x}\cdot a^{y} &=& a^{x+y}\\
+						a^1	&=& a
+		\end{eqnarray*}
+	</tex>
+	Die Zahl \(1\) wird also auf die Zahl \(a\) abgebildet, alle anderen
+	Werte ergeben sich aus der Rechenregel <tex>a^{x}a^{y}=a^{x+y}</tex>.
+</p>
+
+<h3>Beispiel</h3>
+<div class="beispiel">
+<p>
+	Sei \(a=2\). Für natürlichen Zahlen \(n\) ist die
+	Exponentialfunktion zur Basis \(2\) die übliche \(n-\)te Potenz von
+	\(2\), also \(2^1=2, 2^2=4, 2^3=8, 2^4=16\) und so weiter. Da die
+	Exponentialfunktion für beliebige reelle Zahlen erklärt ist, lässt
+	sich \(2^x\) für beliebiges \(x\in\mathbb{R}\) berechnen. So ist
+	für \(x=\)
+</p>
+</div>
+
+
+<h4>Der Logarithmus</h4>
+
+
+
+<h4>Trigonometrische Funktionen</h4>
+
+
+
+<h4>Polynome</h4>
+
+
+
+<h4>Die Wurzelfunktionen</h4>
+
+
+
+
+
+
+
+<h2>Test</h2>
+
+
+<quiz>
+ <question>
+	So sieht ein Test aus!
+ </question>
+
+	<choice correct>
+		Richtig
+	</choice>
+
+	<choice>
+		Falsch
+	</choice>
+</quiz>
+
+<quiz>
+	<question>
+		Und ein Test mit Eingabe. Die richtige Antwort lautet 42.
+	</question>
+
+	<textinput correct="42"></textinput>
+
+</quiz>
+
+
+</div>
+</body>
+</html>
