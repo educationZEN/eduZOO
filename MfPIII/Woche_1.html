@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+<head>
+    <meta charset="utf-8">
+    <title>Woche 1 - Trennung der Variablen</title>
+    <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+    <script src="../../eduZOO-app/script/eduZOO.js"></script>
+</head>
+
+<body>
+<div class="row centered">
+
+<h1>Woche 1 - Trennung der Variablen</h1>
+
+<p><!-- 1. Absatz: Ziel und Motivation -->
+	Differentialgleichungen <tex>y'=F(x,y)</tex> erster Ordnung, für die
+	sich die Ableitung \(y'\) als Produkt zweier Funktionen schreiben
+	lässt, von denen die eine <em>nur von</em> \(x\) und die andere
+	<em>nur von</em> \(y\) abhängt, lassen sich mit Hilfe des Verfahrens
+	der <em>Trennung der Variablen</em> lösen.
+</p>
+
+
+
+<h2>Das Kochrezept</h2>
+
+
+<p>
+	Lässt sich eine Differentialgleichung <tex>y'=F(x,y)</tex> erster
+	Ordnung schreiben als
+	<tex p>
+		y'=f(x)g(y)
+	</tex>
+	mit zwei (integrierbaren) Funktionen \(f,g\), so lassen sich die
+	Variablen <em>separieren</em>, das heißt die Gleichung sich
+	schreiben als
+	<tex p>
+		\frac{1}{g(y)}y'=f(x)
+	</tex>
+	Ist nun \(H\) eine Stammfunktion von <tex>\frac{1}{g}</tex>, das
+	heißt <tex>H'=\frac{1}{g}</tex>, so lässt sich die linke Seite
+	schreiben als
+	<tex p>\frac{1}{g(y)}y'=H'(y)y'=\frac{d(H\circ y)}{dx}</tex>
+	wobei im letzten Schritt die Kettenregel verwendet wurde. Bezeichnet
+	\(F\) eine Stammfunktion von \(f\), so lässt sich die DGL
+	<tex>y'=f(x)g(y)</tex> also schreiben als
+	<tex p>
+		\frac{dF}{dx}=f(x)=\frac{1}{g(y)}y'=\frac{d(H\circ y)}{dx}
+	</tex>
+	woraus folgt, dass <tex>H(y(x))=F(x)+c</tex>, mit einer
+	Integrationskonstante \(c\in\mathbb{R}\). Auflösen nach \(y\)
+	liefert nun die Lösung der DGL.
+</p>
+
+<div class="definition">
+<strong>Trennung der Variablen: Das Kochrezept</strong><hr>
+<p>
+	Gegeben sei die DGL 1. Ordnung <tex>y'=f(x)g(y)</tex>. Die Schritte
+	zum Finden der Lösung sind die folgenden:
+	<ol>
+		<li>
+			Überprüfe, ob die DGL erster Ordnung ist. Nur für solche
+			DGLs kommt Trennung der Variablen in Frage. Schreibe die
+			Funktionen \(f(x)\) und \(g(y)\) auf, um dich der
+			Möglichkeit der Trennung zu vergewissern.
+		</li>
+		<li>
+			Finde eine Stammfunktion \(H\) von \(1/g\) und eine
+			Stammfunktion \(F\) von \(f\).
+		</li>
+		<li>
+			Löse die Gleichung <tex>H(y(x))=F(x)+c</tex> nach \(y(x)\)
+			auf.
+		</li>
+		<li>
+			Mache eine Probe! Setze die gefundene Lösung \(y(x)\) in die
+			Differentialgleichung ein und überprüfe ihre Korrektheit.
+		</li>
+	</ol>
+</p>
+</div>
+
+<p>
+	Die Probe ist natürlich fakultativ, sollte aber aus
+	Sicherheitsgründen immer gemacht werden.
+</p>
+
+
+
+
+<h3>Beispiel</h3>
+<div class="beispiel">
+<p>
+	Gegeben sei die Differentialgleichung
+	<tex p>y'=\frac{x^2}{y}</tex>
+	Dies ist eine Differentialgleichung erster Ordnung.	Die rechte Seite
+	ist von der Form <tex>f(x)g(y)</tex>, mit <tex>f(x)=x^2</tex> und
+	<tex>g(y)=1/y</tex>. Die Variablen lassen sich also trennen.
+</p>
+<p>
+	Eine Stammfunktion \(H\)von <tex>1/g(y)=y</tex> ist
+	<tex>H(y)=\frac{1}{2}y^2</tex>. Eine Stammfunktion \(F\) von
+	<tex>f(x)=x^2</tex> ist <tex>F(x)=\frac{1}{3}x^3</tex>. Auflösen
+	der Gleichung
+	<tex p>
+		\frac{1}{2}y^2=\frac{1}{3}x^3+c
+	</tex>
+	liefert
+	<tex p>
+		y(x)=\pm\sqrt{\frac{2}{3}x^3+c}
+	</tex>
+	Streng genommen müsste in der letzten Gleichung unter der Wurzel
+	natürlich \(2c\) stehen statt \(c\). Da die Konstante aber beliebig
+	ist, ändert die Beibehaltung von \(c\) nichts an der Tatsache, dass
+	\(y\) Lösung der DGL ist.
+</p>
+<p>
+	Die Probe liefert
+	<tex p>
+		y'(x)=\pm\frac{1}{2\sqrt{\frac{2}{3}x^3+c}}2x^2
+			=\frac{x^2}{\pm\sqrt{\frac{2}{3}x^3+c}}
+			=\frac{x^2}{y(x)}
+	</tex>
+</p>
+</div><hr>
+
+<p>
+	Der Wert der Konstanten wird - genau wie das Vorzeichen der Lösung -
+	bestimmt durch durch eine <em>Anfangsbedingung</em> oder
+	<em>Randbedingung</em>, die notwendig für die <em>Eindeutigkeit</em>
+	der Lösung sind. So hat zum Beispiel schon die einfachste DGL
+	\(y'=0\) keine eindeutige Lösung. <em>Jede</em> konstante Funktion
+	\(y(x)=c\) für ein \(c\in\mathbb{R}\) ist Lösung.
+</p>
+
+<h3>Noch ein Beispiel</h3>
+<div class="beispiel">
+<p>
+	Gegeben sei die Differentialgleichung
+	<tex p>xy'=(1-y^2)^{\frac{1}{2}}</tex>
+	Dies ist eine Differentialgleichung erster Ordnung.
+	<strong>Doch Achtung: Die linke Seite ist nicht von der Form
+	<nobr>"\(y'=\)"</nobr>.
+	</strong> Es muss vorher durch \(x\) geteilt werden. Damit jedoch
+	der Wert \(y(0)\) der Lösung \(y\) in \(x=0\) nicht verloren geht,
+	wird eine Fallunterscheidung nötig.
+	<dl>
+		<dt>1. Fall \(x\neq0\)</dt>
+		<dd>
+			In diesem Fall lässt sich durch \(x\) teilen und die DGL
+			nimmt die Form an
+			<tex p>y'=\frac{(1-y^2)^{\frac{1}{2}}}{x}</tex>
+			Sie ist erster Ordnung und lässt sich trennen, denn es ist
+			<tex>f(x)=1/x</tex> und
+			<tex>g(y)=(1-y^2)^{\frac{1}{2}}</tex>
+		</dd>
+		<dt>2. Fall \(x=0\) </dt>
+		<dd>
+			Ist \(x=0\) so folgt
+			<tex p>(1-y^2(0))^{\frac{1}{2}}=0</tex>
+		</dd>
+	</dl>
+
+
+	Die rechte Seite
+	ist von der Form <tex>f(x)g(y)</tex>, mit <tex>f(x)=x^2</tex> und
+	<tex>g(y)=1/y</tex>. Die Variablen lassen sich also trennen.
+</p>
+</div>
+
+
+</div>
+</body>
+</html>
