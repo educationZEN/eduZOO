@@ -10,45 +10,150 @@
 <body>
 <div class="row centered">
 
-<h1>Woche 1 - Lokale Extrema unter Nebenbedingungen</h1>
-
-
-
-
-
-<p><!-- 1. Absatz: Ziel und Motivation -->
-
-</p>
-
-
-
-<h2>Das Kochrezept</h2>
-
+<h2>Woche 1 - Lokale Extrema unter Nebenbedingungen</h2>
 
 <p>
-
+	Für stetige Funktionen einer Veränderlichen ist bekannt, dass sie
+	auf kompakten Menge Maximum und Minimum annehmen. Ist diese
+	Menge ein kompaktes Intervall <tex>[a,b]</tex>, so werden die
+	kritischen Punkte differenzierbaren Funktion
+	<tex>f:[a,b]\to\mathbb{R}</tex> durch Null-Setzen der Ableitung
+	und Lösen der resultierenden Gleichung gefunden. Um die globalen
+	Extrema zu finden, <em>müssen</em> die Intervallgrenzen
+	<tex>a,b</tex> hinzugezogen werden, da sich auf dem Rand
+	Funktionswerte ergeben können, die größer als die eventuell
+	gefundenen lokalen Maxima sind, oder kleiner als die gefundenen
+	lokalen Minima.
 </p>
 
-
-
-<!-- Satz
-<div class="definition">
-<strong>Satz</strong><hr>
 <p>
-	Sei
+	In mehr Dimensionen als einer ist das Einsetzen aller Randpunkte
+	eines kompakten Definitionsbereichs in die Funktion und das
+	Vergleichen der resultierenden Funktionswerte im Allgemeinen
+	nicht mehr möglich. Jedoch gilt, dass in einem Extrempunkt
+	<tex>p</tex> auf dem Rand der Gradient der untersuchten Funktion
+	<tex>f</tex> parallel zum Gradienten der den Rand beschreibenden
+	Funktion <tex>g</tex> sein muss, das heißt
+	<tex p>
+		\mbox{grad}_pf=\lambda\mbox{ grad}_pg
+	</tex>
+	für ein <tex>\lambda\in\mathbb{R}</tex>. Der
+	Proportionalistätsfaktor <tex>\lambda</tex> heißt
+	<em>Lagrange-Multiplikator</em>. Diese für ein Extremum notwendige
+	Bedingung lässt sich umformulieren zu
+	<tex>\mbox{grad}_p(f-\lambda g)=0</tex>, was genau die notwendige
+	Bedingung für die kritischen Punkte <tex>(p,\lambda)</tex> der
+	Funktion <tex>L(p,\lambda)=f(p)-\lambda g(p)</tex> eine Dimension
+	"höher" ist. Die Funktion <tex>L</tex> heißt
+	<em>Lagrange-Funktion</em>, ist aber nicht zu verwechseln mit der
+	gleichnamigen Funktion aus der analytischen Mechanik.
 </p>
-</div>
--->
 
-
-<!-- Beispiel
-<h3>Beispiel</h3>
+<h3>Ein Beispiel</h3>
 <div class="beispiel">
 <p>
-	Beispiele haben einen etwas kleineren Font.
+	Sei
+	<tex>
+		D=\left\{(x,y)\in\mathbb{R}^2\,|\,\frac{x^2}{2}+y^2\leq3\right\}
+	</tex> und sei
+	<tex p>
+		f:D\to\mathbb{R}\;,\; f(x,y)=\left(x-\tfrac{1}{2}\right)^2
+							+2\left(y+\tfrac{1}{2}\right)^2+\tfrac{9}{4}.
+	</tex>
+	Gesucht sind die globalen Extrema von <tex>f</tex> auf <tex>D</tex>.
 </p>
+<p>
+	Die Funktion <tex>f</tex> nimmt ihr globales Maximum und Minimum an,
+	da der Definitionsbereich <tex>D</tex> eine	kompakte Menge ist. Die
+	lokalen Extrema von <tex>f</tex> werden gefunden durch Lösen der
+	Gleichung <tex>\mbox{grad}_{p}f=0</tex>, also
+	<tex p>
+		\begin{eqnarray*}
+			2\left(x-\tfrac{1}{2}\right)&=& 0\\
+			4\left(y+\tfrac{1}{2}\right)&=& 0
+		\end{eqnarray*}
+	</tex>
+	Ablesen der Lösung liefert <tex>p=(\frac{1}{2},-\frac{1}{2})</tex>.
+	Insbesondere ist <tex>p\in D</tex>, andernfalls käme es als
+	kritischer Punkt von <tex>f</tex> nicht in Frage. Es ist
+	<tex>f(\frac{1}{2},-\frac{1}{2})=\tfrac{9}{4}</tex>, was ein
+	Minimum sein muss, da die quadratischen Terme von <tex>f</tex> für
+	alle <tex>(x,y)\neq(\frac{1}{2},-\frac{1}{2})</tex> positive
+	Beiträge liefern. Das globale Minimum ist damit gefunden. Da keine
+	weiteren kritischen Punkte existieren muss sich das	globale Maximum
+	auf dem Rand befinden.
+</p>
+
+<p>
+	Dieses wird mit Hilfe der Lagrange-Multiplikatoren bestimmt. Der
+	Rand von <tex>D</tex> wird beschrieben durch die Nullstellen der
+	Funktion
+	<tex p>
+		g:\mathbb{R}^2\to\mathbb{R}\;,\;g(x,y)=\tfrac{x^2}{2}+y^2-3
+	</tex>
+	das heißt es ist
+	<tex p>
+		\partial D=\left\{(x,y)\in\mathbb{R}^2\,|\,g(x,y)=0\right\}
+	</tex>
+	Die Lagrange-Funktion für dieses Problem ist also gegeben durch
+	<tex p>
+		\begin{eqnarray*}
+			L(x,y,\lambda)&=&f(x,y)-\lambda g(x,y)\\
+			&=& \left(x-\tfrac{1}{2}\right)^2
+				+2\left(y+\tfrac{1}{2}\right)^2+\tfrac{9}{4}
+				-\lambda\left(\tfrac{x^2}{2}+y^2-3\right)\\
+			&=&\left(1-\tfrac{\lambda}{2}\right)x^2-x
+				+(2-\lambda)y^2+2y+3\lambda+3
+		\end{eqnarray*}
+	</tex>
+	Das Sortieren nach Potenzen von <tex>x,y</tex> ist zweckdienlich
+	für die Bestimmung des Gradienten von <tex>L</tex>,	der im nächsten
+	Schritt gleich Null gesetzt wird, um die kritischen	Punkte zu
+	ermitteln:
+	<tex p>
+		\begin{eqnarray*}
+\frac{\partial L}{\partial x}&=&2\left(1-\tfrac{\lambda}{2}\right)x-1&=&0\\
+\frac{\partial L}{\partial y}&=&2(2-\lambda)y+2 &=& 0\\
+\frac{\partial L}{\partial\lambda}&=&-\tfrac{x^2}{2}-y^2+3 &=& 0
+		\end{eqnarray*}
+	</tex>
+	Die Berechnung der partiellen Ableitung nach <tex>\lambda</tex> ist
+	nicht nötig, denn da <tex>f</tex> und <tex>g</tex> nicht von
+	<tex>\lambda</tex> abhängen ist immer
+	<tex p>
+		\frac{\partial L}{\partial\lambda}=
+		\frac{\partial}{\partial\lambda}(f-\lambda g)=-g
+	</tex>
+	Umstellen der ersten beiden Gleichungen des Gleichungssystems
+	liefert
+	<tex p>
+		\begin{eqnarray*}
+			x&=&\frac{1}{2-\lambda}=-y
+		\end{eqnarray*}
+	</tex>
+	und einsetzen in die Zwangsbedingung <tex>g=0</tex>, unter
+	Verwendung, dass <tex>x=-y</tex>, also <tex>x^2=y^2</tex>,
+	<tex p>
+		\begin{eqnarray*}
+			\tfrac{x^2}{2}+y^2-3
+			=\left(1+\tfrac{1}{2}\right)x^2-3
+			=\frac{3}{2}\frac{1}{(2-\lambda)^2}-3=0
+		\end{eqnarray*}
+	</tex>
+	oder äquivalent
+	<tex p>
+		\frac{1}{2-\lambda}=\pm\sqrt{2}
+	</tex>
+	Da nur nach den globalen Extrema gefragt ist, ist es nicht nötig
+	den Lagrangen Multiplikator zu berechnen. Die hier angegebene Form
+	ist günstiger, da sich so ablesen lässt, dass
+	<tex>p_1=(\sqrt{2},-\sqrt{2})</tex> und
+	<tex>p_2=(-\sqrt{2},\sqrt{2})</tex> die kritischen Punkte sind.
+</p>
+
+
 </div>
--->
+
 
 
 
