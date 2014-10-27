@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+<head>
+    <meta charset="utf-8">
+    <title>Woche 2 - Warm Up</title>
+    <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+    <script src="../../eduZOO-app/script/eduZOO.js"></script>
+</head>
+
+<body>
+<div class="row centered">
+
+<h2>Warm-Up Woche 2</h2>
+
+<hr>
+<h3>Exakte DGLs, Existenz und Eindeutigkeit von AWPs</h3>
+<hr>
+
+<p>Markiere die richtigen Aussagen.</p>
+<quiz>
+ <question>
+	<strong>1.</strong>
+	Eine DGL der Form <tex>g(x,y)y'+f(x,y)=0</tex> ist exakt, falls
+ </question>
+
+	<choice correct>
+		<tex>
+		\tfrac{\partial g}{\partial x}=\tfrac{\partial f}{\partial y}
+		</tex>
+	</choice>
+
+	<choice>
+		<tex>
+		\tfrac{\partial g}{\partial y}=\tfrac{\partial f}{\partial x}
+		</tex>
+	</choice>
+
+	<choice correct>
+		eine Funktion <tex>F(x,y)</tex> existiert mit
+		<tex>\tfrac{\partial F}{\partial x}=f</tex> und
+		<tex>\tfrac{\partial F}{\partial y}=g</tex>.
+	</choice>
+
+	<choice>
+		eine Funktion <tex>F(x,y)</tex> existiert mit
+		<tex>\tfrac{\partial F}{\partial y}=f</tex> und
+		<tex>\tfrac{\partial F}{\partial x}=g</tex>.
+	</choice>
+
+	<choice>
+		es ein <tex>M(x,y)</tex> gibt, sodass
+		<tex>
+			\tfrac{\partial M}{\partial x}g
+				+M\tfrac{\partial g}{\partial x}
+				=\tfrac{\partial M}{\partial y}f
+				+M\tfrac{\partial f}{\partial y}.
+		</tex>
+	</choice>
+
+</quiz>
+
+<quiz>
+ <question>
+	<strong>2.</strong>
+	Betrachte das AWP <tex>y'=f(x,y)</tex> mit <tex>y(0)=1</tex>. Es
+	gilt:
+ </question>
+
+	<choice>
+		Das AWP besitzt (mind.) eine Lösung.
+	</choice>
+
+	<choice>
+		Die Lösung des AWP ist eindeutig.
+	</choice>
+
+	<choice correct>
+		Das AWP besitzt eine Lösung, wenn <tex>f</tex> stetig ist.
+	</choice>
+
+	<choice>
+		Das AWP besitzt eine eindeutige Lösung, wenn <tex>f</tex> stetig
+		ist.
+	</choice>
+
+</quiz>
+
+</div>
+</body>
+</html>
