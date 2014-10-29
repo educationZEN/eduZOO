@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+<head>
+    <meta charset="utf-8">
+    <title>Woche 2 - Exakte DGLs und Integrierende Faktoren</title>
+    <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+    <script src="../../eduZOO-app/script/eduZOO.js"></script>
+</head>
+
+<body>
+<div class="row centered">
+
+<h2>Woche 2 - Exakte DGLs und Integrierende Faktoren</h2>
+
+<p>
+	<strong>Erinnerung:</strong>
+	Das Differential <tex>dF</tex> einer differenzierbaren Funktion
+	<tex>
+		F:\mathbb{R}^n\to\mathbb{R}\;,\;
+			(x_1,\dots,x_n)\mapsto F(x_1,\dots,x_n)
+	</tex>
+	ist definiert als
+	<tex p>
+		dF=\sum_{k=1}^n\frac{\partial F}{\partial x_k}\mbox{d}x_k
+	</tex>
+	Dabei ist es zweckdienlich (und richtig), sich die Differentiale
+	<tex>\mbox{d}x_k</tex> der Koordinaten <tex>\{x_k\}</tex> als Basis
+	eines Vektorraums vorzustellen, der den <em>Zeilenvektor</em>
+	<tex>\mbox{d}F</tex> beinhaltet. Das Differential einer skalaren
+	Funktion <tex>F</tex> ist genau die Jacobi-Matrix von <tex>F</tex>,
+	beziehungsweise der transponierte Gradient.
+</p>
+
+<p>
+	Diese "Definition" erklärt nicht, was das Differential eigentlich
+	<em>ist</em>. An dieser Stelle genügt es jedoch zu wissen, dass aus
+	<tex>\mbox{d}F=0</tex> folgt, dass <tex>F</tex> konstant sein muss.
+	Ist nämlich <tex>\mbox{d}F=0</tex>, so folgt aus der linearen
+	Unabhängigkeit der <tex>\mbox{d}x_k</tex>, dass die
+	<tex>\frac{\partial F}{\partial x_k}</tex> alle Null sein müssen.
+</p>
+
+<p>
+	Betrachte nun eine Differentialgleichung 1. Ordnung von der Form
+	<tex p>
+		f(x,y)+g(x,y)y'=0
+	</tex>
+	Mit <tex>y'=\tfrac{dy}{dx}</tex> und
+	Durchmultiplizieren mit dem Koordinatendifferential
+	<tex>\mbox{d}x</tex> wird das zu
+	<tex p>
+		f(x,y)\mbox{d}x+g(x,y)\mbox{d}y=0
+	</tex>
+	Das motiviert die Definition.
+</p>
+
+<div class="definition">
+<strong>Definition: Exakte DGL</strong><hr>
+<p>
+	Sei
+	<tex p>
+		f(x,y)+g(x,y)y'=0
+	</tex>
+	eine DGL 1. Ordnung. Existiert eine Funktion <tex>F</tex> mit
+	<tex>\mbox{d}F=f(x,y)\mbox{d}x+g(x,y)\mbox{d}y</tex>, so heißt
+	die DGL <em>exakt</em>.
+</p>
+<p>
+	Die Lösung <tex>y(x)</tex> der DGL ist dann implizit gegeben als
+	Lösung der Gleichung <tex>F(x,y)=c</tex>, wobei
+	<tex>c\in\mathbb{R}</tex> die Integrationskonstante ist.
+</p>
+</div>
+
+<p>
+	Eine notwendige (und hinreichende) Bedingung für Exaktheit ist also
+	die Existenz einer Funktion <tex>F(x,y)</tex> mit
+	<tex p>
+		\begin{eqnarray*}
+			\frac{\partial F}{\partial x}(x,y)&=& f(x,y)\\
+			\frac{\partial F}{\partial y}(x,y)&=& g(x,y)
+		\end{eqnarray*}
+	</tex>
+	Ist <tex>F</tex> zweimal stetig partiell differenzierbar auf einem
+	einfach zusammenhängenden Definitionbereich (im einfachsten Fall
+	ganz <tex>\mathbb{R}^2</tex>), so gilt der Satz von Schwarz, nach
+	dem beim zweimalen partiellen Differenzieren die Reihenfolge der
+	Differentiation keine Rolle spielt, also
+	<tex>
+		\frac{\partial^2 F}{\partial x\partial y}=
+		\frac{\partial^2 F}{\partial y\partial x}
+	</tex>
+	Einsetzen der Bedingung liefert dann als hinreichende Bedingung für
+	Exaktheit
+	<tex p>
+		\frac{\partial f}{\partial y}(x,y)
+		=\frac{\partial g}{\partial x}(x,y)
+	</tex>
+</p>
+
+
+<h3>Beispiel</h3>
+<div class="beispiel">
+<p>
+	Gegeben sei <tex>2xy+(x^2+2)y'=0</tex>. Es ist also
+	<tex>f(x,y)=2xy</tex> und <tex>g(x,y)=x^2+2</tex>. Für die
+	benötigten partiellen Ableitungen gilt
+	<tex p>
+		\begin{eqnarray*}
+		\frac{\partial f}{\partial y}(x,y)&=& 2x\\
+		\frac{\partial g}{\partial x}(x,y)&=& 2x
+		\end{eqnarray*}
+	</tex>
+	Die DGL ist also exakt. Gesucht ist nun eine Funktion <tex>F</tex>
+	mit
+	<tex p>
+		\begin{eqnarray*}
+			\frac{\partial F}{\partial x}(x,y)&=& 2xy\\
+			\frac{\partial F}{\partial y}(x,y)&=& x^2+2
+		\end{eqnarray*}
+	</tex>
+	Eine Stammfunktion von <tex>2xy</tex> bezüglich <tex>x</tex> ist
+	der Kandidat <tex>F_\Psi(x,y)=x^2y+\Psi(y)</tex>, wobei
+	<tex>\Psi</tex> eine Funktion ist, die nur von <tex>y</tex> abhängt
+	und statt der üblichen Integrationskonstante verwendet werden muss,
+	da beim partiellen Differenzieren nach einer Variablen alle anderen
+	Veränderlichen konstant gehalten werden. Der <tex>\Psi</tex>-Term
+	fällt bei partieller Differentiation nach <tex>x</tex> weg.
+	Partielle Differentiation nach <tex>y</tex> liefert
+	<tex p>
+		\frac{\partial F_\Psi}{\partial y}(x,y)=x^2+\Psi'(y)
+	</tex>
+	Vergleich mit der Forderung
+	<tex>\frac{\partial F}{\partial y}(x,y)= x^2+2</tex> liefert
+	<tex>\Psi'(y)=2</tex>, also
+	<tex>\Psi(y)=2y</tex>. Das gesuchte <tex>F</tex> ist dann
+	<tex>F(x,y)=x^2y+2y</tex>. Auflösen von <tex>F(x,y)=c</tex> nach
+	<tex>y</tex> liefert
+	<tex p>
+		y(x)=\frac{c}{x^2+2}
+	</tex>
+</p>
+</div>
+
+<p>
+	Es ist zu beachten, dass <tex>y(x)=0</tex> eine weitere Lösung
+	der DGL ist. An dieser Stelle wird ausdrücklich darauf hingewiesen,
+	dass sich diese DGL auch mit Trennung der Variablen lösen lässt und
+	dies als zusätzliche Übung getan werden sollte.
+</p>
+
+
+</div>
+</body>
+</html>
