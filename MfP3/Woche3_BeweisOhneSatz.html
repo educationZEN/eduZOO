@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+<head>
+    <meta charset="utf-8">
+    <title>Woche 3 - </title>
+    <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+    <script src="../../eduZOO-app/script/eduZOO.js"></script>
+</head>
+
+<body>
+<div class="row centered">
+
+
+<p>
+	Die Verwendung des Satzes zum Beweis der nicht-gleichmäßigen
+	Konvergenz hat Stil und ist der Sinn von Beweisen solcher Sätze.
+	Dass eben nicht jedes Mal alles "per Hand" nachgeprüft werden muss.
+	Besonders neugierigen Augen sei dies hier trotzdem vorgeführt.
+</p>
+
+<h3>
+Beweis der nicht-gleichmäßigen Konvergenz ohne Verwendung des Satzes
+</h3>
+<div class="beispiel">
+<p>
+	Dieser Beweis besteht im Wesentlichen die Berechnung eines
+	Supremums. Sei
+	<tex p>
+		f_n:\mathbb{R}\to\mathbb{R}\;,\;f_n(x)=\frac{1}{1+nx^2}
+	</tex>
+	die Folge punktweise konvergenter Funktionen mit Grenzfunktion
+	<tex p>
+		f(x)=\begin{cases}1\,,\;x=0\\ 0\,,\;x\neq0\end{cases}
+	</tex>
+	Es ist zu zeigen, dass ein <tex>\epsilon&gt;0</tex> existiert,
+	sodass für alle <tex>n\in\mathbb{N}</tex> gilt
+	<tex p>
+		\sup_{x\in\mathbb{R}}|f_n(x)-f(x)|\geq\epsilon
+	</tex>
+	Wir wählen also <tex>n\in\mathbb{N}</tex> beliebig und berechnen
+	das Supremum. Zunächst einmal gilt für den Betrags-Term
+	<tex p>
+		\left|\frac{1}{1+nx^2}-f(x)\right|=
+		\begin{cases}
+		0&,& x=0\\ \frac{1}{1+nx^2} &,& x\neq0
+		\end{cases}
+	</tex>
+	da <tex>f(0)=1</tex>. Das Supremum ist also echt größer Null. Es ist
+	sogar gleich <tex>1</tex>, da <tex>x</tex> beliebig klein werden
+	kann (und <tex>n</tex> zwar beliebig, aber fest ist). Das Supremum
+	wird nicht angenommen, ist also kein Maximum, jedoch ist jede obere
+	Schranke des Terms <tex>\frac{1}{1+nx^2}</tex> größer gleich
+	<tex>1</tex>. Um das zu zeigen nehmen wir an, dass es eine Schranke
+	<tex>0&lt;M&lt;1</tex> gibt, also <tex>\frac{1}{1+nx^2}\leq M</tex>.
+</p>
+<p>
+	Heimliches Auflösen und Negieren der Ungleichung nach <tex>x</tex>
+	verrät uns, dass die Schranke verletzt wird, wenn <tex>x</tex> so
+	gewählt wird, dass <tex>x^2&lt;\frac{1-M}{nM}</tex> (Hier wird die
+	Bedingung <tex>M&lt;1</tex> wichtig, sonst geht das nicht). Dann
+	gilt nämlich
+	<tex p>
+		\begin{eqnarray*}
+			1+nx^2 & &lt; & 1+n\left(\frac{1-M}{nM}\right)\\
+					&=&		1+\tfrac{1}{M}-1\\
+					&=&		\tfrac{1}{M}
+		\end{eqnarray*}
+	</tex>
+	und damit <tex>\frac{1}{1+nx^2} &gt; M</tex>, was ein Widerspruch
+	ist. Dies war der formale Weg, zu zeigen, dass sich <tex>x</tex>
+	"klein genug" wählen lässt, um jede kleinere Schranke als
+	<tex>1</tex> zu verletzen. Das Supremum ist also für alle
+	<tex>n</tex> gleich <tex>1</tex>, kann damit insbesondere nicht wie
+	für gleichmäßige Konvergenz erforderlich gegen Null konvergieren.
+</p>
+</div>
+
+
+</div>
+</body>
+</html>

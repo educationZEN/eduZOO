@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+<head>
+    <meta charset="utf-8">
+    <title>Woche 3 - Gegenbeispiele Finden</title>
+    <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+    <script src="../../eduZOO-app/script/eduZOO.js"></script>
+</head>
+
+<body>
+<div class="row centered">
+
+<h2>Gegenbeispiele Finden</h2>
+
+<p>
+	Dass Grenzfunktionen gleichmäßig konvergenter Folgen stetiger
+	Funktionen stetig sind, soll in Aufgabe 1 bewiesen werden.
+	Punktweise Konvergenz reicht nicht aus. Dies wird gezeigt durch
+	Angabe eines Gegenbeispiels. Wie lässt sich ein solches finden?
+	Ein möglicher Gedankengang:
+</p>
+
+<p>
+	Benötigt wird eine Folge <tex>\{f_n\}</tex> stetiger Funktionen
+	<tex>f_n</tex>, die punktweise aber	nicht gleichmäßig gegen eine
+	nicht stetige Grenzfunktion <tex>f</tex> konvergiert. Bei der
+	Konstruktion dieser Folge werden wir ausnutzen, dass Terme der Form
+	<tex>nx</tex> für <tex>x=0</tex> die Abhängigkeit der Folge von
+	<tex>n</tex> "ausschalten", die Folge also eine konstante Folge
+	wird. Dies soll die Unstetigkeitsstelle der Grenzfunktion werden.
+</p>
+
+<h3>Versuch 1</h3>
+<div class="beispiel">
+<p>
+	Die einfachste Wahl für die <tex>f_n</tex> ist dann
+	<tex>f_n(x)=nx</tex>. Diese Funktionen sind für alle <tex>n</tex>
+	stetig. Jedoch konvergiert die Folge nicht einmal punktweise, denn
+	für alle <tex>x\in\mathbb{R}</tex> ist
+	<tex>f_n(x)=nx</tex> (<tex>x</tex> ist jetzt fest!) eine
+	unbeschränkte Folge reeller Zahlen.
+</p>
+</div>
+
+<p>
+	Dieser erste Versuch zeigt, dass wir eine Funktionen benötigen, die
+	für festes <tex>x</tex> konvergente Folgen reeller Zahlen liefern.
+	Ein Bruch mit <tex>nx</tex> im Nenner funktioniert vielleicht.
+</p>
+
+<h3>Versuch 2</h3>
+<div class="beispiel">
+<p>
+	Sei <tex>f_n(x)=\frac{1}{nx}</tex>. Dann ist für jedes
+	<tex>x\neq0</tex> die Folge <tex>f_n(x)=\frac{1}{nx}</tex> eine
+	Nullfolge. Doch in <tex>x=0</tex>, wo wir die Unstetigkeitsstelle
+	der Grenzfunktion erzeugen wollen, sind die <tex>f_n</tex> auch
+	alle nicht stetig.
+</p>
+</div>
+
+<p>
+	Die Nullfolgen für alle <tex>x</tex> sind schon nah dran. Finden wir
+	eine Funktionenfolge, sodass <tex>nx</tex> im Nenner steht und
+	dieser nicht Null werden kann, sodass die Stetigkeit erhalten
+	bleibt, sind wir fertig. Da jedoch <tex>nx</tex> für negative
+	<tex>x</tex> auch negativ wird, bringt uns der Ansatz
+	<tex>f_n(x)=\frac{1}{1+nx}</tex> nicht weiter. Was nicht negativ
+	werden kann ist aber <tex>nx^2</tex>, und was keine
+	Unstetigkeitsstelle hat, ist <tex>1+nx^2</tex>.
+</p>
+
+<h3>Versuch 3: Ein Gegenbeispiel</h3>
+<div class="beispiel">
+<p>
+	Sei <tex>f_n(x)=\frac{1}{1+nx^2}</tex>. Dann ist für jedes
+	<tex>x\neq0</tex> die Folge <tex>f_n(x)=\frac{1}{1+nx^2}</tex> eine
+	Nullfolge, und für <tex>x=0</tex> gilt
+	<tex>f_n(0)=1</tex>, was gegen <tex>1</tex> konvergiert. Die Folge
+	<tex>\{f_n\}</tex> konvergiert also punktweise gegen die in Null
+	nicht stetige Funktion
+	<tex p>
+		f(x)=\begin{cases}1\;,\;x=0\\ 0\;,\;x\neq0\end{cases}
+	</tex>
+	Gleichmäßige Konvergenz kann nicht vorliegen, da Grenzfunktionen
+	gleichmäßig konvergenter Folgen stetiger Funktionen stetig sind.
+</p>
+</div>
+
+
+
+</div>
+</body>
+</html>
