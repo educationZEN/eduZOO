@@ -28,20 +28,75 @@
 <p>
 	Sei <tex>y'=F(x,y)</tex> eine DGL erster Ordnung. Ist
 	<tex>F(x,y)=f(ax+by+c)</tex>, für eine integrierbare Funktion
-	<tex>f</tex> und reelle Zahlen <tex>a,b,c</tex>
+	<tex>f</tex> und reelle Zahlen <tex>a,b,c</tex>, so erlaubt die
+	Substitution
+	<tex p>g(x)=g(x,y(x))=ax+by(x)+c</tex>
+	eine Trennung der Variablen in der DGL
+	<tex p>
+		g'=a+bf(g)
+	</tex>
+	Ist <tex>\Phi</tex> eine Stammfunktion von
+	<tex>\frac{1}{a+bf}</tex> mit Inverser <tex>\Phi^{-1}</tex>, und
+	<tex>d\in\mathbb{R}</tex> eine Integrationskonstante, so ist die
+	Lösung von <tex>y'=f(ax+by+c)</tex> gegeben durch
+	<tex p>
+		y(x)=\tfrac{1}{b}\left(\Phi^{-1}(x+d)-ax-c\right)
+	</tex>
 </p>
 </div>
 
 <p>
 	Die DGL <tex>y'=F(x,y)</tex> lässt sich in
 	<a href="Woche2_ExakteDGLs#Differential">Differentialen</a>
+	schreiben als <tex>\mbox{d}y=F\mbox{d}x</tex>. Für das Differential
+	der Funktion <tex>g(x,y)=ax+by+c</tex> gilt dann
+	<tex p>
+		\begin{eqnarray*}
+			\mbox{d}g 	&=& a\mbox{d}x+b\mbox{d}y\\
+						&=& a\mbox{d}x+bF\mbox{d}x\\
+						&=& (a+bF)\mbox{d}x\\
+						&=& (a+bf(g))\mbox{d}x
+		\end{eqnarray*}
+	</tex>
+	wobei in der letzten Zeile <tex>F(x,y)=f(g(x,y))=f(g)</tex>
+	verwendet wurde. Teilen durch <tex>\mbox{d}x</tex> liefert die
+	DGL
+	<tex p>
+		g'=a+bf(g)
+	</tex>
+	und Trennung der Variablen
+	<tex p>
+		\frac{1}{a+bf(g)}dg=dx
+	</tex>
+	Ist <tex>\Phi</tex> Stammfunktion des Terms auf der rechten Seite,
+	so gilt <tex>\Phi(g)=x+d</tex>, mit einer Integrationskonstante
+	<tex>d\in\mathbb {R}</tex>. Auflösen nach <tex>y</tex>, mit
+	<tex>g=ax+by+c</tex> liefert die gesuchte Lösung.
 </p>
 
 
 <h3>Beispiel</h3>
 <div class="beispiel">
 <p>
-	Gegeben sei <tex>y'=(x+y)^2</tex>
+	Gegeben sei
+	<tex p>y'=(x+y)^2</tex>
+	Es ist also <tex>f(g)=g^2</tex> und <tex>g=x+y</tex>, und die
+	modifizierte DGL lautet
+	<tex p>
+		g'=1+g^2
+	</tex>
+	Stammfunktion <tex>\Phi</tex> von <tex>\frac{1}{1+g^2}</tex> ist
+	<tex>\Phi(g)=\arctan(g)</tex>. Es ist also
+	<tex>\arctan(g)=x+d</tex>, mit einer Integrationskonstanten
+	<tex>d\in\mathbb{R}</tex>. Daraus folgt
+	<tex>g=x+y=\tan(x+d)</tex>, also
+	<tex p>
+		y(x)=\tan(x+d)-x
+	</tex>
+	Die Probe liefert
+	<tex p>
+		y'(x)=1+\tan^2(x+d)-1=\tan^2(x+d)=(y+x)^2
+	</tex>
 </p>
 </div>
 
