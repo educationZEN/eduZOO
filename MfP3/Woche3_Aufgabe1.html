@@ -13,12 +13,32 @@
 <h2>Merkzettel für Aufgabe 1</h2>
 
 <p>
-
+	In Hausafgabe 1 soll gezeigt werden, dass die Grenzfunktion einer
+	gleichmäßig konvergenten Folge stetiger Funktionen stetig ist. Bei
+	allen Beweisen ist es dienlich, sich vorher eine Strategie zu
+	überlegen, wie von den Vorrausetzungen, also hier
+	<ul>
+		<li>Gleichmäßige Konvergenz der Funktionenfolge</li>
+		<li>Stetigkeit der Funktionen</li>
+	</ul>
+	auf die zu zeigende Aussage, also
+	<ul>
+		<li>Stetigkeit der Grenzfunktion</li>
+	</ul>
+	zu schließen ist.
 </p>
 
-
-
-
+<p>
+	Um die Stetigkeit auf ganz <tex>I</tex> zu zeigen, reicht Stetigkeit
+	in einem beliebigen <tex>x\in I</tex> aus. Diese wird entweder mit
+	dem Folgenkriterium oder dem <tex>\epsilon-\delta-</tex>Kriterium
+	gezeigt. Das Folgenkriterium ist hier eine gute Wahl. Werden nun die
+	Stichpunkte oben genauer auf Gemeinsamkeiten untersucht, lässt sich
+	feststellen, dass sich alle Eigenschaften, die gegebenen und die
+	gesuchte, als Betragsterme schreiben lassen. Damit ist eine
+	Strategie klar. Es wird mit den üblichen Hilfsmitteln, wie Null
+	Addieren und Dreiecksungleichung, operiert. Der Merkzettel:
+</p>
 
 <div class="definition">
 <strong>Merkzettel</strong><hr>
@@ -31,7 +51,7 @@
 			<ul>
 				<li>
 					<tex>|f_n(x)-f(x)|</tex> wird beliebig klein wegen
-					der gleichmäßigen Konvergenz.
+					der gleichmäßigen Konvergenz von <tex>\{f_n\}</tex>.
 				</li>
 				<li>
 					<tex>|f_n(x_k)-f_n(x)|</tex> wird beliebig klein
@@ -50,15 +70,22 @@
 </div>
 
 <p>
-
+	Beliebig klein muss noch zu "kleiner als jedes vorgegebene
+	<tex>\epsilon&gt;</tex>0" decodiert werden.
 </p>
 
 
 <h3>Vordruck zum Abschreiben</h3>
 <div class="beispiel">
-<p>
+<p style="margin-bottom: 250px">
 	Sei <tex>I\subset\mathbb{R}</tex> und <tex>f_n:I\to\mathbb{R}</tex>
-	stetig für alle <tex>n\in\mathbb{N}</tex>.
+	stetig für alle <tex>n\in\mathbb{N}</tex>. Die Folge
+	<tex>\{f_n\}</tex> konvergiere gleichmäßig gegen eine Funktion
+	<tex>f:I\to\mathbb{R}</tex>. Es ist zu zeigen, dass <tex>f</tex>
+	stetig ist. Sei <tex>x\in I</tex>, und <tex>\{x_k\}</tex> eine
+	Folge mit <tex>x_k\to x</tex>. Die Funktion <tex>f</tex> ist stetig,
+	wenn gilt, dass <tex>f(x_k)\to f(x)</tex>. Es ist also zu zeigen,
+	dass ...
 </p>
 </div>
 
