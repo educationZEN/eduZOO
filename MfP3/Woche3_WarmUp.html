@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+<head>
+    <meta charset="utf-8">
+    <title>Woche 3 - Warm-Up</title>
+    <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+    <script src="../../eduZOO-app/script/eduZOO.js"></script>
+</head>
+
+<body>
+<div class="row centered">
+
+<h2>Warm-Up Woche 3</h2>
+
+<hr>
+<h3>Punktweise und Gleichmäßige Konvergenz</h3>
+<hr>
+
+<p>Markiere die richtigen Aussagen.</p>
+<quiz>
+ <question>
+	Für alle <tex>n\in\mathbb{N}</tex> sei
+	<tex>f_n:[a,b]\to\mathbb{R}</tex> eine Funktion
+ </question>
+
+	<choice>
+		Die Funktionenfolge <tex>\{f_n\}</tex> konvergiert punktweise,
+		das heißt <tex>\lim_nf_n(x)</tex> existiert für alle
+		<tex>x\in[a,b]</tex>.
+	</choice>
+
+	<choice>
+		Falls die Funktionenfolge <tex>\{f_n\}</tex> konvergiert und
+		alle <tex>f_n</tex> stetige Funktionen sind, ist die
+		Grenzfunktion stetig.
+	</choice>
+
+	<choice>
+		Falls die Funktionenfolge <tex>\{f_n\}</tex> konvergiert und
+		alle <tex>f_n</tex> Riemann-integrierbar sind, gilt
+		<tex p>
+			\lim_{n\to\infty}\int_a^bf_n(x)\mbox{d}x=
+			\int_a^b\lim_{n\to\infty}f_n(x)\mbox{d}x
+		</tex>
+	</choice>
+
+	<choice correct>
+		Die Folge <tex>\{f_n\}</tex> heißt gleichmäßig konvergent
+		gegen <tex>f:[a,b]\to\mathbb{R}</tex>, falls für alle
+		<tex>\epsilon&gt;0</tex> ein <tex>N\in\mathbb{N}</tex>
+		existiert, sodass für alle <tex>x\in[a,b]</tex> und für alle
+		<tex>n\geq N</tex> gilt <tex>|f_n(x)-f(x)| &lt;\epsilon</tex>
+	</choice>
+
+</quiz>
+
+</div>
+</body>
+</html>

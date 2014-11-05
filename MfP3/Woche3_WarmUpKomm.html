@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+<head>
+    <meta charset="utf-8">
+    <title>Woche 3 - Kommentare zum Warm-Up</title>
+    <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+    <script src="../../eduZOO-app/script/eduZOO.js"></script>
+</head>
+
+<body>
+<div class="row centered">
+
+<h2>Kommentare zum Warm-Up</h2>
+
+<p>
+	Für alle <tex>n\in\mathbb{N}</tex> sei
+	<tex>f_n:[a,b]\to\mathbb{R}</tex> eine Funktion
+</p>
+
+<ul>
+	<li>
+		Die Funktionenfolge <tex>\{f_n\}</tex> konvergiert punktweise,
+		das heißt <tex>\lim_nf_n(x)</tex> existiert für alle
+		<tex>x\in[a,b]</tex>.
+	</li>
+</ul>
+<p><em>
+	Gegenbeispiel: Betrachte verschiedene konstante Funktionen, erzeuge
+	Folge reeller Zahlen mit mehr als einem	Häufungspunkt, zum Beispiel
+	<tex>f_{2k}(x)=1</tex>, <tex>f_{2k+1}(x)=-1</tex> für alle
+	<tex>x\in[a,b]</tex>.
+</em></p>
+
+<ul>
+	<li>
+		Falls die Funktionenfolge <tex>\{f_n\}</tex> konvergiert und
+		alle <tex>f_n</tex> stetige Funktionen sind, ist die
+		Grenzfunktion stetig.
+	</li>
+</ul>
+<p><em>
+	Dies gilt nur wenn die Konvergenz gleichmäßig ist. Ein Gegenbeispiel
+	wird <a href="MfP3/Woche3_Ggbsp.html">hier</a> konstruiert.
+</em></p>
+
+<ul>
+	<li>
+		Falls die Funktionenfolge <tex>\{f_n\}</tex> konvergiert und
+		alle <tex>f_n</tex> Riemann-integrierbar sind, gilt
+		<tex p>
+			\lim_{n\to\infty}\int_a^bf_n(x)\mbox{d}x=
+			\int_a^b\lim_{n\to\infty}f_n(x)\mbox{d}x
+		</tex>
+	</li>
+</ul>
+<p><em>
+	Dies gilt ebenfalls nur wenn die Konvergenz gleichmäßig ist.
+</em></p>
+
+<ul>
+	<li>
+		Die Folge <tex>\{f_n\}</tex> heißt gleichmäßig konvergent
+		gegen <tex>f:[a,b]\to\mathbb{R}</tex>, falls für alle
+		<tex>\epsilon&gt;0</tex> ein <tex>N\in\mathbb{N}</tex>
+		existiert, sodass für alle <tex>x\in[a,b]</tex> und für alle
+		<tex>n\geq N</tex> gilt <tex>|f_n(x)-f(x)| &lt;\epsilon</tex>
+	</li>
+</ul>
+<p><em>
+	Dies ist die Definition.
+</em></p>
+
+</div>
+</body>
+</html>
