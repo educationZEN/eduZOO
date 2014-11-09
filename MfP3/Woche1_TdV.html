@@ -14,9 +14,9 @@
 
 <p><!-- 1. Absatz: Ziel und Motivation -->
 	Differentialgleichungen <tex>y'=F(x,y)</tex> erster Ordnung, für die
-	sich die Ableitung \(y'\) als Produkt zweier Funktionen schreiben
-	lässt, von denen die eine <em>nur von</em> \(x\) und die andere
-	<em>nur von</em> \(y\) abhängt, lassen sich mit Hilfe des Verfahrens
+	sich die Ableitung <tex>y'</tex> als Produkt zweier Funktionen schreiben
+	lässt, von denen die eine <em>nur von</em> <tex>x</tex> und die andere
+	<em>nur von</em> <tex>y</tex> abhängt, lassen sich mit Hilfe des Verfahrens
 	der <em>Trennung der Variablen</em> lösen.
 </p>
 
@@ -31,7 +31,7 @@
 	<tex p>
 		y'=f(x)g(y)
 	</tex>
-	mit zwei integrierbaren Funktionen \(f,g\).
+	mit zwei integrierbaren Funktionen <tex>f,g</tex>.
 </p>
 
 <h3>Die konstanten Lösungen</h3>
@@ -57,18 +57,18 @@
 	<tex p>
 		\frac{1}{g(y)}y'=f(x)
 	</tex>
-	Ist nun \(H\) eine Stammfunktion von <tex>\frac{1}{g}</tex>, das
+	Ist nun <tex>H</tex> eine Stammfunktion von <tex>\frac{1}{g}</tex>, das
 	heißt <tex>H'=\frac{1}{g}</tex>, so lässt sich die linke Seite
 	schreiben als
 	<tex p>\frac{1}{g(y)}y'=H'(y)y'=\frac{d(H\circ y)}{dx}</tex>
 	wobei im letzten Schritt die Kettenregel verwendet wurde. Bezeichnet
-	\(F\) eine Stammfunktion von \(f\), so lässt sich die DGL
+	<tex>F</tex> eine Stammfunktion von <tex>f</tex>, so lässt sich die DGL
 	<tex>y'=f(x)g(y)</tex> also schreiben als
 	<tex p>
 		\frac{dF}{dx}=f(x)=\frac{1}{g(y)}y'=\frac{d(H\circ y)}{dx}
 	</tex>
 	woraus folgt, dass <tex>H(y(x))=F(x)+c</tex>, mit einer
-	Integrationskonstante \(c\in\mathbb{R}\). Auflösen nach \(y\)
+	Integrationskonstante <tex>c\in\mathbb{R}</tex>. Auflösen nach <tex>y</tex>
 	liefert nun die (nicht-triviale) Lösung der DGL.
 </p>
 
@@ -81,7 +81,7 @@
 		<li>
 			Überprüfe, ob die DGL erster Ordnung ist. Nur für solche
 			DGLs kommt Trennung der Variablen in Frage. Schreibe die
-			Funktionen \(f(x)\) und \(g(y)\) auf, um dich der
+			Funktionen <tex>f(x)</tex> und <tex>g(y)</tex> auf, um dich der
 			Möglichkeit der Trennung zu vergewissern.
 		</li>
 		<li>
@@ -92,15 +92,15 @@
 		</li>
 		<li>
 			Zur Bestimmung der nicht-konstanten Lösungen finde eine
-			Stammfunktion \(H\) von \(1/g\) und eine Stammfunktion \(F\)
-			von \(f\).
+			Stammfunktion <tex>H</tex> von <tex>1/g</tex> und eine Stammfunktion <tex>F</tex>
+			von <tex>f</tex>.
 		</li>
 		<li>
-			Löse die Gleichung <tex>H(y(x))=F(x)+c</tex> nach \(y(x)\)
+			Löse die Gleichung <tex>H(y(x))=F(x)+c</tex> nach <tex>y(x)</tex>
 			auf.
 		</li>
 		<li>
-			Mache eine Probe! Setze die gefundene Lösung \(y(x)\) in die
+			Mache eine Probe! Setze die gefundene Lösung <tex>y(x)</tex> in die
 			Differentialgleichung ein und überprüfe ihre Korrektheit.
 		</li>
 	</ol>
@@ -126,8 +126,8 @@
 	Lösungen.
 </p>
 <p>
-	Eine Stammfunktion \(H\)von <tex>1/g(y)=y</tex> ist
-	<tex>H(y)=\frac{1}{2}y^2</tex>. Eine Stammfunktion \(F\) von
+	Eine Stammfunktion <tex>H</tex>von <tex>1/g(y)=y</tex> ist
+	<tex>H(y)=\frac{1}{2}y^2</tex>. Eine Stammfunktion <tex>F</tex> von
 	<tex>f(x)=x^2</tex> ist <tex>F(x)=\frac{1}{3}x^3</tex>. Auflösen
 	der Gleichung
 	<tex p>
@@ -138,9 +138,9 @@
 		y(x)=\pm\sqrt{\frac{2}{3}x^3+c}
 	</tex>
 	Streng genommen müsste in der letzten Gleichung unter der Wurzel
-	natürlich \(2c\) stehen statt \(c\). Da die Konstante aber beliebig
-	ist, ändert die Beibehaltung von \(c\) nichts an der Tatsache, dass
-	\(y\) Lösung der DGL ist.
+	natürlich <tex>2c</tex> stehen statt <tex>c</tex>. Da die Konstante aber beliebig
+	ist, ändert die Beibehaltung von <tex>c</tex> nichts an der Tatsache, dass
+	<tex>y</tex> Lösung der DGL ist.
 </p>
 <p>
 	Die Probe liefert
@@ -157,8 +157,8 @@
 	bestimmt durch durch eine <em>Anfangsbedingung</em> oder
 	<em>Randbedingung</em>, die notwendig für die <em>Eindeutigkeit</em>
 	der Lösung sind. So hat zum Beispiel schon die einfachste DGL
-	\(y'=0\) keine eindeutige Lösung. <em>Jede</em> konstante Funktion
-	\(y(x)=c\) für ein \(c\in\mathbb{R}\) ist Lösung.
+	<tex>y'=0</tex> keine eindeutige Lösung. <em>Jede</em> konstante Funktion
+	<tex>y(x)=c</tex> für ein <tex>c\in\mathbb{R}</tex> ist Lösung.
 </p>
 
 <h3>Noch ein Beispiel</h3>
@@ -168,14 +168,14 @@
 	<tex p>xy'=(1-y^2)^{\frac{1}{2}}</tex>
 	Dies ist eine Differentialgleichung erster Ordnung.
 	<strong>Doch Achtung: Die linke Seite ist nicht von der Form
-	<nobr>"\(y'=\)"</nobr>.
-	</strong> Es muss vorher durch \(x\) geteilt werden. Damit jedoch
-	der Wert \(y(0)\) der Lösung \(y\) in \(x=0\) nicht verloren geht,
+	<nobr>"<tex>y'=</tex>"</nobr>.
+	</strong> Es muss vorher durch <tex>x</tex> geteilt werden. Damit jedoch
+	der Wert <tex>y(0)</tex> der Lösung <tex>y</tex> in <tex>x=0</tex> nicht verloren geht,
 	wird eine Fallunterscheidung nötig.
 	<dl>
-		<dt><u>1. Fall</u> \(x\neq0\)</dt>
+		<dt><u>1. Fall</u> <tex>x\neq0</tex></dt>
 		<dd>
-			In diesem Fall lässt sich durch \(x\) teilen und die DGL
+			In diesem Fall lässt sich durch <tex>x</tex> teilen und die DGL
 			nimmt die Form an
 			<tex p>y'=\frac{(1-y^2)^{\frac{1}{2}}}{x}</tex>
 			Sie ist erster Ordnung und lässt sich trennen, denn es ist
@@ -193,9 +193,9 @@
 			Eine Funktion, die in <tex>x=0</tex> eine Singularität
 			besitzt, was in diesem Fall zu erwarten war.
 		</dd>
-		<dt>2. Fall \(x=0\) </dt>
+		<dt>2. Fall <tex>x=0</tex> </dt>
 		<dd>
-			Ist \(x=0\) so folgt
+			Ist <tex>x=0</tex> so folgt
 			<tex p>(1-y^2(0))^{\frac{1}{2}}=0</tex>
 			Dies entspricht aber genau der Suche nach den konstanten
 			Lösungen, das heißt die Lösungen <tex>y</tex> mit

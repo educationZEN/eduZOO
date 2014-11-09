@@ -88,7 +88,7 @@ div {
 
 /* Modifier for HighDPI-Devices */
 /* TODO: check if the selection rule does not break rendering */
-/*       on non mobile devices				      */
+/*       on non mobile devices				      		      */
 /* ---------------------------------------------------------- */
 /*                                                            */
 /* A media query that captures:                               */
