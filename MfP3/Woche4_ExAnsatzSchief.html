@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+<head>
+    <meta charset="utf-8">
+    <title>Wo4 - Wie der Exponentialansatz schief geht</title>
+    <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+    <script src="../../eduZOO-app/script/eduZOO.js"></script>
+</head>
+
+<body>
+<div class="row centered">
+
+<h2>Wie der Exponentialansatz schief geht</h2>
+
+<p>
+	Betrachete die DGL
+	<tex p>
+		y''+2y'+y=0
+	</tex>
+	Der Exponentialansatz <tex>y(x)=e^{\lambda x}</tex> liefert die
+	(korrekte!) charakteristische Gleichung
+	<tex p>
+		\lambda^2+2\lambda+1=0
+	</tex>
+	Die binomische Formel liefert die doppelte Nullstelle
+	<tex>\lambda=-1</tex>. Die allgemeine Lösung der DGL ist nach dem
+	Exponentialansatz dann
+	<tex p>
+		y(x)=ce^{-x}
+	</tex>
+	Das kann aber nicht sein. Da die DGL von der Ordnung 2 ist, müssen
+	zwei unabhängige Integrationskonstanten in der allgemeinen Lösung
+	auftauchen. Der Versuch <tex>y=c_1e^{-x}+c_2e^{-x}</tex> ist nicht
+	ausreichend, denn
+	<tex>c_1e^{-x}+c_2e^{-x}=(c_1+c_2)e^{-x}=ce^{-x}</tex>. Die beiden
+	vermeintlichen Integrationskonstanten <tex>c_1, c_2</tex> können
+	zu einer Konstante zusammengefasst werden.
+</p>
+
+<p>
+	Das Zusammenfassen von Integrationskonstanten zu einer einzigen
+	Konstante ist immer dann möglich, wenn linear abhängige
+	Partikulärlösungen linear kombiniert werden. Die Lösung
+	<tex>y(x)=ce^{-x}</tex> ist lediglich eine spezielle Lösung, eine
+	zweite, linear unabhängige, muss noch gefunden werden.
+</p>
+
+<p style="margin-bottom: 250px"></p>
+</div>
+</body>
+</html>

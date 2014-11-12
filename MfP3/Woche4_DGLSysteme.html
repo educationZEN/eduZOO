@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+<head>
+    <meta charset="utf-8">
+    <title>Wo4 - DGLs höherer Ordnung, DGL-Systeme</title>
+    <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+    <script src="../../eduZOO-app/script/eduZOO.js"></script>
+</head>
+
+<body>
+<div class="row centered">
+
+<h2>DGLs höherer Ordnung und DGL-Systeme</h2>
+
+
+<p>
+	Eine DGL <tex>n-</tex>ter Ordnung,
+	<tex>y^{(n)}=F(x,y,y',\dots,y^{(n-1)})</tex>, lässt sich in ein
+	System von <tex>n</tex> DGLs 1. Ordnung umwandeln, indem die
+	Ableitungen <tex>y^{(k)}</tex> zu Koordinaten eines Vektorraums
+	umgedeutet werden, einmal abgeleitet, und die resultierenden DGLs
+	erster Ordnung als Vektoren notiert werden, ähnlich wie bei
+	Gleichungssytemen bekannt aus der linearen Algebra. Ein möglicher
+	Weg ist
+	<tex p>
+		\begin{eqnarray*}
+			y_1&=& y\\
+			y_2&=& y'\\
+			y_3&=& y''\\
+			&\vdots& \\
+			y_n&=& y^{(n-1)}
+		\end{eqnarray*}
+	</tex>
+	kompakt notiert <tex>y_k=y^{(k-1)}, k=1,\dots,n</tex>. Dann folgt
+	<tex>y_k'=y^{(k)}=y_{k+1}, k=1,\dots,n-1</tex> und für
+	<tex>k=n</tex> ist <tex>y_n'=y^{(n)}=F(x,y_1,\dots,y_n)</tex>, das
+	heißt in der Abbildungsvorschrift von <tex>F</tex> werden die
+	Ableitungen durch die mit ihnen assoziierten Koordinaten ersetzt.
+	Ausführlich
+	<tex p>
+		\begin{eqnarray*}
+			y_1' &=& y' &=& y_2\\
+			y_2' &=& y'' &=& y_3\\
+			y_3' &=& y''' &=& y_4\\
+			&\vdots& \\
+			y_n' &=& y^{(n)} &=& F(x,y_1,\dots,y_n)
+		\end{eqnarray*}
+	</tex>
+	Vektoriell notiert
+	<tex p>
+		\begin{pmatrix} y_1\\ y_2\\ \vdots\\ y_{n-1}\\ y_n\end{pmatrix}'
+		=
+		\begin{pmatrix} y_2\\ y_3\\ \vdots\\ y_{n}\\ F(x,y_1,\dots,y_n)
+		\end{pmatrix}
+	</tex>
+	Die rechte Seite der Gleichung wird dabei als ein Vektorfeld im
+	<tex>\mathbb{R}^n</tex> interpretiert. So erlauben zum Beispiel DGLs
+	2. Ordnung eine Skizzierung als Vektorfeld im
+	<tex>\mathbb{R}^2</tex>.
+</p>
+
+<h3>Beispiel</h3>
+<div class="beispiel">
+	VIDEO
+
+</div>
+
+<p>
+	Die Beispiele illustrieren, dass sich eine DGL höherer Ordnung
+	<tex>y^{(n)}=F(x,y,y',\dots,y^{(n-1)})</tex> mit einer Matrix
+	<tex>D_F</tex> identifizieren lässt, einem
+	<em>Differentialoperator</em>, sofern die die Abbildung
+	<tex>F(x,.):\mathbb{R}^n\to\mathbb{R}</tex> linear ist. In diesem
+	Fall ist <tex>F(x,.)</tex> ein Zeilenvektor
+	<tex>(a_1(x),\dots,a_n(x))</tex> mit von <tex>x</tex> abhängigen
+	Komponenten <tex>a_k(x)</tex>, und es ist
+	<tex>F(x,y_1,\dots,y_n)=\sum_{k=1}^na_k(x)y_k</tex>. Ist die DGL
+	autonom, also <tex>F</tex> nicht explizit von <tex>x</tex> abhängig,
+	so sind die Funktionen <tex>a_k(x)</tex> konstant,
+	<tex>a_k(x)=a_k</tex>, und
+	<tex>F(x,y_1,\dots,y_n)=F(y_1,\dots,y_n)=\sum_{k=1}^na_ky_k</tex>.
+	In diesem Fall heißt die Differentialgleichung
+	<tex p>y^{(n)}=\sum_{k=1}^na_ky^{(k-1)}</tex>
+	<em>lineare DGL mit konstanten Koeffizienten</em>. Die vektorielle
+	Form wird zu
+	<tex p>
+		\begin{pmatrix} y_1\\ \\ \vdots\\ \\ y_n\end{pmatrix}'
+		=
+		\begin{pmatrix} y_2\\ \vdots\\ \sum_{k=1}^na_ky_k
+		\end{pmatrix}
+		=
+		\begin{pmatrix}
+		0	& 1   & 0 	& 0 	& \dots	& 0\\
+		0 	& 0   & 1 	& 0 	& 	 	& 0\\
+	 \vdots	&     &   	&   	&      	&\vdots\\
+		0 	&\dots&   	&   	&   0  	& 1\\
+		a_1	& a_2 & a_3	& \dots	& a_{n-1} & a_n
+		\end{pmatrix}
+		\begin{pmatrix} y_1\\ \\ \vdots\\ \\ y_n\end{pmatrix}
+	</tex>
+	Die Ableitung des Vektors
+	<tex>\pmb{y}=(y_1,\dots,y_n)^{\mbox{T}}\in\mathbb{R}^n</tex> ist
+	also nur eine lineare Transformation <tex>D_F\pmb{y}</tex> des
+	Vektors selbst. Der Spezialfall <tex>n=1</tex> liefert die bekannte
+	DGL <tex>y'=a\cdot y</tex>. Dies motiviert den
+	<em>Exponential-Ansatz</em>
+	<tex p>y_k=e^{\lambda x}v_k, k=1,\dots,n,</tex> mit
+	<tex>v=(v_1,\dots,v_n)^{\mbox{T}}\in\mathbb{R}^n</tex>. Damit wird
+	die DGL <tex>\pmb{y}'=D_F\pmb{y}</tex> zu
+	<tex p>
+		\pmb{y}'=\left(e^{\lambda x}v\right)'=\lambda e^{\lambda x}v
+		=\lambda\pmb{y}=D_F\pmb{y}
+	</tex>
+	und damit zu einer Eigenwertgleichung für den Differentialoperator
+	<tex>D_F</tex>.
+</p>
+
+<p style="margin-bottom: 250px"></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+<head>
+    <meta charset="utf-8">
+    <title>Wo4 - Der Harmonische Oszillator</title>
+    <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+    <script src="../../eduZOO-app/script/eduZOO.js"></script>
+</head>
+
+<body>
+<div class="row centered">
+
+<h2>Der Harmonische Oszillator</h2>
+
+<p><!-- 1. Absatz: Ziel und Motivation -->
+	Der (eindimensionale) harmonische Oszillator wird beschrieben durch
+	die allgemeine lineare DGL 2. Ordnung mit konstanten Koeffizienten,
+	notiert als
+	<tex p>
+		my''+ay'+by=0
+	</tex>
+	Umwandeln in ein System von 2 DGLs der Ordnung 1 erfordert umstellen
+	nach <tex>y'' </tex>. Da die DGL von der Ordnung 2 sein soll, muss
+	<tex>m\neq0</tex> sein, es darf also durch <tex>m</tex> geteilt
+	werden. Dann ist
+</p>
+<div class="definition">
+	<tex p>
+		y''+2\delta y' +\omega^2y=0
+	</tex>
+</div>
+<p>
+	Die Bezeichnungen für die Koeffizienten stammen aus der Physik. Der
+	<tex>y'</tex>-Term ist ein Dämpfungsterm, die Konstante
+	<tex>\omega</tex> eine Frequenz. Dass diese als Quadrat auftaucht
+	und der Dämpfungsterm mit 2 multipliziert wird, hat rechnerische
+	Vorteile.
+</p>
+
+<p>
+	Umschreiben in ein DGL-System mit <tex>y_1=y, y_2=y' </tex> und
+	<tex>y''=-\omega^2y-2\delta y' </tex>liefert
+	<tex p>
+		\pmb{y}' =
+		\begin{pmatrix} y_1\\ y_2\end{pmatrix}' =
+		\begin{pmatrix} y_2\\ -\omega^2y_1-2\delta y_2\end{pmatrix} =
+		\begin{pmatrix} 0 & 1\\ -\omega^2 & -2\delta\end{pmatrix}
+		\begin{pmatrix} y_1\\ \\ y_2\end{pmatrix} =
+		D\pmb{y}
+	</tex>
+	Die Eigenwerte von <tex>D</tex> sind gegeben durch die Nullstellen
+	des charakteristischen Polynoms <tex>P_D(\lambda)</tex> von
+	<tex>D</tex>.
+	<tex p>
+		P_D(\lambda)=
+		\begin{vmatrix}
+			-\lambda & 1\\ -\omega^2 & -2\delta-\lambda
+		\end{vmatrix} =
+		\lambda^2+2\delta\lambda+\omega^2=0
+	</tex>
+	Vor der Lösung dieser einfachen quadratischen Gleichung noch ein
+	paar allgemeine Gedanken zu Polynomen 2. Grades und den möglichen
+	Ausgängen. In Abhängigkeit von den Werten für <tex>\delta</tex> und
+	<tex>\omega^2</tex> gibt es drei Fälle, die für die Eigenwerte
+	eintreten können. Entweder es gibt zwei verschiedene reelle
+	Eigenwerte. Oder es gibt einen Eigenwert der algebraischen
+	Vielfachheit 2 (was dann schief gehen kann, steht
+	<a href="MfP3/Woche4_ExAnsatzSchief.html">hier</a>). Oder es gibt
+	zwei komplexe Eigenwerte, die komplex konjugiert zueinander sind.
+	Fü Polynome mit reellen Koeffizienten gilt nämlich, dass für jede
+	komplexe Nullstelle <tex>z</tex> auch die komplex konjugierte Zahl
+	<tex>\overline{z}</tex> eine Nullstelle ist. Daher kann es für
+	Polynome zweiten Grades nicht vorkommen, dass eine Nullstelle reell
+	und die zweite Nullstelle komplex ist.
+</p>
+<p>
+	Zurück zum eigentlichen Problem:
+</p>
+
+<div class="definition">
+<p> Für die Eigenwerte <tex>\lambda_{1,2}</tex> der DGL
+	<tex>y''+2\delta y' +\omega^2y=0</tex> gilt
+	<tex p>
+		\lambda_{1,2}=-\delta\pm\sqrt{\delta^2-\omega^2}
+	</tex>
+</p>
+</div>
+
+<p>
+	Die drei oben geschilderten Fälle sind nun äquivalent zu den drei
+	Fällen, die wegen des Wurzelterms unterschieden werden müssen.
+	<dl>
+		<dt>1. Fall: <tex>\delta^2&gt;\omega^2</tex></dt>
+		<dd>
+			Dies ist der Fall zweier verschiedener reeller Nullstellen.
+		</dd>
+		<dt>2. Fall: <tex>\delta^2=\omega^2</tex></dt>
+		<dd>
+			Dies ist der Fall der doppelten Nullstelle. Das soll in
+			Hausaufgabe 2 genauer untersucht werden.
+		</dd>
+	</dl>
+</p>
+
+</div>
+</body>
+</html>
