@@ -67,11 +67,11 @@
 	Vielfachheit 2 (was dann schief gehen kann, steht
 	<a href="MfP3/Woche4_ExAnsatzSchief.html">hier</a>). Oder es gibt
 	zwei komplexe Eigenwerte, die komplex konjugiert zueinander sind.
-	Fü Polynome mit reellen Koeffizienten gilt nämlich, dass für jede
+	Für Polynome mit reellen Koeffizienten gilt nämlich, dass für jede
 	komplexe Nullstelle <tex>z</tex> auch die komplex konjugierte Zahl
 	<tex>\overline{z}</tex> eine Nullstelle ist. Daher kann es für
-	Polynome zweiten Grades nicht vorkommen, dass eine Nullstelle reell
-	und die zweite Nullstelle komplex ist.
+	solche Polynome zweiten Grades nicht vorkommen, dass eine Nullstelle
+	reell und die zweite Nullstelle komplex ist.
 </p>
 <p>
 	Zurück zum eigentlichen Problem:
@@ -93,15 +93,82 @@
 		<dt>1. Fall: <tex>\delta^2&gt;\omega^2</tex></dt>
 		<dd>
 			Dies ist der Fall zweier verschiedener reeller Nullstellen.
+			Die allgemeine Lösung ist
+			<tex p>
+				\begin{eqnarray*}
+				y(x)&=& c_1e^{(-\delta+\sqrt{\delta^2-\omega^2})x}
+						+c_2e^{(-\delta-\sqrt{\delta^2-\omega^2})x}\\
+					&=& e^{-\delta x}
+						(c_1e^{\sqrt{\delta^2-\omega^2} x}
+							+c_2e^{-\sqrt{\delta^2-\omega^2} x})
+				\end{eqnarray*}
+			</tex>
+			Da <tex>\sqrt{\delta^2-\omega^2}&lt;\delta</tex>, geht die
+			Lösung exponentiell schnell gegen Null. Daher heißt dieser
+			Fall <em>Kriechfall</em>.
 		</dd>
 		<dt>2. Fall: <tex>\delta^2=\omega^2</tex></dt>
 		<dd>
-			Dies ist der Fall der doppelten Nullstelle. Das soll in
+			Dies ist der Fall der doppelten Nullstelle, der sogenannte
+			<em>aperiodische Grenzfall</em>. Das soll in
 			Hausaufgabe 2 genauer untersucht werden.
+		</dd>
+		<dt>3. Fall: <tex>\delta^2&lt;\omega^2</tex></dt>
+		<dd>
+			Dies ist der Fall des Paares komplex konjugierter
+			Nullstellen
+			<tex>
+				\lambda_{1,2}=-\delta\pm i\sqrt{\omega^2-\delta^2}
+			</tex>.
+			Mit
+			<tex>\omega_d=\sqrt{\omega^2-\delta^2}</tex> schreibt sich
+			die allgemeine Lösung
+			<tex p>
+				\begin{eqnarray*}
+				y(x)&=& c_1e^{(-\delta+i\omega_d)x}
+						+c_2e^{(-\delta-i\omega_d)x}\\
+					&=& e^{-\delta x}
+						(c_1e^{i\omega_d x}
+							+c_2e^{-i\omega_d x})
+				\end{eqnarray*}
+			</tex>
+			Doch <strong>Achtung!</strong> Diese Lösung ist
+			komplex-wertig, die DGL jedoch, wie alle ihre Lösungen
+			reell-wertig. Um die Lösung als Linearkombination reeller
+			Partikulärlösungen zu schreiben, werden die Real- und
+			Imaginärteile der komplexen Partikulärlösungen
+			<tex>y_\pm=e^{(-\delta\pm i\omega_d)x}</tex>
+			betrachtet. Es gilt
+			<tex p>
+				\begin{eqnarray*}
+					\mathfrak{Re}(y_+) &=&
+						e^{-\delta x}\mathfrak{Re}(e^{i\omega_d x}) =
+						e^{-\delta x}\cos(\omega_d x)\\
+					\mathfrak{Im}(y_+) &=&
+						e^{-\delta x}\sin(\omega_d x)\\ && \\
+					\mathfrak{Re}(y_-) &=&
+						e^{-\delta x}\mathfrak{Re}(e^{-i\omega_d x}) =
+						e^{-\delta x}\cos(-\omega_d x) =
+						\mathfrak{Re}(y_+)
+						\\
+					\mathfrak{Im}(y_-) &=&
+						e^{-\delta x}\sin(-\omega_d x) =
+						-\mathfrak{Im}(y_+)
+				\end{eqnarray*}
+			</tex>
+			Die Real- und Imaginärteile der komplexen Lösungen sind
+			nicht nur nicht linear unabhängig, sondern sogar, bis auf
+			Vorzeichen gleich. Dass sie die DGL ebenfalls lösen sei
+			freiwillige Hausaufgabe. Da Sinus und Cosinus linear
+			unabhängig sind, ist die allgemeine Lösung also
+			<tex p>
+				y(x)=e^{-\delta}(c_1\cos(\omega_dx)+c_2\sin(\omega_dx))
+			</tex>
 		</dd>
 	</dl>
 </p>
 
+<p style="margin-bottom: 250px"></p>
 </div>
 </body>
 </html>
