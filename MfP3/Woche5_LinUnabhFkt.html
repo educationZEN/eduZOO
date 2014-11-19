@@ -13,23 +13,34 @@
 <h2>Lineare Unabhängigkeit von Funktionen</h2>
 
 <p><!-- 1. Absatz: Ziel und Motivation -->
-	Lineare Unabhängigkeit von Funktionen
-	wenn sie in jedem Punkt linear unabhängige Vektoren
+	Lineare Unabhängigkeit von Funktionen ist ein zentraler Begriff der
+	Funktionalanalysis und Theorie der linearen Differentialgleichungen.
+	Der Lösungsraum eines DGL-Systems mit konstanten Koeffizienten ist
+	nämlich immer ein Vektorraum, die allgemeine Lösung eine Linearkombination
+	von Basisvektoren, die nun Funktionen sind und keine n-Tupel von Zahlen
+	mehr.
 </p>
 
 
 <div class="definition">
 <strong>Definition: Lineare Unabhängikeit von Funktionen</strong><hr>
 <p>
-	Sei <tex>I</tex> ein offenes Intervall und seien <tex>f_1,\dots,f_n:I\to\mathbb{R}</tex>
-	Funktionen.
+	Sei <tex>I</tex> ein offenes Intervall. Die Funktionen
+	<tex>f_1,\dots,f_n:I\to\mathbb{R}</tex> heißen linear unabhängig, falls
+	aus <tex>\sum_{k=1}^n\lambda_kf_k=0</tex> folgt, dass
+	<tex>\lambda_k=0, k=1,\dots,n</tex>.
 </p>
 </div>
 
 <p>
-	Wie in der Linearen Algebra des <tex>\mathbb{R}^n</tex> sind also Funktionen,
+	Es ist zu beachten, dass die linke Seite der Gleichung
+	<tex>\sum_{k=1}^n\lambda_kf_k=0</tex> nicht die Zahl <tex>0</tex> ist,
+	sondern der Nullvektor, im Allgemeinen die Funktion, die identisch Null ist.
+	Aber wie in der Linearen Algebra des <tex>\mathbb{R}^n</tex> sind Funktionen,
 	die sich als Linearkombination anderer Funktionen schreiben lassen, linear
-	abhängig.
+	abhängig. Denn sind nicht alle Koeffizienten <tex>\lambda_k</tex> gleich Null,
+	so lässt sich die Gleichung	<tex>\sum_{k=1}^n\lambda_kf_k=0</tex> nach einer
+	der beteiligten Funktionen <tex>f_j</tex> auflösen.
 </p>
 
 <h3>Beispiel</h3>
@@ -54,13 +65,17 @@
 	Es ist zu beachten, dass im Fall <tex>x=\tfrac{k}{2}+\pi, k\in\mathbb{Z}</tex>
 	nur folgt <tex>\lambda=0</tex> und <tex>\mu</tex> beliebig sein kann, da
 	der Cosinus verschwindet. Doch um lineare Unabhängigkeit zu zeigen, reicht
-	es ein <tex>x</tex> aus dem Definitionsbereich zu finden, sodass
+	es ein <tex>x</tex> aus dem Definitionsbereich zu finden, sodass die Linearkombination
+	der beiden ungleich Null ist, denn dann kann dies nicht die Nullfunktion sein.
+</p>
+
+<p>
+	Ein wichtiges Kriterium ist der Wronski-Test.
 </p>
 
 
 
 
-<p style="margin-bottom: 250px"></p>
 </div>
 </body>
 </html>
