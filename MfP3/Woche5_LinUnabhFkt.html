@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+<head>
+    <meta charset="utf-8">
+    <title>Wo5 - Lineare Unabhängigkeit von Funktionen</title>
+    <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+    <script src="../../eduZOO-app/script/eduZOO.js"></script>
+</head>
+
+<body>
+<div class="row centered">
+
+<h2>Lineare Unabhängigkeit von Funktionen</h2>
+
+<p><!-- 1. Absatz: Ziel und Motivation -->
+	Lineare Unabhängigkeit von Funktionen
+	wenn sie in jedem Punkt linear unabhängige Vektoren
+</p>
+
+
+<div class="definition">
+<strong>Definition: Lineare Unabhängikeit von Funktionen</strong><hr>
+<p>
+	Sei <tex>I</tex> ein offenes Intervall und seien <tex>f_1,\dots,f_n:I\to\mathbb{R}</tex>
+	Funktionen.
+</p>
+</div>
+
+<p>
+	Wie in der Linearen Algebra des <tex>\mathbb{R}^n</tex> sind also Funktionen,
+	die sich als Linearkombination anderer Funktionen schreiben lassen, linear
+	abhängig.
+</p>
+
+<h3>Beispiel</h3>
+<div class="beispiel">
+<p>
+	Die Funktionen <tex>f(x)=\cos(x)</tex> und <tex>g(x)=\sin(x)</tex> sind
+	linear unabhängig. Die Gleichung
+	<tex p>
+		\lambda\sin(x)+\mu\cos(x)=0\;,\;\mbox{f.a. }x\in\mathbb{R}
+	</tex>
+	ist äquivalent zu <tex>\lambda\sin(x)=-\mu\cos(x)</tex> und für alle
+	<tex>x\neq\tfrac{k}{2}+\pi, k\in\mathbb{Z}</tex> ist dann
+	<tex p>
+		\lambda\tan(x)=-\mu
+	</tex>
+	woraus folgt, dass <tex>\lambda=0</tex> und damit <tex>\mu=0</tex> sein muss,
+	da der Tangens nicht konstant ist.
+</p>
+</div>
+
+<p>
+	Es ist zu beachten, dass im Fall <tex>x=\tfrac{k}{2}+\pi, k\in\mathbb{Z}</tex>
+	nur folgt <tex>\lambda=0</tex> und <tex>\mu</tex> beliebig sein kann, da
+	der Cosinus verschwindet. Doch um lineare Unabhängigkeit zu zeigen, reicht
+	es ein <tex>x</tex> aus dem Definitionsbereich zu finden, sodass
+</p>
+
+
+
+
+<p style="margin-bottom: 250px"></p>
+</div>
+</body>
+</html>

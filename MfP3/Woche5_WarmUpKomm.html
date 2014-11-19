@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+<head>
+    <meta charset="utf-8">
+    <title>Woche 5 - Kommentare zum Warm-Up</title>
+    <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+    <script src="../../eduZOO-app/script/eduZOO.js"></script>
+</head>
+
+<body>
+<div class="row centered">
+
+<h2>Kommentare zum Warm-Up Woche 5</h2>
+
+<hr>
+<h3>DGL-Systeme</h3>
+<hr>
+
+<p>
+	Sei <tex>M\in\mathbb{C}^{n\times n}</tex> eine Matrix.
+</p>
+
+<ul>
+	<li>
+		Die Matrixpotenzreihe <tex>e^M</tex> konvergiert genau dann, wenn
+		<tex>M</tex> diagonalisierbar ist.
+	</li>
+</ul>
+<p><em>
+	Falsch. Ein Gegenbeispiel ist zum Beispiel in Hausaufgabe 1 zu zeigen.
+</em></p>
+
+
+
+<ul>
+	<li>
+		Die Matrixpotenzreihe <tex>e^M</tex> konvergiert.
+	</li>
+</ul>
+<p><em>
+	Richtig. Sei <tex>\|.\|</tex> eine Matrix-Norm auf <tex>\mathbb{C}^{n\times n}</tex>.
+	Es ist zu beachten, dass eine Matrix-Norm immer submultiplikativ ist,
+	das heißt für alle <tex>A,B\in\mathbb{C}^{n\times n}</tex> gilt
+	<tex>\|AB\|\leq\|A\|\|B\|</tex>. Für den Reihenrest gilt dann
+	<tex p>
+		\begin{eqnarray*}
+			\left\|e^M-\sum_{k=0}^N\frac{M^k}{k!}\right\| &=&
+			\left\|\sum_{k=N+1}^\infty\frac{M^k}{k!}\right\|\\ &\leq&
+			\sum_{k=N+1}^\infty\left\|\frac{M^k}{k!}\right\|\\ &\leq&
+			\sum_{k=N+1}^\infty\frac{\|M\|^k}{k!}
+		\end{eqnarray*}
+	</tex>
+	was der Reihenrest der reellen Exponentialreihe zum Wert <tex>\|M\|</tex>
+	ist, der gegen Null geht.
+</em></p>
+
+
+
+<ul>
+	<li>
+		Das AWP <tex>\dot x=Mx, x(0)=x_0</tex> hat eine eine eindeutige Lösung.
+	</li>
+</ul>
+<p><em>
+	Das folgt aus der Linearität von <tex>M</tex> und dem
+	<a href="xdef_PicLin.html">Satz von Picard-Lindelöf</a>.
+</em></p>
+
+
+
+<ul>
+	<li>
+		Die Lösung des AWP <tex>\dot x=Mx, x(0)=x_0</tex> ist
+		<tex>x(t)=e^{tM}x_0</tex>.
+	</li>
+</ul>
+<p><em>
+	Richtig. Verifizieren durch Einsetzen.
+</em></p>
+
+
+
+<ul>
+	<li>
+		Falls alle Einträge in <tex>M</tex> reell sind, so hat <tex>M</tex>
+		nur reelle Eigenwerte.
+	</li>
+</ul>
+<p><em>
+	Falsch. Ein Gegenbeispiel <tex>M\in\mathbb{R}^{2\times2}</tex> sollte
+	jeder selbstständig konstruieren können.
+</em></p>
+
+
+
+<ul>
+	<li>
+		Wenn <tex>M\in\mathbb{R}^{n\times n}</tex>, dann treten die komplexen
+		Eigenwerte nur in komplex konjugierten Paaren auf.
+	</li>
+</ul>
+<p><em>
+	Ist <tex>M\in\mathbb{R}^{n\times n}</tex>, so ist das charakteristische
+	Polynom <tex>P_M(\lambda)</tex> von <tex>M</tex> ein Polynom mit reellen
+	Koeffizienten. Dass für ein Polynom <tex>p(z)=\sum_{k=0}^na_kz^k</tex>
+	mit <tex>a_k\in\mathbb{R}, k=0,\dots,n</tex> gilt, dass aus
+	<tex>p(z_0)=0</tex> folgt, dass <tex>p(\overline{z}_0)=0</tex>, folgt
+	aus den Rechenregeln für die komplexe Konjugation und aus
+	<tex>\overline{a_k}=a_k</tex>.
+</em></p>
+
+
+</div>
+</body>
+</html>

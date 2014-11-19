@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+<head>
+    <meta charset="utf-8">
+    <title>Der Satz von Picard-Lindelöf</title>
+    <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+    <script src="../../eduZOO-app/script/eduZOO.js"></script>
+</head>
+
+<body>
+<div class="row centered">
+
+<div class="definition">
+<strong>Satz von Picard-Lindelöf</strong><hr>
+<p>
+	Wenn <tex>U\subset\mathbb{R}^{n+1}</tex> offen und
+	<tex p>
+		\begin{eqnarray*}
+			f&:&U\to\mathbb{R}^n\\
+			\partial_2f,\dots,\partial_{n+2}f&:&U\to\mathbb{R}^n
+		\end{eqnarray*}
+	</tex>
+	stetig sind, dann gibt es zu jedem <tex>(t_0,\vec{x}_0)\in U</tex>
+	ein <tex>h&gt;0</tex>, sodass das Anfangswertproblem
+	<tex p>
+		\begin{eqnarray*}
+			\dot{\vec{x}}&=&f(t,\vec{x})\\
+			\vec{x}(t_0)&=&\vec{x}_0
+		\end{eqnarray*}
+	</tex>
+	auf dem Intervall <tex>(t_0-h,t_0+h)</tex> genau eine Lösung hat.
+</p>
+</div>
+</div>
+</body>
+</html>
