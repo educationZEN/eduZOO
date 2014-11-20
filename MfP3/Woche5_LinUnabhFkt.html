@@ -65,15 +65,133 @@
 	Es ist zu beachten, dass im Fall <tex>x=\tfrac{k}{2}+\pi, k\in\mathbb{Z}</tex>
 	nur folgt <tex>\lambda=0</tex> und <tex>\mu</tex> beliebig sein kann, da
 	der Cosinus verschwindet. Doch um lineare Unabhängigkeit zu zeigen, reicht
-	es ein <tex>x</tex> aus dem Definitionsbereich zu finden, sodass die Linearkombination
-	der beiden ungleich Null ist, denn dann kann dies nicht die Nullfunktion sein.
+	es ein <tex>x</tex> aus dem Definitionsbereich zu finden, für das aus
+	"Linearkombination lgeich Null" folgt, dass die Koeffizienten Null sein müssen.
 </p>
 
 <p>
 	Ein wichtiges Kriterium ist der Wronski-Test.
 </p>
 
+<div class="definition">
+<strong>Wronksi-Test</strong><hr>
+<p>
+	Sei <tex>I</tex> ein offenes Intervall, <tex>x_1,\dots,x_n:I\to\mathbb{C}</tex>
+	seien <tex>(n-1)-</tex>mal differenzierbare Funktionen. Falls die Determinante der
+	<em>Wronski-Matrix</em>
+	<tex p>
+		W_{t}=
+		\begin{pmatrix}
+			x_1(t) & x_2(t) & \dots & x_n(t)\\
+			x_1'(t)& x_2'(t)& \dots & x_n'(t)\\
+			\vdots & \vdots	&\ddots &\vdots\\
+			x_1^{(n-1)}(t)& x_2^{(n-1)}(t)& \dots & x_n^{(n-1)}(t)
+		\end{pmatrix}
+	</tex>
+	für ein <tex>t_0</tex> ungleich Null ist, so sind die <tex>x_1,\dots,x_n</tex>
+	linear unabhängig.
+</p>
+</div>
 
+<p>
+	Ist die Determinante nämlich für ein <tex>t_0</tex> ungleich Null, so
+	ist <tex>W_{t_0}</tex> bijektiv und damit folgt aus <tex>W_{t_0}v=0</tex>
+	sofort <tex>v=0</tex>. Sei <tex>v\in\mathbb{C}^n, v_i=\lambda_i</tex>,
+	dann folgt aus
+	<tex p>
+		\begin{pmatrix}
+			x_1(t_0) & x_2(t_0) & \dots & x_n(t_0)\\
+			x_1'(t_0)& x_2'(t_0)& \dots & x_n'(t_0)\\
+			\vdots & \vdots	&\ddots &\vdots\\
+			x_1^{(n-1)}(t_0)& x_2^{(n-1)}(t_0)& \dots & x_n^{(n-1)}(t_0)
+		\end{pmatrix}
+		\begin{pmatrix}
+			\lambda_1\\ \lambda_2\\ \ddots\\ \lambda_n
+		\end{pmatrix}=
+		\begin{pmatrix}
+			\textstyle\sum_{k=1}^n\lambda_kx_k(t_0)\\
+			\textstyle\sum_{k=1}^n\lambda_kx_k'(t_0)\\ \ddots\\
+			\textstyle\sum_{k=1}^n\lambda_kx_k^{(n-1)}(t_0)
+		\end{pmatrix}=
+		\begin{pmatrix}
+			0\\ 0\\ \ddots\\ 0
+		\end{pmatrix}=
+	</tex>
+	sofort <tex>\lambda_1=\lambda_2=\dots=\lambda_n=0</tex>. Damit sind die
+	<tex>x_1,\dots,x_n</tex> linear unabhängig.
+</p>
+
+<h3>Beispiel</h3>
+<div class="beispiel">
+<p>
+	Betrachte wieder Sinuns und Cosinus. Die Wronski-Determinante ist
+	<tex p>
+		\begin{vmatrix}
+			\sin(x) & \cos(x)\\
+			\cos(x) &-\sin(x)
+		\end{vmatrix}=-\sin^2(x)-\cos^2(x)=-1
+	</tex>
+	also insbesondere ungleich Null für alle <tex>x</tex>.
+</p>
+</div>
+
+<h3>Beispiel</h3>
+<div class="beispiel">
+<p>
+	Betrachte <tex>f,g:\mathbb{R}\to\mathbb{R}, f(t)=t, g(t)=t^2</tex>.
+	Die Wronski-Determinante ist
+	<tex p>
+		\begin{vmatrix}
+			t & t^2\\
+			1 & 2t
+		\end{vmatrix}=2t^2-t^2=t^2
+	</tex>
+	also ungleich Null für alle <tex>x\neq0</tex>. Die beiden Monome sind
+	linear unabhängig. Desweiteren lässt sich zeigen, dass jede Basis des
+	Raums <tex>\mathbb{P}_{\leq n}</tex> der Polynome vom Grad kleiner gleich
+	<tex>n</tex>, linear unabhängig im Funktionensinne ist.
+</p>
+</div>
+
+<p>
+	Die Umkehrung des Wronski-Tests gilt im Allgemeinen nicht, also aus linearer
+	Unabhängigkeit folgt nicht die Invertierbarkeit der Wronski-Matrix.
+</p>
+
+<h3>Beispiel</h3>
+<div class="beispiel">
+<p>
+	Gegenbeispiele finden sich zum Beispiel für Funktionen, die auf disjunkten
+	Intervallen verschwinden, also zum Beispiel <tex>f,g:[-1,1]\to\mathbb{R}</tex>
+	<tex p>
+		\begin{eqnarray*}
+		f(x)&=&\begin{cases}
+				x^2 &, -1\leq x\leq0\\
+				0 &, 0&lt; x\leq1
+			 \end{cases}\\
+		g(x)&=&\begin{cases}
+				0 &, -1\leq x\leq0\\
+				x^2 &, 0&lt; x\leq1
+			 \end{cases}
+		\end{eqnarray*}
+	</tex>
+	Beide Funktionen sind differenzierbar und linear unabhängig, denn
+	<tex p>
+		\lambda f(x)+\mu g(x)=
+		\begin{cases}
+			\lambda x^2 &, -1\leq x\leq0\\
+			\mu x^2 &, 0&lt; x\leq1
+		\end{cases}
+	</tex>
+	was nur dann Null für alle <tex>x</tex> wird (die Nullfunktion eben!),
+	wenn <tex>\lambda=\mu=0</tex>.
+</p>
+
+<p>
+	Die Wronski-Matrix jedoch hat für jede Wahl von <tex>x</tex> eine Spalte,
+	die Null wird, ist also nicht invertierbar.
+</p>
+</div>
 
 
 </div>
