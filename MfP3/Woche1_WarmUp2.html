@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <script src="https://www.polymer-project.org/webcomponents.js"></script>
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_app.html">
+    <link rel="import" href="../../eduzoo-components/eduzoo_definition.html">
+    <link rel="import" href="../../eduzoo-components/eduzoo_example.html">
+    <link rel="import" href="../../eduzoo-components/eduzoo_quiz.html">
+    <link rel="import" href="../../eduzoo-components/3rdparty/math-tex/math-tex.html">
+
+</head>
+
+<body fullbleed unresolved>
+
+<eduzoo-app courseName="Mathematik fuer PhysikerInnen III"
+         zooTitle="Woche 1 - WarmUp">
+
+<h2>Warm-Up Woche 1</h2>
+
+<hr>
+<h3>Lokale Extrema unter Nebenbedingungen</h3>
+<hr>
+
+<p>Markiere die richtigen Aussagen.</p>
+
+<eduzoo-quiz>
+<eduzoo-quiz-question>
+	Seien <math-tex>f,g:\mathbb{R}^n\to\mathbb{R}</math-tex> stetig partiell
+	diffbar. Sei <math-tex>M=\{x\in\mathbb{R}^n\,|\,g(x)=0\}</math-tex> und
+	<math-tex>f_M:M\to\mathbb{R},\,f_M(x)=f(x)</math-tex> für alle <math-tex>x\in M</math-tex>. Sei
+	<math-tex>a\in M</math-tex>. Dann gilt:
+</eduzoo-quiz-question>
+
+	<eduzoo-quiz-choice>
+		<math-tex>f_M</math-tex> nimmt ihr (globales) Maximum an.
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice correct>
+		Falls <math-tex>f</math-tex> ein globales Maximum in <math-tex>a</math-tex> annimmt, dann gilt das
+		auch für <math-tex>f_M</math-tex>.
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice correct>
+		Falls <math-tex>f</math-tex> ein lokales Maximum in <math-tex>a</math-tex> annimmt, dann gilt das
+		auch für <math-tex>f_M</math-tex>.
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice>
+		Falls <math-tex>f_M</math-tex> ein globales Maximum in <math-tex>a</math-tex> annimmt, dann gilt
+		das	auch für <math-tex>f</math-tex>.
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice>
+		Falls <math-tex>f_M</math-tex> ein lokales Maximum in <math-tex>a</math-tex> annimmt, dann gilt
+		das	auch für <math-tex>f</math-tex>.
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice>
+		Falls <math-tex>f_M</math-tex> ein globales Maximum im Punkt <math-tex>a</math-tex> annimmt, so
+		gilt grad <math-tex>f_M(a)=0</math-tex>
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice>
+		Falls <math-tex>f_M</math-tex> ein globales Maximum im Punkt <math-tex>a</math-tex> annimmt, so
+		gilt grad <math-tex>f_M(a)=\lambda\mbox{ grad }g(a)</math-tex> für ein
+		<math-tex>\lambda\in\mathbb{R}</math-tex> oder grad <math-tex>g(a)=0</math-tex>
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice correct>
+		Falls <math-tex>f_M</math-tex> ein lokales Maximum im Punkt <math-tex>a</math-tex> annimmt, so
+		gilt grad <math-tex>f_M(a)=\lambda\mbox{ grad }g(a)</math-tex> für ein
+		<math-tex>\lambda\in\mathbb{R}</math-tex> oder grad <math-tex>g(a)=0</math-tex>
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice>
+		Falls grad <math-tex>f_M(a)=\lambda\mbox{ grad }g(a)</math-tex> für ein
+		<math-tex>\lambda\in\mathbb{R}</math-tex>, so nimmt <math-tex>f_M</math-tex> ein
+		lokales Maximum im Punkt <math-tex>a</math-tex> an.
+	</eduzoo-quiz-choice>
+
+</eduzoo-quiz>
+
+</eduzoo-app>
+</body>
+</html>
