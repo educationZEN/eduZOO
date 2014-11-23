@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+<head>
+    <meta charset="utf-8">
+    <title>Woche 1 - Warm Up</title>
+    <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+    <script src="../../eduZOO-app/script/eduZOO.js"></script>
+</head>
+
+<body>
+<div class="row centered">
+
+<h2>Warm-Up Woche 1</h2>
+
+<hr>
+<h3>Lokale Extrema unter Nebenbedingungen</h3>
+<hr>
+
+<p>Markiere die richtigen Aussagen.</p>
+<quiz>
+ <question>
+	Seien <tex>f,g:\mathbb{R}^n\to\mathbb{R}</tex> stetig partiell
+	diffbar. Sei <tex>M=\{x\in\mathbb{R}^n\,|\,g(x)=0\}</tex> und
+	<tex>f_M:M\to\mathbb{R},\,f_M(x)=f(x)</tex> für alle <tex>x\in M</tex>. Sei
+	<tex>a\in M</tex>. Dann gilt:
+ </question>
+
+	<choice>
+		<tex>f_M</tex> nimmt ihr (globales) Maximum an.
+	</choice>
+
+	<choice correct>
+		Falls <tex>f</tex> ein globales Maximum in <tex>a</tex> annimmt, dann gilt das
+		auch für <tex>f_M</tex>.
+	</choice>
+
+	<choice correct>
+		Falls <tex>f</tex> ein lokales Maximum in <tex>a</tex> annimmt, dann gilt das
+		auch für <tex>f_M</tex>.
+	</choice>
+
+	<choice>
+		Falls <tex>f_M</tex> ein globales Maximum in <tex>a</tex> annimmt, dann gilt
+		das	auch für <tex>f</tex>.
+	</choice>
+
+	<choice>
+		Falls <tex>f_M</tex> ein lokales Maximum in <tex>a</tex> annimmt, dann gilt
+		das	auch für <tex>f</tex>.
+	</choice>
+
+	<choice>
+		Falls <tex>f_M</tex> ein globales Maximum im Punkt <tex>a</tex> annimmt, so
+		gilt grad <tex>f_M(a)=0</tex>
+	</choice>
+
+	<choice>
+		Falls <tex>f_M</tex> ein globales Maximum im Punkt <tex>a</tex> annimmt, so
+		gilt grad <tex>f_M(a)=\lambda\mbox{ grad }g(a)</tex> für ein
+		<tex>\lambda\in\mathbb{R}</tex> oder grad <tex>g(a)=0</tex>
+	</choice>
+
+	<choice correct>
+		Falls <tex>f_M</tex> ein lokales Maximum im Punkt <tex>a</tex> annimmt, so
+		gilt grad <tex>f_M(a)=\lambda\mbox{ grad }g(a)</tex> für ein
+		<tex>\lambda\in\mathbb{R}</tex> oder grad <tex>g(a)=0</tex>
+	</choice>
+
+	<choice>
+		Falls grad <tex>f_M(a)=\lambda\mbox{ grad }g(a)</tex> für ein
+		<tex>\lambda\in\mathbb{R}</tex>, so nimmt <tex>f_M</tex> ein
+		lokales Maximum im Punkt <tex>a</tex> an.
+	</choice>
+
+</quiz>
+
+</div>
+</body>
+</html>

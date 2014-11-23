@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+<head>
+    <meta charset="utf-8">
+    <title>Woche 5 - Matrixexponentiale</title>
+    <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+    <script src="../../eduZOO-app/script/eduZOO.js"></script>
+</head>
+
+<body>
+<div class="row centered">
+
+<h2>Matrixexponentiale</h2>
+
+<p><!-- 1. Absatz: Ziel und Motivation -->
+	Das Matrixexponential <tex>e^M</tex> einer quadratischen Matrix
+	<tex>M</tex> ist von Bedeutung für Systeme von Differentialgleichungen
+	erster Ordnung, denn die eindeutige Lösung des Anfangswertproblems
+	<tex>\dot x=Mx, x(t_0)=x_0</tex> ist gegeben durch <tex>x(t)=e^{tM}x_0</tex>.
+</p>
+
+<p>
+	Das Exponential einer Matrix ist definiert durch die Reihendarstellung
+	der Exponentialfunktion.
+</p>
+
+<div class="definition">
+<strong>Definition: Matrixexponential</strong><hr>
+<p>
+	Sei <tex>M\in\mathbb{C}^{n\times n}</tex> Dann ist das <em>Matrixexponential</em>
+	<tex>e^M\in\mathbb{C}^{n\times n}</tex> definiert durch den Grenzwert der Reihe
+	<tex p>
+		e^M=\sum_{k=0}^\infty\frac{M^k}{k!}
+	</tex>
+</p>
+</div>
+
+<p>
+	Diese Reihe konvergiert für alle quadratischen Matrizen. Einen Beweis
+	dafür gibt es in den <a href="MfP3/Woche5_WarmUpKomm.html">Kommentaren zum Warm-Up</a>.
+</p>
+
+
+<h3>Beispiel</h3>
+<div class="beispiel">
+<p>
+	Für Diagonalmatrizen <tex>D</tex> ist das Exponential <tex>e^D</tex> ebenfalls
+	eine Diagonalmatrix, denn es ist
+	<tex p>
+		\begin{pmatrix}
+		\lambda_1 & 		& 0\\
+				  & \ddots	& \\
+			0	  &			&\lambda_n
+		\end{pmatrix}^k =
+		\begin{pmatrix}
+		\lambda_1^k & 		& 0\\
+				  & \ddots	& \\
+			0	  &			&\lambda_n^k
+		\end{pmatrix}
+	</tex>
+	Daher ist
+	<tex p>
+		\begin{eqnarray*}
+			e^D &=& \sum_{k=0}^\infty\frac{1}{k!}
+			\begin{pmatrix}
+			\lambda_1 & 		& 0\\
+					  & \ddots	& \\
+				0	  &			&\lambda_n
+			\end{pmatrix}^k \\ &=&
+			\sum_{k=0}^\infty\frac{1}{k!}
+			\begin{pmatrix}
+			\lambda_1^k & 		& 0\\
+						& \ddots& \\
+				0	    &		&\lambda_n^k
+			\end{pmatrix} \\ &=&
+			\begin{pmatrix}
+				\sum_{k=0}^\infty\frac{\lambda_1^k}{k!}	& & 0\\
+													&\ddots &\\
+					0& & \sum_{k=0}^\infty\frac{\lambda_n^k}{k!}
+			\end{pmatrix}\\ &=&
+			\begin{pmatrix}
+			e^{\lambda_1} & 		& 0\\
+					  & \ddots	& \\
+				0	  &			&e^{\lambda_n}
+			\end{pmatrix}
+		\end{eqnarray*}
+	</tex>
+</p>
+</div>
+
+<p>
+	Eine weitere wichtige Beispielklasse für Matrixexponentiale bilden die
+	<a href="xdef_NilMat.html">nilpotenten</a> Matrizen. Da für eine nilpotente
+	Matrix <tex>A</tex> mit Nilpotenzgrad <tex>n</tex> gilt, dass <tex>A^k=0</tex>
+	für alle <tex>k\geq n</tex>, bricht die Exponentialreihe ab und wird zu einer
+	einfachen Summe.
+</p>
+
+<h3>Beispiel</h3>
+<div class="beispiel">
+<p>
+	Sei <tex>A\in\mathbb{R}^{2\times2}\setminus\{0\}</tex> nilpotent. Dann
+	ist der Nilpotenzgrad gleich 2, also <tex>A^2=0</tex>. Daher ist
+	<tex p>
+		e^A=\sum_{k=0}^\infty\frac{A^k}{k!}=\sum_{k=0}^1\frac{A^k}{k!}=
+			E+A
+	</tex>
+	wobei <tex>E\in\mathbb{R}^{2\times2}</tex> die Einheitsmatrix ist.
+</p>
+</div>
+
+<p>
+	Zur Berechnung der Matrixexponentiale kann es also nützlich sein, Matrizen
+	zu zerlegen in Summen von Matrizen, die einfachere Exponentiale besitzen.
+	Dabei ist aber eine wichtige Rechenregel zu beachten:
+</p>
+
+<div class="definition">
+<strong>Matrixexponential einer Summe</strong><hr>
+<p>
+	Seien <tex>A,B\in\mathbb{C}^{n\times n}</tex>, mit <tex>AB=BA</tex>.
+	Dann gilt
+	<tex p>
+		e^{A+B}=e^Ae^B
+	</tex>
+</p>
+</div>
+
+<p>
+	Ohne die Vertauschbarkeit der beiden beteiligten Matrizen gilt dies
+	nicht! Ist natürlich eine der Matrizen diagonal, so lässt sich der Satz
+	anwenden. Diagonale Matrizen vertauschen mit allen Matrizen.
+</p>
+
+</div>
+</body>
+</html>
