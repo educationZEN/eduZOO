@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <script src="https://www.polymer-project.org/webcomponents.js"></script>
+
+    <!--Imports for eduzoo-components-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo-definition/eduzoo-definition.html">
+    <link rel="import" href="../../eduzoo-components/eduzoo-example/eduzoo-example.html">
+
+    <!--Old imports, will change-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_app.html">
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_quiz.html">
+    <link rel="import" href="../../eduzoo-components/3rdparty/math-tex/math-tex.html">
+
+	<title>Wo6 - Inhomogene DGLs</title>
+
+</head>
+
+<body fullbleed unresolved>
+
+<eduzoo-app courseName="Mathematik für PhysikerInnen III"
+         zooTitle="Inhomogene Differentialgleichungen">
+
+<p><!-- 1. Absatz: Ziel und Motivation -->
+	Im folgenden werden nur lineare Differentialgleichungen betrachtet. Für diese hat
+	die Lösungsmenge immer eine lineare Struktur ähnlich den linearen Gleichungssystemen.
+	Die allgemeine Lösung <math-tex>y_h</math-tex> der homogenen Gleichung ist
+	gegeben durch eine Linearkombination von Basisvektoren des Lösungsraums. Die
+	allgemeine Lösung <math-tex>y</math-tex> der inhomogenen Gleichung ist gegeben durch
+	die Summe aus einer Partikulärlösung <math-tex>y_p</math-tex> der inhomogenen
+	Gleichung und der allgemeinen Lösung <math-tex>y_h</math-tex> der homogenen
+	Gleichung, <math-tex>y=y_p+y_h</math-tex>.
+</p>
+
+
+
+<h2>Variation der Konstanten</h2>
+
+<p>
+	Ist <math-tex>y_1,\dots,y_n</math-tex> Lösungsbasis der linearen DGL
+	<math-tex>\sum_{k=0}^na_ky^{(k)}=0</math-tex>, so ist die allgemeine
+	Lösung gegeben durch <math-tex>y_h=\sum_{k=1}^nc_ky_k</math-tex>, mit
+	Integrationskonstanten <math-tex>c_1,\dots,c_n\in\mathbb{R}</math-tex>.
+	Wird eine Inhomogenität <math-tex>b</math-tex> eingeschaltet, wird <em>eine</em>
+	Partikulärlösung <mtah-tex>y_p</mtah-tex> von
+	<math-tex>\sum_{k=0}^na_ky^{(k)}(x)=b(x)</math-tex> benötigt.
+</p>
+<p>
+	Der Idee von Variation der Konstanten liegt nun zu Grunde, dass der Ansatz
+	<math-tex>y_p(x)=\sum_{k=1}^nc_k(x)y_k(x)</math-tex> mit
+	Koeffizienten<em>funktionen</em> <math-tex>c_1(x),\dots,c_n(x)</math-tex>
+	eine Partikulärlösung liefert, falls sich die <math-tex>c_k(x)</math-tex>
+	und deren Ableitungen nach Einsetzen in die DGL genau zu <math-tex>b</math-tex>
+	"kompensieren".
+</p>
+
+<hr><h3>Beispiel</h3>
+<p><span style="font-family:Avantgarde">
+	Die Idee wird klarer für den einfachsten nicht-trivialen Fall
+	<math-tex>n=1</math-tex>. Die DGL hat dann die Form
+	<math-tex>y'+a(x)y=b(x)</math-tex>. Die Lösungsbasis besteht aus einem
+	Element <math-tex>y</math-tex>, die allgemeine Lösung <math-tex>y_h</math-tex>
+	der homogenen DGL ist von der Form <math-tex>y_h=cy</math-tex>. Um eine
+	Partikulärlösung mittels Variation der Konstanten zu erhalten, wird die
+	Konstante <math-tex>c</math-tex> durch eine Funktion <math-tex>c(x)</math-tex>
+	ersetzt, und der Ansatz <math-tex>y_p(x)=c(x)y(x)</math-tex> in die inhomogene
+	DGL eingesetzt.
+	<math-tex mode="display">
+		\begin{eqnarray*}
+			y_p'+a(x)y_p &=& (c(x)y(x))'+a(x)c(x)y(x)\\
+						 &=& c'(x)y(x)+c(x)y'(x)+a(x)c(x)y(x)\\
+						 &=& c'(x)y(x)+c(x)(\underbrace{y'+ay}_{=0})\\
+						 &=& b(x)
+		\end{eqnarray*}
+	</math-tex>
+	Der Ansatz <math-tex>y_p=cy</math-tex> ist also genau dann Lösung, wenn
+	<math-tex>c'y=b</math-tex>. Dies lässt sich für alle <math-tex>x</math-tex>
+	mit <math-tex>y(x)\neq0</math-tex> nach <math-tex>c'</math-tex> auflösen und
+	integrieren.
+</span></p><hr>
+
+<p>
+	Das so gefundene Prinzip lässt sich auf beliebige Ordnung verallgemeinern
+	und mit Hilfe der Umwandlung in ein DGL-System beweisen.
+</p>
+
+<eduzoo-definition cardtitle="Satz: Variation der Konstanten">
+
+<p>
+	Sei <math-tex>\sum_{k=0}^na_ky^{(k)}(x)=b(x)</math-tex> eine lineare DGL mit
+	Inhomogenität <math-tex>b</math-tex>, <math-tex>y_1,\dots,y_n</math-tex> eine
+	Lösungsbasis der homogenen Gleichung. Notiere
+	<math-tex mode="display">
+		\vec{c}(x)=
+			\begin{pmatrix}c_1(x)\\ \vdots\\ c_n(x)\end{pmatrix}\;,\;
+		\vec{b}(x)=
+			\begin{pmatrix}0\\ \vdots\\ b(x)\end{pmatrix}\;,\;
+		W(x)=\begin{pmatrix}
+				y_1(x) & \dots & y_n(x)\\
+				y_1'(x)& \dots & y_n'(x)\\
+				 \dots & \dots & \dots\\
+				y_1^{(n-1)}(x)& \dots & y_n^{(n-1)}(x)
+			 \end{pmatrix}
+	</math-tex>
+	Ist <math-tex>\vec{c}</math-tex> Lösung der Gleichung
+	<math-tex>W\vec{c}'=\vec{b}</math-tex>, so ist
+	<math-tex>y_p(x)=c_1(x)y_1(x)+\dots+c_n(x)y_n(x)</math-tex> eine Partikulärlösung
+	der DGL.
+</p>
+</eduzoo-definition>
+
+<p>
+	Für den Beweis wird <math-tex>y_p</math-tex> einfach eingesetzt.
+</p>
+
+<p>
+	Es ist zu beachten, dass für jede Lösungbasis <math-tex>y_1,\dots,y_n</math-tex>
+	die Wronski-Matrix <math-tex>W</math-tex> invertierbar ist. Daher ist
+	<math-tex>\vec{c}'=W^{-1}\vec{b}</math-tex>, also <math-tex>c_k(x)</math-tex>
+	gegeben durch eine Stammfunktion der k-ten Komponente von
+	<math-tex>W^{-1}\vec{b}</math-tex>. Da <math-tex>\vec{b}</math-tex> nur
+	in der letzten Komponente von Null verschieden ist, ist
+	<math-tex>W^{-1}\vec{b}</math-tex> gleich <math-tex>b</math-tex> mal
+	der letzten Spalte von <math-tex>W^{-1}</math-tex>.
+</p>
+
+
+<hr><h3>Beispiel</h3>
+<p><span style="font-family:Avantgarde">
+	Betrachte die DGL
+	<math-tex mode="display">
+		y''+2y'+y=e^x+xe^x
+	</math-tex>
+	Die Lösungsbasis des homogenen Problems ist gegeben durch die Funktionen
+	<math-tex>y_1(x)=e^{-x}, y_2(x)=xe^{-x}</math-tex>, da
+	<math-tex>\lambda=-1</math-tex> doppelte Nullstelle des charakteristischen
+	Polynoms ist. Die Wronski-Matrix ist
+	<math-tex mode="display">
+		W(x)=
+			\begin{pmatrix}
+				e^{-x} & xe^{-x}\\
+				-e^{-x}& e^{-x}(1-x)
+			\end{pmatrix}= e^{-x}
+			\begin{pmatrix}
+				1 & x\\
+				-1& 1-x
+			\end{pmatrix}
+	</math-tex>
+	mit Inverser
+	<math-tex mode="display">
+		W^{-1}(x)=e^x
+			\begin{pmatrix}
+				1-x & -x\\
+				1	& 1
+			\end{pmatrix}
+	</math-tex>
+	Die letzte Spalte davon multipliziert mit <math-tex>b(x)=e^x+xe^x=(1+x)e^x</math-tex>
+	liefert für die Variation der Konstanten
+	<math-tex mode="display">
+		\begin{pmatrix} c_1'(x)\\ c_2'(x)\end{pmatrix}=
+		\begin{pmatrix} -x(1+x)e^{2x}\\ 1+xe^{2x}\end{pmatrix}
+	</math-tex>
+	Partielle Integration liefert
+	<math-tex mode="display">
+		\begin{pmatrix} c_1(x)\\ c_2(x)\end{pmatrix}=
+		\begin{pmatrix} -\tfrac{1}{2}x^2e^{2x}\\
+						\tfrac{1}{4}(2x+1)e^{2x}\end{pmatrix}
+	</math-tex>
+	Damit ist die gesuchte Partikulärlösung <math-tex>y_p=c_1y_1+c_2y_2</math-tex>
+	gegeben durch
+	<math-tex mode="display">
+		\begin{eqnarray*}
+		y_p	&=& -\tfrac{1}{2}x^2e^{2x}e^{-x}+\tfrac{1}{4}(2x+1)e^{2x}xe^{-x}\\
+			&=& \tfrac{1}{4}xe^x
+		\end{eqnarray*}
+	</math-tex>
+	und die allgemeine Lösung <math-tex>y=y_p+y_h</math-tex> durch
+	<math-tex mode="display">
+		\begin{eqnarray*}
+		y &=& \tfrac{1}{4}xe^x+c_1e^{-x}+c_2xe^{-x}
+		\end{eqnarray*}
+	</math-tex>
+	mit Konstanten <math-tex>c_1,c_2\in\mathbb{R}</math-tex>.
+</span></p><hr>
+
+
+
+
+</eduzoo-app>
+
+</body>
+</html>
