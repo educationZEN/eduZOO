@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <script src="https://www.polymer-project.org/webcomponents.js"></script>
+
+    <!--Imports for eduzoo-components-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo-definition/eduzoo-definition.html">
+    <link rel="import" href="../../eduzoo-components/eduzoo-example/eduzoo-example.html">
+
+    <!--Old imports, will change-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_app.html">
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_quiz.html">
+    <link rel="import" href="../../eduzoo-components/3rdparty/math-tex/math-tex.html">
+
+	<title>Wo6 - Warm Up</title>
+
+</head>
+
+
+<body fullbleed unresolved>
+
+<eduzoo-app courseName="Mathematik fuer PhysikerInnen III"
+         zooTitle="Woche 1 - WarmUp">
+
+<h3>Lineare DGLs</h3>
+<hr>
+
+<p>Markiere die richtigen Aussagen.</p>
+
+<eduzoo-quiz>
+<eduzoo-quiz-question>
+	Seien <math-tex>a_{i,j},b_k:I\to\mathbb{R}</math-tex> Funktionen für
+	<math-tex>i,j,k=1,\dots,n</math-tex> und
+	<math-tex>A(t)=(a_{i,j}(t))_{i,j}</math-tex> und
+	<math-tex>b(t)=(b_k(t))_k</math-tex>. Betrachte das AWP
+	<math-tex>\dot{x}=A(t)x+b(t), x(0)=x_0</math-tex>.
+</eduzoo-quiz-question>
+
+	<eduzoo-quiz-choice>
+		Für jedes <math-tex>x_0</math-tex> hat das AWP genau eine auf ganz
+		<math-tex>I</math-tex> definierte Lösung.
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice ?>
+		Für jedes <math-tex>x_0</math-tex> hat das AWP höchstens eine auf ganz
+		<math-tex>I</math-tex> definierte Lösung.
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice correct>
+	</eduzoo-quiz-choice>
+
+</eduzoo-quiz>
+
+</eduzoo-app>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <script src="https://www.polymer-project.org/webcomponents.js"></script>
+
+    <!--Imports for eduzoo-components-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo-definition/eduzoo-definition.html">
+    <link rel="import" href="../../eduzoo-components/eduzoo-example/eduzoo-example.html">
+
+    <!--Old imports, will change-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_app.html">
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_quiz.html">
+    <link rel="import" href="../../eduzoo-components/3rdparty/math-tex/math-tex.html">
+
+	<title>eduZOO</title>
+
+</head>
+
+<body fullbleed unresolved>
+
+<eduzoo-app courseName="Mathematik fuer PhysikerInnen III"
+         zooTitle="Abbildungen I">
+
+<p>
+	Zum Beispiel
+</p>
+
+<eduzoo-example>
+<p>
+	So sieht ein Beispiel aus
+</p>
+</eduzoo-example>
+
+<p>
+	Karteikarten:
+</p>
+
+<eduzoo-definition cardtitle="Satz/Definition/Bla">
+<p>
+	Dies ist ein Satz. Mathe-Umgebung geht so: <math-tex>\xi\in\mathbb{R}</math-tex>
+	für alle X. Doppeldollar so:
+    <math-tex mode="display">
+		f^{-1}:\mathcal{W}\to\mathcal{D}\;,\;y=f(x)\mapsto f^{-1}(y)=x
+	</math-tex>
+</p>
+</eduzoo-definition>
+
+
+<eduzoo-quiz>
+
+<eduzoo-quiz-question>
+
+	Sei
+	<math-tex mode="display">
+		f:\mathbb{R}\to\mathbb{R}\; ,\; x\mapsto x^2
+	</math-tex>
+	Welche Aussagen sind wahr?
+
+</eduzoo-quiz-question>
+
+             <eduzoo-quiz-choice correct>
+                 Der Definitionsbereich von <math-tex>f</math-tex> sind alle reellen Zahlen.
+             </eduzoo-quiz-choice>
+
+             <eduzoo-quiz-choice>
+                 Der Wertebereich von <math-tex>f</math-tex> sind die positiven reellen Zahlen und
+                 Null.
+             </eduzoo-quiz-choice>
+
+             <eduzoo-quiz-choice correct>
+                 Der Wertebereich von <math-tex>f</math-tex> sind alle reellen Zahlen.
+             </eduzoo-quiz-choice>
+
+             <eduzoo-quiz-choice correct>
+                 <math-tex>f(x)=x^2</math-tex>
+             </eduzoo-quiz-choice>
+
+             <eduzoo-quiz-choice correct>
+                 Die Zahl 11 hat ein Urbild unter <math-tex>f</math-tex>.
+             </eduzoo-quiz-choice>
+
+             <eduzoo-quiz-choice>
+                 Die Zahl -11 hat ein Urbild unter <math-tex>f</math-tex>.
+             </eduzoo-quiz-choice>
+
+             <eduzoo-quiz-choice>
+                 <math-tex>f</math-tex> ist injektiv.
+             </eduzoo-quiz-choice>
+
+             <eduzoo-quiz-choice>
+                 <math-tex>f</math-tex> ist surjektiv.
+             </eduzoo-quiz-choice>
+
+             <eduzoo-quiz-choice correct>
+                 <math-tex>f:\mathbb{R^+}\to\mathbb{R}</math-tex> ist injektiv.
+             </eduzoo-quiz-choice>
+
+             <eduzoo-quiz-choice>
+                 <math-tex>f:\mathbb{R^+}\to\mathbb{R}</math-tex> ist surjektiv.
+             </eduzoo-quiz-choice>
+
+             <eduzoo-quiz-choice correct>
+                 <math-tex>f:\mathbb{R}\to\mathbb{R^+}</math-tex> ist surjektiv.
+             </eduzoo-quiz-choice>
+         </eduzoo-quiz>
+
+</eduzoo-app>
+
+</body>
+
+</html>
+<!--
+<tex></tex>		= <math-tex></math-tex>
+<tex p></tex> 	= <math-tex mode="display"></math-tex>
+-->
