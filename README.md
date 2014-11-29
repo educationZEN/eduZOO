@@ -2,9 +2,54 @@ eduZOO
 ======
 
   A zoo of learning resources
-  
+
+ List of elements
+ -------------------
+
+ Eduzoo App
+
+ ` <link rel="import" href="http://educationzen.github.io/eduzoo-components/eduzoo-app/eduzoo-app.html">`
+
+ http://educationzen.github.io/eduzoo-components/eduzoo-app/demo.html
+
+ Eduzoo Exhibit
+
+ ` <link rel="import" href="http://educationzen.github.io/eduzoo-components/eduzoo-exhibit/eduzoo-exhibit.html">`
+
+ http://educationzen.github.io/eduzoo-components/eduzoo-exhibit/demo.html
+
+ Eduzoo Definition
+
+ ` <link rel="import" href="http://educationzen.github.io/eduzoo-components/eduzoo-definition/eduzoo-definition.html">`
+
+ http://educationzen.github.io/eduzoo-components/eduzoo-definition/demo.html
+
+ Eduzoo Example
+
+ ` <link rel="import" href="http://educationzen.github.io/eduzoo-components/eduzoo-example/eduzoo-example.html">`
+
+ http://educationzen.github.io/eduzoo-components/eduzoo-example/demo.html
+
+ Eduzoo Video
+
+ ` <link rel="import" href="http://educationzen.github.io/eduzoo-components/eduzoo-video/eduzoo-video.html">`
+
+ http://educationzen.github.io/eduzoo-components/eduzoo-video/demo.html
+
+ Eduzoo Quiz
+
+ ` <link rel="import" href="http://educationzen.github.io/eduzoo-components/eduzoo-quiz/eduzoo-quiz.html">`
+
+ http://educationzen.github.io/eduzoo-components/eduzoo-quiz/demo.html
+
+ Eduzoo Quiz Choice
+
+ ` <link rel="import" href="http://educationzen.github.io/eduzoo-components/eduzoo-quiz/eduzoo-quiz-choice.html">`
+
+
+
 Offline Editing
-===============
+---------------
 
 The fastest way to create new eduZOOs is using Vagrant. 
 
