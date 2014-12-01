@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+    <head>
+        <meta charset="utf-8">
+        <title>eduZOO - Hypertext</title>
+        <script src="../../eduZOO-app/script/lib/angular.min.js"></script>
+        <script src="../../eduZOO-app/script/eduZOO.js"></script>
+    </head>
+    <body>
+        <h1>Hypertext</h1>
+        <p>
+            Hier lernen wir etwas über Hypertext. Beginnen wir mit der Geschichte ...
+        </p>
+        <p>
+			Hier schreiben wir jetzt nach Gusto irgendetwas rein. Lorem Ipsum dulor sit... 
+        </p>
+        <quiz>
+            <question>Wer hat "A File Structure for the Complex, the Changing, and the Indeterminate" geschrieben?</question>
+            <choice>Vannevar Bush</choice>
+            <choice correct>Ted Nelson</choice>
+            <choice>Edsger Dijkstra</choice>
+            <choice>Tim Berners-Lee</choice>
+        </quiz>
+        <p>
+            Und gleich die nächste Frage ...
+        </p>
+        <quiz>
+            <question>Wann war das?</question>
+            <choice>1997</choice>
+            <choice>1984</choice>
+            <choice correct>1965</choice>
+            <choice>1942</choice>
+        </quiz>
+        <p>
+            Und hier gehts weiter ...
+        </p>
+        <quiz>
+            <question>Wie heißt die Maschine, die Vannevar Bush in seinem Artikel "As We May Think" beschreibt?</question>
+            <textinput correct="Memex"></textinput>
+        </quiz>
+        <p>
+            Eine EduZOO Seite kann auch Formeln darstellen:
+            <tex p>\frac{-b\pm\sqrt{b^2-4ac}}{2a}</tex>
+            Eine Formel kann in LaTeX Notation eingegeben werden.
+        </p>
+        <p>
+            Es gibt zwei Layout-Arten für Formeln:
+        </p>
+        <ul>
+            <li>
+                <i>Displayed mathematics</i> -- Formel erscheint als eigener Absatz, linksbündig.
+                <p><code><strong>&lt;tex p></strong></code>hier LaTeX<code><strong>&lt;/tex></strong></code></p>
+            </li>
+            <li>
+                <i>In-line mathematics</i> -- Formel erscheint innerhalb <tex>\frac{-b\pm\sqrt{b^2-4ac}}{2a}</tex> der Textzeile. Wie zu sehen, wird hier die Formel in einer kompakteren Notation sowie verkleinert darstellt, mit dem Ziel den Abstand der Textzeilen unverändert zu lassen. 
+                <p><code><strong>&lt;tex></strong></code>hier LaTeX<code><strong>&lt;/tex></strong></code></p>
+            </li>
+        </ul>
+    </body>
+</html>
