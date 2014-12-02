@@ -1,40 +1,153 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
 
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
     <script src="https://www.polymer-project.org/webcomponents.js"></script>
-  <link rel="import" href="../../eduzoo-components/eduzoo-app.html">
-  <link rel="import" href="../../eduzoo-components/eduzoo-exhibit/eduzoo-exhibit.html">
-  <link rel="import" href="../../eduzoo-components/eduzoo-quiz/eduzoo-quiz.html">
-  <link rel="import" href="../../eduzoo-components/eduzoo-quiz/eduzoo-quiz-choice.html">
-  <link rel="import" href="../../eduzoo-components/eduzoo-definition/eduzoo-definition.html">
-  <link rel="import" href="../../eduzoo-components/eduzoo-example/eduzoo-example.html">
 
-    <style>
-        eduzoo-app::shadow core-toolbar {
-            background-color: #add8e6;
-        }
-    </style>
+    <!--Imports for eduzoo-components-->
 
-  <title>Ansatz vom Typ der rechten Seite</title>
+    <link rel="import" href="../../eduzoo-components/eduzoo-definition/eduzoo-definition.html">
+    <link rel="import" href="../../eduzoo-components/eduzoo-example/eduzoo-example.html">
+
+    <!--Old imports, will change-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_app.html">
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_quiz.html">
+    <link rel="import" href="../../eduzoo-components/3rdparty/math-tex/math-tex.html">
+
+	<title>Wo6 - Ansatz vom Typ der Rechten Seite</title>
 
 </head>
-<body unresolved>
 
-<eduzoo-app zooTitle="Ansatz vom Typ der Rechten Seite"
+<body fullbleed unresolved>
+
+<eduzoo-app zooTitle="Inhomogene DGLs - Ansatz vom Typ der Rechten Seite"
             courseName="Mathematik für PhysikerInnen III"
          >
 
 <p>
-	Das <a href="MfP3/Woche6_inhDGL.html#VdKBsp">abschließende Beispiel</a> zum
-	Verfahren der Variation der Konstanten
+	Im <a href="Woche6_inhDGL.html#VdKBsp">abschließenden Beispiel</a> zum
+	Verfahren der Variation der Konstanten wird eine Partikulärlösung gefunden,
+	die aus nur einem Term der Inhomogenität selbst besteht. Wäre es möglich
+	gewesen, diese zu raten? Im Fall von linearen Differentialgleichungen
+	mit konstanten Koeffizienten, also den <em>linearen autonomen Systemen</em>,
+	ist das systematisch möglich. Vorrausgesetzt natürlich, die Inhomogenität
+	besitzt keinen Summanden, der Partikulärlösung des homogenen Problems ist.
+</p>
+
+<p>
+	Gibt es eine Partikulärlösung, die Terme ähnlich der Inhomogenität
+	beinhaltet, entstehen beim Einsetzen des Ansatzes in die DGL durch das Ableiten
+	neue Terme, die vom Ansatz "kompensiert" werden müssen.
 </p>
 
 
+<hr><h3>Beispiel</h3>
+<p><span style="font-family:Avantgarde">
+	Dass Ansatz vom Typ der rechten Seite nicht heißt "Ansatz gleich der Inhomogenität"
+	zeigen schon simple Beispiele. Betrachte
+	<math-tex mode="display">
+		y'+y=\sin x
+	</math-tex>
+	Der Ansatz <math-tex>y_A(x)=\sin x</math-tex>, also genau der Inhomogenität,
+	liefert einen Widerspruch, <math-tex>y_A</math-tex> kann also keine Lösung sein
+	(außer natürlich auf der Nullstellenmenge des Cosinus, aber wir suchen Lösungen,
+	die mindestens auf einem Intervall definiert sind). Der Ansatz
+	<math-tex>y_A(x)=\sin x+\cos x</math-tex> liefert
+	<math-tex mode="display">
+		y_A'+y_A=\cos x-\sin x+\sin x+\cos x=2\cos x
+	</math-tex>
+	Die "richtigen" Terme <math-tex>\sin x</math-tex> heben sich auf. Damit das
+	nicht geschieht, wird eine Linearkombination
+	<math-tex>y_p(x)=a\sin x+b\cos x</math-tex> angesetzt, mit zwei noch zu
+	bestimmenden Unbekannten <math-tex>a,b\in\mathbb{R}</math-tex>. Dann folgt
+	<math-tex mode="display">
+		\begin{eqnarray*}
+			y_p'+y_p &=& a\cos x-b\sin x+a\sin x+b\cos x\\
+					&=&	(a-b)\sin x+(a+b)\cos x
+		\end{eqnarray*}
+	</math-tex>
+	Ein Koeffizientenvergleich dieser rechten Seite mit der rechten Seite der DGL
+	liefert ein (lineares!) Gleichungssystem für <math-tex>a</math-tex> und
+	<math-tex>b</math-tex>.
+	<math-tex mode="display">
+		\begin{eqnarray*}
+			a-b &=& 1\\
+			a+b	&=&	0
+		\end{eqnarray*}
+	</math-tex>
+	und damit <math-tex>a=-b=1/2</math-tex>. Es ist also
+	<math-tex mode="display">
+		y_p(x)=\tfrac{1}{2}(\sin x-\cos x)
+	</math-tex>
+	eine Partikulärlösung.
+</span></p><hr>
 
+<p>
+	Dass es im Allgemeinen nicht reicht, nur die Inhomogenität als Partikulärlösung
+	anzusetzen, ist jetzt klar. Dass mit dem Sinus der Cosinus in den Ansatz muss,
+	weist darauf hin, dass die Ableitungen der Funktionen auf der rechten Seite
+	ebenfalls eine Rolle spielen. Sie spielen die Kompensatoren für die neuen Terme,
+	die beim Einsetzen in die DGL entstehen. Reichen die ersten Ableitungen? Wenn nein,
+	wie viele Ableitungen müssen in den Ansatz, damit er zum Erfolg führt? Auch
+	diese Fragen lassen sich durch ein simples Beispiel klären.
+</p>
 
+<hr><h3>Beispiel</h3>
+<p><span style="font-family:Avantgarde">
+	Betrachte
+	<math-tex mode="display">
+		y'+y=x^3
+	</math-tex>
+	Der Ansatz <math-tex>y_p=ax^3</math-tex> führt ins Nichts. Der Ansatz
+	<math-tex>y_p=ax^3+bx^2</math-tex> ebenso:
+	<math-tex mode="display">
+		\begin{eqnarray*}
+			(ax^3+bx^2)'+ax^3+bx^2 &=& 3ax^2+2bx+ax^3+bx^2\\
+								&=& ax^3+(3a+b)x^2+2bx
+		\end{eqnarray*}
+	</math-tex>
+	mit dem resultierenden, nicht lösbaren Gleichungssystem
+	<math-tex mode="display">
+		\begin{eqnarray*}
+			a &=& 1\\
+			3a+b &=& 0\\
+			b &=& 0
+		\end{eqnarray*}
+	</math-tex>
+	Setzen wir einfach gleich mit einer Linearkombination <em>aller</em> Ableitungen
+	an, <math-tex>y_p=ax^3+bx^2+cx+d</math-tex>. Damit folgt
+	<math-tex mode="display">
+		\begin{eqnarray*}
+			(ax^3+bx^2+cx+d)'+ax^3+bx^2+cx+d &=& 3ax^2+2bx+c+ax^3+bx^2+cx+d\\
+								&=& ax^3+(3a+b)x^2+(2b+c)x+c+d
+		\end{eqnarray*}
+	</math-tex>
+	mit GLS
+	<math-tex mode="display">
+		\begin{eqnarray*}
+			a &=& 1\\
+			3a+b &=& 0\\
+			2b+c &=& 0\\
+			c+d &=& 0
+		\end{eqnarray*}
+	</math-tex>
+	und Lösungen <math-tex>a=1, b=-3, c=6, d=-6</math-tex>. Die Partikulärlösung
+	vom Typ der rechten Seite ist also
+	<math-tex mode="display">
+		y_p=x^3-3x^2+6x-6
+	</math-tex>
+</span></p><hr>
+
+<p>
+	Im Allgemeinen sind also alle Ableitungen, die zu linear unabhängigen Termen
+	führen, nötig, um den Ansatz vom Typ der rechten Seite zum Erfolg zu führen.
+	Naheliegend ist der Ansatz vom Typ der rechten Seite besonders bei
+	Inhomogenitäten, die nur wenige linear unabhängige Ableitungen haben, also
+	Exponentialfunktion, trigonometrische und Hyperbel-Funktionen.
+</p>
 
 
 </eduzoo-app>
