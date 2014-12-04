@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <script src="https://www.polymer-project.org/webcomponents.js"></script>
+
+    <!--Imports for eduzoo-components-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo-definition/eduzoo-definition.html">
+    <link rel="import" href="../../eduzoo-components/eduzoo-example/eduzoo-example.html">
+
+    <!--Old imports, will change-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_app.html">
+
+    <link rel="import" href="../../eduzoo-components/eduzoo-quiz/eduzoo-quiz.html">
+    <link rel="import" href="../../eduzoo-components/eduzoo-quiz/eduzoo-quiz-choice.html">
+    <link rel="import" href="../../eduzoo-components/3rdparty/math-tex/math-tex.html">
+
+	<title>Wo7 - Euler-Lagrange Gleichung</title>
+
+</head>
+
+<body fullbleed unresolved>
+
+<eduzoo-app courseName="Mathematik fuer PhysikerInnen III"
+         zooTitle="Die Euler-Lagrange Gleichung">
+
+<p>
+	Beim Thema Variationsrechnung beschränken wir uns auf die Euler-Lagrange
+	Gleichung <math-tex>\delta S=0</math-tex> für Funktionale der Form
+	<math-tex>S=\int_a^b L(x,\dot x,t)dt</math-tex>, wobei die
+	<math-tex>x</math-tex> Kurven im <math-tex>\mathbb{R}^n</math-tex> sind
+	und die <em>Lagrange-Funktion</em> <math-tex>L</math-tex> ein differenzierbares
+	Funktional auf der Menge der Orte, der Geschwindigkeiten und der Zeit.
+</p>
+
+<eduzoo-quiz lang="ger">
+<div>
+	Es sei <math-tex>L(q_i,\dot q_i,t)</math-tex> eine Lagrange-Funktion.
+	Wie lauten die Euler-Lagrange Gleichungen für <math-tex>L</math-tex>?
+</div>
+	<eduzoo-quiz-choice>
+		<math-tex mode="display">
+		\frac{d}{dt}\frac{\partial L}{\partial q_i}-\frac{\partial L}{\partial\dot q_i}=0
+		</math-tex>
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice correct>
+		<math-tex mode="display">
+		\frac{d}{dt}\frac{\partial L}{\partial\dot q_i}-\frac{\partial L}{\partial q_i}=0
+		</math-tex>
+	</eduzoo-quiz-choice>
+</eduzoo-quiz>
+
+<p>
+	Die beiden Antworten unterscheiden sich nur um die Stelle der Zeitableitung.
+	Die richtige Antwort lässt sich durch eine physikalische Einheitenbetrachtung
+	erschließen. Die Lagrange-Funktion wird jeweils partiell nach den Koordinaten
+	<math-tex>q_i,\dot q_i</math-tex> des Phasenraums
+	differenziert. Nach dem Ort <math-tex>q_i</math-tex> abzuleiten heißt die
+	physikalische Einheit (hier: Energie) durch Meter zu teilen. Nach der Geschwindigkeit
+	<math-tex>\dot q_i</math-tex> abzuleisten heißt, durch Meter pro Sekunde zu teilen,
+	also die resultierende Einheit ist Energie mal Sekunde durch Meter. Ableiten
+	nach der Geschwindigkeit liefert also an Einheit Sekunde zu viel. Daher muss
+	dieser Term noch durch Sekunde geteilt werden, also nach der Zeit abgeleitet.
+</p>
+
+<!--
+<h2>Eine geschwinde Herleitung</h2>
+
+<p>
+	Wird für die Variation
+	<math-tex>
+		\frac{d}{d\epsilon}|_{\epsilon=0}L(x+\epsilon h,\dot x+\epsilon\dot h)
+	</math-tex> eines Funktionals <math-tex>L</math-tex> die Schreibweise
+	<math-tex>\delta L</math-tex> eingeführt, so lässt sich die ausgeführte
+	Variation schreiben als ein Differential. Dies verkürzt die Herleitung
+	der Euler-Lagrange Gleichung und lässt sie sich so leichter merken.
+</p>
+-->
+
+<hr><h3>Beispiel</h3>
+<p><span style="font-family:Avantgarde">
+	Es bezeichne
+	<math-tex>C_0^2[0,T]=\{x\in C^2[0,T]\,|\,x(0)=x(T)=0\}</math-tex>.
+	Betrachte das Funktional
+	<math-tex mode="display">
+		J:C_0^2[0,T]\to\mathbb{R}\;,\;J(x)=\int_0^T(x^2+k\dot x^2+tx)dt
+	</math-tex>
+	Mit der Lagrange-Funktion <math-tex>L(x,\dot x,t)=x^2+k\dot x^2+tx</math-tex>
+	lautet die Lagrange Gleichung
+	<math-tex mode="display">
+		\begin{eqnarray*}
+		\frac{d}{dt}\frac{\partial L}{\partial \dot x}-\frac{\partial L}{\partial x} &=&
+			\frac{d}{dt}\frac{\partial (x^2+k\dot x^2+tx)}{\partial \dot x}-
+				\frac{\partial (x^2+k\dot x^2+tx)}{\partial x}\\
+		&=& \frac{d}{dt} 2k\dot x - (2x+t)\\
+		&=& 2k\ddot x-2x-t=0
+		\end{eqnarray*}
+	</math-tex>
+	Es ist also <math-tex>k\ddot x-x=t/2</math-tex> zu lösen. Der homogene Teil
+	der DGL ist ein harmonischer Oszillator mit Eigenwerten <math-tex>\pm1/k</math-tex>.
+	Eine Partikulärlösung des inhomogenen Problem liefert ein Ansatz vom Typ der
+	rechten Seite, oder einfach ablesen, <math-tex>y_p=-t/2</math-tex>. Es sind
+	nun nur noch die Integrationskonstanten aus den Bedingungen
+	<math-tex>x(0)=x(T)=0</math-tex> zu bestimmen.
+</span></p><hr>
+
+
+</eduzoo-app>
+</body>
+</html>
+<!--
+<tex></tex>		= <math-tex></math-tex>
+<tex p></tex> 	= <math-tex mode="display"></math-tex>
+-->

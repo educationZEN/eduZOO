@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <script src="https://www.polymer-project.org/webcomponents.js"></script>
+
+    <!--Imports for eduzoo-components-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo-definition/eduzoo-definition.html">
+    <link rel="import" href="../../eduzoo-components/eduzoo-example/eduzoo-example.html">
+
+    <!--Old imports, will change-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_app.html">
+
+    <link rel="import" href="../../eduzoo-components/eduzoo-quiz/eduzoo-quiz.html">
+    <link rel="import" href="../../eduzoo-components/eduzoo-quiz/eduzoo-quiz-choice.html">
+    <link rel="import" href="../../eduzoo-components/3rdparty/math-tex/math-tex.html">
+
+	<title>Wo7 - Warm Up</title>
+
+</head>
+
+
+<body fullbleed unresolved>
+
+<eduzoo-app courseName="Mathematik fuer PhysikerInnen III"
+         zooTitle="Woche 7 - Warm Up">
+
+<h3>Variationsrechnung</h3>
+<hr>
+
+<p>
+	Sei <math-tex>U\subset\mathbb{R}^n</math-tex> offen und
+	<math-tex>C^2([t_0,t_1],U)</math-tex> die Menge der zweimal stetig
+	differenzierbaren Funktionen von <math-tex>[t_0,t_1]\to U</math-tex>. Sei
+	<math-tex>
+		S:C^2([t_0,t_1],U)\to\mathbb{R}\,,\,S[x]=\int_{t_0}^{t_1}L(x(t),\dot x(t)dt
+	</math-tex>, wobei <math-tex>L:U\times\mathbb{R}^n\to\mathbb{R}</math-tex>
+	genügend oft diffbar.<br> Sei
+	<math-tex>x:[t_0,t_1]\to U</math-tex> eine zweimal stetig diffbare Funktion.
+</p>
+
+<eduzoo-quiz lang="ger" question="Markiere die richtigen Aussagen.">
+
+	<eduzoo-quiz-choice correct>
+		<math-tex>S</math-tex> ist ein Funktional.
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice correct>
+		Die Funktion <math-tex>L</math-tex> ist eine Lagrange-Funktion.
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice correct>
+		<math-tex>x</math-tex> heißt kritische Kurve bezüglich <math-tex>S</math-tex>
+		bei Variation mit festgehaltenen Endpunkten, falls für alle Funktionen
+		<math-tex>h\in C^2([t_0,t_1],\mathbb{R}^n)</math-tex> mit
+		<math-tex>h(t_0)=h(t_1)=0</math-tex> gilt
+		<math-tex>\frac{d}{d\epsilon}|_{\epsilon=0}S[x+\epsilon h]=0</math-tex>
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice correct>
+		<math-tex>x\in C^2([t_0,t_1],U)</math-tex>
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice correct>
+		Sei <math-tex>x</math-tex> eine Funktion, die <math-tex>S</math-tex>
+		minimiert. Dann gilt
+		<math-tex>
+		\frac{d}{dt}\frac{\partial L}{\partial\dot x}-\frac{\partial L}{\partial x}=0
+		</math-tex>
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice>
+		Sei <math-tex>x</math-tex> eine Funktion, für die gilt
+		<math-tex>
+		\frac{d}{dt}\frac{\partial L}{\partial\dot x}-\frac{\partial L}{\partial x}=0
+		</math-tex>. Dann wird <math-tex>S</math-tex> durch <math-tex>x</math-tex>
+		minimiert.
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice correct>
+		Für <math-tex>x</math-tex> gilt
+		<math-tex>\frac{d}{d\epsilon}|_{\epsilon=0}S[x+\epsilon h]=0</math-tex>
+		für alle <math-tex>h\in C^2([t_0,t_1],\mathbb{R}^n)</math-tex> mit
+		<math-tex>h(t_0)=h(t_1)=0</math-tex> genau dann, wenn
+		<math-tex>
+		\frac{d}{dt}\frac{\partial L}{\partial\dot x}-\frac{\partial L}{\partial x}=0
+		</math-tex>.
+	</eduzoo-quiz-choice>
+
+</eduzoo-quiz>
+
+</eduzoo-app>
+</body>
+</html>
