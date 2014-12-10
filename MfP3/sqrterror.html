@@ -29,13 +29,27 @@
 	the \sqrt{} command is not displayed properly for integration limits
 </p>
 
-
 <eduzoo-example lang="ger">
 <p>
 
 	<math-tex mode="display">
 		\begin{eqnarray*}
 \int_0^{\sqrt{ax}}dy &=& y\bigg\vert_0^{\sqrt{ax}}
+		\end{eqnarray*}
+	</math-tex>
+</p>
+</eduzoo-example>
+
+<p>
+	It is also broken in combination with the \frac{}{} command
+</p>
+
+<eduzoo-example lang="ger">
+<p>
+
+	<math-tex mode="display">
+		\begin{eqnarray*}
+			\frac{\sqrt{x}}{x} &=& \frac{1}{\sqrt{x}}
 		\end{eqnarray*}
 	</math-tex>
 </p>
