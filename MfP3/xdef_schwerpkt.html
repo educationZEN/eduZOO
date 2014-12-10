@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="eduZOO">
+<head>
+    <meta charset="utf-8">
+
+    <script src="https://www.polymer-project.org/webcomponentsjs/webcomponents.js"></script>
+
+    <!--Imports for eduzoo-components-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo-definition/eduzoo-definition.html">
+    <link rel="import" href="../../eduzoo-components/eduzoo-example/eduzoo-example.html">
+
+    <!--Old imports, will change-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_app.html">
+
+    <link rel="import" href="../../eduzoo-components/3rdparty/math-tex/math-tex.html">
+
+	<title>Definition Schwerpunkt einer Fläche</title>
+
+</head>
+
+<body>
+
+<eduzoo-app courseName=""
+         zooTitle="">
+
+
+<eduzoo-definition definitiontitle="Definition: Schwerpunkt einer Fläche">
+<p>
+	Sei <math-tex>F\subset\mathbb{R}^2</math-tex> eine Fläche mit Flächeninhalt
+	<math-tex>A(F)=\iint_Fdxdy\neq0</math-tex>. Der Schwerpunkt
+	<math-tex>(x_s,y_s)\in\mathbb{R}^2</math-tex> von <math-tex>F</math-tex> ist
+	definiert durch
+	<math-tex mode="display">
+		\begin{eqnarray*}
+			x_s &=&	\frac{1}{A(F)}\iint_Fx\,dxdy\\
+			y_s &=&	\frac{1}{A(F)}\iint_Fy\,dxdy
+		\end{eqnarray*}
+	</math-tex>
+</p>
+</eduzoo-definition>
+
+</div>
+</body>
+</html>
