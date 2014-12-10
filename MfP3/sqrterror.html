@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <script src="https://www.polymer-project.org/webcomponentsjs/webcomponents.js"></script>
+
+    <!--Imports for eduzoo-components-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo-definition/eduzoo-definition.html">
+    <link rel="import" href="../../eduzoo-components/eduzoo-example/eduzoo-example.html">
+
+    <!--Old imports, will change-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_app.html">
+
+    <link rel="import" href="../../eduzoo-components/3rdparty/math-tex/math-tex.html">
+
+	<title>sqrt-error</title>
+
+</head>
+
+<body fullbleed unresolved>
+
+<eduzoo-app courseName="" zooTitle="">
+
+<p>
+	the \sqrt{} command is not displayed properly for integration limits
+</p>
+
+
+<eduzoo-example lang="ger">
+<p>
+
+	<math-tex mode="display">
+		\begin{eqnarray*}
+\int_0^{\sqrt{ax}}dy &=& y\bigg\vert_0^{\sqrt{ax}}
+		\end{eqnarray*}
+	</math-tex>
+</p>
+</eduzoo-example>
+
+</body>
+
+</html>
+<!--
+<tex></tex>		= <math-tex></math-tex>
+<tex p></tex> 	= <math-tex mode="display"></math-tex>
+-->
