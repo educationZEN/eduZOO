@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <script src="https://www.polymer-project.org/webcomponentsjs/webcomponents.js"></script>
+
+    <!--Imports for eduzoo-components-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo-definition/eduzoo-definition.html">
+    <link rel="import" href="../../eduzoo-components/eduzoo-example/eduzoo-example.html">
+
+    <!--Old imports, will change-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_app.html">
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_quiz.html">
+    <link rel="import" href="../../eduzoo-components/3rdparty/math-tex/math-tex.html">
+
+	<title>Wo8 - Mehrdimensionale Integration</title>
+
+</head>
+
+<body fullbleed unresolved>
+
+<eduzoo-app courseName="Mathematik fuer PhysikerInnen III"
+         zooTitle="Mehrdimensionale Integration">
+
+<p>
+	Das Riemann-Integral für Funktionen mehrerer Veränderlicher wird analog
+	zum eindimensionalen Fall definiert. Zu jedem vorgegebenen Fehler
+	<math-tex>\varepsilon&gt;0</math-tex> soll es eine Unterteilung des
+	Integrationsbereiches der Feinheit <math-tex>\delta&gt;0</math-tex> geben,
+	sodass Ober- und Untersumme der Funktion zu dieser Unterteilung um nicht
+	mehr als <math-tex>\varepsilon</math-tex> voneinander abweichen.
+</p>
+
+
+
+<h2>Rechtecke als Integrationbereiche</h2>
+
+
+
+<p>
+	Über Rechtecke wird dann einfach nacheinander "eindimensional" integriert,
+	mit den anderen Veränderlichen festgehalten, ähnlich wie bei der partiellen
+	Aleitung.
+</p>
+
+<eduzoo-exhibit exhibitname="Satz">
+<p>
+	Sei <math-tex>R=[a,b]\times[c,d]</math-tex> ein Rechteck und
+	<math-tex>f:R\to\mathbb{R}</math-tex> Riemann-integrierbar, und sei für
+	jedes <math-tex>y\in[c,d]</math-tex> die Funktion
+	<math-tex mode="display">
+		f(\cdot,y):[a,b]\to\mathbb{R}\;,\;x\mapsto f(x,y)
+	</math-tex>
+	auf <math-tex>[a,b]</math-tex> Riemann-integrierbar. Dann ist die Funktion
+	<math-tex mode="display">
+		J:[c,d]\to\mathbb{R}\;,\;y\mapsto J(y)=\int_a^b f(x,y)dx
+	</math-tex>
+	auf <math-tex>[c,d]</math-tex> Riemann-integrierbar, und es gilt
+	<math-tex mode="display">
+		\iint_R f(x,y)dxdy=\int_c^d\int_a^b f(x,y)dxdy=\int_c^d J(y)dy
+	</math-tex>
+</p>
+</eduzoo-exhibit>
+
+<p>
+	Da für stetige Funktionen auch alle Einschränkungen stetig sind, hängt der
+	Wert des Integrals nicht von der Reihenfolge der Integration ab.
+</p>
+
+<eduzoo-example lang="ger">
+<p>
+	Gesucht ist der Wert des Integrals von <math-tex>f(x,y)=\cos(x+y)</math-tex>
+	über dem Rechteck <math-tex>R=[0,\frac{\pi}{2}]\times[0,\pi]</math-tex>.
+	Es ist
+	<math-tex mode="display">
+		\begin{eqnarray*}
+		\iint_R f(x,y)dxdy
+			&=&	\int_0^\pi\left(\int_0^{\pi/2}\cos(x+y)dx\right)dy\\
+			&=&	\int_0^\pi\left(\sin(x+y)\bigg\vert_0^{\pi/2}\right)dy\\
+			&=& \int_0^\pi\left(\cos(y)-\sin(y)\right)dy\\
+			&=& \sin(y)\bigg\vert_0^\pi+\cos(y)\bigg\vert_0^\pi\\
+			&=& 0 -2 =-2
+		\end{eqnarray*}
+	</math-tex>
+	Wird die Integrationsreihenfolge vertauscht, ergibt sich analog
+	<math-tex mode="display">
+		\begin{eqnarray*}
+		\iint_R f(x,y)dxdy
+			&=&	\int_0^{\pi/2}\left(\int_0^{\pi}\cos(x+y)dy\right)dx\\
+			&=&	\int_0^{\pi/2}\left(\sin(x+y)\bigg\vert_0^{\pi}\right)dx\\
+			&=&	\int_0^{\pi/2}\left(-2\sin(x)\right)dx\\
+			&=& 2\cos(x)\bigg\vert_0^{\pi/2}\\
+			&=& 0-2=-2
+		\end{eqnarray*}
+	</math-tex>
+</p>
+</eduzoo-example>
+
+
+
+<h2>Funktionsgraphen als Ränder</h2>
+
+
+
+<p>
+	Für Integrationsbereiche, die kein Rechteck sind, sondern durch Funktionen
+	berandet werden, ist die Integrationsreihenfolge wichtig.
+</p>
+
+<eduzoo-exhibit exhibitname="Satz">
+<p>
+	Seien <math-tex>\alpha,\beta:[a,b]\to\mathbb{R}</math-tex> stetig
+	differenzierbare Funktionen mit <math-tex>\alpha\leq\beta</math-tex>.
+	Ist
+	<math-tex mode="display">
+		B=\{(x,y)\in\mathbb{R}^2\,|\,a\leq x\leq b\,,\,\alpha(x)\leq y\leq\beta(x)\}
+	</math-tex>
+	so gilt für das Integral einer integrierbaren Funktion
+	<math-tex>f:B\to\mathbb{R}</math-tex> über <math-tex>B</math-tex>
+	<math-tex mode="display">
+		\iint_B f(x,y)dxdy=\int_a^b\left(\int_{\alpha(x)}^{\beta(x)}f(x,y)dy\right)dx
+	</math-tex>
+</p>
+</eduzoo-exhibit>
+
+
+<p>
+	Der Term <math-tex>\int_{\alpha(x)}^{\beta(x)}f</math-tex> in Klammern
+	beschreibt für festes <math-tex>x</math-tex> die Stammfunktion der Abbildung
+	<math-tex>y\mapsto f(x,y)</math-tex>, in den Grenzen <math-tex>\alpha(x)</math-tex>
+	und <math-tex>\beta(x)</math-tex>.
+</p>
+
+<eduzoo-example lang="ger">
+<p>
+	Seien <math-tex>a,b&gt;0</math-tex>. Gesucht ist der
+	<a href="xdef_schwerpkt.html">Schwerpunkt</a>
+	<math-tex>(x_s,y_s)\in\mathbb{R}^2</math-tex> der Menge
+	<math-tex mode="display">
+		M=\{(x,y)\in\mathbb{R}^2\,|\,0\leq x\leq b\,,\, y^2\leq ax\,,\,y\geq0\}
+	</math-tex>
+	also die drei Integrale
+	<math-tex mode="display">
+		\begin{eqnarray*}
+			A(M)&=& \iint_Mdxdy\\
+			x_s &=&	\frac{1}{A(M)}\iint_Mx\,dxdy\\
+			y_s &=&	\frac{1}{A(M)}\iint_My\,dxdy
+		\end{eqnarray*}
+	</math-tex>
+	Die Menge <math-tex>M</math-tex> ist in der Vertikalen durch die Geraden
+	<math-tex>x=0</math-tex> und <math-tex>x=b</math-tex> berandet. Die horizontalen
+	Ränder werden beschrieben durch die Ränder des Bereiches definiert durch
+	<math-tex>y^2\leq ax</math-tex> und <math-tex>y\geq0</math-tex>. Aufgelöst
+	nach <math-tex>y</math-tex> also <math-tex>0\leq y\leq \sqrt{ax}</math-tex>.
+	Es ist also <math-tex>\alpha(x)=0</math-tex> und
+	<math-tex>\beta(x)=\sqrt{ax}</math-tex>, also
+	<math-tex mode="display">
+		\begin{eqnarray*}
+			A(M)&=& \int_0^b\left(\int_0^{\sqrt{ax}}dy\right)dx\\
+				&=& \int_0^b\left(y\bigg\vert_0^{\sqrt{ax}}\right)dx\\
+				&=& \int_0^b\sqrt{ax}dx\\
+				&=&	\tfrac{2}{3}\sqrt{ab}b\\
+			x_s &=&	\frac{3}{2\sqrt{ab}b}\int_0^b\left(\int_0^{\sqrt{ax}}xdy\right)dx\\
+				&=&	\frac{3}{2\sqrt{ab}b}\int_0^b x\left(\int_0^{\sqrt{ax}}dy\right)dx\\
+				&=&	\frac{3}{2\sqrt{b}b}\int_0^b x^{3/2}dx\\
+				&=& \tfrac{3}{5}b\\
+			y_s &=& \frac{3}{2\sqrt{ab}b}\int_0^b\left(\int_0^{\sqrt{ax}}ydy\right)dx\\
+&=& \frac{3}{2\sqrt{ab}b}\int_0^b\left(\tfrac{1}{2}y^2\bigg\vert_0^{\sqrt{ax}}\right)dx\\
+				&=&	\frac{3\sqrt{a}}{4\sqrt{b}b}\int_0^b xdx\\
+				&=& \tfrac{3}{8}\sqrt{ab}
+		\end{eqnarray*}
+	</math-tex>
+	Der Schwerpunkt von <math-tex>M</math-tex> ist also
+	<math-tex mode="display">
+		\begin{pmatrix}x_s\\ y_s\end{pmatrix}=
+		\begin{pmatrix}\tfrac{3}{5}b\\ \tfrac{3}{8}\sqrt{ab}\end{pmatrix}
+	</math-tex>
+</p>
+</eduzoo-example>
+
+<p>
+	Für drei Variablen analog
+</p>
+
+<eduzoo-example lang="ger">
+<p>
+	Sei <math-tex>K</math-tex> der Durchdringungskörper der beiden Zylinder
+	im <math-tex>\mathbb{R}^3</math-tex>, definiert durch
+	<math-tex mode="display">
+		x^2+y^2\leq 1\;\mbox{ und }\; x^2+z^2\leq 1
+	</math-tex>
+	Um das Volumen von <math-tex>K</math-tex> zu berechnen, müssen die
+	Grenzfunktionen, die das Integrationsgebiet beranden, angegeben werden
+	Für die Ungleichungen gilt
+	<math-tex mode="display">
+		\begin{eqnarray*}
+		x^2+y^2\leq1 &\Longleftrightarrow& -\sqrt{1-x^2}\leq y\leq\sqrt{1-x^2}\\
+		x^2+z^2\leq1 &\Longleftrightarrow& -\sqrt{1-x^2}\leq z\leq\sqrt{1-x^2}
+		\end{eqnarray*}
+	</math-tex>
+	also ist
+	<math-tex mode="display">
+		K=\{(x,y,z)\in\mathbb{R}^3\,|\,
+				-1\leq x\leq1\,,\,-\sqrt{1-x^2}\leq y\leq\sqrt{1-x^2}\,,\,
+				-\sqrt{1-x^2}\leq z\leq\sqrt{1-x^2}
+			\}
+	</math-tex>
+	und damit das Volumen <math-tex>V(K)</math-tex> von <math-tex>K</math-tex>
+	gegeben durch
+	<math-tex mode="display">
+		\begin{eqnarray*}
+			V(K)&=& \iiint_K dxdydz\\
+				&=& \int_{-1}^1
+					\left(\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}
+					\left(\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}dz\right)dy\right)dx\\
+				&=&	2\int_{-1}^1
+					\left(\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}\sqrt{1-x^2}dy\right)dx\\
+				&=& 2\int_{-1}^1\sqrt{1-x^2}
+					\left(\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}dy\right)dx\\
+				&=&	4\int_{-1}^1\left(1-x^2\right)dx\\
+				&=& 4\left(x\bigg\vert_{-1}^1-\tfrac{1}{3}x^3\bigg\vert_{-1}^1\right)\\
+				&=& \tfrac{16}{3}
+		\end{eqnarray*}
+	</math-tex>
+</p>
+</eduzoo-example>
+
+
+
+</eduzoo-app>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32431467-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+
+</html>
+<!--
+<tex></tex>		= <math-tex></math-tex>
+<tex p></tex> 	= <math-tex mode="display"></math-tex>
+-->
