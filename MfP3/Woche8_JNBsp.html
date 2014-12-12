@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <script src="https://www.polymer-project.org/webcomponents.js"></script>
+
+    <!--Imports for eduzoo-components-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo-definition/eduzoo-definition.html">
+    <link rel="import" href="../../eduzoo-components/eduzoo-example/eduzoo-example.html">
+
+    <!--Old imports, will change-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_app.html">
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_quiz.html">
+    <link rel="import" href="../../eduzoo-components/3rdparty/math-tex/math-tex.html">
+
+	<title>Wo8 - Beispiele für Jordan Nullmengen</title>
+
+</head>
+
+<body fullbleed unresolved>
+
+<eduzoo-app courseName="Mathematik fuer PhysikerInnen III"
+         zooTitle="Beispiele für Jordan Nullmengen">
+
+<p>
+	Teilmengen des <math-tex>\mathbb{R}^2</math-tex>, die sich von endlich vielen
+	Rechtecken mit beliebig kleinem Gesamtflächeninhalt überdecken lassen, heißen
+	<a href="xdef_JN.html">Jordan-Nullmengen</a>.
+</p>
+
+<p>
+	Endliche Teilmengen des <math-tex>\mathbb{R}^2</math-tex> sind
+	Jordan-Nullmengen.
+</p>
+
+<eduzoo-example lang="ger">
+<p>
+	Seien <math-tex>x_1,\dots,x_n\in\mathbb{R}^2</math-tex> und
+	<math-tex>M=\bigcup_{i=1}^n\{x_i\}</math-tex> eine endliche Teilmenge
+	des <math-tex>\mathbb{R}^2</math-tex>. Zu gegebenem
+	<math-tex>\varepsilon&gt;0</math-tex> kann jedes der <math-tex>x_i</math-tex>
+	überdeckt werden von einem Quadrat mit Seitenlänge kleiner als
+	<math-tex>\sqrt{\varepsilon/n}</math-tex>. Die
+	<math-tex>\delta-</math-tex>Vollkugeln bezüglich der Supremums-Norm sind
+	genau Quadrate der Seitenlänge <math-tex>2\delta</math-tex>, also Flächeninhalt
+	<math-tex>4\delta^2</math-tex>. Es
+	ist <math-tex>\{R_i\}</math-tex> mit
+	<math-tex mode="display">
+		R_i=\left\{
+			x\in\mathbb{R}^2\,\bigg\vert\,
+				\|x-x_i\|_\infty\leq\delta
+			\right\}
+	</math-tex>
+	eine Überdeckung von <math-tex>M</math-tex> durch Rechtecke mit
+	Gesamtflächeninhalt
+	<math-tex mode="display">
+		\sum_{i=1}^n A(R_i)=\sum_{i=1}^n 4\delta^2=4n\delta^2&lt;\varepsilon
+	</math-tex>
+	für
+	<math-tex mode="display">
+		\delta&lt;\sqrt{\frac{\varepsilon}{4n}}
+	</math-tex>
+</p>
+</eduzoo-example>
+
+<p>
+	Das obere Beispiel zeigt auch, dass die Geometrie der verwendeten Überdeckung
+	nicht wichtig ist, es also egal ist, ob die Überdeckung durch Rechtecke
+	oder Kreisflächen stattfindet.
+</p>
+<p>
+	Endliche Vereinigungen von Jordan-Nullmengen sind Jordan-Nullmengen.
+</p>
+
+<eduzoo-example lang="ger">
+<p>
+	Seien <math-tex>J_1,\dots,J_n\subset\mathbb{R}^2</math-tex> Jordan-Nullmengen.
+	Dann ist <math-tex>\bigcup_{k=1}^n J_k</math-tex> Jordan-Nullmenge.
+	Zu zeigen ist, dass für beliebiges <math-tex>\varepsilon&gt;0</math-tex>
+	eine endliche Überdeckung von <math-tex>\bigcup_{k=1}^n J_k</math-tex>
+	durch Rechtecke mit Gesamtflächeninhalt kleiner <math-tex>\varepsilon</math-tex>
+	existiert. Die Idee ist hier natürlich, die endlichen Überdeckungen der
+	einzelnen <math-tex>J_k</math-tex> zu verwenden, da deren Vereinigung
+	dann eine Überdeckung der Vereinigung der <math-tex>J_k</math-tex> ist,
+	und sie so klein zu wählen, dass der Gesamtflächeninhalt kleiner
+	<math-tex>\varepsilon</math-tex> wird.
+</p>
+
+<p>
+	Sei also <math-tex>\varepsilon&gt;0</math-tex>. Zu gegebenem
+	<math-tex>\delta&gt;0</math-tex> sei <math-tex>\{R_i^{(k)}\}</math-tex>
+	Überdeckung durch Rechtecke für die Jordan-Nullmenge
+	<math-tex>J_k,\,k=1,\dots,n</math-tex>, mit Gesamtflächeninhalt
+	<math-tex>\sum_iA(R_i^{(k)})&lt;\delta</math-tex>. Dann ist
+	<math-tex>\{\bigcup_{k=1}^n R_i^{(k)}\}</math-tex> eine Überdeckung durch
+	Rechtecke von <math-tex>\bigcup_{k=1}^n J_k</math-tex> mit Gesamtflächeninhalt
+	<math-tex mode="display">
+		\sum_{k=1}^n\sum_iA(R_i^{(k)})&lt;n\delta&lt;\epsilon
+	</math-tex>
+	falls <math-tex>\delta&lt;\epsilon/n</math-tex> gewählt wird.
+</p>
+</eduzoo-example>
+
+<p>
+	Auch unendliche Mengen können Jordan-Nullmengen sein. Die Menge aller
+	Folgenglieder einer konvergenten Folge ist eine Jordan-Nullmenge.
+</p>
+
+<eduzoo-example lang="ger">
+<p>
+	Sei <math-tex>\{a_k\}</math-tex> eine konvergente Folge im
+	<math-tex>\mathbb{R}^2</math-tex>. Dann ist die Menge
+	<math-tex>M=\{a_k\,|\,k\in\mathbb{N}\}</math-tex> Jordan-Nullmenge. Da
+	die Folge konvergiert, liegen für jedes <math-tex>\delta&gt;0</math-tex>
+	fast alle (also alle bis auf endlich viele) Folgenglieder in der
+	<math-tex>\delta-</math-tex>Kugel <math-tex>B_\delta(a)</math-tex> um
+	den Grenzwert <math-tex>a</math-tex>, können also mit einem
+	Quadrat der Seitenlänge <math-tex>2\delta</math-tex> und somit Flächeninhalt
+	<math-tex>4\delta^2</math-tex> überdeckt werden. Für
+	<math-tex>\delta&lt;\sqrt{\epsilon}/2</math-tex> ist das kleiner als jedes
+	<math-tex>\epsilon&gt;0</math-tex> und somit Jordan-Nullmenge. Die endlich
+	vielen Folgenglieder außerhalb dieser Menge sind Jordan-Nullmenge, und die
+	Vereinigung dieser deiden Jordan-Nullmengen wieder Jordan-Nullmenge.
+</p>
+<p>
+	Achtung: Die <math-tex>\delta-</math-tex>Kugel selbst, für festes
+	<math-tex>\delta&gt;0</math-tex>, ist keine Jordan-Nullmenge.
+	Schließlich hat sie einen endlichen festen Flächeninhalt und kann somit nicht
+	durch endlich viele Rechtecke beliebig kleinen Gesamtflächeninhalts überdeckt
+	werden. Aber für jedes <math-tex>\epsilon&gt;0</math-tex> existiert eben
+	ein <math-tex>\delta=\delta(\epsilon)</math-tex>, sodass die
+	<math-tex>\delta-</math-tex>Kugel Überdeckung von fast allen Folgengliedern ist,
+	mit Flächeninhalt klein genug.
+</p>
+</eduzoo-example>
+
+<p>
+	Unbeschränkte Mengen hingegen können nie Jordan-Nullmengen sein. Sie lassen
+	sich nicht mit endlich vielen Rechtecken überdecken. Exisitierte eine solche
+	Überdeckung, so ließe sich daraus ein "großes" Rechteck konstruieren, das
+	die Menge überdeckt. Rechtecke sind beschänkte Mengen und beschränkte Mengen
+	haben keine unbeschränkten Teilmengen
+</p>
+
+<eduzoo-example lang="ger">
+<p>
+	Sei <math-tex>M\subset\mathbb{R}^2</math-tex> unbeschränkt. Angenommen
+	es existiert eine endliche Überdeckung <math-tex>\{R_i\}</math-tex> von
+	<math-tex>M</math-tex> durch Rechtecke
+	<math-tex>R_i=[a_i,b_i]\times[c_i,d_i]</math-tex>. Dann ist das Rechteck
+	<math-tex mode="display">
+		R_M=[\min_i\{a_i\},\max_i\{b_i\}]\times[\min_i\{c_i\},\max_i\{d_i\}]
+	</math-tex>
+	eine Überdeckung von <math-tex>M</math-tex> und kann als beschränkte
+	Menge keine unbeschränkten Teilmengen enthalten. Deshalb kann keine
+	endliche Überdeckung durch Rechtecke existieren und <math-tex>M</math-tex>
+	nicht Jordan-Nullmenge sein.
+</p>
+</eduzoo-example>
+
+</eduzoo-app>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32431467-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+
+</html>
+<!--
+<tex></tex>		= <math-tex></math-tex>
+<tex p></tex> 	= <math-tex mode="display"></math-tex>
+-->
