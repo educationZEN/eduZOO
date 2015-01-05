@@ -53,7 +53,9 @@ Offline Editing
 
 The fastest way to create new eduZOOs is using Vagrant. 
 
-- download and install Vagrant from vagrant.com/downloads.html
+- download and install Vagrant from vagrantup.com/downloads.html
+
+- make sure, VirtualBox is installed
 
 - clone the eduZoo repository
 
@@ -63,7 +65,7 @@ The fastest way to create new eduZOOs is using Vagrant.
 
 Vagrant will do a lot of things to provide you everything you need, which could take a while. Don't worry, it will start faster next time :)
 
-After finish you can now browse to http://localhost:8083/eduZOO to enjoy your local eduZOOs. Try to change something and refresh the browser! 
+After finish you can now browse to http://localhost:8083/eduzoo to enjoy your local eduZOOs. Try to change something and refresh the browser! 
 
 When you are finished stop your machine with `vagrant hold`.
 
