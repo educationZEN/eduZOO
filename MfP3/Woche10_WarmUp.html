@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <script src="https://www.polymer-project.org/webcomponents.js"></script>
+
+    <!--Imports for eduzoo-components-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo-definition/eduzoo-definition.html">
+    <link rel="import" href="../../eduzoo-components/eduzoo-example/eduzoo-example.html">
+
+    <!--Old imports, will change-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_app.html">
+
+    <link rel="import" href="../../eduzoo-components/eduzoo-quiz/eduzoo-quiz.html">
+    <link rel="import" href="../../eduzoo-components/eduzoo-quiz/eduzoo-quiz-choice.html">
+    <link rel="import" href="../../eduzoo-components/3rdparty/math-tex/math-tex.html">
+
+	<title>Wo10 - Warm Up</title>
+
+</head>
+
+
+<body fullbleed unresolved>
+
+<eduzoo-app courseName="Mathematik fuer PhysikerInnen III"
+         zooTitle="Woche 10 - Warm Up">
+
+<h3>Mehrdimensionale Integration</h3>
+<hr>
+
+<p>
+	<strong>1.</strong> Sei
+	<math-tex>B\subset\mathbb{R}^2, \phi:B\to\mathbb{R}^3</math-tex> eine
+	Funktion.
+</p>
+
+<eduzoo-quiz lang="ger" question="Markiere die richtigen Aussagen.">
+
+	<eduzoo-quiz-choice>
+		<math-tex>\phi</math-tex> ist eine Parametrisierung der Fläche
+		<math-tex>\phi(B).</math-tex>
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice correct>
+		<math-tex>\phi(B)</math-tex> ist eine Fläche falls
+		<math-tex>\phi(x,y)=(x,y,x+y)</math-tex> und
+		<math-tex>B=[0,1]\times[0,1]</math-tex>.
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice>
+		<math-tex>\phi(B)</math-tex> ist eine Fläche falls
+		<math-tex>\phi(x,y)=(x,0,0)</math-tex> und
+		<math-tex>B=[0,1]\times[0,1]</math-tex>.
+	</eduzoo-quiz-choice>
+
+
+</eduzoo-quiz>
+
+<p>
+	<strong>2.</strong> Sei <math-tex>B\subset\mathbb{R}^2</math-tex> kompakt,
+	<math-tex>\phi:B\to\mathbb{R}^3</math-tex> eine Parametrisierung der glatten
+	Fläche <math-tex>\phi(B)=:F</math-tex> und <math-tex>f:F\to\mathbb{R}</math-tex>
+	eine Funktion, die die Massenverteilung von <math-tex>F</math-tex> beschreibt.
+</p>
+
+<eduzoo-quiz lang="ger" question="Markiere die richtigen Aussagen.">
+
+	<eduzoo-quiz-choice correct>
+		Die Oberfläche von <math-tex>F</math-tex> ist
+		<math-tex>\iint_B\|\frac{\partial\phi}{\partial u}\times
+					\frac{\partial\phi}{\partial v}\|du\ dv</math-tex>.
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice>
+		Die Gesamtmasse von <math-tex>F</math-tex> ist
+		<math-tex>\iint_B f(u,v)\|\frac{\partial\phi}{\partial u}\times
+					\frac{\partial\phi}{\partial v}\|du\ dv</math-tex>.
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice correct>
+		Die Gesamtmasse von <math-tex>F</math-tex> ist
+		<math-tex>\iint_B f(\phi(u,v))\|\frac{\partial\phi}{\partial u}\times
+					\frac{\partial\phi}{\partial v}\|du\ dv</math-tex>.
+	</eduzoo-quiz-choice>
+
+</eduzoo-quiz>
+
+</eduzoo-app>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51564469-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

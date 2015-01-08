@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <script src="https://www.polymer-project.org/webcomponents.js"></script>
+
+    <!--Imports for eduzoo-components-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo-definition/eduzoo-definition.html">
+    <link rel="import" href="../../eduzoo-components/eduzoo-example/eduzoo-example.html">
+
+    <!--Old imports, will change-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_app.html">
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_quiz.html">
+    <link rel="import" href="../../eduzoo-components/3rdparty/math-tex/math-tex.html">
+
+	<title>Woche9 - Integrale für Ratsuchende</title>
+
+</head>
+
+<body fullbleed unresolved>
+
+<eduzoo-app courseName="Mathematik fuer PhysikerInnen III"
+         zooTitle="Integrale für Ratsuchende">
+
+<p>
+
+</p>
+
+<eduzoo-example lang="ger">
+<p>
+	Wir berechnen das Integral
+	<math-tex mode="display">
+		\int\sqrt{1-x^2}dx
+	</math-tex>
+	Dazu wird nur partielle Integration benutzt und zwei wichtige Ableitungen
+	<math-tex mode="display">
+		\arcsin'x=\frac{1}{\sqrt{1-x^2}}\;,\;(\sqrt{1-x^2})'=\frac{-x}{\sqrt{1-x^2}}
+	</math-tex>
+	Auf geht's!
+	<math-tex mode="display">
+		\begin{eqnarray*}
+			\int\sqrt{1-x^2}dx
+				&=&	\int\frac{1-x^2}{\sqrt{1-x^2}}dx\\
+				&=& \int\frac{1}{\sqrt{1-x^2}}dx+\int x\frac{-x}{\sqrt{1-x^2}}dx\\
+				&=& \arcsin x+x\sqrt{1-x^2}-\int\sqrt{1-x^2}dx
+		\end{eqnarray*}
+	</math-tex>
+	Daraus folgt, dass
+	<math-tex mode="display">
+		\int\sqrt{1-x^2}dx=\frac{1}{2}\left(\arcsin x+x\sqrt{1-x^2}\right)
+	</math-tex>
+	eine Stammfunktion ist.
+</p>
+</eduzoo-example>
+
+<p>
+	Häufiger anzutreffen ist eine allgemeinere Variante.
+</p>
+
+<eduzoo-example lang="ger">
+<p>
+	Sei <math-tex>R&gt;0</math-tex>. Dann ist
+	<math-tex mode="display">
+		\begin{eqnarray*}
+			\int\sqrt{R^2-x^2}dx
+				&=&	R\int\sqrt{1-(\tfrac{x}{R})^2}dx\\
+				&=&	R^2\int\sqrt{1-t^2}dt\\
+				&=& \frac{1}{2}R^2\left(\arcsin t+t\sqrt{1-t^2}\right)\\
+				&=&	\frac{1}{2}R^2
+					\left(
+					\arcsin\tfrac{x}{R}+\tfrac{x}{R}\sqrt{1-(\tfrac{x}{R})^2}
+					\right)
+		\end{eqnarray*}
+</p>
+	eine Stammfunktion.
+</eduzoo-example>
+
+<!--
+<p>
+	Mit etwas Geometrie lässt sich die Formel aufhübschen.
+</p>
+
+<eduzoo-example lang="ger">
+<p>
+	Sei <math-tex>-R\leq x\leq R</math-tex>. Dann existiert ein Winkel
+	<math-tex>\alpha</math-tex>, sodass <math-tex>x/R=\sin\alpha</math-tex>
+	und es gilt
+	<math-tex mode="display">
+		\begin{eqnarray*}
+			\int\sqrt{R^2-x^2}dx
+				&=&	\frac{1}{2}R^2
+					\left(
+					\arcsin\tfrac{x}{R}+\tfrac{x}{R}\sqrt{1-(\tfrac{x}{R})^2}
+					\right)\\
+				&=&	\frac{1}{2}R^2\left(\alpha+\sin\alpha\sqrt{1-\sin^2\alpha}\right)\\
+				&=& \frac{1}{2}R^2(\alpha+\sin\alpha\cos\alpha)\\
+				&=& \frac{1}{4}R^2(2\alpha+\sin2\alpha)
+		\end{eqnarray*}
+</p>
+-->
+
+</eduzoo-example>
+
+</eduzoo-app>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51564469-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+
+</html>
+<!--
+<tex></tex>		= <math-tex></math-tex>
+<tex p></tex> 	= <math-tex mode="display"></math-tex>
+-->

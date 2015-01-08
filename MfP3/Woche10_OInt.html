@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <script src="https://www.polymer-project.org/webcomponents.js"></script>
+
+    <!--Imports for eduzoo-components-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo-definition/eduzoo-definition.html">
+    <link rel="import" href="../../eduzoo-components/eduzoo-example/eduzoo-example.html">
+
+    <!--Old imports, will change-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_app.html">
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_quiz.html">
+    <link rel="import" href="../../eduzoo-components/3rdparty/math-tex/math-tex.html">
+
+	<title>Woche10 - Oberflächenintegrale</title>
+
+</head>
+
+<body fullbleed unresolved>
+
+<eduzoo-app courseName="Mathematik fuer PhysikerInnen III"
+         zooTitle="Oberflächenintegrale">
+
+<p>
+	Wie bei den Kurvenintegralen, bei denen skalare Funktionen entlang parametrisierter
+	Kurven im <math-tex>\mathbb{R}^n</math-tex> integriert werden, lassen sich
+	solche Funktionen auch über parametrisierte Flächen integrieren. Die Rolle
+	des Geschwindigkeitsvektors an einen Punkt der Kurve im Kurvenintegral übernimmt
+	nun der Normalenvektor an einen Punkt der Fläche. Zunächst eine Wiederholung
+	zu parametrisierten Flächen. Wir beschränken uns dabei auf den
+	<math-tex>\mathbb{R}^3</math-tex>.
+</p>
+
+<h2>Parametrisierte Flächen</h2>
+
+<p>
+	Eine parametrisierte Fläche im <math-tex>\mathbb{R}^3</math-tex> ist eine Teilmenge
+	des <math-tex>\mathbb{R}^3</math-tex>, die sich durch eine gutartige Funktion
+	zweier Veränderlicher in den <math-tex>\mathbb{R}^3</math-tex> parametrisieren lässt.
+	Was "gutartig" genau heißt, klärt die Definition der <em>Parametrisierung</em>.
+</p>
+
+<eduzoo-exhibit exhibitname="Definition: Parametrisierung">
+<p>
+ Sei <math-tex>B\subset\mathbb{R^2}</math-tex> kompakt, und
+ <math-tex>\phi:B\to\mathbb{R}^3</math-tex> eine stetig differenzierbare Funktion.
+ Ist zusätzlich
+ <ol>
+	<li>
+		der Rand <math-tex>\partial B</math-tex> von <math-tex>B</math-tex>
+		eine Vereinigung endlich vieler glatter Kurven im <math-tex>\mathbb{R^2}</math-tex>,
+	</li>
+
+	<li>
+		<math-tex>\phi:B\setminus\partial B\to\mathbb{R}^3</math-tex> injektiv, und
+	</li>
+
+	<li>
+		die partiellen Ableitungen <math-tex>\partial_u\phi, \partial_v\phi</math-tex>
+		für alle <math-tex>(u,v)\in B\setminus\partial B</math-tex> linear
+		unabhängige Vektoren
+	</li>
+ </ol>
+	so heißt <math-tex>\phi</math-tex> Parametrisierung der Fläche
+	<math-tex>F=\phi(B)</math-tex>.
+</p>
+</eduzoo-exhibit>
+
+<p>
+	Die lineare Abhängigkeit der partiellen Ableitungen
+	<math-tex>\partial_u\phi, \partial_v\phi</math-tex>	sichert, dass die Fläche
+	auch immer eine Fläche ist und nicht an einem Punkt eine Dimension "verliert".
+	Dadurch spannen <math-tex>\partial_u\phi</math-tex> und
+	<math-tex>\partial_v\phi</math-tex> an jedem Punkt
+	<math-tex>(x,y,z)=\phi(u,v)\in F</math-tex> einen zwei-dimensionalen
+	Tangentialraum auf.
+</p>
+
+<p>
+	Eine <em>parametrisierte Fläche</em> im <math-tex>\mathbb{R}^3</math-tex>,
+	oder einfach <em>Fläche</em> (wir werden keine anderen Flächen betrachten), ist
+	eine Teilmenge des <math-tex>\mathbb{R}^3</math-tex>, für die es eine
+	Parametrisierung gibt.
+</p>
+
+<eduzoo-exhibit exhibitname="Definition: Fläche">
+<p>
+	Eine Menge <math-tex>F\subset\mathbb{R}^3</math-tex> heißt (parametrisierte)
+	Fläche, falls es eine Menge <math-tex>B\subset\mathbb{R}^2</math-tex> gibt und
+	eine Parametrisierung <math-tex>\phi:B\to\mathbb{R}^3</math-tex> mit
+	<math-tex>\phi(B)=F</math-tex>.
+</p>
+</eduzoo-exhibit>
+
+<p>
+	Eine Fläche ist also eine Menge, die sich auf glatte Weise durch zwei Parameter
+	beschreiben lässt. Zu jedem Punkt <math-tex>(x,y,z)\in F</math-tex> gibt es
+	zwei Parameter <math-tex>(u,v)\in B</math-tex> (eine Fläche hat zwei Freiheitsgrade!),
+	mit <math-tex>\phi(u,v)=(x,y,z)</math-tex>.
+</p>
+
+<eduzoo-example lang="ger">
+<p>
+	Sei <math-tex>M</math-tex> der Mantel eines Zylinders
+	<math-tex>Z=\{
+					(x,y,z)\in\mathbb{R}^3	\;:\;
+					\sqrt{x^2+y^2}\leq R\,,\,0\leq z\leq H\}</math-tex>
+	mit Radius <math-tex>R</math-tex> und Höhe <math-tex>H</math-tex>. Es ist also
+	<math-tex>M=\{
+					(x,y,z)\in\mathbb{R}^3	\;:\;
+					\sqrt{x^2+y^2}=R\,,\,0\leq z\leq H\}</math-tex>.
+</p>
+
+<p>
+	Von den Koordinatentransformationen ist bekannt, dass Zylinderkoordinaten
+	jedem <math-tex>r,\varphi,z</math-tex> einen Punkt
+	<math-tex>(x,y,z)\in\mathbb{R}^3</math-tex> zuordnen, der auf einer Zylinderschale
+	vom Radius <math-tex>r</math-tex> liegt. Mit der Wahl <math-tex>r=R</math-tex> und
+	der Einschränkung von <math-tex>z</math-tex> auf das Intervall
+	<math-tex>[0,H]</math-tex> ist eine Parametrisierung des Zylindermantels
+	<math-tex>M</math-tex> gegeben durch
+	<math-tex mode="display">
+		\phi:[0,2\pi]\times[0,H]\to\mathbb{R}^3\;,\;
+		\phi(t,z)=\begin{pmatrix}R\cos t\\ R\sin t\\ z\end{pmatrix}
+	</math-tex>
+	und damit <math-tex>\phi(B)=M</math-tex>.
+</p>
+
+<p>
+	Der Definitionsbereich von <math-tex>\phi</math-tex> ist kompakt und durch
+	ein Rechteck berandet (also insbesondere durch endlich viele glatte Kurven, 4 hier).
+	Im Inneren des Definitionsbereichs ist <math-tex>\phi</math-tex> injektiv.
+	Es gilt zwar <math-tex>\phi(0,z)=\phi(2\pi,z)</math-tex> für alle
+	<math-tex>z</math-tex>, aber diese Punkte liegen auf dem Rand. Als Einschränkung
+	einer Koordinatentransformation (diese muss eine Jacobi-Matrix mit nicht-
+	verschwindender Determinante haben) müssen die partiellen Ableitungen (zwei
+	der drei Spalten der Jacobi-Matrix der Koordiantentransformation) linear
+	unabhängig sein. Damit ist <math-tex>\phi</math-tex> eine Parametrisierung
+	von <math-tex>M</math-tex>.
+</p>
+
+<p>
+	Achtung: Es ist nicht <math-tex>M=\partial Z</math-tex> der Rand des Zylinders
+	<math-tex>Z</math-tex>, da dieser noch aus den Deckeln zu <math-tex>z=0</math-tex>
+	und <math-tex>z=H</math-tex> besteht. Für diese Kreisscheiben müssen eigene
+	Parametrisierungen angegeben werden.
+</p>
+</eduzoo-example>
+
+<p>
+	Unter bestimmten Vorraussetzungen sind Graphen von skalaren Funktionen
+	<math-tex>f:\mathbb{R}^2\to\mathbb{R}</math-tex> Flächen im
+	<math-tex>\mathbb{R}^3</math-tex>.
+</p>
+
+<eduzoo-example lang="ger">
+<p>
+	Sei <math-tex>B\subset\mathbb{R}^2, f:B\to\mathbb{R}</math-tex>. Der Graph
+	<math-tex>G_f</math-tex> von <math-tex>f</math-tex> ist gegeben durch
+	<math-tex>G_f=\{(x,y,z)\in\mathbb{R}^3\;:\;(x,y)\in B\,,\,z=f(x,y)\}</math-tex>.
+	Ein Kandidat für eine Parametrisierung von <math-tex>G_f</math-tex> ist
+	dann
+	<math-tex mode="display">
+		\phi:B\to\mathbb{R}^3\;,\;
+		\phi(u,v)=\begin{pmatrix}u\\ v\\ f(u,v)\end{pmatrix}
+	</math-tex>
+	Damit <math-tex>\phi</math-tex> Parametrisierung ist, muss mindestens gelten,
+	dass <math-tex>B</math-tex> kompakt und durch endlich viele glatte Kurven berandet
+	ist, ebenso muss <math-tex>f</math-tex> stetig differenzierbar sein.
+</p>
+
+<p>
+	Jedoch ist <math-tex>\phi</math-tex> immer injektiv, und die partiellen
+	Ableitungen
+	<math-tex mode="display">
+		\partial_u\phi=\begin{pmatrix}1\\ 0\\ \partial_u f\end{pmatrix}\;,\;
+		\partial_v\phi=\begin{pmatrix}0\\ 1\\ \partial_v f\end{pmatrix}
+	</math-tex>
+	sind für alle <math-tex>(u,v)</math-tex> linear unabhängig.
+</p>
+</eduzoo-example>
+
+<!--
+
+<eduzoo-example lang="ger">
+<p>
+	Kreiskegel
+	<math-tex>B=\{(x,y,z)\in\mathbb{R}^3\;:\;
+				\sqrt{x^2+y^2}\leq1-\frac{z}{2}\,,\,0\leq z\leq2\}</math-tex>
+</p>
+</eduzoo-example>
+-->
+
+
+<h2>Oberflächenintegrale</h2>
+
+<p>
+	Das Oberflächenintegral einer skalaren Funktion über eine parametrisierte
+	Fläche im <math-tex>\mathbb{R}^3</math-tex> ist nun analog zum Kurvenintegral
+	einer Funktion über eine Kurve definiert, mit dem Normalenvektor an Stelle
+	des Geschwindigkeitsvektors.
+</p>
+
+<eduzoo-exhibit exhibitname="Definition: Oberflächenintegral, Oberfläche">
+<p>
+	Sei <math-tex>\phi:B\to\mathbb{R}^3</math-tex> eine Parametrisierung der
+	Fläche <math-tex>F=\phi(B)</math-tex>, und sei <math-tex>f:F\to\mathbb{R}</math-tex>
+	eine auf <math-tex>F</math-tex> definierte Funktion. Dann ist
+	<math-tex mode="display">
+		\iint \limits_F f\ dA=\iint \limits_B f(\phi(u,v))
+						\left\|\frac{\partial\phi}{\partial u}\times
+							\frac{\partial\phi}{\partial v}\right\|\ du\ dv
+	</math-tex>
+	das <em>Oberflächenintegral von</em> <math-tex>f</math-tex> über
+	<math-tex>F</math-tex>.
+	Mit <math-tex>f=1</math-tex> ist <math-tex>A(F)=\iint_F dA</math-tex>
+	die <em>Oberfläche</em> von <math-tex>F</math-tex>.
+</p>
+</eduzoo-exhibit>
+
+<p>
+	Die Oberfläche des Zylindermantels aus dem obigen Beispiel lässt sich nun
+	berechnen.
+</p>
+
+<eduzoo-example lang="ger">
+<p>
+	Sei <math-tex>M=\{
+					(x,y,z)\in\mathbb{R}^3	\;:\;
+					\sqrt{x^2+y^2}=R\,,\,0\leq z\leq H\}</math-tex> und
+	<math-tex mode="display">
+		\phi:[0,2\pi]\times[0,H]\to\mathbb{R}^3\;,\;
+		\phi(t,z)=\begin{pmatrix}R\cos t\\ R\sin t\\ z\end{pmatrix}
+	</math-tex> eine Parametrisierung von <math-tex>M</math-tex>. Es ist dann
+	<math-tex mode="display">
+		\partial_t\phi=\begin{pmatrix}-R\sin t\\ R\cos t\\ 0\end{pmatrix}\;,\;
+		\partial_z\phi=\begin{pmatrix}0\\ 0\\ 1\end{pmatrix}
+	</math-tex> und damit der Normalenvektor <math-tex>n</math-tex>
+	<math-tex mode="display">
+		n=\partial_t\phi\times\partial_z\phi=
+		\begin{pmatrix}R\cos t\\ R\sin t\\ 0\end{pmatrix}
+	</math-tex>
+	mit <math-tex>\|n\|=R</math-tex>. Daraus folgt
+	<math-tex mode="display">
+		A(M)=\iint \limits_{M} dA=\int \limits_{0}^{2\pi} \int \limits_{0}^H R\ dz\ dt=2\pi\cdot R\cdot H,
+	</math-tex>
+	also Umfang mal Höhe.
+</p>
+</eduzoo-example>
+
+<p>
+	Ebenso die Oberfläche eines parametrisierten Graphen
+</p>
+
+<eduzoo-example lang="ger">
+<p>
+	Sei <math-tex>B\subset\mathbb{R}^2, f:B\to\mathbb{R}</math-tex> mit
+	Parametrisierung <math-tex>\phi</math-tex> des Graphen <math-tex>G_f</math-tex> von
+	<math-tex>f</math-tex>. Der Normalenvektor <math-tex>n</math-tex> ist gegeben
+	durch
+	<math-tex mode="display">
+		n=\partial_u\phi\times\partial_v\phi=
+		\begin{pmatrix}1\\ 0\\ \partial_u f\end{pmatrix}\times
+		\begin{pmatrix}0\\ 1\\ \partial_v f\end{pmatrix}=
+		\begin{pmatrix}-\partial_u f\\ -\partial_v f\\ 1\end{pmatrix}
+	</math-tex>
+	mit Länge <math-tex>\|n\|=\sqrt{1+(\partial_u f)^2+(\partial_v f)^2}</math-tex>.
+	Die Oberfläche des Graphen von <math-tex>f</math-tex> ist also gegeben durch
+	<math-tex mode="display">
+		A(G_f)=\iint \limits_{G_f} dA=
+		\iint \limits_{B}\sqrt{1+(\partial_u f)^2+(\partial_v f)^2}\ du\ dv
+	</math-tex>
+</p>
+</eduzoo-example>
+
+
+
+</eduzoo-app>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51564469-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+
+</html>
+<!--
+<tex></tex>		= <math-tex></math-tex>
+<tex p></tex> 	= <math-tex mode="display"></math-tex>
+-->
