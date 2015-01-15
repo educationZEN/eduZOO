@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <script src="https://www.polymer-project.org/webcomponents.js"></script>
+
+    <!--Imports for eduzoo-components-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo-definition/eduzoo-definition.html">
+    <link rel="import" href="../../eduzoo-components/eduzoo-example/eduzoo-example.html">
+
+    <!--Old imports, will change-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_app.html">
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_quiz.html">
+    <link rel="import" href="../../eduzoo-components/3rdparty/math-tex/math-tex.html">
+
+	<title>Wo11 - Flächen und skalare Oberflächenintegrale</title>
+
+</head>
+
+<body fullbleed unresolved>
+
+<eduzoo-app courseName="Mathematik fuer PhysikerInnen III"
+         zooTitle="Flächen und skalare Oberflächenintegrale">
+
+<p>
+	Um Vektorfelder an Stelle von skalaren Funktionen über Flächen zu integrieren
+	wird genau wie bei der Integration von Vektorfeldern entlang Kurven die skalare
+	Multiplikation durch ein Skalarprodukt ersetzt. Der vektorwertige Teil des Integranden
+	muss skalar werden, damit das Integral ein Skalar wird. Statt also mit dem
+	Betrag des Normalenvektors zu Multiplizieren, wird das Vektorfeld skalar mit dem
+	Einheits-Normalenvektor multipliziert.
+</p>
+
+<eduzoo-exhibit exhibitname="Definition: Flussintegral, Einheitsnormalenvektor">
+<p>
+	Sei <math-tex>F=\phi(B)</math-tex> eine glatte Fläche und
+	<math-tex>\phi:B\to\mathbb{R}^3</math-tex> eine Parametrisierung von
+	<math-tex>F</math-tex>, und sei <math-tex>\vec{v}</math-tex> ein stetiges
+	Vektorfeld auf einer offenen Menge, die <math-tex>F</math-tex> enthält.
+	Dann ist das <em>Flussintegral von</em> <math-tex>\vec{v}</math-tex> <em>über</em>
+	<math-tex>F</math-tex> (oder der <em>Fluss von</em> <math-tex>\vec{v}</math-tex>
+	<em>durch</em> <math-tex>F</math-tex>)
+	<math-tex mode="display">
+		\begin{eqnarray*}
+			\iint \limits_F v\cdot d\vec{O}
+				&:=&\iint \limits_F \langle\vec{v},\vec{n}\rangle\ dO\\
+				&=&	\iint \limits_B
+						\vec{v}(\phi(u,v))\cdot\partial_u\phi\times\partial_v\phi\ du\ dv
+		\end{eqnarray*}
+	</math-tex>
+	Dabei ist der <em>Einheitsnormalenvektor</em> <math-tex>\vec{n}</math-tex>
+	von <math-tex>F</math-tex> gegeben durch
+	<math-tex mode="display">
+		\vec{n}=\frac{\partial_u\phi\times\partial_v\phi}
+					 {\|\partial_u\phi\times\partial_v\phi\|}
+	</math-tex>
+</p>
+</eduzoo-exhibit>
+
+<p>
+	Seien <math-tex>u,v,w\in\mathbb{R}^3</math-tex>, <math-tex>M=(u\ v\ w)</math-tex>
+	die Matrix mit den Vektoren <math-tex>u,v,w</math-tex> als Spalten.	Eine manchmal
+	nützliche Identität ist dann
+	<math-tex mode="display">
+		u\cdot v\times w=\det M
+	</math-tex>
+</p>
+
+<eduzoo-exhibit exhibitname="Kochrezept: Flussintegral">
+<p>
+	Sei <math-tex>F</math-tex> eine glatte Fläche und <math-tex>\vec{v}</math-tex>
+	ein stetiges Vektorfeld auf einer offenen Menge, die <math-tex>F</math-tex> enthält.
+	Das <em>Flussintegral von</em> <math-tex>\vec{v}</math-tex> <em>über</em>
+	<math-tex>F</math-tex> wird dann mit den folgenden Schritten berechnet:
+	<ol>
+		<li>
+			Finde eine Parametrisierung <math-tex>\phi:B\to\mathbb{R}^3</math-tex> von
+			<math-tex>F</math-tex>.
+		</li>
+		<li>
+			Berechne
+			<math-tex>
+				f(u,v)=\vec{v}(\phi(u,v))\cdot\partial_u\phi\times\partial_v\phi\
+			</math-tex>
+		</li>
+		<li>
+			Berechne das zweidimensionale Integral
+			<math-tex mode="display">
+				\iint \limits_B f(u,v)\ du\ dv
+			</math-tex>
+		</li>
+	</ol>
+</p>
+</eduzoo-exhibit>
+
+<p>
+	Im Falle geschlossener Flächen vereinbaren wir, dass die Parametrisierungen
+	so gewählt werden, dass der Normalenvektor nach außen zeigt. Lässt sich keine
+	Parametrisierung für die gesamte Fläche <math-tex>F</math-tex> finden, so muss
+	sie zerlegt werden in Teile <math-tex>F_1,\dots,F_k, F=\bigcup_i F_i</math-tex>,
+	die sich parametrisieren lassen und für die gilt, dass die Schnittmengen
+	<math-tex>F_i\cap F_j</math-tex> Jordan-Nullmengen sind. Dann ist das Integral
+	<math-tex>\iint\limits{F_i\cap F_j}</math-tex> über die Überlappungen gleich Null
+	und es gilt wie üblich, dass das Integral über <math-tex>F</math-tex> gleich der
+	Summe der Integrale über die Teilstücke <math-tex>F_i</math-tex> ist,
+	<math-tex mode="display">
+		\iint\limits_F \vec{v}\cdot d\vec{O}
+		=\sum_{i=1}^k\iint\limits_{F_i}\vec{v}\cdot d\vec{O}
+	</math-tex>
+</p>
+
+<eduzoo-example lang="ger">
+<p>
+	Sei <math-tex>\vec{v}(x,y,z)=(xy^2,y^3,y)</math-tex>, und <math-tex>Z</math-tex>
+	ein Zylinder vom Radius <math-tex>r</math-tex> und der Höhe <math-tex>h</math-tex>
+	um die <math-tex>z</math-tex>-Achse. Der Rand <math-tex>\partial Z</math-tex>
+	von <math-tex>Z</math-tex> besteht aus dem Zylindermantel <math-tex>M</math-tex>
+	und den beiden Deckeln <math-tex>K_h</math-tex> bei <math-tex>z=h</math-tex>
+	und <math-tex>K_0</math-tex> bei <math-tex>z=0</math-tex>, also
+	<math-tex>\partial Z=M\cup K_h\cup K_0</math-tex>.
+</p>
+
+<p><strong>Abkürzende Beobachtung:</strong> Da <math-tex>\vec{v}</math-tex>
+	nicht von <math-tex>z</math-tex> abhängt, könnte gelten, dass der Fluss
+	von <math-tex>v</math-tex> durch die Deckel jeweils denselben Wert hat. Doch
+	ist zu beachten, dass die Parametrisierungen der Deckel so gewählt werden
+	müssen, dass der Normalenvektor an jedem Punkt des Randes von <math-tex>Z</math-tex>
+	nach außen, also vom Körper weg zeigt. Auf einer Seite fließt etwas herein
+	und auf der anderen wieder heraus. Es gilt also für die Einheitsnormalenvektoren
+	<math-tex>\vec{n}_h</math-tex> von <math-tex>K_h</math-tex> und
+	<math-tex>\vec{n}_0</math-tex> von <math-tex>K_0</math-tex>, dass
+	<math-tex>\vec{n}_h=-\vec{n}_0</math-tex>, und damit
+	<math-tex mode="display">
+		\iint\limits_{K_h}\vec{v}\cdot d\vec{O}=-\iint\limits_{K_0}\vec{v}\cdot d\vec{O}
+	</math-tex>
+	und damit insbesondere
+	<math-tex mode="display">
+		\begin{eqnarray*}
+			\iint\limits_{F}\vec{v}\cdot d\vec{O}
+			&=&\iint\limits_{M}\vec{v}\cdot d\vec{O}+
+				\iint\limits_{K_h}\vec{v}\cdot d\vec{O}+
+				\iint\limits_{K_0}\vec{v}\cdot d\vec{O}\\
+			&=&\iint\limits_{M}\vec{v}\cdot d\vec{O}
+		\end{eqnarray*}
+	</math-tex>
+</p><hr>
+
+<p>
+	Eine Parametrisierung von <math-tex>M</math-tex> ist
+	<math-tex mode="display">
+		\phi:[0,2\pi]\times[0,h]\;,\;
+		\phi(t,z)=\begin{pmatrix}r\cos t\\ r\sin t\\ z\end{pmatrix}
+	</math-tex>
+	mit (nach außen weisendem) Normalenvektor
+	<math-tex mode="display">
+		\partial_t\phi\times\partial_z\phi=
+		\begin{pmatrix}r\cos t\\ r\sin t\\ 0\end{pmatrix}
+	</math-tex>
+	Damit ist der Integrand
+	<math-tex>
+		f(t,z)=\vec{v}(\phi(t,z))\cdot\partial_t\phi\times\partial_z\phi\
+	</math-tex> gegeben durch
+	<math-tex mode="display">
+		f(t,z)=r^2\sin t
+			\begin{pmatrix}
+				r^2\cos t\sin t \\ r^2\sin^2 t\\ 1
+			\end{pmatrix}\cdot
+			\begin{pmatrix}\cos t\\ \sin t\\ 0\end{pmatrix}=r^4\sin^2 t
+	</math-tex>
+	Daraus folgt
+	<math-tex mode="display">
+		\begin{eqnarray*}
+			\iint\limits_{F}\vec{v}\cdot d\vec{O}
+			&=& r^4\int\limits_0^{2\pi}\int\limits_0^h\sin^2 t\ dz\ dt\\
+			&=& r^4\ h\int\limits_0^{2\pi}\sin^2 t\ dt\\
+			&=& \pi\ h\ r^4
+		\end{eqnarray*}
+	</math-tex>
+</p>
+</eduzoo-example>
+
+
+
+<h2>Der Integralsatz von Gauß</h2>
+
+
+
+<p>
+	Der Integralsatz von Gauß setzt Oberflächen- und Volumenintegrale in
+	einen Zusammenhang.
+</p>
+
+<eduzoo-exhibit exhibitname="Satz: Der Integralsatz von Gauß">
+<p>
+	Sei <math-tex>B\subset\mathbb{R}^3</math-tex> ein kompakter Bereich, dessen
+	Rand <math-tex>\partial B</math-tex> eine Fläche ist, die aus endlich vielen
+	glatten Flächenstücken besteht. Die Parametrisierung sei so gewählt, dass der
+	Normalenvektor überall aus <math-tex>B</math-tex> heraus weist. Sei
+	<math-tex>\vec{v}</math-tex> ein stetig differenzierbares Vektorfeld auf einer
+	offenen Umgebung von <math-tex>B</math-tex>. Dann gilt
+	<math-tex mode="display">
+		\iint \limits_{\partial B}\vec{v}\cdot d\vec{O}
+		=\iiint \limits_B \mbox{div}\ \vec{v}\ dx\ dy\ dz
+	</math-tex>
+</p>
+</eduzoo-exhibit>
+
+<p>
+	Für Divergenz-freie Felder, also solche ohne Quellen oder Senken (zum Beispiel
+	Rotationsfelder) folgt dann, dass das Integral über jede geschlossene Fläche
+	immer Null sein muss. Was reinfließt, fließt auch wieder raus. Bei Flussintegralen
+	über geschlossene Flächen ist es also immer sinnvoll, zuerst die Divergenz des
+	zu integrierenden Vektorfeldes zu berechnen.
+</p>
+
+<eduzoo-example lang="ger">
+<p>
+	Sei wie oben <math-tex>\vec{v}(x,y,z)=(xy^2,y^3,y)</math-tex>, und
+	<math-tex>Z</math-tex> ein Zylinder vom Radius <math-tex>r</math-tex>
+	und der Höhe <math-tex>h</math-tex> um die <math-tex>z</math-tex>-Achse.
+	Dieser ist kompakt und von endlich vielen glatten Flächen (nämlich 3, s.o.)
+	berandet. Da <math-tex>\vec{v}</math-tex> stetig differenzierbar ist,
+	lässt sich der Satz von Gauß anwenden. Die Divergenz von <math-tex>\vec{v}</math-tex>
+	ist gegeben durch
+	<math-tex mode="display">
+		\mbox{div}\ \vec{v}=\partial_x (xy^2)+\partial_y y^3+\partial_z y= 4y^2
+	</math-tex>
+	Das resultierende Volumenintegral lässt sich am leichtesten in Zylinderkoordinaten
+	berechnen. Für das Volumenelement <math-tex>dx\ dy\ dz</math-tex>
+	<a href="MfP3/Woche9_VolEl.html">gilt dann</a>
+	<math-tex>dx\ dy\ dz=r\ dr\ dt\ dz</math-tex>, und somit
+	<math-tex mode="display">
+		\begin{eqnarray*}
+			\iint \limits_{\partial Z}\vec{v}\cdot d\vec{O}
+			&=& \iiint \limits_Z \mbox{div}\ \vec{v}\ dx\ dy\ dz\\
+		&=& 4\int\limits_0^h\int\limits_0^{2\pi}\int\limits_0^r r^3\sin^2 t\ dr\ dt\ dz\\
+			&=& \pi\ h\ r^4
+		\end{eqnarray*}
+	</math-tex>
+</p>
+</eduzoo-example>
+
+
+
+</eduzoo-app>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51564469-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+
+</html>
+<!--
+<tex></tex>		= <math-tex></math-tex>
+<tex p></tex> 	= <math-tex mode="display"></math-tex>
+-->
