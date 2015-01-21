@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <script src="https://www.polymer-project.org/webcomponents.js"></script>
+
+    <!--Imports for eduzoo-components-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo-definition/eduzoo-definition.html">
+    <link rel="import" href="../../eduzoo-components/eduzoo-example/eduzoo-example.html">
+
+    <!--Old imports, will change-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_app.html">
+
+    <link rel="import" href="../../eduzoo-components/eduzoo-quiz/eduzoo-quiz.html">
+    <link rel="import" href="../../eduzoo-components/eduzoo-quiz/eduzoo-quiz-choice.html">
+    <link rel="import" href="../../eduzoo-components/3rdparty/math-tex/math-tex.html">
+
+	<title>Wo12 - Warm Up</title>
+
+</head>
+
+
+<body fullbleed unresolved>
+
+<eduzoo-app courseName="Mathematik fuer PhysikerInnen III"
+         zooTitle="Woche 10 - Warm Up">
+
+<h3>Integralsatz von Stokes</h3>
+<hr>
+
+<p>
+	<strong>1.</strong> Sei	<math-tex>F\subset\mathbb{R}^3</math-tex> eine
+	Fläche mit stückweise glatter Randkurve <math-tex>\partial F</math-tex> und
+	<math-tex>\vec{v}:\mathbb{R}^3\to\mathbb{R}^3</math-tex> ein Vektorfeld.
+	(Die Konvention für die Orientierung von Randkurven vorausgesetzt, ) gilt:
+	<math-tex mode="display">
+		\iint\limits_F\mbox{rot}\ \vec{v}\cdot d\vec{O}=
+			\int\limits_{partial F}\vec{v}\cdot d\vec{s}
+	</math-tex>
+</p>
+
+<eduzoo-quiz lang="ger" question="Markiere die richtigen Aussagen.">
+
+	<eduzoo-quiz-choice>
+		immer (die Gleichheit heißt Satz von Stokes)
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice>
+		falls <math-tex>\vec{v}</math-tex> auf einer offenen Umgebung von
+		<math-tex>F</math-tex> stetig ist.
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice correct>
+		falls <math-tex>\vec{v}</math-tex> auf einer offenen Umgebung von
+		<math-tex>F</math-tex> stetig differenzierbar ist.
+	</eduzoo-quiz-choice>
+
+</eduzoo-quiz>
+
+<hr>
+<p>
+	<strong>2.</strong> Die Konvention für Orientierung von Randflächen ist:
+</p>
+
+<eduzoo-quiz lang="ger" question="Markiere die richtigen Aussagen.">
+
+	<eduzoo-quiz-choice>
+		Bei einer Fläche im <math-tex>\mathbb{R}^2</math-tex> liegt das Gebiet
+		rechts, wenn man die Randkurve im positiven Sinn durchläuft.
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice correct>
+		Bei einer Fläche im <math-tex>\mathbb{R}^2</math-tex> liegt das Gebiet
+		links, wenn man die Randkurve im positiven Sinn durchläuft.
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice correct>
+		Bei einer Fläche im <math-tex>\mathbb{R}^3</math-tex> mit vorgegebenem
+		Normalenvektor liegt bei positivem Umlaufsinn des Randes die Fläche links,
+		wenn man von der Seite guckt, in die der Normalenvektor zeigt.
+	</eduzoo-quiz-choice>
+
+</eduzoo-quiz>
+
+</eduzoo-app>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51564469-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

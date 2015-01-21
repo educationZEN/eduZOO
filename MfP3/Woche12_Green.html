@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <script src="https://www.polymer-project.org/webcomponents.js"></script>
+
+    <!--Imports for eduzoo-components-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo-definition/eduzoo-definition.html">
+    <link rel="import" href="../../eduzoo-components/eduzoo-example/eduzoo-example.html">
+
+    <!--Old imports, will change-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_app.html">
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_quiz.html">
+    <link rel="import" href="../../eduzoo-components/3rdparty/math-tex/math-tex.html">
+
+	<title>Wo 12 - Greensche Formel und Gaußsche Flächenformel</title>
+
+</head>
+
+<body fullbleed unresolved>
+
+<eduzoo-app courseName="Mathematik fuer PhysikerInnen III"
+         zooTitle="Greensche Formel und Gaußsche Flächenformel">
+
+<p>
+	Für ebene Flächen ist es möglich, mit Hilfe der Greenschen Formel nur aus der
+	Randkurve der Fläche deren Flächeninhalt zu bestimmen. Die Greensche Formel
+	folgt aus dem Satz von Stokes, indem das zweidimensionale Problem als Problem
+	im <math-tex>\mathbb{R}^3</math-tex> aufgefasst wird. Die Idee ist, für eine
+	Fläche <math-tex>F</math-tex> das Oberflächenintegral
+	<math-tex>A(F)=\iint_F dxdy</math-tex> als das Flussintegral eines Rotationsfeldes
+	<math-tex>\mbox{rot}\ v</math-tex> durch <math-tex>F</math-tex> aufzufassen, für
+	das gilt <math-tex>\mbox{rot}\ v.n=1</math-tex>. Dann ist nämlich nach dem Satz
+	von Stokes
+	<math-tex mode="display">
+		A(F)=\iint\limits_F dx\ dy=\iint\limits_F\mbox{rot}\ v.dO
+			=\int\limits_\gamma v.ds
+	</math-tex>
+	der Flächeninhalt bestimmbar aus dem Wegintegral über den Rand
+	<math-tex>\partial F=\gamma</math-tex> von <math-tex>F</math-tex>.
+</p>
+
+<h3>Das zweidimensionale Problem im <math-tex>\mathbb{R}^3</math-tex></h3>
+
+<p>
+	Sei <math-tex>v:\mathbb{R}^2\to\mathbb{R}^2\,,\,v(x,y)=(v_1(x,y),v_2(x,y))</math-tex>
+	ein ebenes Vektorfeld, und <math-tex>F\subset\mathbb{R}^2\subset\mathbb{R}^3</math-tex>
+	eine ebene Fläche mit Randkurve
+	<math-tex>\gamma:[a,b]\to\mathbb{R}^2\,,\,\gamma(t)=(\gamma_1(t),\gamma_2(t))</math-tex>.
+	Betrachte nun <math-tex>v</math-tex> als Vektorfeld im <math-tex>\mathbb{R}^3</math-tex>
+	und <math-tex>F</math-tex> als Menge im <math-tex>\mathbb{R}^3</math-tex> mit
+	Randkurve <math-tex>\tilde\gamma</math-tex>:
+	<math-tex mode="display">
+			v(x,y,z)=\begin{pmatrix}v_1(x,y)\\v_2(x,y)\\ 0\end{pmatrix}\;,\;
+			\tilde\gamma(t)=\begin{pmatrix}\gamma_1(t)\\ \gamma_2(t)\\ 0\end{pmatrix}
+	</math-tex>
+	Das vektorielle Flächenelement <math-tex>dO</math-tex> von <math-tex>F</math-tex>
+	ergibt sich aus der Parametrisierung. Dabei wird die ebene Fläche
+	<math-tex>F</math-tex> am besten "durch sich selbst" parametrisiert,
+	<math-tex mode="display">
+		\phi:F\to\mathbb{R}^3\;,\;
+		\phi(x,y)=\begin{pmatrix}x\\ y\\ 0\end{pmatrix}
+	</math-tex>
+	Damit ist das vektorielle Flächenelement gebeben durch
+	<math-tex mode="display">
+		\begin{eqnarray*}
+			dO 	&=& \partial_x\phi\times\partial_y\phi\ dx\ dy
+			= \begin{pmatrix}0\\ 0\\ 1\end{pmatrix}\ dx\ dy
+		\end{eqnarray*}
+	</math-tex>
+	Die Rotation des Vektorfelds zeigt immer parallel zur z-Achse:
+	<math-tex mode="display">
+		\mbox{rot}\ v=\begin{pmatrix}0\\ 0\\ \partial_x v_2-\partial_y v_1\end{pmatrix}
+	</math-tex>
+	Es ist also <math-tex>\mbox{rot}\ v.dO=\partial_x v_2-\partial_y v_1\ dxdy</math-tex>
+</p>
+
+<h3>Der Satz von Stokes und die Greensche Formel</h3>
+
+<p>
+	Der Satz von Stokes erlaubt es, das Flussintegral des Rotationsvektorfelds
+	durch die Fläche <math-tex>F</math-tex>	in ein Kurvenintegral über den Rand
+	von <math-tex>F</math-tex> zu überführen. Es ist also
+	<math-tex mode="display">
+		\iint\limits_F\mbox{rot}\ v.dO=\int\limits_\gamma v.ds
+	</math-tex>
+	Mit der Definition des Kurvenintegrals wird der Term
+	<math-tex>v.ds=v(\gamma(t)).\dot\gamma(t)dt</math-tex> und die Greensche Formel
+	ist hergeleitet.
+</p>
+
+<eduzoo-exhibit exhibitname="Greensche Formel">
+<p>
+	Sei <math-tex>v:\mathbb{R}^2\to\mathbb{R}^2\,,\,v(x,y)=(v_1(x,y),v_2(x,y))</math-tex>
+	ein ebenes Vektorfeld, und <math-tex>F\subset\mathbb{R}^2</math-tex>
+	eine ebene Fläche mit Randkurve	<math-tex>
+		\gamma:[a,b]\to\mathbb{R}^2\,,\,\gamma(t)=(\gamma_1(t),\gamma_2(t))</math-tex>.
+	Dann gilt
+	<math-tex mode="display">
+		\iint\limits_F
+			\left(\frac{\partial v_2}{\partial x}-\frac{\partial v_1}{\partial y}\right)\
+			dx\ dy =
+		\int\limits_a^b
+			\left(v_1(\gamma(t))\cdot\frac{d\gamma_1}{dt}
+				+v_2(\gamma(t))\cdot\frac{d\gamma_2}{dt}\right)\ dt
+	</math-tex>
+</p>
+</eduzoo-exhibit>
+
+<p>
+	Mit Hilfe dieser Formel lassen sich sehr genau die Flächeninhalte von Zeichnungen
+	mit Hilfe mechanischer Messgeräte, sogenannter Planimeter bestimmen. Diese vermessen
+	den Rand und bestimmen dann den Flächeninhalt.
+</p>
+
+<eduzoo-example lang="ger">
+<p>
+	Sei <math-tex>v(x,y)=(0,x,0)</math-tex> und <math-tex>F\subset\mathbb{R}^2</math-tex>
+	eine ebene Fläche mit Randkurve	<math-tex>
+		\gamma:[a,b]\to\mathbb{R}^2\,,\,\gamma(t)=(\gamma_1(t),\gamma_2(t))</math-tex>.
+	Dann ist <math-tex>\partial_x v_2-\partial_y v_1=1</math-tex> und damit der
+	Flächeininhalt <math-tex>A(F)</math-tex> von
+	<math-tex>F</math-tex> gegeben durch
+	<math-tex mode="display">
+		A(F)=\iint\limits_F\ dx\ dy=\int\limits_a^b\gamma_1(t)\dot\gamma_2(t)\ dt
+	</math-tex>
+</p>
+</eduzoo-example>
+
+<p>
+	Andere Vektorfelder, deren (2-d-)Rotation gleich 1 ist, liefern ebenso den
+	Flächeninhalt, aber mit einer anderen rechten Seite, die, abhängig von der
+	Beschaffenheit der Randkurve, günstiger sein kann. In den Hausaufgaben sind
+	zwei weitere solche Identitäten zu zeigen.
+</p>
+
+<!--
+
+<h3>Die Flächenformel von Gauß</h3>
+
+<p>
+
+</p>
+-->
+
+
+</eduzoo-app>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51564469-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+
+</html>
+<!--
+<tex></tex>		= <math-tex></math-tex>
+<tex p></tex> 	= <math-tex mode="display"></math-tex>
+-->

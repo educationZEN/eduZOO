@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <script src="https://www.polymer-project.org/webcomponents.js"></script>
+
+    <!--Imports for eduzoo-components-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo-definition/eduzoo-definition.html">
+    <link rel="import" href="../../eduzoo-components/eduzoo-example/eduzoo-example.html">
+
+    <!--Old imports, will change-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_app.html">
+
+    <link rel="import" href="../../eduzoo-components/eduzoo_quiz.html">
+    <link rel="import" href="../../eduzoo-components/3rdparty/math-tex/math-tex.html">
+
+	<title>Wo12 - Der Satz von Stokes</title>
+
+</head>
+
+<body fullbleed unresolved>
+
+<eduzoo-app courseName="Mathematik fuer PhysikerInnen III"
+         zooTitle="Der Satz von Stokes">
+
+<p>
+	Zum Beispiel
+</p>
+
+<eduzoo-exhibit exhibitname="Satz von Stokes">
+<p>
+	Sei <math-tex>F</math-tex> eine Fläche im <math-tex>\mathbb{R}^3</math-tex>
+	mit stückweise glatter Randkurve <math-tex>\partial F</math-tex>. Sei
+	<math-tex>\vec{v}</math-tex> ein stetig differenzierbares Vektorfeld auf
+	einer offenen Umgebung von <math-tex>F</math-tex>. Dann gilt
+	<math-tex mode="display">
+		\iint\limits_F \mbox{rot}\ \vec{v}.d\vec{O}=
+			\int\limits_{\partial F}\vec{v}.d\vec{s}
+	</math-tex>
+</p>
+</eduzoo-exhibit>
+
+<p>
+	Eine solche Formel anzuwenden ist nicht schwer, von Vorteil ist sie immer
+	besonders dann, wenn ein Kurvenintegral eines <em>rotationsfreien</em> Vektorfelds
+	über eine geschlossene Kurve zu berechnen ist, zum Beispiel eines Gradientenfeldes.
+	Die stetige Differenzierbarkeit des Vektorfeldes ist dabei die entscheidende
+	Voraussetzung wie das folgende Beispiel zeigt.
+</p>
+
+<eduzoo-example lang="ger">
+<p>
+	Es sei <math-tex>R\subset\mathbb{R}^3</math-tex> der Einheitskreis in der
+	<math-tex>x-y-</math-tex>Ebene, und <math-tex>\vec{v}</math-tex> das Vektorfeld mit
+	<math-tex mode="display">
+		v(x,y,z)=\frac{1}{x^2+y^2}\begin{pmatrix}-y\\ x\\ 0\end{pmatrix}
+	</math-tex>
+	Das Wegintegral <math-tex>\int_S\vec{v}.d\vec{s}</math-tex> ist schnell im Kopf
+	berechnet, beschreibt <math-tex>\vec{v}</math-tex> auf <math-tex>S</math-tex>
+	genau die normierten Tangentialvektoren an den Kreis. Daher ist der Wert des
+	Integrals gerade der Umfang, also <math-tex>\int_S\vec{v}.d\vec{s}=2\pi</math-tex>.
+</p>
+
+<p>
+	Für die Rotation von <math-tex>\vec{v}</math-tex> gilt jedoch
+	<math-tex>\mbox{rot}\ \vec{v}=\vec{0}</math-tex>, also für jede Fläche
+	<math-tex>F</math-tex>
+	<math-tex mode="display">
+		\iint\limits_F \mbox{rot}\ \vec{v}.d\vec{O}=0
+	</math-tex>
+	Nach dem Satz von Stokes müsste aber für jede Fläche <math-tex>F</math-tex>
+	mit <math-tex>\partial F=S</math-tex> aber gelten, dass die beiden Integrale
+	gleich sein.
+</p>
+
+<p>
+	Um das Wegintegral <math-tex>\int_S\vec{v}.d\vec{s}</math-tex> zu berechnen
+	lässt sich der Satz von Stokes nicht anwenden. Egal, welche Fläche durch die
+	Kurve <math-tex>S</math-tex> berandet wird (das muss übrigens nicht die
+	Kreisscheibe sein, es kann auch ein Kegelmantel oder eine ganz abstrakte Fläche
+	sein, die ein Loch genau in der Form und an der Stelle von
+	<math-tex>S</math-tex> hat), sie schneidet die <math-tex>z-</math-tex>Achse.
+	Doch in keiner Umgebung der <math-tex>z-</math-tex>Achse ist das Vektorfeld
+	<math-tex>\vec{v}</math-tex> stetig differenzierbar.
+</p>
+</eduzoo-example>
+
+</eduzoo-app>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51564469-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+
+</html>
+<!--
+<tex></tex>		= <math-tex></math-tex>
+<tex p></tex> 	= <math-tex mode="display"></math-tex>
+-->
