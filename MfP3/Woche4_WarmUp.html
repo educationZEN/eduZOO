@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <script src="../../eduzoo-components/bower_components/webcomponentsjs/webcomponents.js"></script>
+
+    <!--Imports for eduzoo-components-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo-definition/eduzoo-definition.html">
+    <link rel="import" href="../../eduzoo-components/eduzoo-example/eduzoo-example.html">
+
+    <!--Old imports, will change-->
+
+    <link rel="import" href="../../eduzoo-components/eduzoo-app/eduzoo-app.html">
+
+    <link rel="import" href="../../eduzoo-components/eduzoo-quiz/eduzoo-quiz.html">
+    <link rel="import" href="../../eduzoo-components/eduzoo-quiz/eduzoo-quiz-choice.html">
+    <link rel="import" href="../../eduzoo-components/bower_components/math-tex/math-tex.html">
+
+	<title>Wo4 - Warm Up</title>
+
+</head>
+
+
+<body fullbleed unresolved>
+
+<eduzoo-app courseName="Mathematik fuer PhysikerInnen III"
+         zooTitle="Woche 4 - Warm Up">
+
+<h3>DGL-Systeme</h3>
+<hr>
+
+<p>
+	<strong>1.</strong> Betrachte die DGL
+	<math-tex>x^{(n)}=f(t,x,x',x'',\dots,x^{(n-1)})</math-tex>.
+</p>
+
+<eduzoo-quiz lang="ger" question="Markiere die richtigen Aussagen.">
+
+	<eduzoo-quiz-choice correct>
+		Die DGL ist <math-tex>n-</math-tex>ter Ordnung.
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice>
+		Die DGL ist linear.
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice correct>
+		Falls <math-tex>x(t)</math-tex> eine Lösung der DGL ist, so ist
+		<math-tex>x_i(t)=x^{(i-1)}(t)</math-tex> für <math-tex>i=1,\dots,n-1</math-tex>
+		Lösung des Systems
+		<math-tex mode="display">
+			\begin{eqnarray*}
+				x_1' &=& x_2\\
+				x_2' &=& x_3\\
+					&\vdots&\\
+				x_{n-1}'&=& f(t,x_1,\dots,x_{n-1})
+			\end{eqnarray*}
+		</math-tex>
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice>
+		Die DGL ist autonom.
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice correct>
+		Falls die DGL autonom und <math-tex>x(t)</math-tex> eine Lösung ist, so ist auch
+		<math-tex>x(t-t_0)</math-tex> eine Lösung für alle
+		<math-tex>t_0\in\mathbb{R}</math-tex>.
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice>
+		Sei zusätzlich gefordert, dass
+		<math-tex>x(t_0)=x_0,\dots,x^{(n-1)}(t_0)=x_0^{(n-1)}</math-tex>. Dann hat das
+		AWP eine eindeutige Lösung.
+	</eduzoo-quiz-choice>
+
+</eduzoo-quiz>
+
+</eduzoo-app>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51564469-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

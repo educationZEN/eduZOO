@@ -17,7 +17,7 @@
 
     <link rel="import" href="../../eduzoo-components/eduzoo-quiz/eduzoo-quiz.html">
     <link rel="import" href="../../eduzoo-components/eduzoo-quiz/eduzoo-quiz-choice.html">
-    <link rel="import" href="../../eduzoo-components/3rdparty/math-tex/math-tex.html">
+    <link rel="import" href="../../eduzoo-components/bower_components/math-tex/math-tex.html">
 
 	<title>Wo6 - Warm Up</title>
 
@@ -27,33 +27,58 @@
 <body fullbleed unresolved>
 
 <eduzoo-app courseName="Mathematik fuer PhysikerInnen III"
-         zooTitle="Woche 1 - WarmUp">
+         zooTitle="Woche 6 - Warm Up">
 
-<h3>Lineare DGLs</h3>
+<h3>Allgemeine lineare DGLen</h3>
 <hr>
 
-<p>Markiere die richtigen Aussagen.</p>
-
-<eduzoo-quiz>
-<eduzoo-quiz-question>
-	Seien <math-tex>a_{i,j},b_k:I\to\mathbb{R}</math-tex> Funktionen für
-	<math-tex>i,j,k=1,\dots,n</math-tex> und
+<p>
+	<strong>1.</strong> Seien <math-tex>a_{i,j},b_k:I\to\mathbb{R}</math-tex> stetige
+	Funktionen für <math-tex>i,j,k=1,\dots,n</math-tex> und
 	<math-tex>A(t)=(a_{i,j}(t))_{i,j}</math-tex> und
 	<math-tex>b(t)=(b_k(t))_k</math-tex>. Betrachte das AWP
-	<math-tex>\dot{x}=A(t)x+b(t), x(0)=x_0</math-tex>.
-</eduzoo-quiz-question>
+	<math-tex>\dot x=A(t)x+b(t),\, x(0)=x_0</math-tex>.
+</p>
+
+<eduzoo-quiz lang="ger" question="Markiere die richtigen Aussagen.">
 
 	<eduzoo-quiz-choice>
 		Für jedes <math-tex>x_0</math-tex> hat das AWP genau eine auf ganz
 		<math-tex>I</math-tex> definierte Lösung.
 	</eduzoo-quiz-choice>
 
-	<eduzoo-quiz-choice ?>
+	<eduzoo-quiz-choice>
 		Für jedes <math-tex>x_0</math-tex> hat das AWP höchstens eine auf ganz
 		<math-tex>I</math-tex> definierte Lösung.
 	</eduzoo-quiz-choice>
 
+	<eduzoo-quiz-choice>
+		Falls <math-tex>x_1,\dots,x_n</math-tex> auf <math-tex>I</math-tex> definierte
+		Lösungen des homogenen Systems <math-tex>\dot x=A(t)x</math-tex> sind, dann sind
+		die Vektoren <math-tex>x_1(t),\dots,x_n(t)</math-tex> für alle
+		<math-tex>t\in I</math-tex> linear unabhängig.
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice>
+		Falls <math-tex>x_1,\dots,x_n</math-tex> auf <math-tex>I</math-tex> definierte
+		Lösungen des homogenen Systems <math-tex>\dot x=A(t)x</math-tex> sind, dann existiert
+		<math-tex>t\in I</math-tex> sodass die Vektoren
+		<math-tex>x_1(t),\dots,x_n(t)</math-tex> linear unabhängig sind.
+	</eduzoo-quiz-choice>
+
 	<eduzoo-quiz-choice correct>
+		Seien <math-tex>x_H</math-tex> und <math-tex>x_P</math-tex> Lösungen des
+		homogenen bzw. des inhomogenen Systems. Dann ist <math-tex>x_H+x_P</math-tex>
+		eine Lösung des inhomogenen Systems.
+	</eduzoo-quiz-choice>
+
+	<eduzoo-quiz-choice correct>
+		Seien <math-tex>c_1,\dots,c_n:I\to\mathbb{R}</math-tex> so, dass
+		<math-tex>
+			\begin{pmatrix}x_1(t)& x_2(t)&\dots & x_n(t)\end{pmatrix}\cdot
+			\begin{pmatrix}\dot c_1(t)\\ \dots \\ c_n(t)\end{pmatrix}=b(t)
+		</math-tex>. Dann ist <math-tex>\sum_i c_i(t)x_i(t)</math-tex> eine
+		Lösung des inhomogenen Systems.
 	</eduzoo-quiz-choice>
 
 </eduzoo-quiz>
